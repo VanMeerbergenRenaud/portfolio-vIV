@@ -37,7 +37,6 @@
 }
 
 @layer base {
-
     *,
     ::after,
     ::before,
@@ -45,22 +44,207 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+
+    ::selection {
+        @apply bg-gray-900 text-white;
+    }
+
+    body {
+        @apply mx-auto p-0 relative flex flex-col h-screen min-h-screen max-w-[160rem] text-base font-normal scroll-smooth antialiased bg-gray-50 dark:bg-gray-800 text-black dark:text-white;
+    }
+
+    main {
+        @apply m-0 p-0 bg-gray-50 dark:bg-gray-800;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-medium;
+    }
+
+    p, span {
+        @apply text-base font-normal;
+    }
+
+    a, button {
+        @apply text-base font-normal leading-6 cursor-pointer transition-colors ease-in-out duration-400 hover:duration-150 active:duration-50;
+    }
+
+    img, video {
+        @apply flex-center w-full max-w-full h-auto object-cover bg-gray-300 overflow-hidden;
+    }
+
+    svg {
+        @apply w-4 h-4 text-gray-600 dark:text-gray-400;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+        @apply outline-2 outline-gray-800 dark:outline-gray-400 outline-offset-2 rounded-md;
+    }
+
+    button:disabled,
+    input:disabled,
+    textarea:disabled {
+        @apply opacity-50 cursor-not-allowed;
+    }
+
+    /* Styles de base pour les tableaux */
+    table {
+        @apply min-w-full border-collapse divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-800;
+    }
+
+    thead, thead tr, thead tr span {
+        @apply bg-gray-50 dark:bg-cyan-950 hover:text-gray-900 dark:hover:text-gray-300;
+    }
+
+    thead th, thead th span {
+        @apply text-xs font-semibold text-gray-700 dark:text-gray-400;
+    }
+
+    tbody {
+        @apply bg-white dark:bg-gray-800;
+    }
+
+    tbody tr {
+        @apply bg-white dark:bg-gray-800 transition-colors;
+    }
+
+    tbody td, tbody td p {
+        @apply text-sm font-normal text-gray-700 dark:text-gray-400;
+    }
+
+    tr {
+        @apply border-b border-gray-200 dark:border-gray-700;
+    }
+
+    th {
+        @apply px-6 py-3 text-left;
+    }
+
+    td {
+        @apply px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400;
+    }
+
+    tbody tr:last-of-type {
+        @apply border-b-0;
+    }
 }
 
-[data-flux-field]:not(ui-radio, ui-checkbox) {
-    @apply grid gap-2;
+@layer components {
+    /*---------- Text (xl, lg, md, sm, xs) ----------*/
+    .text-xl-regular {
+        @apply text-xl leading-normal font-normal;
+        /* 20px / 30px / Regular */
+    }
+
+    .text-xl-medium {
+        @apply text-xl leading-normal font-medium;
+        /* 20px / 30px / Medium */
+    }
+
+    .text-xl-semibold {
+        @apply text-xl leading-normal font-semibold;
+        /* 20px / 30px / Semibold */
+    }
+
+    .text-xl-bold {
+        @apply text-xl leading-normal font-bold;
+        /* 20px / 30px / Bold */
+    }
+
+    .text-lg-regular {
+        @apply text-lg leading-relaxed font-normal;
+        /* 18px / 28px / Regular */
+    }
+
+    .text-lg-medium {
+        @apply text-lg leading-relaxed font-medium;
+        /* 18px / 28px / Medium */
+    }
+
+    .text-lg-semibold {
+        @apply text-lg leading-relaxed font-semibold;
+        /* 18px / 28px / Semibold */
+    }
+
+    .text-lg-bold {
+        @apply text-lg leading-relaxed font-bold;
+        /* 18px / 28px / Bold */
+    }
+
+    .text-md-regular {
+        @apply text-base leading-normal font-normal;
+        /* 16px / 24px / Regular */
+    }
+
+    .text-md-medium {
+        @apply text-base leading-normal font-medium;
+        /* 16px / 24px / Medium */
+    }
+
+    .text-md-semibold {
+        @apply text-base leading-normal font-semibold;
+        /* 16px / 24px / Semibold */
+    }
+
+    .text-md-bold {
+        @apply text-base leading-normal font-bold;
+        /* 16px / 24px / Bold */
+    }
+
+    .text-sm-regular {
+        @apply text-sm leading-snug font-normal;
+        /* 14px / 20px / Regular (text-sm est 0.875rem = 14px) */
+    }
+
+    .text-sm-medium {
+        @apply text-sm leading-snug font-medium;
+        /* 14px / 20px / Medium */
+    }
+
+    .text-sm-semibold {
+        @apply text-sm leading-snug font-semibold;
+        /* 14px / 20px / Semibold */
+    }
+
+    .text-sm-bold {
+        @apply text-sm leading-snug font-bold;
+        /* 14px / 20px / Bold */
+    }
+
+    .text-xs-regular {
+        @apply text-xs leading-normal font-normal;
+        /* 12px / 18px / Regular (text-xs est 0.75rem = 12px) */
+    }
+
+    .text-xs-medium {
+        @apply text-xs leading-normal font-medium;
+        /* 12px / 18px / Medium */
+    }
+
+    .text-xs-semibold {
+        @apply text-xs leading-normal font-semibold;
+        /* 12px / 18px / Semibold */
+    }
+
+    .text-xs-bold {
+        @apply text-xs leading-normal font-bold;
+        /* 12px / 18px / Bold */
+    }
 }
 
-[data-flux-label] {
-    @apply  !mb-0 !leading-tight;
+@utility flex-center {
+    @apply flex justify-center items-center;
 }
 
-input:focus[data-flux-control],
-textarea:focus[data-flux-control],
-select:focus[data-flux-control] {
-    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
-}
+@utility scrollbar-hidden {
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
 
-/* \[:where(&)\]:size-4 {
-    @apply size-4;
-} */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
