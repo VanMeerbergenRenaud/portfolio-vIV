@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-use Laravel\Fortify\Features;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -35,17 +34,6 @@ class Login extends Component
         $this->ensureIsNotRateLimited();
 
         $user = $this->validateCredentials();
-
-        if (Features::canManageTwoFactorAuthentication() && $user->hasEnabledTwoFactorAuthentication()) {
-            Session::put([
-                'login.id' => $user->getKey(),
-                'login.remember' => $this->remember,
-            ]);
-
-            $this->redirect(route('two-factor.login'), navigate: true);
-
-            return;
-        }
 
         Auth::login($user, $this->remember);
 
