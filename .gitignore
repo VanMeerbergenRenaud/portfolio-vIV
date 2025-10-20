@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/storage
+/public/inspirations
 /storage/*.key
 /storage/pail
 /vendor
@@ -21,3 +22,6 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+/.junie
+boost.json
+/public/inspirations

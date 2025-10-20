@@ -1,17 +1,27 @@
 {
     "private": true,
     "type": "module",
-    "scripts": {
-        "build": "vite build",
-        "dev": "vite"
-    },
+    "module": "index.ts",
     "dependencies": {
-        "@tailwindcss/vite": "^4.1.11",
+        "@alpinejs/focus": "^3.14.8",
+        "@alpinejs/ui": "^3.14.7",
+        "@tailwindcss/vite": "^4.1.11"
+    },
+    "devDependencies": {
+        "alpinejs": "^3.14.8",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.4",
+        "bun-types": "latest",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^2.0",
+        "sass-embedded": "^1.83.0",
         "tailwindcss": "^4.0.7",
         "vite": "^7.1.6"
+    },
+    "scripts": {
+        "dev": "bunx --bun vite",
+        "build": "vite build",
+        "serve": "vite preview",
+        "start": "bun run index.ts"
     }
 }
