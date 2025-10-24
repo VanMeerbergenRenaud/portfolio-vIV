@@ -14,7 +14,7 @@
             <!-- Navbar -->
             <x-partials.menu />
 
-            <div class="block py-12 lg:py-22" aria-hidden="true">
+            <div class="block py-16 lg:py-22" aria-hidden="true">
                 <p class="sr-only">Empty space</p>
             </div>
 
@@ -74,7 +74,7 @@
                 </div>
             </section>
 
-            <section class="relative flex-grow py-15 border-before">
+            <section class="hidden lg:block relative flex-grow py-15 border-before">
                 <p class="sr-only">Espace vide</p>
             </section>
 
