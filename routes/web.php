@@ -13,6 +13,13 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::middleware(['guest'])->group(function () {
+    Route::view('/about', 'livewire.pages.about')->name('about');
+    Route::view('/projects', 'livewire.pages.projects.index')->name('projects');
+    Route::view('/project/{id}', 'livewire.pages.projects.show')->name('project');
+    Route::view('/contact', 'livewire.pages.contact')->name('contact');
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 

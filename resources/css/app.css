@@ -240,6 +240,14 @@
     @apply flex justify-center items-center;
 }
 
+@utility border-before {
+    @apply before:content-[''] before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-screen before:h-px before:bg-gray-200;
+}
+
+@utility border-after {
+    @apply  after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-screen after:h-px after:bg-gray-200;
+}
+
 @utility scrollbar-hidden {
     scrollbar-width: none;  /* Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
