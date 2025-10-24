@@ -2,10 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>{{ $title ?? 'Renaud Van Meerbergen - Développeur Full-Stack Laravel' }}</title>
-<meta name="description" content="Développeur Full-Stack senior spécialisé en Laravel et architecture cloud. Je conçois des applications web performantes, évolutives et maintenables pour propulser votre croissance digitale.">
-<meta name="keywords" content="développeur full-stack, Laravel expert, architecture web, développement d'applications, PHP senior developer, performance web, solutions cloud, développeur freelance">
+<title>{{ $title ?? 'Renaud Van Meerbergen - Développeur Full-Stack' }}</title>
+<meta name="title" content="Renaud Vmb">
 <meta name="author" content="Renaud Van Meerbergen">
+<meta name="keywords" content="développeur fullstack, développeur Laravel, développement d'applications, développeur frontend, développeur backend, développeur Liège, Renaud développeur">
+<meta name="description" content="Développeur Full-Stack junior spécialisé en Laravel, je conçois des applications web performantes, évolutives et maintenables pour soutenir votre croissance digitale.">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -18,7 +19,7 @@
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ url()->current() }}">
 <meta property="twitter:title" content="Renaud Van Meerbergen - Développeur Full-Stack">
-<meta property="twitter:description" content="Architecture web moderne, performance optimale et code maintenable. Applications web robustes et évolutives.">
+<meta property="twitter:description" content="Architecture web moderne, performance optimale et code maintenable. Je transforme vos ambitions digitales en succès mesurables.">
 <meta property="twitter:image" content="{{ asset('img/og-image.jpg') }}">
 
 <!-- Favicons -->
