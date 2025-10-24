@@ -3,7 +3,7 @@
     <head>
         @include('partials.head')
     </head>
-    <body class="bg-[#FAFAFA] text-[#1b1b18] min-h-screen">
+    <body>
         @include('partials.no-js')
 
         <x-custom-cursor />

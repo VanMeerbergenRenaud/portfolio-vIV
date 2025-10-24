@@ -3,14 +3,14 @@
     <head>
         @include('partials.head')
     </head>
-    <body class="bg-[#FAFAFA] text-[#1b1b18] min-h-screen">
+    <body>
         @include('partials.no-js')
 
         <x-custom-cursor />
 
         <x-partials.header />
 
-        <main class="min-h-screen bg-[#FAFAFA] text-[#111111] font-sans overflow-hidden flex-center flex-col">
+        <main class="flex-center flex-col max-w-6xl mx-auto border-l border-r border-gray-200">
             <!-- Navbar -->
             <x-partials.menu />
 

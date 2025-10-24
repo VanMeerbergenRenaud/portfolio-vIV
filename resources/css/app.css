@@ -6,7 +6,7 @@
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
-@custom-variant dark (&:where(.dark, .dark *));
+/*@custom-variant dark (&:where(.dark, .dark *));*/
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -28,13 +28,13 @@
     --color-accent-foreground: var(--color-white);
 }
 
-@layer theme {
+/*@layer theme {
     .dark {
         --color-accent: var(--color-white);
         --color-accent-content: var(--color-white);
         --color-accent-foreground: var(--color-neutral-800);
     }
-}
+}*/
 
 @layer base {
     *,
@@ -50,11 +50,11 @@
     }
 
     body {
-        @apply mx-auto p-0 relative flex flex-col h-screen min-h-screen max-w-[160rem] text-base font-normal scroll-smooth antialiased bg-gray-50 dark:bg-gray-800 text-black dark:text-white;
+        @apply mx-auto p-0 bg-gray-50 dark:bg-gray-50 text-[#1b1b18] relative flex flex-col h-screen min-h-screen max-w-[160rem] text-base font-normal scroll-smooth antialiased;
     }
 
     main {
-        @apply m-0 p-0 bg-gray-50 dark:bg-gray-800;
+        @apply m-0 p-0 bg-gray-50 dark:bg-gray-50;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -65,8 +65,8 @@
         @apply text-base font-normal;
     }
 
-    a, button {
-        @apply text-base font-normal leading-6 cursor-pointer transition-colors ease-in-out duration-400 hover:duration-150 active:duration-50;
+    a, button, a span, button span {
+        @apply text-[15px] font-normal leading-6 cursor-pointer transition-colors ease-in-out duration-400 hover:duration-150 active:duration-50;
     }
 
     img, video {
