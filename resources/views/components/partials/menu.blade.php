@@ -17,7 +17,7 @@
     </div>
 
     <!-- CTA -->
-    <a href="mailto:renaud.vanmeerbergen@gmail.com" class="px-5 py-1 bg-white hover:bg-gray-50 border border-gray-200 text-sm-semibold rounded-full transition-colors">
+    <a href="mailto:renaud.vanmeerbergen@gmail.com" class="mr-1 px-5 py-1 bg-white hover:bg-gray-50 border border-gray-200 text-sm-semibold rounded-full transition-colors">
         Contact {{-- {{ route('contact') }} --}}
     </a>
 </nav>

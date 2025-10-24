@@ -51,8 +51,8 @@
 
                         <!-- CTA Button -->
                         <a href="{{ route('contact') }}" class="relative group flex items-center gap-3 bg-black text-white pl-2 pr-6 py-2 rounded-full hover:bg-gray-900 transition-all shadow-lg hover:shadow-xl active:scale-95">
-                            <img src="{{ asset('img/me_2.jpg') }}" alt="Photo de Renaud Van Meerbergen" class="w-10 h-10 rounded-full border-2 border-black grayscale group-hover:grayscale-0 transition-all">
-                            <span class="text-[15px] font-medium">Discutons de votre projet</span>
+                            <img src="{{ asset('img/me2.jpg') }}" alt="Photo de Renaud Van Meerbergen" class="w-10 h-10 rounded-full border-2 border-black grayscale group-hover:grayscale-0 transition-all">
+                            <span class="font-medium">Discutons de votre projet</span>
                         </a>
                     </div>
 
