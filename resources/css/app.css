@@ -1,12 +1,14 @@
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
+@import './typography.css';
+@import './table.css';
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
-/*@custom-variant dark (&:where(.dark, .dark *));*/
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -27,15 +29,25 @@
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
+
+    /* Color Palette */
+    --color-dark-primary: #121212;
+    --color-dark-secondary: #181818;
+    --color-gray-dark: #3D3D3D;
+    --color-gray-medium: #6E6E6E;
+    --color-gray-light: #9E9E9E;
+    --color-gray-lighter: #BFBFBF;
+    --color-whitesmoke: #F2F2F2;
+    --color-red: #FC4040;
 }
 
-/*@layer theme {
+@layer theme {
     .dark {
         --color-accent: var(--color-white);
         --color-accent-content: var(--color-white);
         --color-accent-foreground: var(--color-neutral-800);
     }
-}*/
+}
 
 @layer base {
     *,
@@ -47,7 +59,7 @@
     }
 
     ::selection {
-        @apply bg-gray-900 text-white;
+        @apply bg-dark-primary text-white;
     }
 
     html {
@@ -55,11 +67,11 @@
     }
 
     body {
-        @apply mx-auto p-0 bg-[#ECECEC] dark:bg-white text-[#1b1b18] relative flex flex-col h-screen min-h-screen max-w-[160rem] text-base font-normal scroll-smooth antialiased;
+        @apply mx-auto p-0 relative flex flex-col h-screen min-h-screen max-w-[160rem] text-base font-normal scroll-smooth antialiased text-[var(--color-dark-primary)]  bg-[var(--color-whitesmoke)] dark:bg-[var(--color-whitesmoke)];
     }
 
     main {
-        @apply m-0 p-0 bg-[#ECECEC] dark:bg-white;
+        @apply m-0 p-0;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -71,7 +83,7 @@
     }
 
     a, button, a span, button span {
-        @apply text-[15px] font-normal leading-6 cursor-pointer transition-colors ease-in-out duration-400 hover:duration-150 active:duration-50;
+        @apply cursor-pointer transition-all ease-in-out duration-400 hover:duration-300 active:duration-100;
     }
 
     img, video {
@@ -79,7 +91,7 @@
     }
 
     svg {
-        @apply w-4 h-4 text-gray-600 dark:text-gray-400;
+        @apply w-4 h-4 text-[var(--color-dark-primary)] dark:text-[var(--color-whitesmoke)];
     }
 
     a:focus-visible,
@@ -94,82 +106,6 @@
     input:disabled,
     textarea:disabled {
         @apply opacity-50 cursor-not-allowed;
-    }
-
-    /*---------- Tables ----------*/
-    table {
-        @apply min-w-full border-collapse divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-800;
-    }
-
-    thead, thead tr, thead tr span {
-        @apply bg-gray-50 dark:bg-cyan-950 hover:text-gray-900 dark:hover:text-gray-300;
-    }
-
-    thead th, thead th span {
-        @apply text-xs font-semibold text-gray-700 dark:text-gray-400;
-    }
-
-    tbody {
-        @apply bg-white dark:bg-gray-800;
-    }
-
-    tbody tr {
-        @apply bg-white dark:bg-gray-800 transition-colors;
-    }
-
-    tbody td, tbody td p {
-        @apply text-sm font-normal text-gray-700 dark:text-gray-400;
-    }
-
-    tr {
-        @apply border-b border-gray-200 dark:border-gray-700;
-    }
-
-    th {
-        @apply px-6 py-3 text-left;
-    }
-
-    td {
-        @apply px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400;
-    }
-
-    tbody tr:last-of-type {
-        @apply border-b-0;
-    }
-
-    /*---------- Sections ----------*/
-    section {
-        @apply bg-transparent text-[#121212];
-
-        .big-title {
-            @apply text-7xl font-medium leading-20 tracking-[-4px];
-        }
-
-        .title {
-            @apply text-5xl font-medium leading-13 tracking-[-2.5px];
-        }
-
-        .small-title {
-            @apply text-xl font-medium leading-6 tracking-tight;
-        }
-
-        .subtitle {
-            .number {
-                @apply text-sm font-medium leading-5 tracking-tight text-[#9E9E9E];
-            }
-
-            .text {
-                @apply text-base font-medium leading-5 tracking-tight text-[#121212];
-            }
-        }
-
-        .text, .text span  {
-            @apply text-lg font-medium leading-6 tracking-tight text-[#6E6E6E] max-w-[30rem];
-        }
-
-        .link {
-            @apply text-base font-semibold leading-6 tracking-tight;
-        }
     }
 }
 
@@ -193,106 +129,16 @@
         left: 0;
     }
 
-
-    /*---------- Text (xl, lg, md, sm, xs) ----------*/
-    .text-xl-regular {
-        @apply text-xl leading-normal font-normal;
-        /* 20px / 30px / Regular */
+    .border-dashed-top {
+        @apply border-t border-[var(--color-gray-light)] border-dashed;
     }
 
-    .text-xl-medium {
-        @apply text-xl leading-normal font-medium;
-        /* 20px / 30px / Medium */
+    .border-dashed-light {
+        @apply border border-[var(--color-gray-light)] border-dashed;
     }
 
-    .text-xl-semibold {
-        @apply text-xl leading-normal font-semibold;
-        /* 20px / 30px / Semibold */
-    }
-
-    .text-xl-bold {
-        @apply text-xl leading-normal font-bold;
-        /* 20px / 30px / Bold */
-    }
-
-    .text-lg-regular {
-        @apply text-lg leading-relaxed font-normal;
-        /* 18px / 28px / Regular */
-    }
-
-    .text-lg-medium {
-        @apply text-lg leading-relaxed font-medium;
-        /* 18px / 28px / Medium */
-    }
-
-    .text-lg-semibold {
-        @apply text-lg leading-relaxed font-semibold;
-        /* 18px / 28px / Semibold */
-    }
-
-    .text-lg-bold {
-        @apply text-lg leading-relaxed font-bold;
-        /* 18px / 28px / Bold */
-    }
-
-    .text-md-regular {
-        @apply text-base leading-normal font-normal;
-        /* 16px / 24px / Regular */
-    }
-
-    .text-md-medium {
-        @apply text-base leading-normal font-medium;
-        /* 16px / 24px / Medium */
-    }
-
-    .text-md-semibold {
-        @apply text-base leading-normal font-semibold;
-        /* 16px / 24px / Semibold */
-    }
-
-    .text-md-bold {
-        @apply text-base leading-normal font-bold;
-        /* 16px / 24px / Bold */
-    }
-
-    .text-sm-regular {
-        @apply text-sm leading-snug font-normal;
-        /* 14px / 20px / Regular (text-sm est 0.875rem = 14px) */
-    }
-
-    .text-sm-medium {
-        @apply text-sm leading-snug font-medium;
-        /* 14px / 20px / Medium */
-    }
-
-    .text-sm-semibold {
-        @apply text-sm leading-snug font-semibold;
-        /* 14px / 20px / Semibold */
-    }
-
-    .text-sm-bold {
-        @apply text-sm leading-snug font-bold;
-        /* 14px / 20px / Bold */
-    }
-
-    .text-xs-regular {
-        @apply text-xs leading-normal font-normal;
-        /* 12px / 18px / Regular (text-xs est 0.75rem = 12px) */
-    }
-
-    .text-xs-medium {
-        @apply text-xs leading-normal font-medium;
-        /* 12px / 18px / Medium */
-    }
-
-    .text-xs-semibold {
-        @apply text-xs leading-normal font-semibold;
-        /* 12px / 18px / Semibold */
-    }
-
-    .text-xs-bold {
-        @apply text-xs leading-normal font-bold;
-        /* 12px / 18px / Bold */
+    .border-dashed-dark {
+        @apply border border-[var(--color-gray-medium)] border-dashed;
     }
 }
 
