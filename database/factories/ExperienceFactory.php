@@ -23,7 +23,7 @@ class ExperienceFactory extends Factory
             'company' => fake()->company(),
             'position' => fake()->jobTitle(),
             'description' => fake()->paragraph(4),
-            'location' => fake()->boolean(80) ? fake()->city() . ', ' . fake()->country() : null,
+            'location' => fake()->boolean(80) ? fake()->city().', '.fake()->country() : null,
             'started_at' => fake()->dateTimeBetween('-5 years', '-1 year'),
             'ended_at' => fake()->boolean(40) ? fake()->dateTimeBetween('-11 months', 'now') : null,
             'order' => fake()->numberBetween(1, 10),

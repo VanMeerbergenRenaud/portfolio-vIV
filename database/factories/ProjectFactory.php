@@ -24,7 +24,7 @@ class ProjectFactory extends Factory
             'description' => fake()->paragraph(3),
             'tech_stack' => fake()->randomElements(['Laravel', 'Livewire', 'PHP', 'Tailwind', 'MySQL', 'JavaScript', 'Vue.js', 'Docker'], rand(2, 5)),
             'url' => fake()->boolean(50) ? fake()->url() : null,
-            'github_url' => fake()->boolean(70) ? 'https://github.com/' . fake()->userName() . '/' . str($title)->slug() : null,
+            'github_url' => fake()->boolean(70) ? 'https://github.com/'.fake()->userName().'/'.str($title)->slug() : null,
             'image_path' => null,
             'featured' => fake()->boolean(30),
             'order' => fake()->numberBetween(1, 10),
