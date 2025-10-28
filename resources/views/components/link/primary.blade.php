@@ -2,7 +2,7 @@
     'link' => '#'
 ])
 
-<div>
+<div class="w-full max-w-[350px]">
     <a
         href="{{ $link }}"
         title="Vers la page {{ $slot }}"

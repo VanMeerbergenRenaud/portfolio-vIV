@@ -13,8 +13,8 @@
         </a>
 
         {{-- Liens de navigation (Desktop) --}}
-        <div class="hidden lg:flex items-center gap-6">
-            <ul class="flex items-center gap-4">
+        <div class="flex items-center gap-6">
+            <ul class="hidden lg:flex items-center gap-4">
                 <li>
                     <a href="{{ route('about') }}"
                        class="text-sm font-semibold hover:text-black transition-colors"

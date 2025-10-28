@@ -254,7 +254,7 @@
         letter-spacing: -0.0125rem; /* -0.2px */
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
         .typo-link,
         .typo-link span {
             font-size: 1.0625rem; /* 17px */
