@@ -101,7 +101,8 @@
 
     /*------------ Tablet ------------*/
     @media (min-width: 768px) {
-        .typo-title-2xl,        .typo-title-2xl span {
+        .typo-title-2xl,
+        .typo-title-2xl span {
             font-size: 5rem; /* 80px */
             line-height: 4.5rem; /* 72px */
             letter-spacing: -0.375rem; /* -6px */
@@ -173,7 +174,8 @@
 
     /*------------ Desktop ------------*/
     @media (min-width: 1024px) {
-        .typo-title-2xl,        .typo-title-2xl span {
+        .typo-title-2xl,
+        .typo-title-2xl span {
             font-size: 7.5rem; /* 120px */
             line-height: 6.75rem; /* 108px */
             letter-spacing: -0.5rem; /* -8px */
@@ -246,9 +248,19 @@
     /*------------ Link ------------*/
     .typo-link,
     .typo-link span {
-        font-size: 1.0625rem; /* 17px */
+        font-size: 0.875rem; /* 14px */
         font-weight: 600;
-        line-height: 1.0625rem; /* 17px */
-        letter-spacing: -0.02125rem; /* -0.34px */
+        line-height: 0.875rem; /* 14px */
+        letter-spacing: -0.0125rem; /* -0.2px */
+    }
+
+    @media (min-width: 1024px) {
+        .typo-link,
+        .typo-link span {
+            font-size: 1.0625rem; /* 17px */
+            font-weight: 600;
+            line-height: 1.0625rem; /* 17px */
+            letter-spacing: -0.02125rem; /* -0.34px */
+        }
     }
 }

@@ -91,7 +91,7 @@
     }
 
     svg {
-        @apply w-4 h-4 text-[var(--color-dark-primary)] dark:text-[var(--color-whitesmoke)];
+        @apply w-4 h-4 text-dark-primary;
     }
 
     a:focus-visible,
@@ -116,29 +116,14 @@
 
     [data-border="true"]::after {
         content: "";
-        border-width: 3px;
-        border-color: white;
-        border-style: solid;
-        box-sizing: border-box;
-        border-radius: 1rem;
-        pointer-events: none;
-        width: 100%;
-        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-    }
-
-    .border-dashed-top {
-        @apply border-t border-[var(--color-gray-light)] border-dashed;
-    }
-
-    .border-dashed-light {
-        @apply border border-[var(--color-gray-light)] border-dashed;
-    }
-
-    .border-dashed-dark {
-        @apply border border-[var(--color-gray-medium)] border-dashed;
+        border: 3px solid white;
+        border-radius: 1rem;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
     }
 }
 
