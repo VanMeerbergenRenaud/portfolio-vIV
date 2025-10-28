@@ -1,3 +1,18 @@
-<svg {{ $attributes->merge(['class' => 'w-5 h-5 transition-transform']) }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-    <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+@props([
+    'color' => 'black',
+])
+
+@php
+    $strokeColor = $color === 'white'
+        ? '#ffffff'
+        : '#121212';
+@endphp
+
+<svg
+    role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+    {{ $attributes->merge(['class' => 'transform -rotate-[45deg]']) }}
+>
+    <path d="M 0 7 L 18 7 M 18 7 L 11 0 M 18 7 L 11 14" fill="transparent" height="14px" width="18px"
+          stroke="{{ $strokeColor }}" stroke-width="2" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round"
+          transform="translate(3 5)"></path>
 </svg>
