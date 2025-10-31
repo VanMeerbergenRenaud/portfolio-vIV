@@ -25,11 +25,7 @@
 
     <x-home.section.blog />
 
-    <section class="px-4 md:px-8 lg:px-10 py-25 flex flex-col gap-15">
-        <h2 class="typo-title-lg">Newsletter.</h2>
-    </section>
+    <x-home.section.newsletter />
 
-    <section class="px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-15 lg:gap-25">
-        <h2 class="typo-title-lg">Contact form.</h2>
-    </section>
+    {{--<x-home.section.contact-form />--}}
 </div>

@@ -15,13 +15,13 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()->create([
             'name' => 'Renaud Vmb',
-            'email' => 'renaud.vanmeerbergen@gmail.com',
+            'email' => 'renaud.vmb@gmail.com',
             'password' => bcrypt('password'),
         ]);
 
-        $this->call([
+        /*$this->call([
             ExperienceSeeder::class,
             ProjectSeeder::class,
-        ]);
+        ]);*/
     }
 }

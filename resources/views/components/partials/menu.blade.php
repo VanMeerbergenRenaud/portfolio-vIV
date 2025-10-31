@@ -9,7 +9,7 @@
 
         {{-- Logo à gauche --}}
         <a href="{{ route('home') }}" title="Accueil" class="text-lg font-medium tracking-tighter leading-8">
-            Renaud Vmb®
+            Renaud Vmb&reg;
         </a>
 
         {{-- Liens de navigation (Desktop) --}}
