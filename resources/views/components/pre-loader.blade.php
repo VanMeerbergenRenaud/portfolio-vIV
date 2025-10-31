@@ -1,0 +1,31 @@
+<div
+    x-data="{ show: true }"
+    x-init="setTimeout(() => show = false, 1750)"
+    x-show="show"
+    x-transition:leave="transition ease-in-out duration-800"
+    x-transition:leave-start="translate-y-0"
+    x-transition:leave-end="-translate-y-full"
+    class="will-change-transform fixed inset-0 bg-gray-100 flex items-center justify-center z-50"
+>
+    <h1
+        aria-level="1"
+        aria-label="Chargement..."
+        role="heading"
+        class="font-bold"
+        x-data="{ text: 'Renaud Vmb®'.split('') }"
+    >
+        <template x-for="(char, index) in text" :key="index">
+            <span
+                class="inline-block text-[#A9A9A9] font-medium opacity-0 text-[56px]"
+                :style="{
+                    'will-change': 'transform, opacity, color',
+                     animation: `
+                        letter-in 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards ${index * 50}ms,
+                        letter-fill-color 0.4s ease forwards ${1100 + index * 50}ms
+                     `
+                }"
+                x-text="char === ' ' ? '\u00A0' : char"
+            ></span>
+        </template>
+    </h1>
+</div>
