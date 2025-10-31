@@ -16,3 +16,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/blog', Blog::class)->name('blog');
     Route::get('/contact', Contact::class)->name('contact');
 });
+
+/* Admin login */
+Route::get('/login', function () {
+    return redirect('/admin/login');
+})->name('login');

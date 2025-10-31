@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Livewire\Pages\Blog;
+use Filament\Enums\GlobalSearchPosition;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -24,15 +26,44 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->default()
             ->id('admin')
             ->path('admin')
+            ->login()
+            ->registration()
+            ->passwordReset()
+            ->emailVerification()
+            ->profile()
+            ->brandName('Portfolio vIV')
+            ->brandLogoHeight('7.5rem')
+            ->darkMode(false)
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Gray,
+                'secondary' => Color::Gray,
+                'gray' => Color::Slate,
+                'blue' => Color::Blue,
+                'green' => Color::Green,
+                'yellow' => Color::Yellow,
+                'purple' => Color::Purple,
+                'pink' => Color::Pink,
+                'orange' => Color::Orange,
+                'teal' => Color::Teal,
+                'rose' => Color::Rose,
+                'amber' => Color::Amber,
+                'indigo' => Color::Indigo,
+                'neutral' => Color::Neutral,
             ])
+            ->sidebarWidth('16rem')
+            ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
             ->discoverResources(in: app_path('Filament/Admin/Resources'), for: 'App\Filament\Admin\Resources')
             ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\Filament\Admin\Pages')
             ->pages([
                 Dashboard::class,
+            ])
+            /*->globalSearchKeyBindings(['command+k', 'ctrl+k'])
+            ->globalSearch(position: GlobalSearchPosition::Sidebar)*/
+            ->plugins([
+                //
             ])
             ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\Filament\Admin\Widgets')
             ->widgets([
