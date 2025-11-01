@@ -1,3 +1,0 @@
-<div>
-    Mon blog
-</div>

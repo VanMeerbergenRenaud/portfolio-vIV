@@ -2,8 +2,9 @@
 
 namespace App\Providers\Filament;
 
-use App\Livewire\Pages\Blog;
 use Filament\Enums\GlobalSearchPosition;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -30,13 +31,8 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->registration()
-            ->passwordReset()
-            ->emailVerification()
             ->profile()
             ->brandName('Portfolio vIV')
-            ->brandLogoHeight('7.5rem')
-            ->darkMode(false)
             ->colors([
                 'primary' => Color::Gray,
                 'secondary' => Color::Gray,
@@ -54,7 +50,6 @@ class AdminPanelProvider extends PanelProvider
                 'neutral' => Color::Neutral,
             ])
             ->sidebarWidth('16rem')
-            ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
             ->discoverResources(in: app_path('Filament/Admin/Resources'), for: 'App\Filament\Admin\Resources')
             ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\Filament\Admin\Pages')
             ->pages([
@@ -84,5 +79,24 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
+    }
+
+    public function boot(): void
+    {
+        // Configuration globale pour tous les FileUpload
+        FileUpload::configureUsing(function (FileUpload $component): void {
+            $component
+                ->disk('s3')
+                ->visibility('private')
+                ->placeholder('👉🏻 Cliquez pour sélectionner votre fichier 👈🏻');
+        });
+
+        // Configuration globale pour tous les RichEditor
+        RichEditor::configureUsing(function (RichEditor $component): void {
+            $component
+                ->fileAttachmentsDisk('s3')
+                ->fileAttachmentsDirectory('attachments')
+                ->fileAttachmentsVisibility('private');
+        });
     }
 }
