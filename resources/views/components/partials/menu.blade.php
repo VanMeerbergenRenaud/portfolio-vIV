@@ -80,11 +80,11 @@
         <div
             x-cloak
             id="fullscreen-menu"
-            class="flex-grow flex flex-col justify-center transition-all duration-300 -mt-14"
+            class="flex-grow flex flex-col justify-center -mt-14"
             :class="{ 'opacity-100 delay-200': menuOpen, 'opacity-0 -translate-y-4 pointer-events-none': !menuOpen }"
         >
         <!-- Nav links -->
-        <nav class="flex-grow flex items-center justify-center" aria-label="Menu principal">
+        <nav class="flex-grow flex-center" aria-label="Menu principal">
             <ul class="flex flex-col items-center gap-4 text-center">
                 <li>
                     <x-link.tertiary
