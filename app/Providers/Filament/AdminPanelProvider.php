@@ -2,7 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use Filament\Enums\GlobalSearchPosition;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Http\Middleware\Authenticate;
@@ -13,6 +12,7 @@ use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\Support\Facades\FilamentView;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -20,6 +20,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
@@ -50,6 +51,7 @@ class AdminPanelProvider extends PanelProvider
                 'neutral' => Color::Neutral,
             ])
             ->sidebarWidth('16rem')
+            ->breadcrumbs(false)
             ->discoverResources(in: app_path('Filament/Admin/Resources'), for: 'App\Filament\Admin\Resources')
             ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\Filament\Admin\Pages')
             ->pages([
@@ -83,6 +85,26 @@ class AdminPanelProvider extends PanelProvider
 
     public function boot(): void
     {
+        FilamentView::registerRenderHook(
+            'panels::head.end',
+            fn (): string => Blade::render('
+                <style>
+                    .fi-section-content .fi-section-content {
+                        background-color: #f9f9f9 !important;
+                        border-radius: 0 0 0.75rem 0.75rem !important;
+                    }
+
+                    .fi-header {
+                        padding: 0 1rem !important;
+                    }
+
+                    .filepond--drop-label {
+                        min-height: 8rem !important;
+                    }
+                </style>
+            ')
+        );
+
         // Configuration globale pour tous les FileUpload
         FileUpload::configureUsing(function (FileUpload $component): void {
             $component
