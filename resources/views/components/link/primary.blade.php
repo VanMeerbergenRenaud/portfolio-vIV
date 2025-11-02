@@ -5,8 +5,8 @@
 
 @php
     $classes = $variant === 'bw'
-        ? 'p-1 bg-white hover:bg-black rounded-2xl flex justify-between gap-1 border border-transparent border-dashed hover:border-white group'
-        : 'p-1 bg-red hover:bg-white rounded-2xl flex justify-between gap-1 border border-transparent border-dashed hover:border-gray-light group';
+        ? 'p-1 bg-white hover:bg-black rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-white group'
+        : 'p-1 bg-red hover:bg-white rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-gray-light group';
 
     $textClasses = $variant === 'bw'
         ? 'text-black group-hover:text-white'
@@ -35,7 +35,7 @@
         {{-- Text effect --}}
         <div class="p-4 flex gap-2 typo-link {{ $textClasses }}">
             <span class="relative p-0 h-4 md:h-4.5 overflow-hidden">
-                <span class="block transition-transform duration-400 ease-in-out group-hover:-translate-y-4 md:group-hover:-translate-y-4.5">
+                <span class="block transition-transform duration-400 ease-in-out group-hover:-translate-y-3 md:group-hover:-translate-y-4">
                     <span class="block origin-right transition-transform duration-400 ease-in-out group-hover:rotate-[20deg]">{{ $slot }}</span>
                     <span class="block origin-left transition-transform duration-400 ease-in-out rotate-[20deg] group-hover:rotate-0">{{ $slot }}</span>
                 </span>
