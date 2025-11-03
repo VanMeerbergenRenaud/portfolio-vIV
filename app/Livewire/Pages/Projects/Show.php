@@ -5,7 +5,7 @@ namespace App\Livewire\Pages\Projects;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Mon projet')]
+#[Title('Projet')]
 class Show extends Component
 {
     public function render()
