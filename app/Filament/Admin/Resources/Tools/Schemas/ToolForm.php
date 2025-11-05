@@ -17,6 +17,7 @@ class ToolForm
         return $schema
             ->components([
                 Section::make('Informations de l\'outil')
+                    ->columns(2)
                     ->schema([
                         TextInput::make('name')
                             ->required()
@@ -37,17 +38,20 @@ class ToolForm
                             ->directory('tools/logos')
                             ->label('Logo de l\'outil')
                             ->acceptedFileTypes(['image/svg', 'image/png', 'image/jpg', 'image/jpeg'])
-                            ->helperText('Logo de l\'outil (non requis pour les cartes de statistiques)'),
-                    ]),
+                            ->helperText('Logo de l\'outil (non requis pour les cartes de statistiques)')
+                            ->columnSpanFull(),
+                    ])->columnSpanFull(),
 
                 Section::make('Carte de statistique')
                     ->description('Cochez pour transformer cet élément en carte de statistique au lieu d\'un outil')
+                    ->columns(2)
                     ->schema([
                         Toggle::make('is_stat_card')
                             ->label('Est une carte de statistique')
                             ->default(false)
                             ->live()
-                            ->helperText('Si activé, cet élément sera affiché comme une carte de statistique'),
+                            ->helperText('Si activé, cet élément sera affiché comme une carte de statistique')
+                            ->columnSpanFull(),
 
                         TextInput::make('stat_number')
                             ->maxLength(255)
@@ -68,23 +72,23 @@ class ToolForm
                             ->label('Description')
                             ->placeholder('De développement web professionnel.')
                             ->visible(fn ($get) => $get('is_stat_card'))
-                            ->helperText('La description affichée en bas de la carte'),
-                    ]),
+                            ->helperText('La description affichée en bas de la carte')
+                            ->columnSpanFull(),
+                    ])->columnSpanFull(),
 
                 Section::make('Paramètres de publication')
+                    ->columns(3)
                     ->schema([
-                        Toggle::make('is_published')
-                            ->label('Publié')
-                            ->default(true),
-
                         TextInput::make('order')
                             ->numeric()
                             ->required()
                             ->default(0)
-                            ->label('Ordre d\'affichage')
-                            ->helperText('L\'ordre d\'affichage dans la grille (1, 2, 3, etc.)'),
-                    ])
-                    ->columns(2),
+                            ->label('Ordre d\'affichage'),
+
+                        Toggle::make('is_published')
+                            ->label('Publié')
+                            ->default(true),
+                    ])->columnSpanFull(),
             ]);
     }
 }

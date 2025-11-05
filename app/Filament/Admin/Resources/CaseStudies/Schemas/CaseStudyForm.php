@@ -25,7 +25,7 @@ class CaseStudyForm
                             ->maxLength(255)
                             ->label('Titre')
                             ->live(onBlur: true)
-                            ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
+                            ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
 
                         TextInput::make('slug')
                             ->required()
@@ -130,7 +130,7 @@ class CaseStudyForm
                             ->columns(3)
                             ->defaultItems(4)
                             ->collapsible()
-                            ->helperText('Les statistiques affichées en bas de la case study')
+                            ->helperText('Les statistiques affichées en bas de la case study'),
                     ])->columnSpanFull(),
 
                 Section::make('Paramètres de publication')

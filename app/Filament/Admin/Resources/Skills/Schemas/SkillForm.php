@@ -17,6 +17,7 @@ class SkillForm
         return $schema
             ->components([
                 Section::make('Informations du skill')
+                    ->columns(2)
                     ->schema([
                         TextInput::make('name')
                             ->required()
@@ -34,28 +35,30 @@ class SkillForm
                         Textarea::make('description')
                             ->required()
                             ->rows(4)
-                            ->label('Description'),
+                            ->label('Description')
+                            ->columnSpanFull(),
 
                         FileUpload::make('image')
                             ->image()
                             ->imageEditor()
                             ->directory('skills')
-                            ->label('Image de la compétence'),
-                    ]),
+                            ->label('Image de la compétence')
+                            ->columnSpanFull(),
+                    ])->columnSpanFull(),
 
                 Section::make('Paramètres de publication')
+                    ->columns(3)
                     ->schema([
-                        Toggle::make('is_published')
-                            ->label('Publié')
-                            ->default(true),
-
                         TextInput::make('order')
                             ->numeric()
                             ->required()
                             ->default(0)
                             ->label('Ordre d\'affichage'),
-                    ])
-                    ->columns(2),
+
+                        Toggle::make('is_published')
+                            ->label('Publié')
+                            ->default(true),
+                    ])->columnSpanFull(),
             ]);
     }
 }

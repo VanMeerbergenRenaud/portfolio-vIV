@@ -18,6 +18,7 @@ class ServiceForm
         return $schema
             ->components([
                 Section::make('Informations du service')
+                    ->columns(4)
                     ->schema([
                         TextInput::make('number')
                             ->required()
@@ -29,6 +30,7 @@ class ServiceForm
                             ->required()
                             ->maxLength(255)
                             ->label('Titre du service')
+                            ->columnSpan(2)
                             ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
 
                         TextInput::make('slug')
@@ -37,17 +39,19 @@ class ServiceForm
                             ->unique(ignoreRecord: true)
                             ->label('Slug (URL)'),
 
-                        Textarea::make('description')
-                            ->required()
-                            ->rows(4)
-                            ->label('Description'),
-
                         FileUpload::make('image')
                             ->image()
                             ->imageEditor()
                             ->directory('services')
-                            ->label('Image du service'),
-                    ]),
+                            ->label('Image du service')
+                            ->columnSpan(2),
+
+                        Textarea::make('description')
+                            ->required()
+                            ->rows(4)
+                            ->label('Description')
+                            ->columnSpan(2),
+                    ])->columnSpanFull(),
 
                 Section::make('Technologies & Tags')
                     ->schema([
@@ -67,21 +71,21 @@ class ServiceForm
                                 'PHP',
                                 'SEO',
                             ]),
-                    ]),
+                    ])->columnSpanFull(),
 
                 Section::make('Paramètres de publication')
+                    ->columns(3)
                     ->schema([
-                        Toggle::make('is_published')
-                            ->label('Publié')
-                            ->default(true),
-
                         TextInput::make('order')
                             ->numeric()
                             ->required()
                             ->default(0)
                             ->label('Ordre d\'affichage'),
-                    ])
-                    ->columns(2),
+
+                        Toggle::make('is_published')
+                            ->label('Publié')
+                            ->default(true),
+                    ])->columnSpanFull(),
             ]);
     }
 }

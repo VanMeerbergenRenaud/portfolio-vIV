@@ -17,6 +17,7 @@ class TestimonialForm
         return $schema
             ->components([
                 Section::make('Informations du témoignage')
+                    ->columns(4)
                     ->schema([
                         TextInput::make('name')
                             ->required()
@@ -34,17 +35,6 @@ class TestimonialForm
                             ->label('Entreprise')
                             ->placeholder('Ludifica, Spade...'),
 
-                        Textarea::make('content')
-                            ->required()
-                            ->rows(4)
-                            ->label('Contenu du témoignage'),
-
-                        FileUpload::make('image')
-                            ->image()
-                            ->imageEditor()
-                            ->directory('testimonials')
-                            ->label('Image de la personne'),
-
                         Select::make('rating')
                             ->options([
                                 1 => '1 étoile',
@@ -55,22 +45,34 @@ class TestimonialForm
                             ])
                             ->default(5)
                             ->label('Note'),
-                    ])
-                    ->columns(2),
+
+                        FileUpload::make('image')
+                            ->image()
+                            ->imageEditor()
+                            ->directory('testimonials')
+                            ->label('Image de la personne')
+                            ->columnSpan(2),
+
+                        Textarea::make('content')
+                            ->required()
+                            ->rows(4)
+                            ->label('Contenu du témoignage')
+                            ->columnSpan(2),
+                    ])->columnSpanFull(),
 
                 Section::make('Paramètres de publication')
+                    ->columns(3)
                     ->schema([
-                        Toggle::make('is_published')
-                            ->label('Publié')
-                            ->default(true),
-
                         TextInput::make('order')
                             ->numeric()
                             ->required()
                             ->default(0)
                             ->label('Ordre d\'affichage'),
-                    ])
-                    ->columns(2),
+
+                        Toggle::make('is_published')
+                            ->label('Publié')
+                            ->default(true),
+                    ])->columnSpanFull(),
             ]);
     }
 }

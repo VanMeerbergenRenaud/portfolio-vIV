@@ -26,21 +26,21 @@ class ProcessForm
                         Textarea::make('description')
                             ->rows(4)
                             ->label('Description'),
-                    ]),
+                    ])->columnSpanFull(),
 
                 Section::make('Paramètres de publication')
+                    ->columns(3)
                     ->schema([
-                        Toggle::make('is_published')
-                            ->label('Publié')
-                            ->default(true),
-
                         TextInput::make('order')
                             ->numeric()
                             ->required()
                             ->default(0)
                             ->label('Ordre d\'affichage'),
-                    ])
-                    ->columns(2),
+
+                        Toggle::make('is_published')
+                            ->label('Publié')
+                            ->default(true),
+                    ])->columnSpanFull(),
             ]);
     }
 }
