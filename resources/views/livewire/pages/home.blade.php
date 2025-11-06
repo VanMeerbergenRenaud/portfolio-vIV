@@ -1,31 +1,25 @@
 <div>
     <x-home.section.hero />
 
-    <x-home.section.about />
+    <livewire:pages.home.about />
 
-    <x-home.section.projects />
+    <livewire:pages.home.projects />
 
-    <x-home.section.services />
+    <livewire:pages.home.services />
 
-    <x-home.section.process />
+    <livewire:pages.home.processes />
 
-    <x-home.section.whyme />
+    <livewire:pages.home.skills />
 
-    <x-home.section.clients />
+    <livewire:pages.home.tools />
 
-    <x-home.section.testimonials />
+    <livewire:pages.home.testimonials />
 
-    {{-- Teams abandon --}}
+    <livewire:pages.home.case-study />
 
-    <x-home.section.case_study />
+    <livewire:pages.home.faq />
 
-    {{-- Pricing abandon --}}
+    <livewire:pages.home.articles />
 
-    <x-home.section.faq />
-
-    <x-home.section.blog />
-
-    <x-home.section.newsletter />
-
-    {{--<x-home.section.contact-form />--}}
+    <x-home.section.cta />
 </div>

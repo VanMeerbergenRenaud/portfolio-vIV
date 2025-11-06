@@ -6,7 +6,7 @@
 >
     <div
         :class="{
-            'top-4 left-4 right-4 lg:left-10 lg:right-10 rounded-2xl p-2 h-12 lg:h-14 w-auto': !menuOpen,
+            'top-4 left-4 right-4 lg:left-11 lg:right-11 rounded-2xl p-2 h-12 lg:h-14 w-auto': !menuOpen,
             'inset-0 rounded-none p-4 h-screen': menuOpen,
             '-translate-y-[calc(100%+1rem)] pointer-events-none': !menuOpen && !headerVisible,
             'translate-y-0': !menuOpen && headerVisible

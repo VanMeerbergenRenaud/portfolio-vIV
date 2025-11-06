@@ -127,7 +127,13 @@
                                 <div class="z-2 absolute max-lg:left-4 bottom-4 {{ $isReverse ? 'lg:left-6' : 'lg:right-6' }}">
                                     <img src="{{ Storage::disk('s3')->url($project->logo) }}"
                                          alt="{{ $project->name }} logo"
-                                         class="aspect-video object-contain max-w-20 max-h-8 group-hover:max-h-10 lg:max-w-24 lg:max-h-10 lg:group-hover:max-h-14 transition-all duration-600 p-2"
+                                         class="
+                                            object-contain transition-all duration-600 p-1
+                                            min-w-24 max-w-32 max-h-16
+                                            group-hover:scale-115 group-hover:max-h-18
+                                            group-hover:-translate-y-1
+                                            {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
+                                        "
                                          loading="lazy"
                                     >
                                 </div>
@@ -135,7 +141,13 @@
                                 <div class="z-2 absolute max-lg:left-4 bottom-4 {{ $isReverse ? 'lg:left-6' : 'lg:right-6' }}">
                                     <img src="{{ asset('img/projects/logo.svg') }}"
                                          alt="logo par défaut"
-                                         class="aspect-video object-contain max-w-20 max-h-8 group-hover:max-h-10 lg:max-w-24 lg:max-h-10 lg:group-hover:max-h-14 transition-all duration-600 p-2"
+                                         class="
+                                            object-contain transition-all duration-600 p-1
+                                            min-w-24 max-w-32 max-h-16
+                                            group-hover:scale-115 group-hover:max-h-18
+                                            group-hover:-translate-y-1
+                                            {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
+                                        "
                                          loading="lazy"
                                     >
                                 </div>

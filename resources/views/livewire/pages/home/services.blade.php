@@ -37,29 +37,23 @@
         </div>
 
         {{-- Grid --}}
-        <div class="lg:grid lg:grid-cols-[35%_1fr] lg:gap-3" x-data="{
-            activeService: 0,
-            services: @js($services->map(fn($service) => [
-                'number' => $service->number,
-                'title' => $service->title,
-                'image' => $service->image,
-                'description' => $service->description,
-                'tags' => $service->tags
-            ]))
-        }">
+        <div class="lg:grid lg:grid-cols-[35%_1fr] lg:gap-3"
+             x-data="{
+                activeService: 0,
+                services: @js($this->servicesWithUrls)
+             }">
             {{-- Column left: Image & Info --}}
             <div class="hidden lg:flex lg:flex-col pt-2 pr-6">
                 <div class="flex grow flex-col mb-4">
                     <x-font.text-3xl x-text="services[activeService]?.number || services[0].number"></x-font.text-3xl>
-                    <x-font.text class="text-gray-light mt-auto"
-                                 x-text="services[activeService]?.title || services[0].title"></x-font.text>
+                    <x-font.text class="text-gray-light mt-auto" x-text="services[activeService]?.title || services[0].title"></x-font.text>
                 </div>
 
                 <div class="rounded-2xl overflow-hidden max-h-[350px]">
                     {{-- If no active service add an image placeholder --}}
-                    <img :src="'{{ asset('') }}' + (services[activeService]?.image || 'img/placeholder.png')"
+                    <img :src="services[activeService]?.image_url || services[0].image_url"
                          :alt="services[activeService]?.title || 'Service'"
-                         class="w-full h-full object-cover transition-opacity duration-500">
+                         class="w-full h-full object-cover transition-opacity duration-500 bg-transparent">
                 </div>
             </div>
 
@@ -71,7 +65,6 @@
                         :title="$service->title"
                         :description="$service->description"
                         :tags="$service->tags"
-                        :image="$service->image"
                     />
                 @endforeach
             </div>

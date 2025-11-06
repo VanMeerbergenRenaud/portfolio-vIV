@@ -3,7 +3,6 @@
     'title',
     'description',
     'tags',
-    'image'
 ])
 
 <div
@@ -32,7 +31,7 @@
 
     {{-- Title --}}
     <x-font.title
-        class="leading-15 transition-colors duration-300"
+        class="lg:leading-15 transition-colors duration-300 pr-6"
         x-bind:class="activeService === {{ $index }}
             ? 'text-dark-primary'
             : 'group-hover:text-white'"

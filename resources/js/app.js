@@ -13,7 +13,7 @@ document.addEventListener('livewire:navigated', () => {
         threshold: 0.1
     });
 
-    const elementsToReveal = document.querySelectorAll('h1, h2, h3, h4, h5, h6, img, footer');
+    const elementsToReveal = document.querySelectorAll('h1, h2, h3, h4, h5, h6, section, img, footer');
     elementsToReveal.forEach(element => {
         element.classList.add('reveal-on-scroll');
         observer.observe(element);
