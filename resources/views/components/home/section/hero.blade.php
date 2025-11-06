@@ -1,0 +1,105 @@
+<section id="hero" class="px-4 md:px-8 lg:px-10 pt-30 pb-5 md:pt-34 lg:pt-38">
+    <div class="flex flex-col gap-7">
+
+        {{-- Row first --}}
+        <div class="flex flex-col lg:grid gap-6 lg:grid-cols-[1fr_315px]">
+            <x-font.title-2xl>
+                Full-Stack dev&reg;
+            </x-font.title-2xl>
+
+            <x-font.text-xl class="lg:pt-6 max-w-[475px]">
+                <x-whitespace />Je transforme le chaos des specs en
+                <span class="text-gray-medium">code élégant, performant et qui traverse le temps.</span>
+            </x-font.text-xl>
+        </div>
+
+        {{-- Row second --}}
+        <div class="flex flex-col lg:grid gap-6 lg:grid-cols-[1fr_315px]">
+            <div class="relative group overflow-hidden rounded-2xl max-h-[62.5vh] lg:min-h-[425px]">
+                <img
+                    src="{{ asset('img/placeholder.png') }}"
+                    alt="Portrait of a person with motion blur effect, representing creative work."
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                >
+            </div>
+
+            {{-- Column right --}}
+            <div class="flex flex-col justify-between pb-1 md:grid md:grid-cols-2 md:gap-8 lg:flex lg:gap-0">
+
+                <x-divider-dash class="hidden lg:block"/>
+
+                {{-- Top --}}
+                <ul class="flex flex-col gap-0.5 lg:pt-6 md:order-2 lg:order-none">
+                    <li class="flex justify-between items-center">
+                        <x-font.text-md>Laravel • PHP</x-font.text-md>
+                        <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative"></span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <x-font.text-md>Livewire • Filament</x-font.text-md>
+                        <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative"></span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <x-font.text-md>Tailwind • JavaScript</x-font.text-md>
+                        <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative"></span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <x-font.text-md>MySQL • PostgreSQL</x-font.text-md>
+                        <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative"></span>
+                    </li>
+                </ul>
+
+                {{-- Middle --}}
+                <div class="py-10 my-auto md:order-1 lg:order-none md:pt-0">
+                    <x-font.text-xs class="text-gray-medium">
+                        © 2024 - 2025
+                    </x-font.text-xs>
+
+                    <x-font.text-sm>
+                        Basé en Belgique
+                    </x-font.text-sm>
+                </div>
+
+                {{-- Bottom (split into info and link on tablet) --}}
+                <div class="md:order-3 md:col-span-1 lg:order-none lg:col-span-1">
+                    <div class="flex items-center">
+                        <x-svg.star/>
+                        <x-svg.star/>
+                        <x-svg.star/>
+                        <x-svg.star/>
+                        <x-svg.star/>
+                        <x-font.text-sm>
+                            Codeur passionné
+                        </x-font.text-sm>
+                    </div>
+
+                    <x-font.text-sm class="mt-1.5 text-gray-medium">
+                        Diplômé avec grande distinction<br>
+                        <span class="text-dark-primary">et une addiction au café.</span>
+                    </x-font.text-sm>
+
+                    <x-divider-dash class="my-4"/>
+
+                    <div class="flex justify-between gap-2">
+                        <x-font.text-md class="flex items-center gap-2">
+                            <span class="bg-green-400 rounded-full w-2 h-2 flex-shrink-0"></span>
+                            En recherche active
+                        </x-font.text-md>
+                        <x-font.text-md class="text-gray-medium">CDI/CDD</x-font.text-md>
+                    </div>
+
+                    <x-link.primary class="mt-6 md:hidden lg:flex lg:mt-4">
+                        Me contacter
+                    </x-link.primary>
+                </div>
+
+                {{-- Link (separate column on tablet) --}}
+                <div class="hidden md:flex md:items-end md:order-4 md:col-span-1 lg:hidden">
+                    <x-link.primary>
+                        Me contacter
+                    </x-link.primary>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
