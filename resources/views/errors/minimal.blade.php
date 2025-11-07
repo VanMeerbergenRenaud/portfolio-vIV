@@ -30,7 +30,7 @@
             <x-link.primary link="{{ url()->previous() }}" variant="bw" class="w-max">
                 Retour en arrière
             </x-link.primary>
-            <x-link.primary link="/" class="w-max">
+            <x-link.primary link="{{ route('home') }}" class="w-max">
                 Aller à l'accueil
             </x-link.primary>
         </div>

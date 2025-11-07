@@ -2,6 +2,7 @@
     'link' => '',
     'color' => 'black',
     'fontStyle' => 'text-base', // value : text-sm font-semibold md:text-5xl, etc.
+    'navigate' => true,
 ])
 
 @php
@@ -16,6 +17,7 @@
     href="{{ $link }}"
     title="Vers la page {{ $slot }}"
     {{ $attributes->merge(['class' => 'group inline-block relative overflow-hidden']) }}
+    @if($navigate) wire:navigate @endif
 >
 
     <div class="relative inline-flex items-center {{ $textClasses }}">

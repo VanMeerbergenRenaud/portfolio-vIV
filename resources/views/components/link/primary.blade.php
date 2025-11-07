@@ -1,6 +1,7 @@
 @props([
     'link' => '#',
-    'variant' => 'default' // 'default' ou 'bw'
+    'variant' => 'default', // 'default' ou 'bw'
+    'navigate' => true
 ])
 
 @php
@@ -25,12 +26,12 @@
         : 'group-hover:stroke-dark-primary';
 @endphp
 
-<div class="w-full max-w-[350px]">
+<div class="w-full max-w-[750px]">
     <a
         href="{{ $link }}"
-        title="Vers la page {{ $slot }}"
+        title="Vers {{ $slot }}"
         {{ $attributes->merge(['class' => $classes]) }}
-        wire:navigate
+        @if($navigate) wire:navigate @endif
     >
         {{-- Text effect --}}
         <div class="p-4 flex gap-2 typo-link {{ $textClasses }}">
