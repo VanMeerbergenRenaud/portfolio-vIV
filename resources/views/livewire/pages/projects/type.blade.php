@@ -1,7 +1,7 @@
 <div>
-    <section id="projects" class="px-4 md:px-8 lg:px-10 pt-30 pb-25 lg:pt-52 lg:pb-40 flex flex-col gap-8 md:gap-12 lg:gap-20">
+    <section id="projects" class="px-4 md:px-8 lg:px-10 pt-20 pb-30 lg:pt-30 lg:pb-40 flex flex-col gap-15">
         <h2 role="heading" aria-level="2" class="sr-only">
-            Mes projets
+            Type de projets
         </h2>
 
         {{-- Header section --}}
@@ -16,18 +16,18 @@
                     <span class="text-red" aria-hidden="true">|</span>
 
                     <x-font.text>
-                        Projets
+                        Projets - <x-project-type-label :type="$type" />
                     </x-font.text>
                 </div>
                 <x-font.text-sm class="pl-8.5 text-gray-medium">
-                    Renaud Vmb®
+                    {{ $projects->count() }} projet{{ $projects->count() > 1 ? 's' : '' }}
                 </x-font.text-sm>
             </div>
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
                 <x-font.title-2xl class="max-w-[625px]">
-                    Projets
+                    Projets <x-project-type-label :type="$type" />
                 </x-font.title-2xl>
 
                 {{-- List of different project types --}}
@@ -39,13 +39,13 @@
                             <x-font.text-md>Tous</x-font.text-md>
                         </a>
                     </li>
-                    @foreach($types as $type)
+                    @foreach($types as $projectType)
                         <li>
-                            <a href="{{ route('projects.type', $type) }}"
-                               class="inline-block px-4 py-2 rounded-lg border border-gray-200 hover:border-red hover:text-red transition-colors"
+                            <a href="{{ route('projects.type', $projectType) }}"
+                               class="inline-block px-4 py-2 rounded-lg border transition-colors {{ $projectType === $type ? 'border-red text-red' : 'border-gray-200 hover:border-red hover:text-red' }}"
                                wire:navigate>
                                 <x-font.text-md>
-                                    <x-project-type-label :type="$type" />
+                                    <x-project-type-label :type="$projectType" />
                                 </x-font.text-md>
                             </a>
                         </li>
@@ -54,8 +54,8 @@
             </div>
         </div>
 
-    {{-- Project list --}}
-        <ul class="flex flex-col gap-2 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))]">
+        {{-- Project list --}}
+        <ul class="flex flex-col gap-2 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))] lg:flex">
             @forelse($projects as $index => $project)
                 <li>
                     <a href="{{ route('projects.show', $project->slug) }}"
@@ -122,11 +122,11 @@
             @empty
                 <li class="col-span-full text-center py-10">
                     <x-font.text-lg class="text-gray-medium">
-                        Aucun projet n'est disponible pour le moment.
+                        Aucun projet de type "<x-project-type-label :type="$type" />" n'a été développé pour le moment.
                     </x-font.text-lg>
                 </li>
             @endforelse
         </ul>
-
     </section>
 </div>
+

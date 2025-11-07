@@ -8,12 +8,14 @@ use App\Livewire\Pages\Home;
 use App\Livewire\Pages\Policies;
 use App\Livewire\Pages\Projects\Index as ProjectsIndex;
 use App\Livewire\Pages\Projects\Show as ProjectsShow;
+use App\Livewire\Pages\Projects\Type as ProjectsType;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/', Home::class)->name('home');
     Route::get('/about', About::class)->name('about');
     Route::get('/projects', ProjectsIndex::class)->name('projects');
+    Route::get('/projects/type/{type}', ProjectsType::class)->name('projects.type');
     Route::get('/project/{slug}', ProjectsShow::class)->name('projects.show');
     Route::get('/articles', ArticlesIndex::class)->name('articles');
     Route::get('/articles/{id}', ArticlesShow::class)->name('articles.show');

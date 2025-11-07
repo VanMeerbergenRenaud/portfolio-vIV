@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources\Projects\Tables;
 
+use App\Enums\ProjectType;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -39,20 +40,11 @@ class ProjectsTable
                     ->label('Description')
                     ->limit(50)
                     ->searchable()
-                    ->toggleable(),
+                    ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('type')
                     ->label('Type')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
-                        'web' => 'success',
-                        'mobile' => 'info',
-                        'desktop' => 'warning',
-                        'saas' => 'purple',
-                        'api' => 'primary',
-                        'academique' => 'gray',
-                        default => 'gray',
-                    })
                     ->sortable(),
 
                 TextColumn::make('year')
@@ -62,8 +54,7 @@ class ProjectsTable
                 TextColumn::make('client')
                     ->label('Client')
                     ->searchable()
-                    ->sortable()
-                    ->toggleable(),
+                    ->sortable(),
 
                 IconColumn::make('is_featured')
                     ->label('Mis en avant')

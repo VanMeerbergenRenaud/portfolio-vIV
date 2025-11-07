@@ -1,5 +1,8 @@
 <div>
     <section id="projects" class="px-4 md:px-8 lg:px-10 pt-20 pb-30 lg:pt-30 lg:pb-40 flex flex-col gap-15">
+        <h2 role="heading" aria-level="2" class="sr-only">
+            Projects
+        </h2>
 
         {{-- Header section --}}
         <div class="flex flex-col md:flex-row gap-7 md:grid md:grid-cols-[30%_1fr]">
@@ -53,7 +56,7 @@
                         <div class="grid justify-between p-2 lg:p-6 lg:rounded-2xl lg:bg-white lg:border lg:border-transparent lg:border-dashed lg:group-hover:border-red {{ $orderClass }}">
                             <div>
                                 <x-font.text-lg class="flex justify-between gap-1">
-                                    {{ $project->name }}
+                                    <h4 role="heading" aria-level="4">{{ $project->name }}</h4>
                                     <span class="block lg:hidden text-sm text-gray-medium">{{ $project->year }}</span>
                                 </x-font.text-lg>
 
@@ -84,15 +87,7 @@
                                         <x-font.text-md class="text-gray-medium">Type</x-font.text-md>
                                         <x-divider-dash class="flex-1" />
                                         <x-font.text-md>
-                                            @switch($project->type)
-                                                @case('web') Web App @break
-                                                @case('mobile') Mobile App @break
-                                                @case('desktop') Desktop App @break
-                                                @case('saas') SaaS @break
-                                                @case('api') API @break
-                                                @case('academique') Projet académique @break
-                                                @default {{ $project->type }}
-                                            @endswitch
+                                            <x-project-type-label :type="$project->type" />
                                         </x-font.text-md>
                                     </div>
                                 @endif

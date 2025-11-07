@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources\Projects\Schemas;
 
+use App\Enums\ProjectType;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
@@ -92,14 +93,9 @@ class ProjectForm
                                     ->helperText('Technologies utilisées dans le projet'),
 
                                 Select::make('type')
-                                    ->options([
-                                        'saas' => 'SaaS',
-                                        'web' => 'Web Application',
-                                        'mobile' => 'Mobile Application',
-                                        'desktop' => 'Desktop Application',
-                                        'academique' => 'Projet académique',
-                                        'other' => 'Autre',
-                                    ])
+                                    ->options(collect(ProjectType::cases())->mapWithKeys(
+                                        fn ($type) => [$type->value => $type->label()]
+                                    ))
                                     ->label('Type de projet'),
                             ]),
                     ])->columnSpanFull(),
