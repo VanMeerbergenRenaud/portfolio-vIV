@@ -1,6 +1,9 @@
 <div>
     @if($caseStudy)
         <section id="case_study" class="px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-15 bg-dark-primary text-white">
+            <h2 role="heading" aria-level="2" class="sr-only">
+                Cas d'étude
+            </h2>
 
             {{-- Header section --}}
             <div class="flex flex-col md:flex-row gap-7 md:grid md:grid-cols-[30%_1fr]">

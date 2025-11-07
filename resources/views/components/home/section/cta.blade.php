@@ -1,4 +1,8 @@
 <section id="cta" class="px-4 md:px-8 lg:px-10 py-25 flex flex-col gap-15 bg-white">
+    <h2 role="heading" aria-level="2" class="sr-only">
+        Contact
+    </h2>
+
     {{-- Header section --}}
     <div class="flex flex-col md:flex-row gap-7 md:grid md:grid-cols-[30%_1fr]">
         {{-- Infos --}}

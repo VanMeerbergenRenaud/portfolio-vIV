@@ -3,7 +3,7 @@
 
         {{-- Row first --}}
         <div class="flex flex-col lg:grid gap-6 lg:grid-cols-[1fr_315px]">
-            <x-font.title-2xl>
+            <x-font.title-2xl level="2">
                 Full-Stack dev&reg;
             </x-font.title-2xl>
 
@@ -88,7 +88,7 @@
                         <x-font.text-md class="text-gray-medium">CDI/CDD</x-font.text-md>
                     </div>
 
-                    <x-link.primary class="mt-6 md:hidden lg:flex lg:mt-4">
+                    <x-link.primary link="mailto:renaud.vanmeerbergen@gmail.com" class="mt-6 md:hidden lg:flex lg:mt-4">
                         Me contacter
                     </x-link.primary>
                 </div>

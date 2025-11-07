@@ -16,7 +16,7 @@ class CaseStudyResource extends Resource
 {
     protected static ?string $model = CaseStudy::class;
 
-    protected static ?string $navigationLabel = 'Case Studies';
+    protected static ?string $navigationLabel = 'Cas d’étude';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 

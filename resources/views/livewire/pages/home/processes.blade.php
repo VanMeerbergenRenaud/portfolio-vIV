@@ -1,5 +1,8 @@
 <div>
     <section id="processes" class="px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-15 md:gap-20 lg:gap-25 lg:grid lg:grid-cols-[40%_1fr]">
+        <h2 role="heading" aria-level="2" class="sr-only">
+            Processus
+        </h2>
 
         <div class="flex flex-col gap-4 lg:sticky lg:top-25 lg:h-fit">
 
@@ -66,7 +69,7 @@
                     </div>
 
                     {{-- Number card desktop --}}
-                    <div class="hidden lg:block absolute bottom-4 right-5">
+                    <div class="hidden lg:block absolute bottom-4 right-5" aria-hidden="true">
                         <x-font.title-xl class="text-whitesmoke">
                             {{ $orderNumber }}
                         </x-font.title-xl>

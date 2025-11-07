@@ -16,7 +16,7 @@ class SkillResource extends Resource
 {
     protected static ?string $model = Skill::class;
 
-    protected static ?string $navigationLabel = 'Skills';
+    protected static ?string $navigationLabel = 'Compétences';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedSparkles;
 

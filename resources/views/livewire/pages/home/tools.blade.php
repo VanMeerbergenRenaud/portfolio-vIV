@@ -1,5 +1,8 @@
 <div>
     <section id="tools" class="px-4 md:px-8 lg:px-10 pt-30 pb-20 lg:pt-40 lg:pb-30 flex flex-col gap-15 lg:gap-x-2 lg:grid lg:grid-cols-[30%_1fr]">
+        <h2 role="heading" aria-level="2" class="sr-only">
+            Outils
+        </h2>
 
         {{-- Header infos --}}
         <div class="flex flex-col gap-1">

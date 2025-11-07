@@ -85,6 +85,10 @@
         >
         <!-- Nav links -->
         <nav class="flex-grow flex-center" aria-label="Menu principal">
+            <h2 role="heading" aria-level="2" class="sr-only">
+                Menu principal
+            </h2>
+
             <ul class="flex flex-col items-center gap-4 text-center">
                 <li>
                     <x-link.tertiary

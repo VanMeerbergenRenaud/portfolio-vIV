@@ -1,5 +1,8 @@
 <div>
     <section id="about" class="px-4 md:px-8 lg:px-10 pt-30 pb-20 md:pt-40 md:pb-25 lg:pt-50 lg:pb-30">
+        <h2 role="heading" aria-level="2" class="sr-only">
+            À propos de moi
+        </h2>
 
         <div class="flex flex-col lg:grid lg:grid-cols-2 gap-15 lg:gap-25">
 

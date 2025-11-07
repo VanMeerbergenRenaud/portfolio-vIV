@@ -1,5 +1,8 @@
 <div>
     <section id="articles" class="px-4 md:px-8 lg:px-10 pt-20 pb-30 lg:pt-30 lg:pb-40 flex flex-col gap-15">
+        <h2 role="heading" aria-level="2" class="sr-only">
+            Articles
+        </h2>
 
         <div class="flex flex-col md:flex-row gap-7 md:grid md:grid-cols-[30%_1fr]">
             {{-- Infos --}}

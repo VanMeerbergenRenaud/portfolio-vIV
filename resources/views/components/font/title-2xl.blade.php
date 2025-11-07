@@ -1,6 +1,6 @@
 @props([
     'color' => 'dark-primary',
-    'level' => '2'
+    'level' => '3'
 ])
 
 {{-- Font-size: 60px (mobile) | 80px (tablet) | 120px (desktop) --}}

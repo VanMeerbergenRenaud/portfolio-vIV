@@ -5,6 +5,10 @@
         x-init="init()"
         class="px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-20 bg-white"
     >
+        <h2 role="heading" aria-level="2" class="sr-only">
+            Compétences
+        </h2>
+
         <div class="flex flex-col gap-7">
             {{-- Header section --}}
             <div class="flex flex-col gap-1">
