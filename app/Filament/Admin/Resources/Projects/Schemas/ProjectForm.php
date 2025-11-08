@@ -100,6 +100,112 @@ class ProjectForm
                             ]),
                     ])->columnSpanFull(),
 
+                /* Details */
+                Section::make('Détails techniques')
+                    ->description('Informations sur le rôle, la difficulté et les outils utilisés')
+                    ->schema([
+                        Grid::make()
+                            ->schema([
+                                Select::make('roles')
+                                    ->multiple()
+                                    ->options([
+                                        'frontend' => 'Frontend',
+                                        'backend' => 'Backend',
+                                        'design' => 'Design',
+                                        'fullstack' => 'Fullstack',
+                                        'ux' => 'UX',
+                                        'ui' => 'UI',
+                                        'devops' => 'DevOps',
+                                        'project_management' => 'Gestion de projet',
+                                    ])
+                                    ->label('Rôles')
+                                    ->helperText('Sélectionnez les rôles que vous avez occupés')
+                                    ->searchable()
+                                    ->preload(),
+
+                                Select::make('difficulty')
+                                    ->options([
+                                        'easy' => 'Facile',
+                                        'medium' => 'Moyen',
+                                        'hard' => 'Difficile',
+                                    ])
+                                    ->label('Difficulté')
+                                    ->helperText('Niveau de difficulté du projet'),
+
+                                TagsInput::make('tools')
+                                    ->label('Outils utilisés')
+                                    ->placeholder('Ex: Figma, VSCode, Laravel...')
+                                    ->helperText('Outils et logiciels utilisés (Entrée après chaque outil)')
+                                    ->suggestions(['Figma', 'VSCode', 'PhpStorm', 'Git', 'GitHub', 'Docker', 'Postman', 'Slack'])
+                                    ->columnSpanFull(),
+                            ]),
+                    ])->columnSpanFull()
+                    ->collapsible(),
+
+                Section::make('Contexte du projet')
+                    ->description('Décrivez le contexte et les objectifs du projet')
+                    ->schema([
+                        Grid::make()
+                            ->schema([
+                                TextInput::make('context_title')
+                                    ->label('Titre de la section')
+                                    ->maxLength(255)
+                                    ->placeholder('Ex: Un besoin de modernisation')
+                                    ->columnSpanFull(),
+
+                                Textarea::make('context_description')
+                                    ->label('Description du contexte')
+                                    ->rows(4)
+                                    ->placeholder('Décrivez le contexte, les besoins du client, les objectifs...')
+                                    ->helperText('Expliquez le contexte dans lequel le projet a été réalisé')
+                                    ->columnSpanFull(),
+
+                                FileUpload::make('context_gallery')
+                                    ->label('Galerie d\'images')
+                                    ->multiple()
+                                    ->image()
+                                    ->imageEditor()
+                                    ->directory('projects/context')
+                                    ->reorderable()
+                                    ->maxFiles(5)
+                                    ->helperText('Ajoutez jusqu\'à 5 images pour illustrer le contexte (wireframes, maquettes, anciennes versions...)')
+                                    ->columnSpanFull(),
+                            ]),
+                    ])->columnSpanFull()
+                    ->collapsible(),
+
+                Section::make('Résultats obtenus')
+                    ->description('Présentez les résultats et l\'impact du projet')
+                    ->schema([
+                        Grid::make()
+                            ->schema([
+                                TextInput::make('results_title')
+                                    ->label('Titre de la section')
+                                    ->maxLength(255)
+                                    ->placeholder('Ex: Un portfolio performant et élégant')
+                                    ->columnSpanFull(),
+
+                                Textarea::make('results_description')
+                                    ->label('Description des résultats')
+                                    ->rows(4)
+                                    ->placeholder('Décrivez les résultats obtenus, les métriques, l\'impact...')
+                                    ->helperText('Expliquez les résultats concrets du projet (performances, statistiques, retours...)')
+                                    ->columnSpanFull(),
+
+                                FileUpload::make('results_gallery')
+                                    ->label('Galerie d\'images')
+                                    ->multiple()
+                                    ->image()
+                                    ->imageEditor()
+                                    ->directory('projects/results')
+                                    ->reorderable()
+                                    ->maxFiles(5)
+                                    ->helperText('Ajoutez jusqu\'à 5 images pour illustrer les résultats (captures d\'écran, graphiques...)')
+                                    ->columnSpanFull(),
+                            ]),
+                    ])->columnSpanFull()
+                    ->collapsible(),
+
                 Section::make('Paramètres de publication')
                     ->columns(3)
                     ->schema([

@@ -91,190 +91,216 @@
             </div>
         </div>
 
-        {{-- Details (img, text, etc.) --}}
-        <div class="py-20 flex flex-col gap-7">
-            <div class="flex items-center gap-1.5">
-                <span class="text-red" aria-hidden="true">|</span>
+        {{-- Project infos --}}
+        <div class="pt-20 flex flex-col gap-15">
 
-                <x-font.text>
-                    Contexte de réalisation
-                </x-font.text>
-            </div>
+            {{-- Context--}}
+            <div class="flex flex-col gap-7">
+                <div class="flex items-center gap-1.5">
+                    <span class="text-red" aria-hidden="true">|</span>
 
-            {{-- Missing data in db--}}
-            {{-- Objectif/Contexte --}}
-            <div class="flex flex-col gap-4">
-                <x-font.title class="pr-4">
-                    {{-- context project title --}}
-                </x-font.title>
+                    <x-font.text>
+                        Contexte de réalisation
+                    </x-font.text>
+                </div>
 
-                <x-font.text class="text-gray-medium">
-                    {{-- context project description --}}
-                </x-font.text>
+                {{-- Objectif/Contexte --}}
+                @if($project->context_title || $project->context_description || ($project->context_gallery && count($project->context_gallery) > 0))
+                    <div class="flex flex-col gap-6">
+                        @if($project->context_title)
+                            <x-font.title class="pr-4 max-w-220">
+                                {{ $project->context_title }}
+                            </x-font.title>
+                        @endif
 
-                <ul>
-                    <li>{{-- context project gallery (several images) --}}</li>
-                </ul>
+                        @if($project->context_description)
+                            <x-font.text class="text-gray-medium max-w-150 leading-relaxed">
+                                {{ $project->context_description }}
+                            </x-font.text>
+                        @endif
+
+                        @if($project->context_gallery && count($project->context_gallery) > 0)
+                            <div class="grid grid-cols-1 gap-4 my-8">
+                                @foreach($project->context_gallery as $index => $image)
+                                    <img
+                                        src="{{ Storage::disk('s3')->url($image) }}"
+                                        alt="Image contexte {{ $project->name }} - {{ $index + 1 }}"
+                                        class="rounded-2xl w-full h-auto object-cover {{ count($project->context_gallery) === 1 ? 'md:col-span-2' : '' }}"
+                                        loading="lazy"
+                                    >
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                @else
+                    <div class="p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                        <x-font.text class="text-gray-medium text-center">
+                            Aucun contexte renseigné pour ce projet
+                        </x-font.text>
+                    </div>
+                @endif
             </div>
 
             {{-- Résultats --}}
-            <div class="flex flex-col gap-4">
-                <x-font.title class="pr-4">
-                    {{-- result project title --}}
-                </x-font.title>
+            <div class="flex flex-col gap-7">
+                <div class="flex items-center gap-1.5">
+                    <span class="text-red" aria-hidden="true">|</span>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {{-- Rôles --}}
-                    <x-font.text class="text-gray-medium">
-                        {{-- result project description --}}
+                    <x-font.text>
+                        Résultats obtenus
                     </x-font.text>
-
-                    <ul>
-                        <li>{{-- result project gallery (several images) --}}</li>
-                    </ul>
                 </div>
 
-                {{-- Exhausitive list of details --}}
-                <ul class="mb-12">
-                    <li>1. Roles (front, back, design,..), || Select multiple (like tags)</li>
-                    <li>2. Rapidité (GTMetrics, Lighthouse,...), || String</li>
-                    <li>3. Difficulté (facile, moyen, difficile), || Select</li>
-                    <li>4. Outils utilisés (Figma, VSCode, Laravel,...), || Select multiple (like tags)</li>
-                    <li>5. durée de développement (6mois, 300h,...), || String</li>
-                </ul>
+                @if($project->results_title || $project->results_description || ($project->results_gallery && count($project->results_gallery) > 0))
+                    <div class="flex flex-col gap-6">
+                        @if($project->results_title)
+                            <x-font.title class="pr-4 max-w-225">
+                                {{ $project->results_title }}
+                            </x-font.title>
+                        @endif
+
+                        @if($project->results_description)
+                            <x-font.text class="text-gray-medium max-w-150 leading-relaxed">
+                                {{ $project->results_description }}
+                            </x-font.text>
+                        @endif
+
+                        @if($project->results_gallery && count($project->results_gallery) > 0)
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+                                @foreach($project->results_gallery as $index => $image)
+                                    <img
+                                        src="{{ Storage::disk('s3')->url($image) }}"
+                                        alt="Résultat {{ $project->name }} - {{ $index + 1 }}"
+                                        class="rounded-2xl w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-300 {{ count($project->results_gallery) === 1 ? 'md:col-span-2' : '' }}"
+                                        loading="lazy"
+                                    >
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                @else
+                    <div class="p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                        <x-font.text class="text-gray-medium text-center">
+                            Aucun résultat renseigné pour ce projet
+                        </x-font.text>
+                    </div>
+                @endif
             </div>
 
-            <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
-                {{-- Title --}}
-                <x-font.title-lg class="max-w-[625px]">
-                    Explorez d'autres de mes réalisations.
-                </x-font.title-lg>
+            {{-- Détails techniques --}}
+            @if($project->tags || $project->roles || $project->difficulty || $project->tools_details)
+                <div class="flex flex-col gap-7">
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-red" aria-hidden="true">|</span>
 
-                {{-- Link --}}
-                <x-link.secondary class="mt-4" link="{{ route('projects') }}">
-                    Tous les projets
-                </x-link.secondary>
-            </div>
+                        <x-font.text>
+                            Détails techniques
+                        </x-font.text>
+                    </div>
 
-            <ul class="flex flex-col gap-2 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))] lg:flex">
-                @foreach($projects as $index => $project)
-                    @php
-                        $isReverse = $index % 2 !== 0;
-                        $gridClass = $isReverse ? 'lg:grid-cols-[1fr_30%]' : 'lg:grid-cols-[30%_1fr]';
-                        $orderClass = $isReverse ? 'lg:order-2' : '';
-                    @endphp
-
-                    <li>
-                        <a href="{{ route('projects.show', $project->slug) }}"
-                           title="Vers le projet {{ $project->name }}"
-                           class="max-lg:bg-white p-1.5 rounded-2xl flex flex-col gap-2 lg:grid {{ $gridClass }} max-lg:border max-lg:border-transparent max-lg:border-dashed max-lg:hover:border-red group"
-                           wire:navigate
-                        >
-                            {{-- Infos --}}
-                            <div
-                                class="grid justify-between p-2 lg:p-6 lg:rounded-2xl lg:bg-white lg:border lg:border-transparent lg:border-dashed lg:group-hover:border-red {{ $orderClass }}">
-                                <div>
-                                    <x-font.text-lg class="flex justify-between gap-1">
-                                        {{ $project->name }}
-                                        <span
-                                            class="block lg:hidden text-sm text-gray-medium">{{ $project->year }}</span>
-                                    </x-font.text-lg>
-
-                                    <x-font.text-md class="hidden lg:block lg:mt-3 text-gray-medium">
-                                        {{ $project->description }}
-                                    </x-font.text-md>
+                    <div class="flex flex-col gap-10">
+                        {{-- Technologies Stack --}}
+                        @if($project->tags && count($project->tags) > 0)
+                            <div class="flex flex-col gap-5">
+                                <x-font.title class="pr-4">
+                                    Stack technique
+                                </x-font.title>
+                                <div class="flex flex-wrap gap-2">
+                                    @foreach($project->tags as $tag)
+                                        <span class="group relative px-5 py-2.5 bg-white border border-gray-200 text-gray-dark rounded-2xl text-sm font-medium hover:border-red transition-all duration-300">
+                                            {{ $tag }}
+                                        </span>
+                                    @endforeach
                                 </div>
+                            </div>
+                        @endif
 
-                                <div class="hidden lg:block mt-auto space-y-2.5">
-                                    @if($project->year)
+                        {{-- Informations complémentaires --}}
+                        @if($project->roles || $project->difficulty || $project->tools_details)
+                            <div class="flex flex-col gap-8">
+                                {{-- Mes rôles --}}
+                                @if($project->roles && count($project->roles) > 0)
+                                    <div class="flex flex-col gap-3">
                                         <div class="flex items-baseline gap-1.5">
-                                            <x-font.text-md class="text-gray-medium">Année</x-font.text-md>
+                                            <x-font.text-md class="text-gray-medium">Mes rôles</x-font.text-md>
                                             <x-divider-dash class="flex-1"/>
-                                            <x-font.text-md>{{ $project->year }}</x-font.text-md>
                                         </div>
-                                    @endif
-
-                                    @if($project->client)
-                                        <div class="flex items-baseline gap-1.5">
-                                            <x-font.text-md class="text-gray-medium">Client</x-font.text-md>
-                                            <x-divider-dash class="flex-1"/>
-                                            <x-font.text-md>{{ $project->client }}</x-font.text-md>
+                                        <div class="flex flex-wrap gap-2">
+                                            @foreach($project->roles as $role)
+                                                <x-project-role-label :role="$role"/>
+                                            @endforeach
                                         </div>
-                                    @endif
+                                    </div>
+                                @endif
 
-                                    @if($project->type)
+                                {{-- Complexité --}}
+                                @if($project->difficulty)
+                                    <div class="flex flex-col gap-3">
                                         <div class="flex items-baseline gap-1.5">
-                                            <x-font.text-md class="text-gray-medium">Type</x-font.text-md>
+                                            <x-font.text-md class="text-gray-medium">Complexité</x-font.text-md>
                                             <x-divider-dash class="flex-1"/>
-                                            <x-font.text-md>
-                                                <x-project-type-label :type="$project->type"/>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex-1 max-w-[200px] h-1 bg-gray-100 rounded-full overflow-hidden">
+                                                <div class="h-full rounded-full transition-all duration-500
+                                                    {{ $project->difficulty->value === 'easy' ? 'w-1/3 bg-gray-dark' : '' }}
+                                                    {{ $project->difficulty->value === 'medium' ? 'w-2/3 bg-gray-dark' : '' }}
+                                                    {{ $project->difficulty->value === 'hard' ? 'w-full bg-gray-dark' : '' }}
+                                                "></div>
+                                            </div>
+                                            <x-font.text-md class="text-gray-dark font-medium">
+                                                {{ $project->difficulty->label() }}
                                             </x-font.text-md>
                                         </div>
-                                    @endif
+                                    </div>
+                                @endif
 
-                                    @if($project->duration)
+                                {{-- Outils & Logiciels --}}
+                                @if($project->tools_details && $project->tools_details->isNotEmpty())
+                                    <div class="flex flex-col gap-3">
                                         <div class="flex items-baseline gap-1.5">
-                                            <x-font.text-md class="text-gray-medium">Durée</x-font.text-md>
+                                            <x-font.text-md class="text-gray-medium">Outils & Logiciels</x-font.text-md>
                                             <x-divider-dash class="flex-1"/>
-                                            <x-font.text-md>{{ $project->duration }}</x-font.text-md>
                                         </div>
-                                    @endif
-                                </div>
-                            </div>
-
-                            {{-- Image --}}
-                            <div class="relative rounded-2xl overflow-hidden max-h-[550px]">
-                                @if($project->image)
-                                    <img src="{{ Storage::disk('s3')->url($project->image) }}"
-                                         alt="{{ $project->name }}"
-                                         class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
-                                         loading="lazy"
-                                    >
-                                @else
-                                    <img src="{{ asset('img/placeholder.png') }}"
-                                         alt="{{ $project->name }}"
-                                         class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
-                                         loading="lazy"
-                                    >
-                                @endif
-
-                                @if($project->logo)
-                                    <div
-                                        class="z-2 absolute max-lg:left-4 bottom-4 {{ $isReverse ? 'lg:left-6' : 'lg:right-6' }}">
-                                        <img src="{{ Storage::disk('s3')->url($project->logo) }}"
-                                             alt="{{ $project->name }} logo"
-                                             class="
-                                            object-contain transition-all duration-600 p-1
-                                            min-w-24 max-w-32 max-h-16
-                                            group-hover:scale-115 group-hover:max-h-18
-                                            group-hover:-translate-y-1
-                                            {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
-                                        "
-                                             loading="lazy"
-                                        >
-                                    </div>
-                                @else
-                                    <div
-                                        class="z-2 absolute max-lg:left-4 bottom-4 {{ $isReverse ? 'lg:left-6' : 'lg:right-6' }}">
-                                        <img src="{{ asset('img/projects/logo.svg') }}"
-                                             alt="logo par défaut"
-                                             class="
-                                            object-contain transition-all duration-600 p-1
-                                            min-w-24 max-w-32 max-h-16
-                                            group-hover:scale-115 group-hover:max-h-18
-                                            group-hover:-translate-y-1
-                                            {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
-                                        "
-                                             loading="lazy"
-                                        >
+                                        <div class="flex flex-col gap-2">
+                                            @foreach($project->tools_details as $tool)
+                                                <div class="flex items-center gap-2">
+                                                    <span class="w-1 h-1 rounded-full bg-gray-medium"></span>
+                                                    <x-font.text-md class="text-gray-dark">
+                                                        {{ $tool->name }}
+                                                    </x-font.text-md>
+                                                </div>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 @endif
                             </div>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
+                        @endif
+                    </div>
+                </div>
+            @endif
         </div>
+    </section>
+
+    {{-- Other projects --}}
+    <section class="px-4 md:px-8 lg:px-10 py-15 flex flex-col gap-12 lg:gap-15">
+        <h2 role="heading" aria-level="2" class="sr-only">
+            Mes autres projets
+        </h2>
+
+        <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
+            {{-- Title --}}
+            <x-font.title-lg class="max-w-[625px]">
+                Explorez d'autres de mes réalisations.
+            </x-font.title-lg>
+
+            {{-- Link --}}
+            <x-link.secondary class="mt-4" link="{{ route('projects') }}">
+                Tous les projets
+            </x-link.secondary>
+        </div>
+
+        <x-projects.list :$projects />
     </section>
 
     <x-home.section.cta/>

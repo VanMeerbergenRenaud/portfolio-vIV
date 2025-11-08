@@ -2,8 +2,8 @@
 
 namespace App\Filament\Admin\Resources\Projects\Tables;
 
-use App\Enums\ProjectType;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
@@ -56,11 +56,6 @@ class ProjectsTable
                     ->searchable()
                     ->sortable(),
 
-                IconColumn::make('is_featured')
-                    ->label('Mis en avant')
-                    ->boolean()
-                    ->sortable(),
-
                 IconColumn::make('is_published')
                     ->label('Publié')
                     ->boolean()
@@ -82,6 +77,7 @@ class ProjectsTable
             ->reorderable('order')
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
