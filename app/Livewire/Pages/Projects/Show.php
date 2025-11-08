@@ -30,6 +30,7 @@ class Show extends Component
     public function render()
     {
         return view('livewire.pages.projects.show')
-            ->layout('layouts.guest');
+            ->layout('layouts.guest')
+            ->title('Projet : '.$this->project->name);
     }
 }
