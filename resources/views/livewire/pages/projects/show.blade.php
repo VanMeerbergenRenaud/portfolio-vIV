@@ -188,32 +188,31 @@
             </div>
 
             {{-- Détails techniques --}}
-            @if($project->tags || $project->roles || $project->difficulty || $project->tools_details)
-                <div class="flex flex-col gap-7">
-                    <div class="flex items-center gap-1.5">
-                        <span class="text-red" aria-hidden="true">|</span>
+            <div class="flex flex-col gap-7">
+                <div class="flex items-center gap-1.5">
+                    <span class="text-red" aria-hidden="true">|</span>
 
-                        <x-font.text>
-                            Détails techniques
-                        </x-font.text>
-                    </div>
+                    <x-font.text>
+                        Détails techniques
+                    </x-font.text>
+                </div>
 
-                    <div class="flex flex-col gap-10">
-                        {{-- Technologies Stack --}}
-                        @if($project->tags && count($project->tags) > 0)
-                            <div class="flex flex-col gap-5">
-                                <x-font.title class="pr-4">
-                                    Stack technique
-                                </x-font.title>
-                                <div class="flex flex-wrap gap-2">
-                                    @foreach($project->tags as $tag)
-                                        <span class="group relative px-5 py-2.5 bg-white border border-gray-200 text-gray-dark rounded-2xl text-sm font-medium hover:border-red transition-all duration-300">
-                                            {{ $tag }}
-                                        </span>
-                                    @endforeach
-                                </div>
+                    {{-- Technologies utilisées --}}
+                <div class="flex flex-col gap-8">
+                    {{-- Technologies utilisées --}}
+                    @if($project->tags && count($project->tags) > 0)
+                        <div class="flex flex-col gap-4">
+                            <x-font.title class="pr-4">
+                                Technologies
+                            </x-font.title>
+                            <div class="flex flex-wrap gap-2">
+                                @foreach($project->tags as $tag)
+                                    <span class="px-4 py-2 bg-white border border-gray-200 text-gray-dark rounded-lg text-sm font-medium hover:border-red transition-colors">
+                                        {{ $tag }}
+                                    </span>
+                                @endforeach
                             </div>
-                        @endif
+                        </div>
 
                         {{-- Informations complémentaires --}}
                         @if($project->roles || $project->difficulty || $project->tools_details)

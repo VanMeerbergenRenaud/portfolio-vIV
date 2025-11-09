@@ -32,9 +32,10 @@
 
                 {{-- List of different project types --}}
                 <ul class="flex flex-wrap gap-2">
-                    <li>
+                   <li>
                         <a href="{{ route('projects') }}"
-                           class="inline-block px-4 py-2 rounded-lg border border-gray-200 hover:border-red hover:text-red transition-colors"
+                           title="Voir tous les projets"
+                           class="inline-block px-4 py-2 rounded-lg transition-colors {{ request()->routeIs('projects') ? 'border border-red text-red' : 'border border-gray-200 hover:border-red hover:text-red' }}"
                            wire:navigate>
                             <x-font.text-md>Tous</x-font.text-md>
                         </a>
@@ -42,6 +43,7 @@
                     @foreach($types as $type)
                         <li>
                             <a href="{{ route('projects.type', $type) }}"
+                               title="Voir les projets de type {{ $type }}"
                                class="inline-block px-4 py-2 rounded-lg border border-gray-200 hover:border-red hover:text-red transition-colors"
                                wire:navigate>
                                 <x-font.text-md>

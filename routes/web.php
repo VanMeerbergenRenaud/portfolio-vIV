@@ -18,7 +18,7 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/projects/type/{type}', ProjectsType::class)->name('projects.type');
     Route::get('/project/{slug}', ProjectsShow::class)->name('projects.show');
     Route::get('/articles', ArticlesIndex::class)->name('articles');
-    Route::get('/articles/{id}', ArticlesShow::class)->name('articles.show');
+    Route::get('/articles/{slug}', ArticlesShow::class)->name('articles.show');
     // Privacy
     Route::get('/policies', Policies::class)->name('policies');
     Route::get('/conditions', Conditions::class)->name('conditions');
