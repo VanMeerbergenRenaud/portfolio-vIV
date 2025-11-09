@@ -1,5 +1,5 @@
 <div>
-    <x-home.section.hero />
+    <livewire:pages.home.hero />
 
     <livewire:pages.home.about />
 

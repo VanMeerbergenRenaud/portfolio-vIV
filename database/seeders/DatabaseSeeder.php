@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            HeroSeeder::class,
             AboutSeeder::class,
             ProjectSeeder::class,
             ServiceSeeder::class,
