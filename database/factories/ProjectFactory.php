@@ -2,10 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Enums\ProjectDifficulty;
+use App\Enums\ProjectRole;
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Project>
+ * @extends Factory<Project>
  */
 class ProjectFactory extends Factory
 {
@@ -16,20 +19,38 @@ class ProjectFactory extends Factory
      */
     public function definition(): array
     {
-        $title = fake()->sentence(3);
-
         return [
-            'title' => $title,
-            'slug' => str($title)->slug(),
-            'description' => fake()->paragraph(3),
-            'tech_stack' => fake()->randomElements(['Laravel', 'Livewire', 'PHP', 'Tailwind', 'MySQL', 'JavaScript', 'Vue.js', 'Docker'], rand(2, 5)),
-            'url' => fake()->boolean(50) ? fake()->url() : null,
-            'github_url' => fake()->boolean(70) ? 'https://github.com/' . fake()->userName() . '/' . str($title)->slug() : null,
-            'image_path' => null,
-            'featured' => fake()->boolean(30),
-            'order' => fake()->numberBetween(1, 10),
-            'started_at' => fake()->dateTimeBetween('-2 years', '-6 months'),
-            'ended_at' => fake()->boolean(60) ? fake()->dateTimeBetween('-5 months', 'now') : null,
+            'name' => fake()->sentence(3),
+            'slug' => fake()->slug(),
+            'description' => fake()->paragraph(),
+            'url' => fake()->url(),
+            'year' => fake()->year(),
+            'duration' => fake()->randomElement(['3 mois', '6 mois', '1 an', '200h', '500h']),
+            'client' => fake()->company(),
+            'type' => fake()->randomElement(['personnel', 'academique']),
+            'tags' => fake()->randomElements(['Laravel', 'Livewire', 'Tailwind', 'PHP', 'MySQL'], 3),
+
+            // Nouveaux champs
+            'roles' => fake()->randomElements(
+                array_column(ProjectRole::cases(), 'value'),
+                fake()->numberBetween(1, 3)
+            ),
+            'difficulty' => fake()->randomElement(ProjectDifficulty::cases())->value,
+            'tools' => fake()->randomElements(
+                ['Figma', 'VSCode', 'PhpStorm', 'Git', 'GitHub', 'Docker', 'Postman', 'Laravel', 'Tailwind'],
+                fake()->numberBetween(3, 6)
+            ),
+
+            'context_title' => fake()->sentence(4),
+            'context_description' => fake()->paragraph(3),
+            'context_gallery' => [], // À remplir manuellement avec des vraies images
+
+            'results_title' => fake()->sentence(4),
+            'results_description' => fake()->paragraph(3),
+            'results_gallery' => [], // À remplir manuellement avec des vraies images
+
+            'is_published' => true,
+            'order' => fake()->numberBetween(0, 10),
         ];
     }
 }

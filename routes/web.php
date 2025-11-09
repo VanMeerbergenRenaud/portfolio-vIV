@@ -1,31 +1,30 @@
 <?php
 
-use App\Livewire\Settings\Appearance;
-use App\Livewire\Settings\Password;
-use App\Livewire\Settings\Profile;
+use App\Livewire\Pages\About;
+use App\Livewire\Pages\Articles\Index as ArticlesIndex;
+use App\Livewire\Pages\Articles\Show as ArticlesShow;
+use App\Livewire\Pages\Conditions;
+use App\Livewire\Pages\Home;
+use App\Livewire\Pages\Policies;
+use App\Livewire\Pages\Projects\Index as ProjectsIndex;
+use App\Livewire\Pages\Projects\Show as ProjectsShow;
+use App\Livewire\Pages\Projects\Type as ProjectsType;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
 Route::middleware(['guest'])->group(function () {
-    Route::view('/about', 'livewire.pages.about')->name('about');
-    Route::view('/projects', 'livewire.pages.projects.index')->name('projects');
-    Route::view('/project/{id}', 'livewire.pages.projects.show')->name('project');
-    Route::view('/contact', 'livewire.pages.contact')->name('contact');
+    Route::get('/', Home::class)->name('home');
+    Route::get('/about', About::class)->name('about');
+    Route::get('/projects', ProjectsIndex::class)->name('projects');
+    Route::get('/projects/type/{type}', ProjectsType::class)->name('projects.type');
+    Route::get('/project/{slug}', ProjectsShow::class)->name('projects.show');
+    Route::get('/articles', ArticlesIndex::class)->name('articles');
+    Route::get('/articles/{slug}', ArticlesShow::class)->name('articles.show');
+    // Privacy
+    Route::get('/policies', Policies::class)->name('policies');
+    Route::get('/conditions', Conditions::class)->name('conditions');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
-
-    Route::get('settings/profile', Profile::class)->name('settings.profile');
-    Route::get('settings/password', Password::class)->name('settings.password');
-    Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
-});
-
-require __DIR__.'/auth.php';
+/* Admin login */
+Route::get('/login', function () {
+    return redirect('/admin/login');
+})->name('login');

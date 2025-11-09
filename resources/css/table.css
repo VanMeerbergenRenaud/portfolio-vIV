@@ -1,0 +1,40 @@
+/*---------- Tables ----------*/
+table {
+    @apply min-w-full border-collapse divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-800;
+}
+
+thead, thead tr, thead tr span {
+    @apply bg-gray-50 dark:bg-cyan-950 hover:text-gray-900 dark:hover:text-gray-300;
+}
+
+thead th, thead th span {
+    @apply text-xs font-semibold text-gray-700 dark:text-gray-400;
+}
+
+tbody {
+    @apply bg-white dark:bg-gray-800;
+}
+
+tbody tr {
+    @apply bg-white dark:bg-gray-800 transition-colors;
+}
+
+tbody td, tbody td p {
+    @apply text-sm font-normal text-gray-700 dark:text-gray-400;
+}
+
+tr {
+    @apply border-b border-gray-200 dark:border-gray-700;
+}
+
+th {
+    @apply px-6 py-3 text-left;
+}
+
+td {
+    @apply px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400;
+}
+
+tbody tr:last-of-type {
+    @apply border-b-0;
+}

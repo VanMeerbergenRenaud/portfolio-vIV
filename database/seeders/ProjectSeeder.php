@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ProjectSeeder extends Seeder
@@ -13,50 +12,50 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        // Crée des projets avec ton CV en exemple
-        Project::create([
-            'title' => 'Minos - Interface WordPress',
-            'slug' => 'minos-interface-wordpress',
-            'description' => 'Interface permettant de créer rapidement des sites web sur WordPress avec des blocs personnalisés à la demande du client.',
-            'tech_stack' => ['WordPress', 'PHP 5.6', 'PHP 8.2'],
-            'url' => null,
-            'github_url' => null,
-            'image_path' => null,
-            'featured' => true,
-            'order' => 1,
-            'started_at' => '2024-09-01',
-            'ended_at' => '2024-12-01',
-        ]);
+        $projects = [
+            [
+                'name' => 'Familynest',
+                'slug' => 'familynest',
+                'description' => 'SaaS de gestion de budget familial qui transforme les corvées financières en un jeu d’enfant. Fruit de +500h de TFE où chaque ligne de code a été pensée, testée et optimisée pour une expérience utilisateur sans friction.',
+                'url' => null,
+                'year' => 2025,
+                'duration' => '500+ heures',
+                'client' => 'Travail de fin d\'études',
+                'type' => 'saas',
+                'tags' => ['Laravel', 'Livewire', 'Tailwind', 'PHP', 'PostgreSQL'],
+                'is_published' => true,
+                'order' => 1,
+            ],
+            [
+                'name' => 'Jiri',
+                'slug' => 'jiri',
+                'description' => 'Plateforme de gestion de jurys académiques qui simplifie l’évaluation des projets étudiants. Une plongée profonde dans l’écosystème TALL (Tailwind, Alpine, Livewire, Laravel) qui a définitivement forgé mon expertise.',
+                'url' => null,
+                'year' => 2024,
+                'duration' => '3 mois',
+                'client' => 'Projet académique',
+                'type' => 'academique',
+                'tags' => ['Laravel', 'Livewire', 'Tailwind', 'PHP', 'MySQL'],
+                'is_published' => true,
+                'order' => 2,
+            ],
+            [
+                'name' => 'Portfolio vIII',
+                'slug' => 'portfolio-viii',
+                'description' => 'Ma mission : dompter WordPress avec ACF et Polylang pour un portfolio sur-mesure. Mission accomplie.',
+                'url' => null,
+                'year' => 2023,
+                'duration' => '2 semaines',
+                'client' => 'Projet académique',
+                'type' => 'academique',
+                'tags' => ['Wordpress', 'PHP', 'HTML', 'CSS', 'Typescript'],
+                'is_published' => true,
+                'order' => 3,
+            ],
+        ];
 
-        Project::create([
-            'title' => 'Site WordPress 2024',
-            'slug' => 'site-wordpress-2024',
-            'description' => 'Construction d\'un site WordPress en utilisant les blocs natifs du thème 2024, avec ajout de blocs personnalisés.',
-            'tech_stack' => ['WordPress', 'PHP', 'Docker', 'Twig'],
-            'url' => null,
-            'github_url' => null,
-            'image_path' => null,
-            'featured' => true,
-            'order' => 2,
-            'started_at' => '2024-09-01',
-            'ended_at' => '2024-12-01',
-        ]);
-
-        Project::create([
-            'title' => 'Projet SaaS - Ludifica',
-            'slug' => 'projet-saas-ludifica',
-            'description' => 'Développement d\'un produit SaaS avec Filament permettant aux futurs clients de modifier n\'importe quelle information souhaitée, tout en rendant l\'interface aussi intuitive que possible.',
-            'tech_stack' => ['Filament', 'Laravel', 'PHP'],
-            'url' => null,
-            'github_url' => null,
-            'image_path' => null,
-            'featured' => true,
-            'order' => 3,
-            'started_at' => '2025-07-01',
-            'ended_at' => '2025-08-01',
-        ]);
-
-        // Crée des projets aléatoires pour tester
-        Project::factory()->count(5)->create();
+        foreach ($projects as $projectData) {
+            Project::create($projectData);
+        }
     }
 }

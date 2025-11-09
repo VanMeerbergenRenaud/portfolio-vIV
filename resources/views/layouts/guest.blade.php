@@ -6,15 +6,21 @@
     <body>
         @include('partials.no-js')
 
-        <x-custom-cursor />
+        {{--@if(Route::is('home') || request()->is('/'))
+            <x-pre-loader/>
+        @endif--}}
+
+        {{--<x-custom-cursor />--}}
+
+        <x-custom-bg />
 
         <x-partials.header />
 
-        <main class="flex-center flex-col max-w-6xl mx-auto border-l border-r border-gray-200">
+        <main>
             <!-- Navbar -->
             <x-partials.menu />
 
-            <!-- Main content -->
+            {{-- Main content --}}
             {{ $slot }}
         </main>
 
