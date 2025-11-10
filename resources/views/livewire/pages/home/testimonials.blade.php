@@ -48,25 +48,25 @@
                 <div class="mt-auto flex gap-3.5">
                     <ul class="flex -space-x-4">
                         <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/placeholder.png') }}"
+                            <img src="{{ asset('img/avatars/a1.jpg') }}"
                                  alt=""
                                  class="w-full h-full rounded-2xl"
                             >
                         </li>
                         <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/placeholder.png') }}"
+                            <img src="{{ asset('img/avatars/a2.jpg') }}"
                                  alt=""
                                  class="w-full h-full rounded-2xl"
                             >
                         </li>
                         <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/placeholder.png') }}"
+                            <img src="{{ asset('img/avatars/a3.jpg') }}"
                                  alt=""
                                  class="w-full h-full rounded-2xl"
                             >
                         </li>
                         <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/placeholder.png') }}"
+                            <img src="{{ asset('img/avatars/a4.jpg') }}"
                                  alt=""
                                  class="w-full h-full rounded-2xl"
                             >
@@ -130,13 +130,13 @@
                     {{-- Card --}}
                     <div
                         x-show="i === {{ $index }}"
-                        class="p-4.5 lg:p-10 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
+                        class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
                     >
                         <x-font.text-3xl>
                             "{{ $testimonial->content }}"
                         </x-font.text-3xl>
 
-                        <div class="flex md:items-center gap-3 mt-auto">
+                        <div class="relative top-1.5 -left-1 flex md:items-center gap-3 mt-auto">
                             <img
                                 src="{{
                                     $testimonial->image
