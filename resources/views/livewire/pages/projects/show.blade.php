@@ -123,7 +123,7 @@
                         @endif
 
                         @if($project->context_description)
-                            <x-font.text class="text-gray-medium max-w-150 leading-relaxed">
+                            <x-font.text class="text-gray-medium max-w-175 leading-relaxed">
                                 {{ $project->context_description }}
                             </x-font.text>
                         @endif
@@ -131,12 +131,14 @@
                         @if($project->context_gallery && count($project->context_gallery) > 0)
                             <div class="grid grid-cols-1 gap-4 my-8">
                                 @foreach($project->context_gallery as $index => $image)
-                                    <img
-                                        src="{{ Storage::disk('s3')->url($image) }}"
-                                        alt="Image contexte {{ $project->name }} - {{ $index + 1 }}"
-                                        class="rounded-2xl w-full h-auto object-cover {{ count($project->context_gallery) === 1 ? 'md:col-span-2' : '' }}"
-                                        loading="lazy"
-                                    >
+                                    <div class="rounded-2xl overflow-hidden {{ count($project->context_gallery) === 1 ? 'md:col-span-2' : '' }}">
+                                        <img
+                                            src="{{ Storage::disk('s3')->url($image) }}"
+                                            alt="Image contexte {{ $project->name }} - {{ $index + 1 }}"
+                                            class="gallery-zoom-effect w-full h-auto object-cover"
+                                            loading="lazy"
+                                        >
+                                    </div>
                                 @endforeach
                             </div>
                         @endif
@@ -163,13 +165,13 @@
                 @if($project->results_title || $project->results_description || ($project->results_gallery && count($project->results_gallery) > 0))
                     <div class="flex flex-col gap-6">
                         @if($project->results_title)
-                            <x-font.title class="pr-4 max-w-225">
+                            <x-font.title class="pr-4 max-w-220">
                                 {{ $project->results_title }}
                             </x-font.title>
                         @endif
 
                         @if($project->results_description)
-                            <x-font.text class="text-gray-medium max-w-150 leading-relaxed">
+                            <x-font.text class="text-gray-medium max-w-175 leading-relaxed">
                                 {{ $project->results_description }}
                             </x-font.text>
                         @endif
@@ -177,12 +179,14 @@
                         @if($project->results_gallery && count($project->results_gallery) > 0)
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
                                 @foreach($project->results_gallery as $index => $image)
-                                    <img
-                                        src="{{ Storage::disk('s3')->url($image) }}"
-                                        alt="Résultat {{ $project->name }} - {{ $index + 1 }}"
-                                        class="rounded-2xl w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-300 {{ count($project->results_gallery) === 1 ? 'md:col-span-2' : '' }}"
-                                        loading="lazy"
-                                    >
+                                    <div class="rounded-2xl overflow-hidden {{ count($project->results_gallery) === 1 ? 'md:col-span-2' : '' }}">
+                                        <img
+                                            src="{{ Storage::disk('s3')->url($image) }}"
+                                            alt="Résultat {{ $project->name }} - {{ $index + 1 }}"
+                                            class="gallery-zoom-effect w-full h-auto object-cover"
+                                            loading="lazy"
+                                        >
+                                    </div>
                                 @endforeach
                             </div>
                         @endif

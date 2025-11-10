@@ -177,3 +177,18 @@
         transform: translateY(0);
     }
 }
+
+/*---------- Gallery zoom effect ----------*/
+.gallery-zoom-effect {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: scale(1.2);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+/* Conteneur pour l'effet de zoom */
+.gallery-zoom-container {
+    overflow: hidden;
+    border-radius: 1rem;
+}
