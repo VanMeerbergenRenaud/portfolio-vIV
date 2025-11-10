@@ -1,3 +1,3 @@
 <div>
-    Conditions d’utilisation
+    <x-coming-soon />
 </div>

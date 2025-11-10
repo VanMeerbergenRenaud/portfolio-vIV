@@ -13,7 +13,11 @@
         <div class="flex justify-between items-start mb-12">
             <x-svg.logo.brand class="w-24 h-24 md:w-32 md:h-32" />
 
-            <a href="#page-top" class="p-1 bg-transparent hover:bg-whitesmoke rounded-full group" title="Retour en haut de la page">
+            <a
+                href="#page-top"
+                title="Retour en haut de la page"
+                class="p-1 bg-transparent hover:bg-whitesmoke rounded-full group"
+            >
                 <x-svg.back-top class="w-8 h-10 text-white group-hover:text-dark-primary" aria-hidden="true" />
             </a>
         </div>
@@ -23,7 +27,7 @@
 
             {{-- Colonne 1: Adresse --}}
             <address class="space-y-4 not-italic">
-                <h3 class="font-bold tracking-widest-plus text-gray-medium">Adresse</h3>
+                <h3 role="heading" aria-level="3" class="font-bold tracking-widest-plus text-gray-medium">Adresse</h3>
                 <p class="leading-relaxed text-sm text-whitesmoke">
                     Rue Petit Bioleux, 18<br>
                     4122, Plainevaux<br>
@@ -36,20 +40,20 @@
                 <h3 role="heading" aria-level="3" class="font-bold tracking-widest-plus mb-4 text-gray-medium">Navigation rapide</h3>
                 <ul class="grid grid-cols-2 lg:grid-rows-4 lg:grid-flow-col lg:pr-20 justify-items-start gap-2">
                     {{-- Colonne 1 --}}
-                    <li><x-link.tertiary link="#hero" color="white" fontStyle="text-sm">Introduction</x-link.tertiary></li>
-                    <li><x-link.tertiary link="#about" color="white" fontStyle="text-sm">À propos</x-link.tertiary></li>
-                    <li><x-link.tertiary link="#projects" color="white" fontStyle="text-sm">Projets</x-link.tertiary></li>
-                    <li><x-link.tertiary link="#services" color="white" fontStyle="text-sm">Services</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#hero" :navigate="false" color="white" fontStyle="text-sm">Introduction</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#about" :navigate="false" color="white" fontStyle="text-sm">À propos</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#projects" :navigate="false" color="white" fontStyle="text-sm">Projets</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#services" :navigate="false" color="white" fontStyle="text-sm">Services</x-link.tertiary></li>
                     {{-- Colonne 2 --}}
-                    <li><x-link.tertiary link="#processes" color="white" fontStyle="text-sm">Processus</x-link.tertiary></li>
-                    <li><x-link.tertiary link="#skills" color="white" fontStyle="text-sm">Compétences</x-link.tertiary></li>
-                    <li><x-link.tertiary link="#tools" color="white" fontStyle="text-sm">Outils</x-link.tertiary></li>
-                    <li><x-link.tertiary link="#testimonials" color="white" fontStyle="text-sm">Témoignages</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#processes" :navigate="false" color="white" fontStyle="text-sm">Processus</x-link.tertiary></li>
+                     <li><x-link.tertiary link="{{ route('home') }}#skills" :navigate="false" color="white" fontStyle="text-sm">Compétences</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#tools" :navigate="false" color="white" fontStyle="text-sm">Outils</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#testimonials" :navigate="false" color="white" fontStyle="text-sm">Témoignages</x-link.tertiary></li>
                     {{-- Colonne 3 --}}
-                    <li><x-link.tertiary link="#case_study" color="white" fontStyle="text-sm">Cas d'étude</x-link.tertiary></li>
-                    <li><x-link.tertiary link="#faq" color="white" fontStyle="text-sm">Faq</x-link.tertiary></li>
-                    <li><x-link.tertiary link="#articles" color="white" fontStyle="text-sm">Articles</x-link.tertiary></li>
-                    <li><x-link.tertiary link="#cta" color="white" fontStyle="text-sm">Me suivre</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#case_study" :navigate="false" color="white" fontStyle="text-sm">Cas d'étude</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#faq" :navigate="false" color="white" fontStyle="text-sm">Faq</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#articles" :navigate="false" color="white" fontStyle="text-sm">Articles</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#cta" :navigate="false" color="white" fontStyle="text-sm">Me suivre</x-link.tertiary></li>
                 </ul>
             </div>
 
@@ -57,10 +61,10 @@
             <div>
                 <h3 class="font-bold tracking-widest-plus mb-4 text-gray-medium">Pages principales</h3>
                 <ul class="flex flex-col gap-2 max-md:flex-wrap">
-                    <li><x-link.tertiary link="{{ route('home') }}" color="white" fontStyle="text-sm" wire:navigate>Accueil</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('about') }}" color="white" fontStyle="text-sm" wire:navigate>À&nbsp;propos</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('projects') }}" color="white" fontStyle="text-sm" wire:navigate>Projets</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('articles') }}" color="white" fontStyle="text-sm" wire:navigate>Articles</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}" color="white" fontStyle="text-sm">Accueil</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('about') }}" color="white" fontStyle="text-sm">À&nbsp;propos</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('projects') }}" color="white" fontStyle="text-sm">Projets</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('articles') }}" color="white" fontStyle="text-sm">Articles</x-link.tertiary></li>
                 </ul>
             </div>
 
@@ -83,6 +87,7 @@
                 href="{{ route('policies') }}"
                 title="Lire la politique de confidentialité"
                 class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                wire:navigate
             >
                 Politique de confidentialité
             </a>
@@ -91,6 +96,7 @@
                 href="{{ route('conditions') }}"
                 title="Lire les conditions d'utilisation"
                 class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                wire:navigate
             >
                 Conditions d'utilisation
             </a>

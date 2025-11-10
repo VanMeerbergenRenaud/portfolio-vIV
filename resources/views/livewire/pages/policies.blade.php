@@ -1,3 +1,3 @@
 <div>
-    Politique de confidentialité
+    <x-coming-soon />
 </div>

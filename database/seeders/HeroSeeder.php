@@ -15,4 +15,3 @@ class HeroSeeder extends Seeder
         Hero::factory()->create();
     }
 }
-

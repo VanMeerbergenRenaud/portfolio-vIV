@@ -1,3 +1,3 @@
 <div>
-    À propos de moi
+    <x-coming-soon />
 </div>

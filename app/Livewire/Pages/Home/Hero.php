@@ -19,4 +19,3 @@ class Hero extends Component
         return view('livewire.pages.home.hero');
     }
 }
-

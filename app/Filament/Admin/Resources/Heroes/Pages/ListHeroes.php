@@ -19,4 +19,3 @@ class ListHeroes extends ListRecords
         ];
     }
 }
-

@@ -67,7 +67,7 @@
                 </div>
 
                 {{-- Image --}}
-                <div class="relative rounded-2xl overflow-hidden max-h-[550px]">
+                <div class="relative rounded-2xl overflow-hidden min-h-[250px] max-h-[550px]">
                     @if($project->image)
                         <img src="{{ Storage::disk('s3')->url($project->image) }}"
                              alt="{{ $project->name }}"
@@ -76,7 +76,7 @@
                         >
                     @else
                         <img src="{{ asset('img/placeholder.png') }}"
-                             alt="{{ $project->name }}"
+                             alt=""
                              class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
                              loading="lazy"
                         >
@@ -87,12 +87,12 @@
                             <img src="{{ Storage::disk('s3')->url($project->logo) }}"
                                  alt="{{ $project->name }} logo"
                                  class="
-                                            object-contain transition-all duration-600 p-1
-                                            min-w-24 max-w-32 max-h-16
-                                            group-hover:scale-115 group-hover:max-h-18
-                                            group-hover:-translate-y-1
-                                            {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
-                                        "
+                                    object-contain transition-all duration-600 p-1
+                                    min-w-24 max-w-32 max-h-16
+                                    group-hover:scale-115 group-hover:max-h-18
+                                    group-hover:-translate-y-1
+                                    {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
+                                "
                                  loading="lazy"
                             >
                         </div>
@@ -101,12 +101,12 @@
                             <img src="{{ asset('img/projects/logo.svg') }}"
                                  alt="logo par défaut"
                                  class="
-                                            object-contain transition-all duration-600 p-1
-                                            min-w-24 max-w-32 max-h-16
-                                            group-hover:scale-115 group-hover:max-h-18
-                                            group-hover:-translate-y-1
-                                            {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
-                                        "
+                                    object-contain transition-all duration-600 p-1
+                                    min-w-24 max-w-32 max-h-16
+                                    group-hover:scale-115 group-hover:max-h-18
+                                    group-hover:-translate-y-1
+                                    {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
+                                "
                                  loading="lazy"
                             >
                         </div>

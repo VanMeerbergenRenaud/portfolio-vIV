@@ -5,10 +5,8 @@
 @source '../views';
 
 @font-face {
-    font-family: 'Prestige Signature Script  Demo';
-    src: url('../../public/fonts/portfolio/prestige-signature-script-demo.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'PrestigeSignatureScript-Demo';
+    src: url('../../public/fonts/portfolio/prestige-signature-script-demo.ttf') format('truetype');
 }
 
 @theme {

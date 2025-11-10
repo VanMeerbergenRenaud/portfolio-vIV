@@ -46,6 +46,11 @@
                 Promise.all([pageLoaded, minimumTime]).then(() => {
                     this.show = false;
                 });
+
+                // Make sure to hide preloader after 2 seconds in case of issues
+                setTimeout(() => {
+                    this.show = false;
+                }, 2000);
             }
         }));
     });

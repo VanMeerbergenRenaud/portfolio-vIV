@@ -1,29 +1,27 @@
 @props([
     'link' => '#',
-    'variant' => 'default', // 'default' ou 'bw'
+    'variant' => 'default', // 'default', 'bw' ou 'wb'
     'navigate' => true
 ])
 
 @php
-    $classes = $variant === 'bw'
-        ? 'p-1 bg-white hover:bg-black rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-white group'
-        : 'p-1 bg-red hover:bg-white rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-gray-light group';
-
-    $textClasses = $variant === 'bw'
-        ? 'text-black group-hover:text-white'
-        : 'text-white group-hover:text-dark-primary';
-
-    $arrowBg = $variant === 'bw'
-        ? 'bg-black group-hover:bg-white'
-        : 'bg-white';
-
-    $arrowStroke = $variant === 'bw'
-        ? '#000000'
-        : '#F74040';
-
-    $arrowStrokeHover = $variant === 'bw'
-        ? 'group-hover:stroke-white'
-        : 'group-hover:stroke-dark-primary';
+    if ($variant === 'bw') {
+        $classes = 'p-1 bg-white hover:bg-black rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-white group';
+        $textClasses = 'text-black group-hover:text-white';
+        $arrowBg = 'bg-black group-hover:bg-white';
+        $arrowStrokeClass = 'stroke-white group-hover:stroke-black';
+    } elseif ($variant === 'wb') {
+        $classes = 'p-1 bg-black hover:bg-white rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-black group';
+        $textClasses = 'text-white group-hover:text-black';
+        $arrowBg = 'bg-white group-hover:bg-black';
+        $arrowStrokeClass = 'stroke-black group-hover:stroke-white';
+    } else {
+        // default (red)
+        $classes = 'p-1 bg-red hover:bg-white rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-gray-light group';
+        $textClasses = 'text-white group-hover:text-dark-primary';
+        $arrowBg = 'bg-white';
+        $arrowStrokeClass = 'stroke-red group-hover:stroke-dark-primary';
+    }
 @endphp
 
 <div class="w-full max-w-[750px]">
@@ -46,7 +44,7 @@
         <div class="aspect-square overflow-clip rounded-xl w-12 h-12 flex-center {{ $arrowBg }}">
             <svg class="transform -rotate-45 group-hover:rotate-0 transition-all duration-300" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
-                    class="transition-colors {{ $variant === 'bw' ? 'stroke-white group-hover:stroke-black' : 'stroke-red group-hover:stroke-dark-primary' }}"
+                    class="transition-colors {{ $arrowStrokeClass }}"
                     d="M 0 7 L 18 7 M 18 7 L 11 0 M 18 7 L 11 14" fill="transparent" height="14px"
                     stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round"
                     stroke-width="3" transform="translate(3 5)"

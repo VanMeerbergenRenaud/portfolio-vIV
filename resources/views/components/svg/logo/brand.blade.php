@@ -3,7 +3,7 @@
         <style>
             .cls-1 {
                 font-family: Geist-Medium, Geist;
-                font-size: 19.73px;
+                font-size: 20px;
                 font-variation-settings: 'wght' 500;
                 font-weight: 500;
             }
@@ -13,14 +13,14 @@
             }
 
             .cls-2 {
-                font-family: PrestigeSignatureScript-Demo, 'Prestige Signature Script  Demo';
-                font-size: 56.93px;
+                font-family: PrestigeSignatureScript-Demo;
+                font-size: 56px;
                 letter-spacing: -.3em;
             }
 
             .rotating-text {
                 animation: rotate 10s linear infinite;
-                transform-origin: 119.44px 119.42px;
+                transform-origin: 120px 120px;
             }
 
             @keyframes rotate {

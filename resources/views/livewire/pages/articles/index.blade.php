@@ -1,3 +1,3 @@
 <div>
-    Mes articles
+    <x-coming-soon />
 </div>

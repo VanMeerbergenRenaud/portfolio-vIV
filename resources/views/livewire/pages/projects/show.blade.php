@@ -15,7 +15,11 @@
                         class="max-w-25"
                     >
                 @else
-                    <p>Aucun logo</p>
+                    <img src="{{ asset('img/projects/logo.svg') }}"
+                         alt=""
+                         class="max-w-25"
+                         loading="lazy"
+                    >
                 @endif
             </div>
 
@@ -26,9 +30,14 @@
                             src="{{ Storage::disk('s3')->url($project->image) }}"
                             alt="{{ $project->name }}"
                             class="rounded-2xl"
+                            loading="lazy"
                         >
                     @else
-                        <p>Aucune image</p>
+                        <img src="{{ asset('img/placeholder.png') }}"
+                             alt=""
+                             class="rounded-2xl"
+                             loading="lazy"
+                        >
                     @endif
                 </div>
 
@@ -80,7 +89,7 @@
 
                         <x-link.primary
                             link="{{ $project->url ?? '#' }}"
-                            variant="bw"
+                            variant="wb"
                             :navigate="false"
                             target="_blank"
                         >

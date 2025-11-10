@@ -19,4 +19,3 @@ class Hero extends Model
         return $query->where('is_published', true);
     }
 }
-

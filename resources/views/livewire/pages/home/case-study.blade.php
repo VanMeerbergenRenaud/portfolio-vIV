@@ -60,7 +60,7 @@
                     </div>
 
                     {{-- Element 2 - Project Image --}}
-                    <div class="relative p-4 lg:p-7 h-62 md:h-115 flex flex-col items-center bg-dark-secondary rounded-2xl overflow-hidden">
+                    <div class="relative p-4 lg:p-7 h-90 md:h-115 flex flex-col items-center bg-dark-secondary rounded-2xl overflow-hidden">
                         <x-font.text-xl class="z-2 text-white">
                             {{ $caseStudy->project_name }}
                         </x-font.text-xl>
@@ -73,7 +73,7 @@
                             >
                         @else
                             <img src="{{ asset('img/placeholder.png') }}"
-                                 alt="{{ $caseStudy->project_name }}"
+                                 alt=""
                                  class="absolute inset-0 h-full w-full object-cover"
                                  loading="lazy"
                             >

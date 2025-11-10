@@ -31,7 +31,7 @@ class HeroesTable
                 TextColumn::make('availability_status')
                     ->label('Disponibilité')
                     ->badge()
-                    ->color(fn($record) => $record->is_available ? 'success' : 'gray'),
+                    ->color(fn ($record) => $record->is_available ? 'success' : 'gray'),
 
                 TextColumn::make('contact_email')
                     ->label('Email')
@@ -63,4 +63,3 @@ class HeroesTable
             ]);
     }
 }
-

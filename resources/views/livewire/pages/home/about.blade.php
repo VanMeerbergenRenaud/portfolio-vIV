@@ -104,7 +104,7 @@
                             >
                         @else
                             <img src="{{ asset('img/placeholder.png') }}"
-                                 alt="Placeholder"
+                                 alt=""
                                  class="w-full h-full object-cover"
                                  loading="lazy"
                             >
@@ -122,7 +122,7 @@
                             >
                         @else
                             <img src="{{ asset('img/placeholder.png') }}"
-                                 alt="Placeholder"
+                                 alt=""
                                  class="w-full h-full object-cover"
                                  loading="lazy"
                             >
@@ -146,7 +146,7 @@
                             >
                         @else
                             <img src="{{ asset('img/placeholder.png') }}"
-                                 alt="Placeholder"
+                                 alt=""
                                  class="w-full h-full object-cover"
                                  loading="lazy"
                             >
@@ -164,7 +164,7 @@
                             >
                         @else
                             <img src="{{ asset('img/placeholder.png') }}"
-                                 alt="Placeholder"
+                                 alt=""
                                  class="w-full h-full object-cover"
                                  loading="lazy"
                             >
