@@ -25,7 +25,8 @@ class ArticlesTable
 
                 ImageColumn::make('image')
                     ->label('Image')
-                    ->square(),
+                    ->disk('s3')
+                    ->circular(),
 
                 TextColumn::make('title')
                     ->label('Titre')

@@ -36,7 +36,8 @@
                         <a href="{{ route('projects') }}"
                            title="Voir tous les projets"
                            class="inline-block px-4 py-2 rounded-lg transition-colors {{ request()->routeIs('projects') ? 'border border-red text-red' : 'border border-gray-200 hover:border-red hover:text-red' }}"
-                           wire:navigate>
+                           wire:navigate
+                        >
                             <x-font.text-md>Tous</x-font.text-md>
                         </a>
                     </li>
@@ -45,7 +46,8 @@
                             <a href="{{ route('projects.type', $type) }}"
                                title="Voir les projets de type {{ $type }}"
                                class="inline-block px-4 py-2 rounded-lg border border-gray-200 hover:border-red hover:text-red transition-colors"
-                               wire:navigate>
+                               wire:navigate
+                            >
                                 <x-font.text-md>
                                     <x-project-type-label :type="$type" />
                                 </x-font.text-md>
@@ -76,7 +78,7 @@
                         </div>
 
                         {{-- Image --}}
-                        <div class="relative rounded-2xl overflow-hidden h-full max-h-[500px]">
+                        <div class="relative rounded-2xl overflow-hidden min-h-[250px] max-h-[500px]">
                             @if($project->image)
                                 <img src="{{ Storage::disk('s3')->url($project->image) }}"
                                      alt="{{ $project->name }}"

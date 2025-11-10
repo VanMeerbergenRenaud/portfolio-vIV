@@ -45,13 +45,19 @@
                         :class="{ 'opacity-0 pointer-events-none': menuOpen, 'opacity-100': !menuOpen }"
                     >
                         <li class="leading-none mt-1">
-                            <x-link.tertiary link="{{ route('about') }}" fontStyle="text-sm font-semibold">À propos</x-link.tertiary>
+                            <x-link.tertiary link="{{ route('about') }}" fontStyle="text-sm font-semibold">
+                                À propos
+                            </x-link.tertiary>
                         </li>
                         <li class="leading-none mt-1">
-                            <x-link.tertiary link="{{ route('projects') }}" fontStyle="text-sm font-semibold">Projets</x-link.tertiary>
+                            <x-link.tertiary link="{{ route('projects') }}" fontStyle="text-sm font-semibold">
+                                Projets
+                            </x-link.tertiary>
                         </li>
                         <li class="leading-none mt-1">
-                            <x-link.tertiary link="{{ route('articles') }}" fontStyle="text-sm font-semibold">Articles</x-link.tertiary>
+                            <x-link.tertiary link="{{ route('articles') }}" fontStyle="text-sm font-semibold">
+                                Articles
+                            </x-link.tertiary>
                         </li>
                     </ul>
 
@@ -95,7 +101,6 @@
                         link="{{ route('home') }}"
                         @click="menuOpen = false"
                         fontStyle="text-5xl md:text-7xl font-semibold -tracking-wider"
-                        wire:navigate
                     >
                         Accueil
                     </x-link.tertiary>
@@ -105,7 +110,6 @@
                         link="{{ route('about') }}"
                         @click="menuOpen = false"
                         fontStyle="text-5xl md:text-7xl font-semibold -tracking-wider"
-                        wire:navigate
                     >
                         À propos
                     </x-link.tertiary>
@@ -115,7 +119,6 @@
                         link="{{ route('projects') }}"
                         @click="menuOpen = false"
                         fontStyle="text-5xl md:text-7xl font-semibold -tracking-wider"
-                        wire:navigate
                     >
                         Projets
                     </x-link.tertiary>
@@ -125,7 +128,6 @@
                         link="{{ route('articles') }}"
                         @click="menuOpen = false"
                         fontStyle="text-5xl md:text-7xl font-semibold -tracking-wider"
-                        wire:navigate
                     >
                         Articles
                     </x-link.tertiary>
@@ -139,12 +141,14 @@
                 <x-link.tertiary
                     link="mailto:renaud.vanmeerbergen@gmail.com"
                     fontStyle="text-md font-medium"
+                    :navigate="false"
                 >
                     renaud.vanmeerbergen@gmail.com
                 </x-link.tertiary>
                 <x-link.tertiary
                     link="tel:+32470596065"
                     fontStyle="text-md font-medium"
+                    :navigate="false"
                 >
                     +32 (0) 470 59 60 65
                 </x-link.tertiary>

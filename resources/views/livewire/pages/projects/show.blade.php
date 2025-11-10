@@ -254,9 +254,28 @@
                             </div>
                         @endif
 
+                        {{-- Outils & Logiciels --}}
+                        @if($project->tools_details)
+                            <div class="flex flex-col gap-4">
+                                <x-font.text-md class="text-gray-medium">
+                                    Outils & logiciels
+                                </x-font.text-md>
+                                <div class="flex flex-wrap gap-x-6 gap-y-4">
+                                    @foreach($project->tools_details as $tool)
+                                        <div class="flex items-center gap-2 group">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-red"></span>
+                                            <x-font.text-md>
+                                                {{ $tool->name }}
+                                            </x-font.text-md>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
+
                         {{-- Complexité --}}
                         @if($project->difficulty)
-                            <div class="flex flex-col gap-4">
+                            <div class="flex flex-col gap-4 lg:pl-4">
                                 <x-font.text-md class="text-gray-medium">
                                     Complexité
                                 </x-font.text-md>
@@ -271,25 +290,6 @@
                                     <x-font.text-md class="text-dark-primary whitespace-nowrap">
                                         {{ $project->difficulty->label() }}
                                     </x-font.text-md>
-                                </div>
-                            </div>
-                        @endif
-
-                        {{-- Outils & Logiciels --}}
-                        @if($project->tools_details)
-                            <div class="flex flex-col gap-4">
-                                <x-font.text-md class="text-gray-medium">
-                                    Outils & logiciels
-                                </x-font.text-md>
-                                <div class="flex gap-x-6 gap-y-2.5">
-                                    @foreach($project->tools_details as $tool)
-                                        <div class="flex items-center gap-2 group">
-                                            <span class="w-1 h-1 rounded-full bg-red"></span>
-                                            <x-font.text-sm>
-                                                {{ $tool->name }}
-                                            </x-font.text-sm>
-                                        </div>
-                                    @endforeach
                                 </div>
                             </div>
                         @endif

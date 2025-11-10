@@ -38,7 +38,7 @@
 
             {{-- Colonne de droite --}}
             <div>
-                <div class="grid grid-cols-2 lg:grid-cols-[128px_180px_180px_128px] gap-2">
+                <div class="grid grid-cols-2 lg:grid-cols-[128px_180px_180px_128px] gap-2 overflow-auto">
 
                     {{-- CARTE 1: Stat 1 --}}
                     <div data-border="true"
