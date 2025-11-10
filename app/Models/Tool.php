@@ -15,7 +15,6 @@ class Tool extends Model
         'order' => 'integer',
     ];
 
-
     public function scopePublished($query)
     {
         return $query->where('is_published', true);

@@ -201,96 +201,102 @@
             </div>
 
             {{-- Détails techniques --}}
-            <div class="flex flex-col gap-7">
-                <div class="flex items-center gap-1.5">
-                    <span class="text-red" aria-hidden="true">|</span>
+            @if($project->tags || $project->roles || $project->difficulty || $project->tools_details)
+                <div class="flex flex-col gap-7">
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-red" aria-hidden="true">|</span>
 
-                    <x-font.text>
-                        Détails techniques
-                    </x-font.text>
-                </div>
+                        <x-font.text>
+                            Détails techniques
+                        </x-font.text>
+                    </div>
 
-                    {{-- Technologies utilisées --}}
-                <div class="flex flex-col gap-8">
-                    {{-- Technologies utilisées --}}
-                    @if($project->tags && count($project->tags) > 0)
-                        <div class="flex flex-col gap-4">
-                            <x-font.title class="pr-4">
-                                Technologies
-                            </x-font.title>
-                            <div class="flex flex-wrap gap-2">
-                                @foreach($project->tags as $tag)
-                                    <span class="px-4 py-2 bg-white border border-gray-200 text-gray-dark rounded-lg text-sm font-medium hover:border-red transition-colors">
+                    <div class="flex flex-col gap-6">
+                        <x-font.title class="pr-4 max-w-220">
+                            Utilisation de technologies venant du fin fond du nectar technologique.
+                        </x-font.title>
+
+                        <x-font.text class="text-gray-medium max-w-175 leading-relaxed">
+                            Découvrez les aspects techniques et les outils qui m'ont permis de mener à bien ce projet.
+                            Que ce soit des outils open-source, des frameworks modernes ou des méthodologies agiles, chaque élément a joué un rôle crucial dans la réussite de cette réalisation.
+                            Issu d'une réflexion approfondie, chaque choix technique a été fait pour garantir la qualité, la performance et la pérennité du projet.
+                        </x-font.text>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {{-- Technologies --}}
+                        @if($project->tags && count($project->tags) > 0)
+                            <div class="flex flex-col gap-4">
+                                <x-font.text-md class="text-gray-medium">
+                                    Technologies utilisées
+                                </x-font.text-md>
+                                <div class="flex flex-wrap gap-2">
+                                    @foreach($project->tags as $tag)
+                                        <span class="px-3 py-1.5 text-sm font-medium text-gray-dark bg-white rounded-lg hover:bg-gray-200 transition-colors duration-300">
                                         {{ $tag }}
                                     </span>
-                                @endforeach
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
+                        @endif
 
-                        {{-- Informations complémentaires --}}
-                        @if($project->roles || $project->difficulty || $project->tools_details)
-                            <div class="flex flex-col gap-8">
-                                {{-- Mes rôles --}}
-                                @if($project->roles && count($project->roles) > 0)
-                                    <div class="flex flex-col gap-3">
-                                        <div class="flex items-baseline gap-1.5">
-                                            <x-font.text-md class="text-gray-medium">Mes rôles</x-font.text-md>
-                                            <x-divider-dash class="flex-1"/>
-                                        </div>
-                                        <div class="flex flex-wrap gap-2">
-                                            @foreach($project->roles as $role)
-                                                <x-project-role-label :role="$role"/>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                @endif
+                        {{-- Mes rôles --}}
+                        @if($project->roles && count($project->roles) > 0)
+                            <div class="flex flex-col gap-4">
+                                <x-font.text-md class="text-gray-medium">
+                                    Rôles & compétences
+                                </x-font.text-md>
+                                <div class="flex flex-wrap gap-2">
+                                    @foreach($project->roles as $role)
+                                        <x-project-role-label :role="$role"/>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
 
-                                {{-- Complexité --}}
-                                @if($project->difficulty)
-                                    <div class="flex flex-col gap-3">
-                                        <div class="flex items-baseline gap-1.5">
-                                            <x-font.text-md class="text-gray-medium">Complexité</x-font.text-md>
-                                            <x-divider-dash class="flex-1"/>
-                                        </div>
-                                        <div class="flex items-center gap-3">
-                                            <div class="flex-1 max-w-[200px] h-1 bg-gray-100 rounded-full overflow-hidden">
-                                                <div class="h-full rounded-full transition-all duration-500
-                                                    {{ $project->difficulty->value === 'easy' ? 'w-1/3 bg-gray-dark' : '' }}
-                                                    {{ $project->difficulty->value === 'medium' ? 'w-2/3 bg-gray-dark' : '' }}
-                                                    {{ $project->difficulty->value === 'hard' ? 'w-full bg-gray-dark' : '' }}
-                                                "></div>
-                                            </div>
-                                            <x-font.text-md class="text-gray-dark font-medium">
-                                                {{ $project->difficulty->label() }}
-                                            </x-font.text-md>
-                                        </div>
+                        {{-- Complexité --}}
+                        @if($project->difficulty)
+                            <div class="flex flex-col gap-4">
+                                <x-font.text-md class="text-gray-medium">
+                                    Complexité
+                                </x-font.text-md>
+                                <div class="flex items-center gap-4">
+                                    <div class="flex-1 h-1.5 max-w-2/3 bg-whitesmoke rounded-full overflow-hidden">
+                                        <div class="h-full rounded-full transition-all duration-700 ease-out
+                                        {{ $project->difficulty->value === 'easy' ? 'w-1/3 bg-gray-dark' : '' }}
+                                        {{ $project->difficulty->value === 'medium' ? 'w-2/3 bg-gray-dark' : '' }}
+                                        {{ $project->difficulty->value === 'hard' ? 'w-full bg-gradient-to-r from-gray-dark to-red' : '' }}
+                                    "></div>
                                     </div>
-                                @endif
+                                    <x-font.text-md class="text-dark-primary whitespace-nowrap">
+                                        {{ $project->difficulty->label() }}
+                                    </x-font.text-md>
+                                </div>
+                            </div>
+                        @endif
 
-                                {{-- Outils & Logiciels --}}
-                                @if($project->tools_details && $project->tools_details->isNotEmpty())
-                                    <div class="flex flex-col gap-3">
-                                        <div class="flex items-baseline gap-1.5">
-                                            <x-font.text-md class="text-gray-medium">Outils & Logiciels</x-font.text-md>
-                                            <x-divider-dash class="flex-1"/>
+                        {{-- Outils & Logiciels --}}
+                        @if($project->tools_details)
+                            <div class="flex flex-col gap-4">
+                                <x-font.text-md class="text-gray-medium">
+                                    Outils & logiciels
+                                </x-font.text-md>
+                                <div class="flex gap-x-6 gap-y-2.5">
+                                    @foreach($project->tools_details as $tool)
+                                        <div class="flex items-center gap-2 group">
+                                            <span class="w-1 h-1 rounded-full bg-red"></span>
+                                            <x-font.text-sm>
+                                                {{ $tool->name }}
+                                            </x-font.text-sm>
                                         </div>
-                                        <div class="flex flex-col gap-2">
-                                            @foreach($project->tools_details as $tool)
-                                                <div class="flex items-center gap-2">
-                                                    <span class="w-1 h-1 rounded-full bg-gray-medium"></span>
-                                                    <x-font.text-md class="text-gray-dark">
-                                                        {{ $tool->name }}
-                                                    </x-font.text-md>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                @endif
+                                    @endforeach
+                                </div>
                             </div>
                         @endif
                     </div>
                 </div>
             @endif
+
         </div>
     </section>
 

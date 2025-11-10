@@ -7,7 +7,7 @@
     $label = $roleEnum ? $roleEnum->label() : ucfirst($role);
 @endphp
 
-<span {{ $attributes->merge(['class' => 'inline-flex items-center px-4 py-2 bg-white border border-gray-200 text-gray-dark rounded-2xl text-sm font-medium hover:border-red transition-all duration-300']) }}>
+<span {{ $attributes->merge(['class' => 'inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-dark bg-white rounded-lg hover:bg-gray-200 transition-colors duration-300']) }}>
     {{ $label }}
 </span>
 
