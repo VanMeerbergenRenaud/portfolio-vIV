@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tools', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('url')->nullable();
             $table->string('logo')->nullable();
             $table->boolean('is_stat_card')->default(false);
             $table->string('stat_number')->nullable();

@@ -46,8 +46,8 @@ class ToolsTable
                     ->searchable()
                     ->toggleable(),
 
-                TextColumn::make('slug')
-                    ->label('Slug')
+                TextColumn::make('url')
+                    ->label('URL')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
 

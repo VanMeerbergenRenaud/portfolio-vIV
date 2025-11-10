@@ -41,6 +41,7 @@
                         $statCardIndex = array_search($tool->order, [3, 6, 9]);
                         $gridClass = $statCardIndex !== false ? $gridPositions[$statCardIndex] : '';
                     @endphp
+
                     <div class="p-6 h-45 lg:h-55 flex flex-col content-between bg-white rounded-2xl max-md:col-span-2 {{ $gridClass }} border border-dashed border-gray-light">
                         <div class="flex flex-col gap-1.5">
                             <x-font.text-2xl class="font-semibold">
@@ -59,12 +60,26 @@
                     </div>
                 @else
                     {{-- Regular Tool --}}
-                    <div class="p-6 h-45 lg:h-55 flex-center bg-white rounded-2xl">
-                        @if($tool->logo)
-                            <img src="{{ Storage::disk('s3')->url($tool->logo) }}" alt="{{ $tool->name }}" class="max-h-8 object-contain">
-                        @else
-                            <x-font.text-lg class="font-semibold text-gray-medium">{{ $tool->name }}</x-font.text-lg>
-                        @endif
+                    <div class="bg-white rounded-2xl">
+                        <a
+                            href="{{ $tool->url }}"
+                            title="Vers la page officielle de {{ $tool->name }}"
+                            target="_blank" rel="noopener noreferrer"
+                            class="group p-6 h-45 lg:h-55 flex-center"
+                        >
+                            @if($tool->logo)
+                                <img
+                                    src="{{ Storage::disk('s3')->url($tool->logo) }}"
+                                    alt="{{ $tool->name }}"
+                                    class="max-h-25 object-contain group-hover:scale-110 transition-transform"
+                                    loading="lazy"
+                                >
+                            @else
+                                <x-font.text-xl class="font-semibold text-gray-medium">
+                                    {{ $tool->name }}
+                                </x-font.text-xl>
+                            @endif
+                        </a>
                     </div>
                 @endif
             @endforeach

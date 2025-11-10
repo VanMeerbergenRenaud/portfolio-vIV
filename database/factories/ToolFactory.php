@@ -19,7 +19,7 @@ class ToolFactory extends Factory
     {
         return [
             'name' => fake()->word(),
-            'slug' => fake()->slug(),
+            'url' => fake()->url(),
             'logo' => null,
             'is_stat_card' => false,
             'stat_number' => null,

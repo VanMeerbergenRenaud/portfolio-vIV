@@ -16,7 +16,7 @@ class ToolSeeder extends Seeder
             // Regular tools
             [
                 'name' => 'Laravel',
-                'slug' => 'laravel',
+                'url' => 'https://laravel.com',
                 'logo' => null,
                 'is_stat_card' => false,
                 'is_published' => true,
@@ -24,7 +24,7 @@ class ToolSeeder extends Seeder
             ],
             [
                 'name' => 'Livewire',
-                'slug' => 'livewire',
+                'url' => 'https://livewire.laravel.com',
                 'logo' => null,
                 'is_stat_card' => false,
                 'is_published' => true,
@@ -33,7 +33,7 @@ class ToolSeeder extends Seeder
             // Stat Card 1
             [
                 'name' => 'Années d\'expérience',
-                'slug' => 'annees-experience',
+                'url' => null,
                 'logo' => null,
                 'is_stat_card' => true,
                 'stat_number' => '4',
@@ -44,7 +44,7 @@ class ToolSeeder extends Seeder
             ],
             [
                 'name' => 'Tailwind CSS',
-                'slug' => 'tailwind-css',
+                'url' => 'https://tailwindcss.com',
                 'logo' => null,
                 'is_stat_card' => false,
                 'is_published' => true,
@@ -52,7 +52,7 @@ class ToolSeeder extends Seeder
             ],
             [
                 'name' => 'Filament',
-                'slug' => 'filament',
+                'url' => 'https://filamentphp.com',
                 'logo' => null,
                 'is_stat_card' => false,
                 'is_published' => true,
@@ -61,7 +61,7 @@ class ToolSeeder extends Seeder
             // Stat Card 2
             [
                 'name' => 'Stack préféré',
-                'slug' => 'stack-prefere',
+                'url' => null,
                 'logo' => null,
                 'is_stat_card' => true,
                 'stat_number' => 'Laravel',
@@ -71,8 +71,8 @@ class ToolSeeder extends Seeder
                 'order' => 6,
             ],
             [
-                'name' => 'PHP',
-                'slug' => 'php',
+                'name' => 'Alpine JS',
+                'url' => 'https://alpinejs.dev',
                 'logo' => null,
                 'is_stat_card' => false,
                 'is_published' => true,
@@ -80,7 +80,7 @@ class ToolSeeder extends Seeder
             ],
             [
                 'name' => 'MySQL',
-                'slug' => 'mysql',
+                'url' => 'https://www.mysql.com',
                 'logo' => null,
                 'is_stat_card' => false,
                 'is_published' => true,
@@ -89,7 +89,7 @@ class ToolSeeder extends Seeder
             // Stat Card 3
             [
                 'name' => 'Projets réalisés',
-                'slug' => 'projets-realises',
+                'url' => null,
                 'logo' => null,
                 'is_stat_card' => true,
                 'stat_number' => '10',

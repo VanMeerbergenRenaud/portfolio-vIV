@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 class Tool extends Model
 {
@@ -16,22 +15,6 @@ class Tool extends Model
         'order' => 'integer',
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($tool) {
-            if (empty($tool->slug)) {
-                $tool->slug = Str::slug($tool->name);
-            }
-        });
-
-        static::updating(function ($tool) {
-            if ($tool->isDirty('name') && empty($tool->slug)) {
-                $tool->slug = Str::slug($tool->name);
-            }
-        });
-    }
 
     public function scopePublished($query)
     {

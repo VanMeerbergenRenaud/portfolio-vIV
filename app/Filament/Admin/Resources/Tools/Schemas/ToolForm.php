@@ -8,7 +8,6 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
-use Illuminate\Support\Str;
 
 class ToolForm
 {
@@ -22,20 +21,20 @@ class ToolForm
                         TextInput::make('name')
                             ->required()
                             ->maxLength(255)
-                            ->label('Nom de l\'outil')
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
+                            ->label('Nom de l\'outil'),
 
-                        TextInput::make('slug')
-                            ->required()
+                        TextInput::make('url')
                             ->maxLength(255)
-                            ->unique(ignoreRecord: true)
-                            ->label('Slug (URL)'),
+                            ->url()
+                            ->label('URL du site officiel')
+                            ->placeholder('https://laravel.com')
+                            ->helperText('Lien vers le site officiel de l\'outil'),
 
                         FileUpload::make('logo')
                             ->image()
                             ->imageEditor()
                             ->directory('tools/logos')
+                            ->visibility('public')
                             ->label('Logo de l\'outil')
                             ->acceptedFileTypes(['image/svg', 'image/png', 'image/jpg', 'image/jpeg'])
                             ->helperText('Logo de l\'outil (non requis pour les cartes de statistiques)')
