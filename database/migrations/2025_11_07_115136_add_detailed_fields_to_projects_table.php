@@ -4,40 +4,26 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            // Vérifier si les colonnes n'existent pas déjà avant de les ajouter
-            if (! Schema::hasColumn('projects', 'tools')) {
-                $table->json('tools')->nullable()->after('difficulty');
-            }
+            $table->string('tools')->nullable()->after('tags');
+            $table->string('difficulty')->nullable()->after('tools');
+            $table->string('roles')->nullable()->after('difficulty');
 
-            // Section Contexte/Objectif
-            if (! Schema::hasColumn('projects', 'context_title')) {
-                $table->string('context_title')->nullable()->after('tags');
-            }
-            if (! Schema::hasColumn('projects', 'context_description')) {
-                $table->text('context_description')->nullable()->after('context_title');
-            }
-            if (! Schema::hasColumn('projects', 'context_gallery')) {
-                $table->json('context_gallery')->nullable()->after('context_description');
-            }
+            // Section Contexte
+            $table->string('context_title')->nullable()->after('tags');
+            $table->text('context_description')->nullable()->after('context_title');
+            $table->json('context_gallery')->nullable()->after('context_description');
 
             // Section Résultats
-            if (! Schema::hasColumn('projects', 'results_title')) {
-                $table->string('results_title')->nullable()->after('context_gallery');
-            }
-            if (! Schema::hasColumn('projects', 'results_description')) {
-                $table->text('results_description')->nullable()->after('results_title');
-            }
-            if (! Schema::hasColumn('projects', 'results_gallery')) {
-                $table->json('results_gallery')->nullable()->after('results_description');
-            }
+            $table->string('results_title')->nullable()->after('context_gallery');
+            $table->text('results_description')->nullable()->after('results_title');
+            $table->json('results_gallery')->nullable()->after('results_description');
         });
     }
 
@@ -49,6 +35,8 @@ return new class extends Migration
         Schema::table('projects', function (Blueprint $table) {
             $columns = [
                 'tools',
+                'difficulty',
+                'roles',
                 'context_title',
                 'context_description',
                 'context_gallery',

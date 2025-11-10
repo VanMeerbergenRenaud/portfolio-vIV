@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             CaseStudySeeder::class,
             FaqSeeder::class,
             ArticleSeeder::class,
+            ProjectDetailSeeder::class,
         ]);
     }
 }
