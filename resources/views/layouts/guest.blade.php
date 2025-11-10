@@ -6,9 +6,9 @@
     <body>
         @include('partials.no-js')
 
-        {{--@if(Route::is('home') || request()->is('/'))
+        @if(Route::is('home') || request()->is('/'))
             <x-pre-loader/>
-        @endif--}}
+        @endif
 
         {{--<x-custom-cursor />--}}
 
