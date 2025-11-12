@@ -280,7 +280,7 @@
                                     Complexité
                                 </x-font.text-md>
                                 <div class="flex items-center gap-4">
-                                    <div class="flex-1 h-1.5 max-w-2/3 bg-whitesmoke rounded-full overflow-hidden">
+                                    <div class="flex-1 h-1.5 max-w-2/3 bg-white rounded-full overflow-hidden">
                                         <div class="h-full rounded-full transition-all duration-700 ease-out
                                         {{ $project->difficulty->value === 'easy' ? 'w-1/3 bg-gray-dark' : '' }}
                                         {{ $project->difficulty->value === 'medium' ? 'w-2/3 bg-gray-dark' : '' }}

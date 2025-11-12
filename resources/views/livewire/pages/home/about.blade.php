@@ -38,11 +38,12 @@
 
             {{-- Colonne de droite --}}
             <div>
-                <div
-                    class="grid grid-cols-2  gap-2 overflow-auto
-                        lg:grid-cols-[minmax(0,8rem)_minmax(0,11.25rem)_minmax(0,11.25rem)_minmax(0,8rem)]
-                        xl:grid-cols-[auto_minmax(0,15rem)_minmax(0,15rem)_auto]"
-                >
+                <div class="
+                        grid grid-cols-2 gap-2 overflow-auto
+                        lg:grid-cols-[minmax(6rem,8rem)_auto_auto_minmax(6rem,8rem)]
+                        xl:grid-cols-[minmax(8rem,12rem)_auto_auto_minmax(8rem,12rem)]
+                        2xl:grid-cols-[minmax(10rem,16rem)_auto_auto_minmax(10rem,16rem)]
+                ">
 
                     {{-- CARTE 1: Stat 1 --}}
                     <div data-border="true"
