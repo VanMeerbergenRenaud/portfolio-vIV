@@ -8,19 +8,19 @@
 <meta name="keywords" content="développeur fullstack, développeur Laravel, développement d'applications, développeur frontend, développeur backend, développeur Liège, Renaud développeur">
 <meta name="description" content="Développeur Full-Stack junior spécialisé en Laravel, Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:title" content="Renaud Van Meerbergen">
 <meta property="og:description" content="Architecture web moderne, performance optimale et code maintenable. Je transforme vos ambitions digitales en succès mesurables.">
-<meta property="og:image" content="{{ asset('img/og-image.jpg') }}">
+<meta property="og:image" content="{{ asset('img/opengraph.png') }}">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ url()->current() }}">
 <meta property="twitter:title" content="Renaud Van Meerbergen">
 <meta property="twitter:description" content="Architecture web moderne, performance optimale et code maintenable. Je transforme vos ambitions digitales en succès mesurables.">
-<meta property="twitter:image" content="{{ asset('img/og-image.jpg') }}">
+<meta property="twitter:image" content="{{ asset('img/opengraph.png') }}">
 
 <!-- Favicons -->
 <link rel="icon" href="/favicons/favicon.ico" sizes="any">
@@ -51,9 +51,9 @@
 <!-- Title -->
 <title>
     @if (!empty($title))
-        {{ $title }} | {{ config('app.name', 'Portfolio') }}
+        {{ $title }}
     @else
-        {{ config('app.name', 'Portfolio - Renaud Vmb') }}
+        {{ config('app.name', 'Renaud Vmb') }}
     @endif
 </title>
 

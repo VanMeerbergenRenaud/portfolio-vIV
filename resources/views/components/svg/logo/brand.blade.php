@@ -81,7 +81,7 @@
             <text class="cls-1" transform="translate(57.93 167.45) rotate(-126.43)"><tspan x="0" y="0">·</tspan></text>
         </g>
         <g>
-            <text class="cls-2" transform="translate(70 120)"><tspan x="0" y="0">RV</tspan></text>
+            <text class="cls-2" transform="translate(72 120)"><tspan x="0" y="0">RV</tspan></text>
         </g>
     </g>
 </svg>

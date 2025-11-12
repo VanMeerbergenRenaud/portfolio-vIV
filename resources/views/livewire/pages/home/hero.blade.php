@@ -101,14 +101,23 @@
                                 <x-font.text-md class="text-gray-medium">{{ $hero->availability_type }}</x-font.text-md>
                             </div>
 
-                            <x-link.primary link="mailto:{{ $hero->contact_email }}" class="mt-6 md:hidden lg:flex lg:mt-4">
+                            <x-link.primary
+                                link="mailto:{{ $hero->contact_email }}"
+                                title="Vers votre application de mail"
+                                class="mt-6 md:hidden lg:flex lg:mt-4"
+                                :navigate="false"
+                            >
                                 Me contacter
                             </x-link.primary>
                         </div>
 
                         {{-- Link (separate column on tablet) --}}
                         <div class="hidden md:flex md:items-end md:order-4 md:col-span-1 lg:hidden">
-                            <x-link.primary link="mailto:{{ $hero->contact_email }}">
+                            <x-link.primary
+                                link="mailto:{{ $hero->contact_email }}"
+                                title="Vers votre application de mail"
+                                :navigate="false"
+                            >
                                 Me contacter
                             </x-link.primary>
                         </div>

@@ -140,6 +140,7 @@
             <div class="flex flex-col gap-1">
                 <x-link.tertiary
                     link="mailto:renaud.vanmeerbergen@gmail.com"
+                    title="Vers votre application de mail"
                     fontStyle="text-md font-medium"
                     :navigate="false"
                 >

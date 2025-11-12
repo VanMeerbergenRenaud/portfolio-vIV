@@ -40,7 +40,12 @@
             </div>
 
             {{-- Link --}}
-            <x-link.secondary title="Vers votre application de mail" link="mailto:renaud.vanmeerbergen@gmail.com" class="mt-4">
+            <x-link.secondary
+                link="mailto:renaud.vanmeerbergen@gmail.com"
+                title="Vers votre application de mail"
+                class="mt-4"
+                :navigate="false"
+            >
                 Me contactez par mail
             </x-link.secondary>
         </div>
