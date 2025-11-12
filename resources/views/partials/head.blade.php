@@ -6,20 +6,20 @@
 <meta name="title" content="Renaud Vmb">
 <meta name="author" content="Renaud Van Meerbergen">
 <meta name="keywords" content="développeur fullstack, développeur Laravel, développement d'applications, développeur frontend, développeur backend, développeur Liège, Renaud développeur">
-<meta name="description" content="Développeur Full-Stack junior spécialisé en Laravel, Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
+<meta name="description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:title" content="Renaud Van Meerbergen">
-<meta property="og:description" content="Architecture web moderne, performance optimale et code maintenable. Je transforme vos ambitions digitales en succès mesurables.">
+<meta property="og:description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
 <meta property="og:image" content="{{ asset('img/opengraph.png') }}">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ url()->current() }}">
 <meta property="twitter:title" content="Renaud Van Meerbergen">
-<meta property="twitter:description" content="Architecture web moderne, performance optimale et code maintenable. Je transforme vos ambitions digitales en succès mesurables.">
+<meta property="twitter:description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
 <meta property="twitter:image" content="{{ asset('img/opengraph.png') }}">
 
 <!-- Favicons -->
