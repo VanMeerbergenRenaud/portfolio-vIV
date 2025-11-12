@@ -41,8 +41,8 @@
                 <div class="
                         grid grid-cols-2 gap-2 overflow-auto
                         lg:grid-cols-[minmax(6rem,8rem)_auto_auto_minmax(6rem,8rem)]
-                        xl:grid-cols-[minmax(8rem,12rem)_auto_auto_minmax(8rem,12rem)]
-                        2xl:grid-cols-[minmax(10rem,16rem)_auto_auto_minmax(10rem,16rem)]
+                        xl:grid-cols-[minmax(7.5rem,9rem)_auto_auto_minmax(7.5rem,9rem)]
+                        2xl:grid-cols-[minmax(9rem,15rem)_auto_auto_minmax(9rem,15rem)]
                 ">
 
                     {{-- CARTE 1: Stat 1 --}}

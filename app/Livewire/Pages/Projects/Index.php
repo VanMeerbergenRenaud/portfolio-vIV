@@ -16,7 +16,7 @@ class Index extends Component
     public function mount()
     {
         $this->projects = Project::published()
-            ->orderBy('updated_at', 'desc')
+            ->ordered()
             ->get();
 
         // Extraire les types distincts de la collection

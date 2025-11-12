@@ -20,7 +20,7 @@ class Type extends Component
 
         $this->projects = Project::published()
             ->where('type', $type)
-            ->orderBy('updated_at', 'desc')
+            ->ordered()
             ->get();
 
         $this->types = Project::published()
