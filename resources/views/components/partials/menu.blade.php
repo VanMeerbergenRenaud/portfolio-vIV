@@ -95,7 +95,7 @@
                 Menu principal
             </h2>
 
-            <ul class="flex flex-col items-center gap-4 text-center">
+            <ul class="mt-24 flex flex-col items-center gap-4 text-center">
                 <li>
                     <x-link.tertiary
                         link="{{ route('home') }}"
