@@ -8,9 +8,9 @@
                     {{ $project->name }}
                 </x-font.title-2xl>
 
-                @if($project->logo)
+                @if($project->logo_black)
                     <img
-                        src="{{ Storage::disk('s3')->url($project->logo) }}"
+                        src="{{ Storage::disk('s3')->url($project->logo_black) }}"
                         alt="{{ $project->name }} logo"
                         class="max-w-25"
                     >
@@ -318,6 +318,7 @@
             </x-link.secondary>
         </div>
 
+        {{-- Project list --}}
         <x-projects.list :$projects />
     </section>
 

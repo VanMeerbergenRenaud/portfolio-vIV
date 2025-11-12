@@ -48,14 +48,22 @@ class ProjectForm
                                     ->imageEditor()
                                     ->directory('projects/mockups')
                                     ->label('Image du projet')
-                                    ->helperText('Image principale du projet'),
+                                    ->helperText('Image principale du projet')
+                                    ->columnSpanFull(),
 
-                                FileUpload::make('logo')
+                                FileUpload::make('logo_white')
                                     ->image()
                                     ->imageEditor()
-                                    ->directory('projects/logos')
-                                    ->label('Logo du projet')
+                                    ->directory('projects/logos/white')
+                                    ->label('Logo du projet en blanc')
                                     ->helperText('Logo affiché sur l\'image'),
+
+                                FileUpload::make('logo_black')
+                                    ->image()
+                                    ->imageEditor()
+                                    ->directory('projects/logos/black')
+                                    ->label('Logo du projet en noir')
+                                    ->helperText('Logo affiché dans la page du projet'),
                             ]),
                     ])->columnSpanFull(),
 

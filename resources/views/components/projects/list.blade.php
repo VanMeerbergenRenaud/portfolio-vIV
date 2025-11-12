@@ -3,7 +3,7 @@
 ])
 
 <ul class="flex flex-col gap-2 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))] lg:flex">
-    @foreach($projects as $index => $project)
+    @forelse($projects as $index => $project)
         @php
             $isReverse = $index % 2 !== 0;
             $gridClass = $isReverse ? 'lg:grid-cols-[1fr_30%]' : 'lg:grid-cols-[30%_1fr]';
@@ -82,15 +82,15 @@
                         >
                     @endif
 
-                    @if($project->logo)
+                    @if($project->logo_white)
                         <div class="z-2 absolute max-lg:left-4 bottom-4 {{ $isReverse ? 'lg:left-6' : 'lg:right-6' }}">
-                            <img src="{{ Storage::disk('s3')->url($project->logo) }}"
+                            <img src="{{ Storage::disk('s3')->url($project->logo_white) }}"
                                  alt="{{ $project->name }} logo"
                                  class="
-                                    object-contain transition-all duration-600 p-1
-                                    min-w-24 max-w-32 max-h-16
-                                    group-hover:scale-115 group-hover:max-h-18
-                                    group-hover:-translate-y-1
+                                    object-contain transition-all duration-600 py-1 px-2
+                                    min-w-24 max-w-32 max-h-18
+                                    group-hover:scale-115 group-hover:max-h-20
+                                    lg:group-hover:-translate-y-1
                                     {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
                                 "
                                  loading="lazy"
@@ -101,10 +101,10 @@
                             <img src="{{ asset('img/projects/logo.svg') }}"
                                  alt="logo par défaut"
                                  class="
-                                    object-contain transition-all duration-600 p-1
-                                    min-w-24 max-w-32 max-h-16
-                                    group-hover:scale-115 group-hover:max-h-18
-                                    group-hover:-translate-y-1
+                                    object-contain transition-all duration-600 py-1 px-2
+                                    min-w-24 max-w-32 max-h-18
+                                    group-hover:scale-115 group-hover:max-h-20
+                                    lg:group-hover:-translate-y-1
                                     {{ $isReverse ? 'lg:group-hover:translate-x-2' : 'lg:group-hover:-translate-x-2' }}
                                 "
                                  loading="lazy"
@@ -114,5 +114,11 @@
                 </div>
             </a>
         </li>
-    @endforeach
+    @empty
+        <li class="col-span-full text-center py-10">
+            <x-font.text-lg class="text-gray-medium">
+                Aucun projet n'a été développé pour le moment.
+            </x-font.text-lg>
+        </li>
+    @endforelse
 </ul>

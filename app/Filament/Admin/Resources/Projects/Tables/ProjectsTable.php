@@ -26,8 +26,13 @@ class ProjectsTable
                     ->disk('s3')
                     ->circular(),
 
-                ImageColumn::make('logo')
-                    ->label('Logo')
+                ImageColumn::make('logo_white')
+                    ->label('Logo blanc')
+                    ->disk('s3')
+                    ->circular(),
+
+                ImageColumn::make('logo_black')
+                    ->label('Logo noir')
                     ->disk('s3')
                     ->circular(),
 

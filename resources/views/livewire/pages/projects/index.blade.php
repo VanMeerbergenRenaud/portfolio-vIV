@@ -93,15 +93,15 @@
                                 >
                             @endif
 
-                            @if($project->logo)
+                            @if($project->logo_white)
                                 <div class="z-2 absolute left-4 bottom-4">
-                                    <img src="{{ Storage::disk('s3')->url($project->logo) }}"
+                                    <img src="{{ Storage::disk('s3')->url($project->logo_white) }}"
                                          alt="{{ $project->name }} logo"
                                          class="
-                                            object-contain transition-all duration-600 p-1
-                                            min-w-24 max-w-32 max-h-16
-                                            group-hover:scale-115 group-hover:max-h-18
-                                            group-hover:-translate-y-1 group-hover:translate-x-1
+                                            object-contain transition-all duration-600 py-1 px-2
+                                            min-w-24 max-w-32 max-h-18
+                                            group-hover:scale-115 group-hover:max-h-20
+                                            group-hover:-translate-y-1 group-hover:translate-x-2
                                         "
                                          loading="lazy"
                                     >
@@ -111,10 +111,10 @@
                                     <img src="{{ asset('img/projects/logo.svg') }}"
                                          alt="logo par défaut"
                                          class="
-                                            object-contain transition-all duration-600 p-1
-                                            min-w-24 max-w-32 max-h-16
-                                            group-hover:scale-115 group-hover:max-h-18
-                                            group-hover:-translate-y-1  group-hover:translate-x-1
+                                            object-contain transition-all duration-600 py-1 px-2
+                                            min-w-24 max-w-32 max-h-18
+                                            group-hover:scale-115 group-hover:max-h-20
+                                            group-hover:-translate-y-1 group-hover:translate-x-2
                                         "
                                          loading="lazy"
                                     >
