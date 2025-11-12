@@ -138,6 +138,7 @@
         <!-- Contact infos -->
         <div class="text-center pb-4">
             <div class="flex flex-col gap-1">
+                {{-- Email --}}
                 <x-link.tertiary
                     link="mailto:renaud.vanmeerbergen@gmail.com"
                     title="Vers votre application de mail"
@@ -146,12 +147,23 @@
                 >
                     renaud.vanmeerbergen@gmail.com
                 </x-link.tertiary>
+                {{-- Phone --}}
                 <x-link.tertiary
                     link="tel:+32470596065"
                     fontStyle="text-md font-medium"
                     :navigate="false"
                 >
                     +32 (0) 470 59 60 65
+                </x-link.tertiary>
+                {{-- CV --}}
+                <x-link.tertiary
+                    link="{{ asset('img/cv.pdf') }}"
+                    title="Afficher mon CV au format PDF"
+                    fontStyle="text-md font-medium"
+                    target="_blank"
+                    :navigate="false"
+                >
+                    Curriculum Vitae
                 </x-link.tertiary>
             </div>
             <div class="flex-center mt-4">

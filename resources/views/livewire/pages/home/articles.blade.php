@@ -30,7 +30,11 @@
                 </x-font.title-lg>
 
                 {{-- Link --}}
-                <x-link.secondary class="mt-4" href="{{ route('articles') }}">
+                <x-link.secondary
+                    class="mt-4"
+                    link="{{ route('articles') }}"
+                    title="Vers mon blog"
+                >
                     Tous les articles
                 </x-link.secondary>
             </div>

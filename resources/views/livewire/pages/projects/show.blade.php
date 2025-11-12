@@ -16,7 +16,7 @@
                     >
                 @else
                     <img src="{{ asset('img/projects/logo.svg') }}"
-                         alt=""
+                         alt="logo par défaut"
                          class="max-w-25"
                          loading="lazy"
                     >

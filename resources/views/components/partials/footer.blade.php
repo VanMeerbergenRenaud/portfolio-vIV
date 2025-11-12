@@ -87,6 +87,7 @@
                 href="{{ route('policies') }}"
                 title="Lire la politique de confidentialité"
                 class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                rel="noopener noreferrer"
                 wire:navigate
             >
                 Politique de confidentialité
@@ -96,6 +97,7 @@
                 href="{{ route('conditions') }}"
                 title="Lire les conditions d'utilisation"
                 class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                rel="noopener noreferrer"
                 wire:navigate
             >
                 Conditions d'utilisation
@@ -110,11 +112,22 @@
             <ul class="flex items-center md:justify-end gap-x-3 gap-y-2 text-xs uppercase tracking-wider text-gray-medium">
                 <li>
                     <a
+                        href="{{ asset('img/cv.pdf') }}"
+                        target="_blank"
+                        class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                        aria-label="Découvrir mon CV"
+                    >
+                        CV
+                    </a>
+                </li>
+                <li aria-hidden="true">·</li>
+                <li>
+                    <a
                         href="https://www.instagram.com/web_developer.renaud/"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
-                        aria-label="Suivez-moi sur Instagram (s'ouvre dans un nouvel onglet)" {{-- Légère reformulation --}}
+                        aria-label="Suivez-moi sur Instagram"
                     >
                         Instagram
                     </a>
@@ -126,7 +139,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
-                        aria-label="Connectez-vous avec moi sur LinkedIn (s'ouvre dans un nouvel onglet)"
+                        aria-label="Connectez-vous avec moi sur LinkedIn"
                     >
                         LinkedIn
                     </a>
@@ -138,7 +151,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
-                        aria-label="Consultez mes projets sur GitHub (s'ouvre dans un nouvel onglet)"
+                        aria-label="Consultez mes projets sur GitHub"
                     >
                         GitHub
                     </a>

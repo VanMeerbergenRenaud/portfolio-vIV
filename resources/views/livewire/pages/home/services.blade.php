@@ -33,7 +33,12 @@
                 </x-font.text-xl>
 
                 {{-- Link --}}
-                <x-link.secondary color="white" class="mt-4">
+                <x-link.secondary
+                    link="{{ route('home') }}#skills"
+                    :navigate="false"
+                    color="white"
+                    class="mt-4"
+                >
                     Voir mes compétences
                 </x-link.secondary>
             </div>

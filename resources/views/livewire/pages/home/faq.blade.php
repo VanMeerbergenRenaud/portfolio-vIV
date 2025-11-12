@@ -30,7 +30,11 @@
                 Probablement les questions que vous vous posez déjà. Si la vôtre n'est pas là, contactez-moi !
             </x-font.text-lg>
 
-            <x-link.secondary>
+            <x-link.secondary
+                link="mailto:renaud.vanmeerbergen@gmail.com"
+                title="Vers votre application de mail"
+                :navigate="false"
+            >
                 Poser une question
             </x-link.secondary>
         </div>

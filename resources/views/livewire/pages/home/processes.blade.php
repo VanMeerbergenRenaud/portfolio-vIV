@@ -29,7 +29,11 @@
                 Ma méthode : anticiper, itérer, tester, et communiquer. Pour un projet sans surprise, juste des solutions.
             </x-font.text-lg>
 
-            <x-link.secondary>
+            <x-link.secondary
+                link="mailto:renaud.vanmeerbergen@gmail.com"
+                title="Vers votre application de mail"
+                :navigate="false"
+            >
                 Discutons de votre projet
             </x-link.secondary>
         </div>

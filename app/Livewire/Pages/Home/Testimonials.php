@@ -13,8 +13,13 @@ class Testimonials extends Component
 
     public function mount()
     {
-        $this->testimonials = Testimonial::published()->ordered()->get();
-        $this->testimonialCount = Testimonial::published()->count();
+        $this->testimonials = Testimonial::published()
+            ->ordered()
+            ->limit(5)
+            ->get();
+
+        $this->testimonialCount = Testimonial::published()
+            ->count();
     }
 
     public function render()

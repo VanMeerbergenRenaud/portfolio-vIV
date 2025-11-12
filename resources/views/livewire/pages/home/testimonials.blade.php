@@ -31,8 +31,14 @@
                 </x-font.title-lg>
 
                 {{-- Link --}}
-                <x-link.secondary class="mt-4">
-                    Laisser un avis
+                <x-link.secondary
+                    link="mailto:renaud.vanmeerbergen@gmail.com"
+                    title="Vers votre application de mail"
+                    :navigate="false"
+                    target="_blank"
+                    class="mt-4"
+                >
+                    Envoyer un témoignage
                 </x-link.secondary>
             </div>
         </div>
@@ -47,35 +53,27 @@
 
                 <div class="mt-auto flex gap-3.5">
                     <ul class="flex -space-x-4">
-                        <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/avatars/a1.jpg') }}"
-                                 alt=""
-                                 class="w-full h-full rounded-2xl"
-                            >
-                        </li>
-                        <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/avatars/a2.jpg') }}"
-                                 alt=""
-                                 class="w-full h-full rounded-2xl"
-                            >
-                        </li>
-                        <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/avatars/a3.jpg') }}"
-                                 alt=""
-                                 class="w-full h-full rounded-2xl"
-                            >
-                        </li>
-                        <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/avatars/a4.jpg') }}"
-                                 alt=""
-                                 class="w-full h-full rounded-2xl"
-                            >
-                        </li>
-                        <li class="w-11 h-11 bg-whitesmoke flex-center rounded-2xl" data-border-small="true">
-                            <x-font.text-md class="text-gray-dark">
-                                95+
-                            </x-font.text-md>
-                        </li>
+                        @foreach($testimonials->take(4) as $testimonial)
+                            <li data-border-small="true" class="w-11 h-11">
+                                <noindex>
+                                    <img src="{{
+                                            $testimonial->image
+                                                ? Storage::disk('s3')->url($testimonial->image)
+                                                : asset('img/placeholder.png')
+                                        }}"
+                                         alt=""
+                                         class="w-full h-full rounded-2xl object-cover"
+                                    >
+                                </noindex>
+                            </li>
+                        @endforeach
+                        @if($testimonialCount > 4)
+                            <li class="w-11 h-11 bg-whitesmoke flex-center rounded-2xl" data-border-small="true">
+                                <x-font.text-md class="text-gray-dark">
+                                    {{$testimonialCount }}+
+                                </x-font.text-md>
+                            </li>
+                        @endif
                     </ul>
 
                     <div class="flex flex-col gap-1">
@@ -89,7 +87,7 @@
                         </div>
 
                         <x-font.text-sm class="text-gray-medium">
-                            Trusted by our partners
+                            Basé sur {{ $testimonialCount }} avis vérifiés
                         </x-font.text-sm>
                     </div>
                 </div>
@@ -137,15 +135,17 @@
                         </x-font.text-3xl>
 
                         <div class="relative top-1.5 -left-1 flex md:items-center gap-3 mt-auto">
-                            <img
-                                src="{{
-                                    $testimonial->image
-                                        ? Storage::disk('s3')->url($testimonial->image)
-                                        : asset('img/placeholder.png')
-                                }}"
-                                alt="{{ $testimonial->name }}"
-                                class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover"
-                            >
+                            <noindex>
+                                <img
+                                    src="{{
+                                        $testimonial->image
+                                            ? Storage::disk('s3')->url($testimonial->image)
+                                            : asset('img/placeholder.png')
+                                    }}"
+                                    alt="{{ $testimonial->name }}"
+                                    class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover"
+                                >
+                            </noindex>
                             <div class="flex flex-col gap-0.5">
                                 <x-font.text-xl>
                                     {{ $testimonial->name }}

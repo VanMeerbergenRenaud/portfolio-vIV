@@ -33,11 +33,14 @@
 
                     {{-- Link --}}
                     @if($caseStudy->url)
-                        <a href="{{ $caseStudy->url }}" target="_blank" rel="noopener noreferrer">
-                            <x-link.secondary class="mt-4" color="white">
-                                Voir le projet
-                            </x-link.secondary>
-                        </a>
+                        <x-link.secondary
+                            link="{{ $caseStudy->url }}"
+                            title="Vers le projet {{ $caseStudy->project_name }}"
+                            class="mt-4"
+                            color="white"
+                        >
+                            Voir le projet
+                        </x-link.secondary>
                     @endif
                 </div>
             </div>

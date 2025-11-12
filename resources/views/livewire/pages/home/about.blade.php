@@ -31,7 +31,11 @@
                     Adepte des principes SOLID et du TDD, je vise le "zéro dette technique" pour un code qui reste propre et évolutif.
                 </x-font.text-lg>
 
-                <x-link.secondary link="#projects" class="mt-7 lg:mt-20">
+                <x-link.secondary
+                    link="{{ route('home') }}#projects"
+                    class="mt-7 lg:mt-20"
+                    :navigate="false"
+                >
                     En savoir plus
                 </x-link.secondary>
             </div>

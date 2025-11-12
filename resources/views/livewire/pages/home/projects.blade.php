@@ -31,7 +31,10 @@
                 </x-font.title-lg>
 
                 {{-- Link --}}
-                <x-link.secondary class="mt-4" href="{{ route('projects') }}">
+                <x-link.secondary
+                    link="{{ route('projects') }}"
+                    class="mt-4"
+                >
                     Tous les projets
                 </x-link.secondary>
             </div>
