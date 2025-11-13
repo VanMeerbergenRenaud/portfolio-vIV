@@ -27,7 +27,7 @@
             {{-- Content --}}
             <div class="flex flex-col gap-4">
                 <x-font.title-lg>
-                    Restons connecté
+                    Restons connectés
                 </x-font.title-lg>
 
                 <x-font.text-lg class="text-gray-medium max-w-[450px]">
@@ -46,7 +46,7 @@
                 class="mt-4"
                 :navigate="false"
             >
-                Me contactez par mail
+                Me contacter par mail
             </x-link.secondary>
         </div>
     </div>

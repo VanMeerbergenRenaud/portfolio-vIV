@@ -26,7 +26,7 @@
 
             {{-- Text --}}
             <x-font.text-lg class="text-gray-medium mb-3 lg:mb-4 max-w-[475px]">
-                Ma méthode : anticiper, itérer, tester, et communiquer. Pour un projet sans surprise, juste des solutions.
+                Ma méthode : anticiper, itérer, tester et communiquer. Pour un projet sans surprise, juste des solutions.
             </x-font.text-lg>
 
             <x-link.secondary
