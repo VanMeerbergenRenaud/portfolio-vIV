@@ -13,7 +13,13 @@
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:title" content="Renaud Van Meerbergen">
 <meta property="og:description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
+
 <meta property="og:image" content="{{ asset('img/opengraph.png') }}">
+<meta property="og:image:secure_url" content="{{ secure_asset('img/opengraph.png') }}">
+<meta property="og:image:alt" content="Logo Renaud Van Meerbergen">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="265">
+<meta property="og:image:height" content="265">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
