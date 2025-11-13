@@ -1,5 +1,6 @@
 <!-- Preloader -->
 <div
+    x-cloak
     x-data="preloader"
     x-show="show"
     x-transition:leave="transition ease-in-out duration-800"

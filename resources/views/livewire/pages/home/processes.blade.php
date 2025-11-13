@@ -15,7 +15,7 @@
                 <span class="text-red" aria-hidden="true">|</span>
 
                 <x-font.text>
-                    Process
+                    Processus
                 </x-font.text>
             </div>
 

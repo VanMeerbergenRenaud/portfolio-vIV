@@ -20,7 +20,7 @@
                     </x-font.text>
                 </div>
                 <x-font.text-sm class="pl-8.5 text-gray-medium">
-                    Retours d'Expérience.
+                    Retours d'expérience.
                 </x-font.text-sm>
             </div>
 
@@ -93,92 +93,133 @@
                 </div>
             </div>
 
-            <div class="relative grid grid-cols-[42px_1fr] gap-2" x-data="{ i: 0 }">
+            <div class="relative" x-data="{ i: 0 }">
+                {{-- Mobile/No-JS: Grid layout with all testimonials --}}
+                <div class="lg:hidden grid gap-4">
+                    @foreach($testimonials as $index => $testimonial)
+                        <div class="p-4.5 flex flex-col content-between gap-20 bg-white rounded-2xl">
+                            <x-font.text-3xl>
+                                "{{ $testimonial->content }}"
+                            </x-font.text-3xl>
 
-                {{-- Number --}}
-                <div class="pt-2.5 pb-1.5 px-1.5 flex flex-col items-center" data-border-rounded="true">
-
-                    <x-font.text-md class="p-1 text-gray-medium" x-text="(i + 1).toString().padStart(2, '0')">01
-                    </x-font.text-md>
-
-                    {{-- Lines --}}
-                    <div class="flex flex-col gap-1.5 mt-auto">
-                        <button
-                            type="button"
-                            class="flex-center bg-white w-8 h-8 rounded-full"
-                            @click.prevent="i = i === 0
-                                ? {{ count($testimonials) - 1 }}
-                                : i - 1"
-                        >
-                            <x-svg.arrow-left/>
-                        </button>
-                        <button
-                            type="button"
-                            class="flex-center bg-white w-8 h-8 rounded-full"
-                            @click.prevent="i = i === {{ count($testimonials) - 1 }}
-                                ? 0
-                                : i + 1"
-                        >
-                            <x-svg.arrow-right/>
-                        </button>
-                    </div>
-                </div>
-
-                @foreach($testimonials as $index => $testimonial)
-                    {{-- Card --}}
-                    <div
-                        x-show="i === {{ $index }}"
-                        class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
-                    >
-                        <x-font.text-3xl>
-                            "{{ $testimonial->content }}"
-                        </x-font.text-3xl>
-
-                        <div class="relative top-1.5 -left-1 flex md:items-center gap-3 mt-auto">
-                            <noindex>
-                                <img
-                                    src="{{
-                                        $testimonial->image
-                                            ? Storage::disk('s3')->url($testimonial->image)
-                                            : asset('img/placeholder.png')
-                                    }}"
-                                    alt="{{ $testimonial->name }}"
-                                    class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover"
-                                >
-                            </noindex>
-                            <div class="flex flex-col gap-0.5">
-                                <x-font.text-xl>
-                                    {{ $testimonial->name }}
-                                </x-font.text-xl>
-                                <x-font.text class="text-gray-medium">
-                                    {{ $testimonial->role }}
-                                    @if($testimonial->company)
-                                        , {{ $testimonial->company }}
-                                    @endif
-                                </x-font.text>
+                            <div class="relative top-1.5 -left-1 flex md:items-center gap-3 mt-auto">
+                                <noindex>
+                                    <img
+                                        src="{{
+                                            $testimonial->image
+                                                ? Storage::disk('s3')->url($testimonial->image)
+                                                : asset('img/placeholder.png')
+                                        }}"
+                                        alt="{{ $testimonial->name }}"
+                                        class="w-10 h-10 rounded-xl object-cover"
+                                    >
+                                </noindex>
+                                <div class="flex flex-col gap-0.5">
+                                    <x-font.text-xl>
+                                        {{ $testimonial->name }}
+                                    </x-font.text-xl>
+                                    <x-font.text class="text-gray-medium">
+                                        {{ $testimonial->role }}
+                                        @if($testimonial->company)
+                                            , {{ $testimonial->company }}
+                                        @endif
+                                    </x-font.text>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
 
-                {{-- Typo card desktop --}}
-                <div class="hidden lg:block absolute bottom-4 right-5">
-                    <x-font.title-xl class="text-whitesmoke" aria-hidden="true">
-                        <span class="sr-only">Guillemet typographique</span>
-                        <svg class="w-auto h-28" display="block" role="presentation" viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
-                                fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5" stroke="#f2f2f2"
-                                transform="translate(2 3)" width="8px"></path>
-                            <path
-                                d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
-                                fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5" stroke="#f2f2f2"
-                                transform="translate(14 3)" width="8px"></path>
-                        </svg>
-                    </x-font.title-xl>
+                {{-- Desktop: Slider layout with navigation --}}
+                <div class="hidden lg:grid grid-cols-[42px_1fr] gap-2">
+
+                    {{-- Number --}}
+                    <div class="pt-2.5 pb-1.5 px-1.5 flex flex-col items-center" data-border-rounded="true">
+
+                        <x-font.text-md class="p-1 text-gray-medium" x-text="(i + 1).toString().padStart(2, '0')">01
+                        </x-font.text-md>
+
+                        {{-- Lines --}}
+                        <div class="flex flex-col gap-1.5 mt-auto">
+                            <button
+                                type="button"
+                                class="flex-center bg-white w-8 h-8 rounded-full"
+                                @click.prevent="i = i === 0
+                                    ? {{ count($testimonials) - 1 }}
+                                    : i - 1"
+                            >
+                                <x-svg.arrow-left/>
+                            </button>
+                            <button
+                                type="button"
+                                class="flex-center bg-white w-8 h-8 rounded-full"
+                                @click.prevent="i = i === {{ count($testimonials) - 1 }}
+                                    ? 0
+                                    : i + 1"
+                            >
+                                <x-svg.arrow-right/>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        @foreach($testimonials as $index => $testimonial)
+                            {{-- Card --}}
+                            <div
+                                x-show="i === {{ $index }}"
+                                class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
+                            >
+                                <x-font.text-3xl>
+                                    "{{ $testimonial->content }}"
+                                </x-font.text-3xl>
+
+                                <div class="relative top-1.5 -left-1 flex md:items-center gap-3 mt-auto">
+                                    <noindex>
+                                        <img
+                                            src="{{
+                                                $testimonial->image
+                                                    ? Storage::disk('s3')->url($testimonial->image)
+                                                    : asset('img/placeholder.png')
+                                            }}"
+                                            alt="{{ $testimonial->name }}"
+                                            class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover"
+                                        >
+                                    </noindex>
+                                    <div class="flex flex-col gap-0.5">
+                                        <x-font.text-xl>
+                                            {{ $testimonial->name }}
+                                        </x-font.text-xl>
+                                        <x-font.text class="text-gray-medium">
+                                            {{ $testimonial->role }}
+                                            @if($testimonial->company)
+                                                , {{ $testimonial->company }}
+                                            @endif
+                                        </x-font.text>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                        {{-- Typo card desktop --}}
+                        <div class="absolute bottom-4 right-5">
+                            <x-font.title-xl class="text-whitesmoke" aria-hidden="true">
+                                <span class="sr-only">Guillemet typographique</span>
+                                <svg class="w-auto h-28" display="block" role="presentation" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
+                                        fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.5" stroke="#f2f2f2"
+                                        transform="translate(2 3)" width="8px"></path>
+                                    <path
+                                        d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
+                                        fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.5" stroke="#f2f2f2"
+                                        transform="translate(14 3)" width="8px"></path>
+                                </svg>
+                            </x-font.title-xl>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

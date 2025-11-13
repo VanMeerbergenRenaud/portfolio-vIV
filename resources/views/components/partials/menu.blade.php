@@ -11,7 +11,7 @@
             '-translate-y-[calc(100%+1rem)] pointer-events-none': !menuOpen && !headerVisible,
             'translate-y-0': !menuOpen && headerVisible
         }"
-        class="fixed z-25 bg-white transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col"
+        class="fixed z-25 top-0 left-0 flex flex-col bg-white transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
         x-trap.inert.noscroll="menuOpen"
         aria-live="polite"
     >
