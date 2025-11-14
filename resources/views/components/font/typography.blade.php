@@ -2,34 +2,34 @@
     'variant' => 'text',
     'color' => null,
     'level' => null,
-    'class' => ''
+    'isTitle' => false,
 ])
 
 @php
-    $variants = [
-        'title-2xl' => ['h', 'dark-primary', 'title-2xl'],
-        'title-xl' => ['h', 'dark-primary', 'title-xl'],
-        'title-lg' => ['h', 'dark-primary', 'title-lg'],
-        'title' => ['h', 'dark-primary', 'title'],
-        'text-3xl' => ['p', 'dark-primary', 'text-3xl'],
-        'text-2xl' => ['p', 'dark-primary', 'text-2xl'],
-        'text-xl' => ['p', 'dark-primary', 'text-xl'],
-        'text-lg' => ['p', 'dark-primary', 'text-lg'],
-        'text' => ['p', 'dark-primary', 'text'],
-        'text-md' => ['p', 'dark-primary', 'text-md'],
-        'text-sm' => ['p', 'dark-primary', 'text-sm'],
-        'text-xs' => ['p', 'dark-primary', 'text-xs'],
+    static $config = [
+        'title-2xl' => ['dark-primary', 'title-2xl', '3'],
+        'title-xl'  => ['dark-primary', 'title-xl', '3'],
+        'title-lg'  => ['dark-primary', 'title-lg', '3'],
+        'title'     => ['dark-primary', 'title', '3'],
+        'text-3xl'  => ['dark-primary', 'text-3xl', '3'],
+        'text-2xl'  => ['dark-primary', 'text-2xl', '3'],
+        'text-xl'   => ['dark-primary', 'text-xl', '3'],
+        'text-lg'   => ['dark-primary', 'text-lg', '3'],
+        'text'      => ['dark-primary', 'text', '3'],
+        'text-md'   => ['dark-primary', 'text-md', '3'],
+        'text-sm'   => ['dark-primary', 'text-sm', '3'],
+        'text-xs'   => ['dark-primary', 'text-xs', '3'],
     ];
 
-    [$baseTag, $defaultColor, $cssClass] = $variants[$variant] ?? ['p', 'dark-primary', 'text'];
+    [$defaultColor, $cssClass, $defaultLevel] = $config[$variant] ?? ['dark-primary', 'text', '3'];
 
-    $tag = $baseTag === 'h' ? 'h' . ($level ?? '2') : $baseTag;
+    $tag = $isTitle
+        ? 'h' . ($level ?? $defaultLevel)
+        : 'p';
 
-    $textColor = $color ?? $defaultColor;
+    $finalColor = $color ?? $defaultColor;
 @endphp
 
-<{{ $tag }}
-    {{ $attributes->merge(['class' => 'typo-' . $cssClass . ' text-[var(--color-' . $textColor . ')] ' . $class]) }}
->
+<{{ $tag }} {{ $attributes->merge(['class' => "typo-{$cssClass} text-{$finalColor}"]) }}>
     {{ $slot }}
 </{{ $tag }}>

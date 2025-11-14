@@ -1,6 +1,7 @@
 @props([
     'color' => 'dark-primary',
-    'level' => '3'
+    'level' => '3',
+    'isTitle' => false
 ])
 
 {{-- Font-size: 40px (mobile) | 48px (tablet) | 72px (desktop) --}}
@@ -8,6 +9,7 @@
     variant="title-lg"
     :color="$color"
     :level="$level"
+    :isTitle="$isTitle"
     {{ $attributes }}
 >
     {{ $slot }}
