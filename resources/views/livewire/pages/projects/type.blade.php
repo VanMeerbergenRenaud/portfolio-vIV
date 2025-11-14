@@ -65,7 +65,7 @@
                     >
                         {{-- Infos --}}
                         <div class="flex items-center justify-between gap-4 px-3 py-2">
-                            <x-font.text-xl class="font-semibold">
+                            <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                                 {{ $project->name }}.
                             </x-font.text-xl>
                             <x-font.text class="text-gray-medium">
