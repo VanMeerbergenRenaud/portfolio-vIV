@@ -88,10 +88,11 @@
             id="fullscreen-menu"
             class="flex-grow flex flex-col justify-center -mt-14"
             :class="{ 'opacity-100 delay-200': menuOpen, 'opacity-0 -translate-y-4 pointer-events-none': !menuOpen }"
+            :inert="!menuOpen"
         >
         <!-- Nav links -->
         <nav class="flex-grow flex-center" aria-label="Menu principal">
-            <h2 role="heading" aria-level="2" class="sr-only">
+            <h2 class="sr-only">
                 Menu principal
             </h2>
 
@@ -150,6 +151,7 @@
                 {{-- Phone --}}
                 <x-link.tertiary
                     link="tel:+32470596065"
+                    title="Appeler le +32 470 59 60 65"
                     fontStyle="text-md font-medium"
                     :navigate="false"
                 >
@@ -171,28 +173,28 @@
                 <a href="https://www.instagram.com/web_developer.renaud/"
                    target="_blank"
                    rel="noopener noreferrer"
-                   title="Vers mon profil Instagram"
-                   class="group p-2" aria-label="Lien vers Instagram"
+                   class="group p-2"
+                   aria-label="Suivre Renaud Van Meerbergen sur Instagram"
                 >
-                    <x-svg.logo.instagram class="text-dark-primary group-hover:text-red transition-colors"/>
+                    <x-svg.logo.instagram class="text-dark-primary group-hover:text-red transition-colors" aria-hidden="true"/>
                 </a>
                 <!-- Lien vers Github -->
                 <a href="https://github.com/VanMeerbergenRenaud"
                    target="_blank"
                    rel="noopener noreferrer"
-                   title="Vers mon profil Github"
-                   class="group p-2" aria-label="Lien vers Github"
+                   class="group p-2"
+                   aria-label="Voir les projets de Renaud Van Meerbergen sur GitHub"
                 >
-                    <x-svg.logo.github class="text-dark-primary group-hover:text-red transition-colors"/>
+                    <x-svg.logo.github class="text-dark-primary group-hover:text-red transition-colors" aria-hidden="true"/>
                 </a>
                 <!-- Lien vers LinkedIn -->
                 <a href="https://www.linkedin.com/in/renaud-van-meerbergen/"
                    target="_blank"
                    rel="noopener noreferrer"
-                   title="Vers mon profil LinkedIn"
-                   class="group p-2" aria-label="Lien vers LinkedIn"
+                   class="group p-2"
+                   aria-label="Voir le profil de Renaud Van Meerbergen sur LinkedIn"
                 >
-                    <x-svg.logo.linkedin class="text-dark-primary group-hover:text-red transition-colors"/>
+                    <x-svg.logo.linkedin class="text-dark-primary group-hover:text-red transition-colors" aria-hidden="true"/>
                 </a>
             </div>
         </div>

@@ -4,18 +4,18 @@
     aria-labelledby="footer-heading"
     class="relative px-6 pt-24 pb-12 md:px-10 lg:p-12 bg-dark-primary text-whitesmoke"
 >
-    <h2 id="footer-heading" role="heading" aria-level="2" class="sr-only">Menu de bas de page</h2>
+    <h2 id="footer-heading" class="sr-only">Menu de bas de page</h2>
 
     {{-- Content --}}
     <div class="relative px-6 pb-12 md:px-8 md:pb-16">
 
         {{-- 1. Section supérieure : Logo et lien retour en haut --}}
         <div class="flex justify-between items-start mb-12">
-            <x-svg.logo.brand class="w-24 h-24 md:w-32 md:h-32" />
+            <x-svg.logo.brand class="w-24 h-24 md:w-32 md:h-32" aria-hidden="true" />
 
             <a
                 href="#page-top"
-                title="Retour en haut de la page"
+                aria-label="Retour en haut de la page"
                 class="p-1 bg-transparent hover:bg-whitesmoke rounded-full group"
             >
                 <x-svg.back-top class="w-8 h-10 text-white group-hover:text-dark-primary" aria-hidden="true" />
@@ -27,7 +27,7 @@
 
             {{-- Colonne 1: Adresse --}}
             <address class="space-y-4 not-italic">
-                <h3 role="heading" aria-level="3" class="font-bold tracking-widest-plus text-gray-medium">Adresse</h3>
+                <h3 class="font-bold tracking-widest-plus text-gray-medium">Adresse</h3>
                 <p class="leading-relaxed text-sm text-whitesmoke">
                     Rue Petit Bioleux, 18<br>
                     4122, Plainevaux<br>
@@ -37,7 +37,7 @@
 
             {{-- Colonne 2 & 3: Navigation rapide --}}
             <div class="md:col-span-2">
-                <h3 role="heading" aria-level="3" class="font-bold tracking-widest-plus mb-4 text-gray-medium">Navigation rapide</h3>
+                <h3 class="font-bold tracking-widest-plus mb-4 text-gray-medium">Navigation rapide</h3>
                 <ul class="grid grid-cols-2 lg:grid-rows-4 lg:grid-flow-col lg:pr-20 justify-items-start gap-2">
                     {{-- Colonne 1 --}}
                     <li><x-link.tertiary link="{{ route('home') }}#hero" :navigate="false" color="white" fontStyle="text-sm">Introduction</x-link.tertiary></li>
@@ -106,7 +106,7 @@
 
         <!-- Social Links -->
         <nav aria-label="Réseaux sociaux">
-            <h3 role="heading" aria-level="3" class="sr-only">
+            <h3 class="sr-only">
                 Réseaux sociaux
             </h3>
             <ul class="flex items-center md:justify-end gap-x-3 gap-y-2 text-xs uppercase tracking-wider text-gray-medium">

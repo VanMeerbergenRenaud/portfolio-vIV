@@ -40,22 +40,22 @@
                         <x-divider-dash class="hidden lg:block"/>
 
                         {{-- Top --}}
-                        <ul class="flex flex-col gap-0.5 lg:pt-6 md:order-2 lg:order-none">
+                        <ul class="flex flex-col gap-0.5 lg:pt-6 md:order-2 lg:order-none" aria-label="Technologies principales">
                             <li class="flex justify-between items-center">
                                 <x-font.text-md>{{ $hero->tech1 }}</x-font.text-md>
-                                <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative"></span>
+                                <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative" aria-hidden="true"></span>
                             </li>
                             <li class="flex justify-between items-center">
                                 <x-font.text-md>{{ $hero->tech2 }}</x-font.text-md>
-                                <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative"></span>
+                                <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative" aria-hidden="true"></span>
                             </li>
                             <li class="flex justify-between items-center">
                                 <x-font.text-md>{{ $hero->tech3 }}</x-font.text-md>
-                                <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative"></span>
+                                <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative" aria-hidden="true"></span>
                             </li>
                             <li class="flex justify-between items-center">
                                 <x-font.text-md>{{ $hero->tech4 }}</x-font.text-md>
-                                <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative"></span>
+                                <span class="bg-gray-light h-[1px] overflow-clip rounded-[3px] flex-none w-2 relative" aria-hidden="true"></span>
                             </li>
                         </ul>
 
@@ -92,9 +92,9 @@
                             <div class="flex justify-between gap-2">
                                 <x-font.text-md class="flex items-center gap-2">
                                     @if($hero->is_available)
-                                        <span class="bg-green-400 rounded-full w-2 h-2 flex-shrink-0"></span>
+                                        <span class="bg-green-400 rounded-full w-2 h-2 flex-shrink-0" aria-hidden="true"></span>
                                     @else
-                                        <span class="bg-gray-400 rounded-full w-2 h-2 flex-shrink-0"></span>
+                                        <span class="bg-gray-400 rounded-full w-2 h-2 flex-shrink-0" aria-hidden="true"></span>
                                     @endif
                                     {{ $hero->availability_status }}
                                 </x-font.text-md>
@@ -127,4 +127,3 @@
         </section>
     @endif
 </div>
-

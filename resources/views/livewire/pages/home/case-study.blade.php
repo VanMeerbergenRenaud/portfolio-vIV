@@ -1,7 +1,7 @@
 <div>
     @if($caseStudy)
         <section id="case_study" class="px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-15 bg-dark-primary text-white">
-            <h2 role="heading" aria-level="2" class="sr-only">
+            <h2 class="sr-only">
                 Cas d'étude
             </h2>
 
@@ -27,7 +27,7 @@
 
                 <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                     {{-- Title --}}
-                    <x-font.title-lg class="max-w-[550px]">
+                    <x-font.title-lg level="3" class="max-w-[550px]">
                         {{ $caseStudy->title }}
                     </x-font.title-lg>
 

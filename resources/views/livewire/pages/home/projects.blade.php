@@ -1,7 +1,7 @@
 <div>
     <section id="projects" class="px-4 md:px-8 lg:px-10 pt-20 pb-30 lg:pt-30 lg:pb-40 flex flex-col gap-15">
-        <h2 role="heading" aria-level="2" class="sr-only">
-            Projects
+        <h2 class="sr-only">
+            Projets
         </h2>
 
         {{-- Header section --}}
@@ -26,7 +26,7 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-lg class="max-w-[625px]">
+                <x-font.title-lg level="3" class="max-w-[625px]">
                     Un code qui prend vie et impacte.
                 </x-font.title-lg>
 

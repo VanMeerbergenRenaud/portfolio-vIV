@@ -19,8 +19,8 @@
                 {{-- Infos --}}
                 <div class="flex flex-col justify-between p-2 lg:p-6 lg:rounded-2xl lg:bg-white lg:border lg:border-transparent lg:border-dashed lg:group-hover:border-red {{ $orderClass }}">
                     <div class="flex flex-col gap-2">
-                        <div class="flex justify-between gap-1">
-                            <h4 role="heading" aria-level="4">{{ $project->name }}</h4>
+                        <div class="flex justify-between gap-1 max-lg:px-1">
+                            <x-font.text-lg role="heading" aria-level="4">{{ $project->name }}</x-font.text-lg>
                             <span class="block lg:hidden text-sm text-gray-medium">{{ $project->year }}</span>
                         </div>
 

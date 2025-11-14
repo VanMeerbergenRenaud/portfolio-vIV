@@ -1,6 +1,6 @@
 <div>
     <section id="faq" class="px-4 md:px-8 lg:px-10 pt-30 pb-20 lg:pt-40 lg:pb-30 flex flex-col gap-15 lg:gap-25 lg:grid lg:grid-cols-[30%_1fr]">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Faq
         </h2>
 
@@ -21,7 +21,7 @@
             </div>
 
             {{-- Title --}}
-            <x-font.title class="mt-3 lg:mt-4 max-w-[525px]">
+            <x-font.title level="3" class="mt-3 lg:mt-4 max-w-[525px]">
                 Quelques Questions…
             </x-font.title>
 

@@ -1,6 +1,6 @@
 <div>
     <section id="articles" class="px-4 md:px-8 lg:px-10 pt-20 pb-30 lg:pt-30 lg:pb-40 flex flex-col gap-15">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Articles
         </h2>
 
@@ -25,7 +25,7 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-lg class="max-w-[550px]">
+                <x-font.title-lg level="3" class="max-w-[550px]">
                     Mes Réflexions.
                 </x-font.title-lg>
 
@@ -68,7 +68,7 @@
                         </div>
 
                         {{-- Image --}}
-                        <div class="relative rounded-2xl overflow-hidden max-h-[450px] -order-1 lg:order-none">
+                        <div class="relative rounded-2xl overflow-hidden min-h-[300px] max-h-[450px] -order-1 lg:order-none">
                             @if($featuredBlog->image)
                                 <img src="{{ Storage::url($featuredBlog->image) }}"
                                      alt="{{ $featuredBlog->title }}"
@@ -103,7 +103,7 @@
                        wire:navigate
                     >
                         {{-- Image --}}
-                        <div class="relative rounded-2xl overflow-hidden max-h-[380px]">
+                        <div class="relative rounded-2xl overflow-hidden min-h-[200px] max-h-[380px]">
                             @if($article->image)
                                 <img src="{{ Storage::url($article->image) }}"
                                      alt="{{ $article->title }}"

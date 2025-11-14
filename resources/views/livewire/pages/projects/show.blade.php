@@ -212,7 +212,7 @@
                     </div>
 
                     <div class="flex flex-col gap-6">
-                        <x-font.title class="pr-4 max-w-220">
+                        <x-font.title level="3" class="pr-4 max-w-220">
                             Utilisation de technologies venant du fin fond du nectar technologique.
                         </x-font.title>
 
@@ -302,13 +302,13 @@
 
     {{-- Other projects --}}
     <section class="px-4 md:px-8 lg:px-10 py-15 flex flex-col gap-12 lg:gap-15">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Mes autres projets
         </h2>
 
         <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
             {{-- Title --}}
-            <x-font.title-lg class="max-w-[625px]">
+            <x-font.title-lg level="3" class="max-w-[625px]">
                 Explorez d'autres de mes réalisations.
             </x-font.title-lg>
 

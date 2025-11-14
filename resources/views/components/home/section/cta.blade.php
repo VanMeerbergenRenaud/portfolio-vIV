@@ -1,5 +1,5 @@
 <section id="cta" class="px-4 md:px-8 lg:px-10 py-25 flex flex-col gap-15 bg-white">
-    <h2 role="heading" aria-level="2" class="sr-only">
+    <h2 class="sr-only">
         Contact
     </h2>
 
@@ -32,9 +32,17 @@
 
                 <x-font.text-lg class="text-gray-medium max-w-[450px]">
                     Retrouvez-moi sur
-                    <a href="https://github.com/VanMeerbergenRenaud" class="text-dark-primary hover:underline" target="_blank" title="Voir mon profil Github">GitHub</a>
+                    <a href="https://github.com/VanMeerbergenRenaud"
+                       class="text-dark-primary hover:underline"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Consulter mon profil GitHub (ouvre dans un nouvel onglet)">GitHub</a>
                     ou
-                    <a href="https://www.linkedin.com/in/renaud-van-meerbergen/" class="text-dark-primary hover:underline" target="_blank" title="Voir mon profil LinkedIn">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/renaud-van-meerbergen/"
+                       class="text-dark-primary hover:underline"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Consulter mon profil LinkedIn (ouvre dans un nouvel onglet)">LinkedIn</a>
                     pour suivre mon évolution et découvrir mes derniers projets.
                 </x-font.text-lg>
             </div>

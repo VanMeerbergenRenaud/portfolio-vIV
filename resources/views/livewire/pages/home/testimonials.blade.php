@@ -1,6 +1,6 @@
 <div>
     <section id="testimonials" class="px-4 md:px-8 lg:px-10 pt-20 pb-30 lg:pt-30 lg:pb-40 flex flex-col gap-15">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Témoignages
         </h2>
 
@@ -26,7 +26,7 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-lg class="max-w-[650px]">
+                <x-font.title-lg level="3" class="max-w-[650px]">
                     Ce qu'ils disent de mon code.
                 </x-font.title-lg>
 
@@ -202,7 +202,7 @@
 
                         {{-- Typo card desktop --}}
                         <div class="absolute bottom-4 right-5">
-                            <x-font.title-xl class="text-whitesmoke" aria-hidden="true">
+                            <x-font.title-xl level="4" class="text-whitesmoke" aria-hidden="true">
                                 <span class="sr-only">Guillemet typographique</span>
                                 <svg class="w-auto h-28" display="block" role="presentation" viewBox="0 0 24 24"
                                      xmlns="http://www.w3.org/2000/svg">

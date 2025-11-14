@@ -1,6 +1,6 @@
 <div>
     <section id="processes" class="px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-15 md:gap-20 lg:gap-25 lg:grid lg:grid-cols-[40%_1fr]">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Processus
         </h2>
 
@@ -21,7 +21,7 @@
 
             {{-- Title --}}
             <x-font.title class="mt-3 lg:mt-4 max-w-[525px]">
-                De la première ligne en local à la mise en prod, un process clair.
+                De la première ligne en local à la mise en prod, un processus clair.
             </x-font.title>
 
             {{-- Text --}}
@@ -74,7 +74,7 @@
 
                     {{-- Number card desktop --}}
                     <div class="hidden lg:block absolute bottom-4 right-5" aria-hidden="true">
-                        <x-font.title-xl class="text-whitesmoke">
+                        <x-font.title-xl level="4" class="text-whitesmoke">
                             {{ $orderNumber }}
                         </x-font.title-xl>
                     </div>

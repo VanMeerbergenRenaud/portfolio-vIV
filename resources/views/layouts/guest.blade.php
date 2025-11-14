@@ -4,6 +4,14 @@
         @include('partials.head')
     </head>
     <body>
+        <!-- Skip links pour navigation rapide -->
+        <a href="#main-content" class="skip-link">
+            1. Aller au contenu principal
+        </a>
+        <a href="#footer" class="skip-link">
+            2. Aller au pied de page
+        </a>
+
         @include('partials.no-js')
 
         @if(Route::is('home') || request()->is('/'))
@@ -16,7 +24,7 @@
 
         <x-partials.header />
 
-        <main>
+        <main id="main-content" role="main">
             <!-- Navbar -->
             <x-partials.menu />
 

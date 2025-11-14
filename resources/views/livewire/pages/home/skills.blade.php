@@ -5,7 +5,7 @@
         x-init="init()"
         class="px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-20 bg-white"
     >
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Compétences
         </h2>
 
@@ -29,7 +29,7 @@
             </div>
 
             {{-- Big title --}}
-            <x-font.title-xl>
+            <x-font.title-xl level="3">
                 J'aborde chaque projet avec rigueur, passion et une attention
                 <span class="text-gray-light">
                 constante à la qualité du code et à l'expérience utilisateur.

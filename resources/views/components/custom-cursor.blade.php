@@ -3,6 +3,7 @@
     x-data="refinedCursor()"
     x-init="init()"
     class="hidden lg:block fixed inset-0 pointer-events-none z-[9999] mix-blend-difference"
+    aria-hidden="true"
 >
     <div
         class="fixed top-0 left-0 bg-white rounded-full pointer-events-none transition-[width,height] duration-300 ease-out"
@@ -11,6 +12,7 @@
             'w-10 h-10 -mt-4 -ml-4': hovering,
             'w-2 h-2 -mt-1 -ml-1': !hovering
         }"
+        aria-hidden="true"
     >
     </div>
 </div>

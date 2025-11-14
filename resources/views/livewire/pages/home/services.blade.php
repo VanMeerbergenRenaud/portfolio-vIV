@@ -1,6 +1,6 @@
 <div>
     <section id="services" class="bg-dark-primary text-white px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-15 lg:gap-20">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Services
         </h2>
 

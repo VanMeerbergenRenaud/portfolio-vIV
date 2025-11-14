@@ -1,6 +1,6 @@
 <div>
     <section id="about" class="px-4 md:px-8 lg:px-10 pt-30 pb-20 md:pt-40 md:pb-25 lg:pt-50 lg:pb-30">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             À propos de moi
         </h2>
 
@@ -23,7 +23,7 @@
                     <x-font.text-sm class="text-gray-medium">2025</x-font.text-sm>
                 </div>
 
-                <x-font.title class="mt-8">
+                <x-font.title level="3" class="mt-8">
                     Artisan du code Laravel, je forge des applications web robustes, scalables et pensées pour tous les utilisateurs.
                 </x-font.title>
 

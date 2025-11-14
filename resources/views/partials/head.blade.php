@@ -1,12 +1,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="theme-color" content="#121212">
 
 <title>{{ $title ?? 'Renaud Van Meerbergen' }}</title>
 <meta name="title" content="Renaud Vmb">
 <meta name="author" content="Renaud Van Meerbergen">
 <meta name="keywords" content="développeur fullstack, développeur Laravel, développement d'applications, développeur frontend, développeur backend, développeur Liège, Renaud développeur">
 <meta name="description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
+<meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">

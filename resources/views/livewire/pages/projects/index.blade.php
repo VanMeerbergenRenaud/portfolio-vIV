@@ -1,6 +1,6 @@
 <div>
     <section id="projects" class="px-4 md:px-8 lg:px-10 pt-30 pb-25 lg:pt-52 lg:pb-40 flex flex-col gap-8 md:gap-12 lg:gap-20">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Mes projets
         </h2>
 
@@ -26,17 +26,18 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-2xl class="max-w-[625px]">
+                <x-font.title-2xl level="2" class="max-w-[625px]">
                     Projets
                 </x-font.title-2xl>
 
                 {{-- List of different project types --}}
-                <ul class="flex flex-wrap gap-2">
+                <ul class="flex flex-wrap gap-2" role="navigation" aria-label="Filtrer les projets par type">
                    <li>
                         <a href="{{ route('projects') }}"
-                           title="Voir tous les projets"
+                           aria-label="Afficher tous les projets"
                            class="inline-block px-4 py-2 rounded-lg transition-colors {{ request()->routeIs('projects') ? 'border border-red text-red' : 'border border-gray-200 hover:border-red hover:text-red' }}"
                            wire:navigate
+                           {{ request()->routeIs('projects') ? 'aria-current="page"' : '' }}
                         >
                             <x-font.text-md>Tous</x-font.text-md>
                         </a>
@@ -44,7 +45,7 @@
                     @foreach($types as $type)
                         <li>
                             <a href="{{ route('projects.type', $type) }}"
-                               title="Voir les projets de type {{ $type }}"
+                               aria-label="Afficher les projets de type {{ $type }}"
                                class="inline-block px-4 py-2 rounded-lg border border-gray-200 hover:border-red hover:text-red transition-colors"
                                wire:navigate
                             >

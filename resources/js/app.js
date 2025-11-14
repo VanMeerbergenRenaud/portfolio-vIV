@@ -2,6 +2,9 @@
 
 /* Reveal content on scroll */
 document.addEventListener('livewire:navigated', () => {
+    // Vérifier les préférences de mouvement réduit
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -10,7 +13,7 @@ document.addEventListener('livewire:navigated', () => {
             }
         });
     }, {
-        threshold: 0.1
+        threshold: prefersReducedMotion ? 0 : 0.1
     });
 
     // Exclure les images avec gallery-zoom-effect du reveal
@@ -23,7 +26,7 @@ document.addEventListener('livewire:navigated', () => {
     /* Zoom out effect on scroll for gallery images - Bidirectionnel */
     const galleryImages = document.querySelectorAll('.gallery-zoom-effect');
 
-    if (galleryImages.length > 0) {
+    if (galleryImages.length > 0 && !prefersReducedMotion) {
         const updateZoomEffect = () => {
             galleryImages.forEach(img => {
                 const rect = img.getBoundingClientRect();
