@@ -26,7 +26,7 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-lg level="3" class="max-w-[625px]">
+                <x-font.title-lg class="max-w-[625px]">
                     Un code qui prend vie et impacte.
                 </x-font.title-lg>
 

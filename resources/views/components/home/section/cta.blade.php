@@ -18,7 +18,7 @@
                     Contact
                 </x-font.text>
             </div>
-            <x-font.text-sm class="pl-7 text-gray-medium">
+            <x-font.text-sm :isTitle="true" level="3" class="pl-7 text-gray-medium">
                 Restons connectés
             </x-font.text-sm>
         </div>

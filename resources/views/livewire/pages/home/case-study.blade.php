@@ -27,7 +27,7 @@
 
                 <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                     {{-- Title --}}
-                    <x-font.title-lg level="3" class="max-w-[550px]">
+                    <x-font.title-lg :isTitle="true" level="3" class="max-w-[550px]">
                         {{ $caseStudy->title }}
                     </x-font.title-lg>
 

@@ -4,31 +4,27 @@
         @include('partials.head')
     </head>
     <body>
-        <!-- Skip links pour navigation rapide -->
-        <a href="#main-content" class="skip-link">
-            1. Aller au contenu principal
-        </a>
-        <a href="#footer" class="skip-link">
-            2. Aller au pied de page
-        </a>
-
         @include('partials.no-js')
 
         @if(Route::is('home') || request()->is('/'))
             <x-pre-loader/>
         @endif
 
-        {{--<x-custom-cursor />--}}
+        <!-- <x-custom-cursor /> -->
 
         <x-custom-bg />
 
         <x-partials.header />
 
-        <main id="main-content" role="main">
+        <!-- Skip links for a faster navigation -->
+        <a href="#main" class="skip-link" aria-label="1. Voir le contenu principal">Aller au contenu principal</a>
+        <a href="#footer" class="skip-link" aria-label="2. Voir le pied de page">Aller au pied de page</a>
+
+        <main id="main" role="main">
             <!-- Navbar -->
             <x-partials.menu />
 
-            {{-- Main content --}}
+            <!-- Main content -->
             {{ $slot }}
         </main>
 

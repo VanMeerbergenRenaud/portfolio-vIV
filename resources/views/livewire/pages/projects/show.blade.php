@@ -4,7 +4,7 @@
         {{-- Infos --}}
         <div class="flex flex-col gap-7">
             <div class="flex flex-col-reverse md:flex-col md:grid md:grid-cols-[1fr_30%] md:items-end gap-4 md:gap-6">
-                <x-font.title-2xl level="2">
+                <x-font.title-2xl :isTitle="true" level="2">
                     {{ $project->name }}
                 </x-font.title-2xl>
 
@@ -108,7 +108,7 @@
                 <div class="flex items-center gap-1.5">
                     <span class="text-red" aria-hidden="true">|</span>
 
-                    <x-font.text>
+                    <x-font.text :isTitle="true" level="3">
                         Contexte de réalisation
                     </x-font.text>
                 </div>
@@ -157,7 +157,7 @@
                 <div class="flex items-center gap-1.5">
                     <span class="text-red" aria-hidden="true">|</span>
 
-                    <x-font.text>
+                    <x-font.text :isTitle="true" level="3">
                         Résultats obtenus
                     </x-font.text>
                 </div>
@@ -206,13 +206,13 @@
                     <div class="flex items-center gap-1.5">
                         <span class="text-red" aria-hidden="true">|</span>
 
-                        <x-font.text>
+                        <x-font.text :isTitle="true" level="3">
                             Détails techniques
                         </x-font.text>
                     </div>
 
                     <div class="flex flex-col gap-6">
-                        <x-font.title level="3" class="pr-4 max-w-220">
+                        <x-font.title class="pr-4 max-w-220">
                             Utilisation de technologies venant du fin fond du nectar technologique.
                         </x-font.title>
 
@@ -308,7 +308,7 @@
 
         <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
             {{-- Title --}}
-            <x-font.title-lg level="3" class="max-w-[625px]">
+            <x-font.title-lg class="max-w-[625px]">
                 Explorez d'autres de mes réalisations.
             </x-font.title-lg>
 

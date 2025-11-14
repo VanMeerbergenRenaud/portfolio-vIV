@@ -75,7 +75,7 @@
                                     loading="lazy"
                                 >
                             @else
-                                <x-font.text-xl class="font-semibold text-gray-medium">
+                                <x-font.text-xl :isTitle="true" level="3" class="font-semibold text-gray-medium">
                                     {{ $tool->name }}
                                 </x-font.text-xl>
                             @endif

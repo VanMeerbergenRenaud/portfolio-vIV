@@ -29,7 +29,7 @@
             </div>
 
             {{-- Big title --}}
-            <x-font.title-xl level="3">
+            <x-font.title-xl>
                 J'aborde chaque projet avec rigueur, passion et une attention
                 <span class="text-gray-light">
                 constante à la qualité du code et à l'expérience utilisateur.
@@ -54,7 +54,7 @@
 
                         <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
 
-                        <x-font.text-xl class="font-semibold">
+                        <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[0]->name }}
                         </x-font.text-xl>
                     </div>
@@ -92,7 +92,7 @@
 
                         <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
 
-                        <x-font.text-xl class="font-semibold">
+                        <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[1]->name }}
                         </x-font.text-xl>
                     </div>
@@ -139,7 +139,7 @@
 
                         <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
 
-                        <x-font.text-xl class="font-semibold">
+                        <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[2]->name }}
                         </x-font.text-xl>
                     </div>
@@ -177,7 +177,7 @@
 
                         <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
 
-                        <x-font.text-xl class="font-semibold">
+                        <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[3]->name }}
                         </x-font.text-xl>
                     </div>
@@ -207,7 +207,7 @@
 
                         <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
 
-                        <x-font.text-xl class="font-semibold">
+                        <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[4]->name }}
                         </x-font.text-xl>
                     </div>
@@ -245,7 +245,7 @@
 
                         <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
 
-                        <x-font.text-xl class="font-semibold">
+                        <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[5]->name }}
                         </x-font.text-xl>
                     </div>

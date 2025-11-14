@@ -63,7 +63,7 @@
 
                     {{-- Card --}}
                     <div class="p-6 lg:pr-35 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl">
-                        <x-font.text-2xl>
+                        <x-font.text-2xl :isTitle="true" level="3">
                             {{ $process->title }}
                         </x-font.text-2xl>
 
@@ -74,7 +74,7 @@
 
                     {{-- Number card desktop --}}
                     <div class="hidden lg:block absolute bottom-4 right-5" aria-hidden="true">
-                        <x-font.title-xl level="4" class="text-whitesmoke">
+                        <x-font.title-xl class="text-whitesmoke">
                             {{ $orderNumber }}
                         </x-font.title-xl>
                     </div>

@@ -1,8 +1,5 @@
 <div>
     <section id="projects" class="px-4 md:px-8 lg:px-10 pt-30 pb-25 lg:pt-52 lg:pb-40 flex flex-col gap-8 md:gap-12 lg:gap-20">
-        <h2 class="sr-only">
-            Mes projets
-        </h2>
 
         {{-- Header section --}}
         <div class="flex flex-col gap-7">
@@ -26,7 +23,7 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-2xl level="2" class="max-w-[625px]">
+                <x-font.title-2xl :isTitle="true" level="2" class="max-w-[625px]">
                     Projets
                 </x-font.title-2xl>
 

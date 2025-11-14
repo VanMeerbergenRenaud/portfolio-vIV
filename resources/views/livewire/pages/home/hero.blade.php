@@ -5,7 +5,7 @@
 
                 {{-- Row first --}}
                 <div class="flex flex-col lg:grid gap-6 lg:grid-cols-[1fr_315px]">
-                    <x-font.title-2xl level="2">
+                    <x-font.title-2xl :isTitle="true" level="2">
                         {!! $hero->title !!}
                     </x-font.title-2xl>
 

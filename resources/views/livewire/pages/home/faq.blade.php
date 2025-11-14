@@ -21,8 +21,8 @@
             </div>
 
             {{-- Title --}}
-            <x-font.title level="3" class="mt-3 lg:mt-4 max-w-[525px]">
-                Quelques Questions…
+            <x-font.title class="mt-3 lg:mt-4 max-w-[525px]">
+                Quelques questions…
             </x-font.title>
 
             {{-- Text --}}
@@ -56,7 +56,7 @@
 
                                 <span class="text-red" aria-hidden="true">|</span>
 
-                                <x-font.text-xl>
+                                <x-font.text-xl :isTitle="true" level="3">
                                     {{ $faq->question }}
                                 </x-font.text-xl>
                             </div>
