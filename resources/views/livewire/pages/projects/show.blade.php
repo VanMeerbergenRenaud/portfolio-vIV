@@ -144,7 +144,7 @@
                         @endif
                     </div>
                 @else
-                    <div class="p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                    <div class="w-1/2 p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
                         <x-font.text class="text-gray-medium text-center">
                             Aucun contexte renseigné pour ce projet
                         </x-font.text>
@@ -158,7 +158,7 @@
                     <span class="text-red" aria-hidden="true">|</span>
 
                     <x-font.text :isTitle="true" level="3">
-                        Résultats obtenus
+                        Au-delà de mes attentes
                     </x-font.text>
                 </div>
 
@@ -192,7 +192,7 @@
                         @endif
                     </div>
                 @else
-                    <div class="p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                    <div class="w-1/2 p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
                         <x-font.text class="text-gray-medium text-center">
                             Aucun résultat renseigné pour ce projet
                         </x-font.text>
