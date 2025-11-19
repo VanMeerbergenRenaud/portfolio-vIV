@@ -178,7 +178,7 @@
                                 class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
                                 role="region"
                                 aria-label="Témoignage {{ $index + 1 }} sur {{ count($testimonials) }}"
-                                :aria-hidden="i !== {{ $index }}"
+                                x-bind:aria-hidden="i !== {{ $index }}"
                             >
                                 <x-font.text-3xl>
                                     "{{ $testimonial->content }}"
