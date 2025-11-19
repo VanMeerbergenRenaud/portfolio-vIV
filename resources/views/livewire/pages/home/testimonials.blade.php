@@ -141,7 +141,7 @@
                             x-text="(i + 1).toString().padStart(2, '0')"
                             role="status"
                             aria-live="polite"
-                            :aria-label="`Témoignage ${i + 1} sur {{ count($testimonials) }}`"
+                            aria-label="Numéro du témoignage sélectionné"
                         >01
                         </x-font.text-md>
 
@@ -174,11 +174,10 @@
                         @foreach($testimonials as $index => $testimonial)
                             {{-- Card --}}
                             <div
+                                role="region"
                                 x-show="i === {{ $index }}"
                                 class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
-                                role="region"
                                 aria-label="Témoignage {{ $index + 1 }} sur {{ count($testimonials) }}"
-                                x-bind:aria-hidden="i !== {{ $index }}"
                             >
                                 <x-font.text-3xl>
                                     "{{ $testimonial->content }}"
