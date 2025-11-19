@@ -39,10 +39,6 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/favicons/android-chrome-512x512.png">
 <link rel="manifest" href="/favicons/site.webmanifest">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
 <!-- JavaScript required -->
 <noscript>
     <style>
