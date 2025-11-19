@@ -31,21 +31,17 @@
 <meta property="twitter:image" content="{{ asset('img/opengraph.png') }}">
 
 <!-- Favicons -->
-<link rel="icon" href="/favicons/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicons/android-chrome-512x512.png">
-<link rel="manifest" href="/favicons/site.webmanifest">
+<link rel="icon" href="{{ asset('public/favicons/favicon.ico') }}" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/favicons/favicon-16x16.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('public/favicons/favicon-32x32.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('public/favicons/apple-touch-icon.png') }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('public/favicons/android-chrome-192x192.png') }}">
+<link rel="icon" type="image/png" sizes="512x512" href="{{ asset('public/favicons/android-chrome-512x512.png') }}">
+<link rel="manifest" href="{{ asset('public/favicons/site.webmanifest') }}">
 
 <!-- JavaScript required -->
 <noscript>
     <style>
-        .js-required {
-            display: none !important;
-        }
-
         .js-disabled-message {
             display: block !important;
         }
