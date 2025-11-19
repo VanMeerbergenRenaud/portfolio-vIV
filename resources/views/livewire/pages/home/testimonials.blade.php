@@ -136,19 +136,26 @@
                     {{-- Number --}}
                     <div class="pt-2.5 pb-1.5 px-1.5 flex flex-col items-center" data-border-rounded="true">
 
-                        <x-font.text-md class="p-1 text-gray-medium" x-text="(i + 1).toString().padStart(2, '0')">01
+                        <x-font.text-md
+                            class="p-1 text-gray-medium"
+                            x-text="(i + 1).toString().padStart(2, '0')"
+                            role="status"
+                            aria-live="polite"
+                            :aria-label="`Témoignage ${i + 1} sur {{ count($testimonials) }}`"
+                        >01
                         </x-font.text-md>
 
                         {{-- Lines --}}
-                        <div class="flex flex-col gap-1.5 mt-auto">
+                        <div class="flex flex-col gap-1.5 mt-auto" role="group" aria-label="Navigation des témoignages">
                             <button
                                 type="button"
                                 class="flex-center bg-white w-8 h-8 rounded-full"
                                 @click.prevent="i = i === 0
                                     ? {{ count($testimonials) - 1 }}
                                     : i - 1"
+                                aria-label="Témoignage précédent"
                             >
-                                <x-svg.arrow-left/>
+                                <x-svg.arrow-left aria-hidden="true"/>
                             </button>
                             <button
                                 type="button"
@@ -156,8 +163,9 @@
                                 @click.prevent="i = i === {{ count($testimonials) - 1 }}
                                     ? 0
                                     : i + 1"
+                                aria-label="Témoignage suivant"
                             >
-                                <x-svg.arrow-right/>
+                                <x-svg.arrow-right aria-hidden="true"/>
                             </button>
                         </div>
                     </div>
@@ -168,6 +176,9 @@
                             <div
                                 x-show="i === {{ $index }}"
                                 class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
+                                role="region"
+                                aria-label="Témoignage {{ $index + 1 }} sur {{ count($testimonials) }}"
+                                :aria-hidden="i !== {{ $index }}"
                             >
                                 <x-font.text-3xl>
                                     "{{ $testimonial->content }}"

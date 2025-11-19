@@ -41,7 +41,7 @@
                 <ul class="grid grid-cols-2 lg:grid-rows-4 lg:grid-flow-col lg:pr-20 justify-items-start gap-2">
                     {{-- Colonne 1 --}}
                     <li><x-link.tertiary link="{{ route('home') }}#hero" :navigate="false" color="white" fontStyle="text-sm">Introduction</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('home') }}#about" :navigate="false" color="white" fontStyle="text-sm">À propos</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#about" :navigate="false" color="white" fontStyle="text-sm">À mon sujet</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#projects" :navigate="false" color="white" fontStyle="text-sm">Projets</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#services" :navigate="false" color="white" fontStyle="text-sm">Services</x-link.tertiary></li>
                     {{-- Colonne 2 --}}
@@ -62,7 +62,7 @@
                 <h3 class="font-bold tracking-widest-plus mb-4 text-gray-medium">Pages principales</h3>
                 <ul class="flex flex-col gap-2 max-md:flex-wrap">
                     <li><x-link.tertiary link="{{ route('home') }}" color="white" fontStyle="text-sm">Accueil</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('about') }}" color="white" fontStyle="text-sm">À&nbsp;propos</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('about') }}" color="white" fontStyle="text-sm">À propos</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('projects') }}" color="white" fontStyle="text-sm">Projets</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('articles') }}" color="white" fontStyle="text-sm">Articles</x-link.tertiary></li>
                 </ul>
