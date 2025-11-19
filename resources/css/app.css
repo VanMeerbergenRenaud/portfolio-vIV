@@ -65,7 +65,7 @@
     }
 
     img, video {
-        @apply flex-center w-full max-w-full h-auto object-cover bg-transparent overflow-hidden;
+        @apply flex-center min-h-1 w-full max-w-full h-auto object-cover bg-transparent overflow-hidden;
     }
 
     svg {

@@ -19,7 +19,7 @@
                     <img
                         src="{{ asset('img/coming-soon.jpg') }}"
                         alt="Image humoristique indiquant que la page est en construction"
-                        class="w-full h-full object-cover"
+                        class="w-full h-full min-h-50 object-cover"
                         loading="lazy"
                     >
                 </div>

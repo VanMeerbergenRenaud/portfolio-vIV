@@ -20,14 +20,14 @@
                         <img
                             src="{{ Storage::disk('s3')->url($hero->hero_image) }}"
                             alt="{{ $hero->hero_image_alt ?? 'Portrait of a person with motion blur effect, representing creative work.' }}"
-                            class="w-full h-full max-h-150 object-cover transition-transform duration-500 group-hover:scale-105"
+                            class="w-full h-full min-h-50 max-h-150 object-cover transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                         >
                     @else
                         <img
                             src="{{ asset('img/placeholder.png') }}"
                             alt="Portrait of a person with motion blur effect, representing creative work."
-                            class="w-full h-full max-h-150 object-cover transition-transform duration-500 group-hover:scale-105"
+                            class="w-full h-full min-h-50 max-h-150 object-cover transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                         >
                     @endif
