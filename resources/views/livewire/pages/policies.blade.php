@@ -1,8 +1,8 @@
 <div>
-    <section class="px-4 md:px-8 lg:px-12 pt-30 pb-25 lg:pt-52 flex flex-col gap-10 lg:gap-15 lg:gap-x-2 lg:grid lg:grid-cols-[25%_1fr]">
+    <section class="px-6 lg:px-12 pt-30 pb-25 lg:pt-52 flex flex-col gap-10 lg:gap-15 lg:gap-x-2 lg:grid lg:grid-cols-[25%_1fr]">
 
         {{-- Header section --}}
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-2">
             <div class="flex items-center gap-1.5">
                 <span class="text-red" aria-hidden="true">|</span>
 
@@ -16,7 +16,7 @@
         </div>
 
         {{-- Grid --}}
-        <div class="flex flex-col gap-4 lg:gap-6 max-w-175">
+        <div class="flex flex-col gap-8 max-w-175">
             <x-font.title-lg :isTitle="true" level="2">
                 Politique de confidentialité.
             </x-font.title-lg>
@@ -26,7 +26,7 @@
             </x-font.text>
 
             {{-- Sommaire --}}
-            <div class="mt-4 flex flex-col gap-5 py-2.5">
+            <div class="mt-4 flex flex-col gap-5">
                 <x-font.text class="font-semibold text-dark-primary" :isTitle="true" level="3">
                     Sommaire
                 </x-font.text>
@@ -63,7 +63,7 @@
                 </x-font.text>
 
                 <div class="flex flex-col gap-4">
-                    <div class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-2">
                         <x-font.text class="font-semibold text-dark-primary">
                             Données de navigation :
                         </x-font.text>
@@ -77,7 +77,7 @@
                         </ul>
                     </div>
 
-                    <div class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-2">
                         <x-font.text class="font-semibold text-dark-primary">
                             Données de contact (si vous me contactez) :
                         </x-font.text>
@@ -132,21 +132,19 @@
                     4. Partage des données et services tiers
                 </x-font.text-xl>
 
-                <x-font.text class="text-gray-medium">
-                    Nous faisons appel à des services tiers reconnus pour leur fiabilité et leur sécurité afin de faire fonctionner ce portfolio :
-                </x-font.text>
+                <div class="flex flex-col gap-2">
+                    <x-font.text class="text-gray-medium">
+                        Nous faisons appel à des services tiers reconnus pour leur fiabilité et leur sécurité afin de faire fonctionner ce portfolio :
+                    </x-font.text>
 
-                <div class="flex flex-col gap-3">
-                    <div class="flex flex-col gap-1">
-                        <x-font.text class="text-gray-medium">
-                            <span class="font-semibold text-dark-primary">Amazon Web Services (AWS) :</span> Pour l'hébergement du site et le stockage sécurisé des fichiers.
-                        </x-font.text>
-                    </div>
+                    <x-font.text class="text-gray-medium">
+                        <span class="font-semibold text-dark-primary">Amazon Web Services (AWS) :</span> Pour l'hébergement du site et le stockage sécurisé des fichiers.
+                    </x-font.text>
+
+                    <x-font.text class="text-gray-medium">
+                        Ces services sont conformes au RGPD et garantissent la protection de vos données.
+                    </x-font.text>
                 </div>
-
-                <x-font.text class="text-gray-medium">
-                    Ces services sont conformes au RGPD et garantissent la protection de vos données.
-                </x-font.text>
             </div>
 
             {{-- Part 5 --}}

@@ -1,5 +1,5 @@
 <div>
-    <section class="px-4 md:px-8 lg:px-12 pt-30 pb-25 lg:pt-52 flex flex-col gap-10 lg:gap-15 lg:gap-x-2 lg:grid lg:grid-cols-[25%_1fr]">
+    <section class="px-6 lg:px-12 pt-30 pb-25 lg:pt-52 flex flex-col gap-10 lg:gap-15 lg:gap-x-2 lg:grid lg:grid-cols-[25%_1fr]">
 
         {{-- Header section --}}
         <div class="flex flex-col gap-1">
@@ -16,7 +16,7 @@
         </div>
 
         {{-- Grid --}}
-        <div class="flex flex-col gap-4 lg:gap-6 max-w-175">
+        <div class="flex flex-col gap-8 max-w-175">
             <x-font.title-lg :isTitle="true" level="2">
                 Conditions générales d'utilisation.
             </x-font.title-lg>
