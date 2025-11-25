@@ -4,6 +4,7 @@ use App\Livewire\Pages\About;
 use App\Livewire\Pages\Articles\Index as ArticlesIndex;
 use App\Livewire\Pages\Articles\Show as ArticlesShow;
 use App\Livewire\Pages\Conditions;
+use App\Livewire\Pages\Cv;
 use App\Livewire\Pages\Home;
 use App\Livewire\Pages\Policies;
 use App\Livewire\Pages\Projects\Index as ProjectsIndex;
@@ -19,11 +20,6 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/project/{slug}', ProjectsShow::class)->name('projects.show');
     Route::get('/articles', ArticlesIndex::class)->name('articles');
     Route::get('/articles/{slug}', ArticlesShow::class)->name('articles.show');
-    // CV
-    Route::get('/cv', function () {
-        return view('livewire.pages.cv');
-    })->name('cv');
-
     // Privacy
     Route::get('/policies', Policies::class)->name('policies');
     Route::get('/conditions', Conditions::class)->name('conditions');

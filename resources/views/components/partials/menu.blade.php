@@ -159,7 +159,7 @@
                 </x-link.tertiary>
                 {{-- CV --}}
                 <x-link.tertiary
-                    link="/cv"
+                    link="{{ asset('img/cv.pdf') }}"
                     title="Découvrir mon CV"
                     fontStyle="text-md font-medium"
                     target="_blank"
