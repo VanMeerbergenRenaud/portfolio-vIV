@@ -19,6 +19,11 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/project/{slug}', ProjectsShow::class)->name('projects.show');
     Route::get('/articles', ArticlesIndex::class)->name('articles');
     Route::get('/articles/{slug}', ArticlesShow::class)->name('articles.show');
+    // CV
+    Route::get('/cv', function () {
+        return view('livewire.pages.cv');
+    })->name('cv');
+
     // Privacy
     Route::get('/policies', Policies::class)->name('policies');
     Route::get('/conditions', Conditions::class)->name('conditions');
