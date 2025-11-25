@@ -14,12 +14,13 @@
                 <x-font.text-sm class="text-gray-medium">2025</x-font.text-sm>
             </div>
 
+            {{-- Change  from here only --}}
             <x-font.title-2xl class="mb-6">
                 Renaud <span class="text-red">Van Meerbergen</span>
             </x-font.title-2xl>
 
             <x-font.title-lg level="2" class="text-gray-medium mb-8">
-                Développeur Fullstack Laravel & PHP
+                Dompteur de code · Backend Lord
             </x-font.title-lg>
 
             <div class="pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
@@ -41,7 +42,7 @@
                 <a href="https://maps.app.goo.gl/qY7TrBUW6BLtoNBn7" target="_blank"
                    class="flex items-center gap-2 text-gray-medium hover:text-dark-primary transition-colors"
                 >
-                    <span class="text-red">→</span>Neupré, Liège, Belgique
+                    <span class="text-red">→</span> Neupré, Liège, Belgique (127.0.0.1)
                 </a>
             </div>
         </div>
@@ -55,9 +56,12 @@
             </div>
 
             <x-font.text-lg class="text-gray-medium max-w-[900px] leading-relaxed">
-                Développeur passionné avec une expertise en PHP 8.2, Laravel et Livewire. Je crée des applications web
-                robustes et scalables en suivant les principes SOLID et les bonnes pratiques de développement. Mon
-                objectif : transformer des besoins complexes en solutions techniques élégantes et maintenables.
+                Je suis un architecte de panique organisée qui transforme les tickets douteux en livrables qui tiennent debout avec une playlist mythique et des jurons poétiques.
+                Je répare la production d’un geste nonchalant tout en semant une nouvelle énigme pour l’équipe afin de préserver le suspense.
+                Je corrige des erreurs légendaires et passer 30 minutes à centrer une image me plonge dans une profonde méditation existentielle.
+                Je commente le code comme un romancier en plein mélodrame en choisissant des mots que je ne comprends pas moi-même.
+                Mon code est nettoyé à la manière d’un illusionniste de sorte qu’il ne reste aucun témoin.
+                Je suis disponible pour des missions payées en euros et je refuse les paiements en visibilité. J’accepte les propositions sérieuses et les pâtisseries comme bonus de négociation.
             </x-font.text-lg>
         </section>
 
@@ -75,15 +79,15 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">PHP 8.2 / Laravel / Livewire</x-font.text>
+                            <x-font.text class="text-gray-medium">PHP 8.5 (Non, il n'est pas mort)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">MySQL / PostgreSQL</x-font.text>
+                            <x-font.text class="text-gray-medium">Laravel (Magie noire incluse)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">REST API / GraphQL</x-font.text>
+                            <x-font.text class="text-gray-medium">SQL (J'aime les relations compliquées)</x-font.text>
                         </li>
                     </ul>
                 </div>
@@ -93,15 +97,15 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">HTML5 / CSS3 / Tailwind CSS</x-font.text>
+                            <x-font.text class="text-gray-medium">Tailwind CSS (J'ai banni le CSS pur)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">JavaScript / Alpine.js</x-font.text>
+                            <x-font.text class="text-gray-medium">JavaScript (Le langage du chaos)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Responsive Design / Accessibilité</x-font.text>
+                            <x-font.text class="text-gray-medium">Alpine.js (Le jQuery du futur)</x-font.text>
                         </li>
                     </ul>
                 </div>
@@ -111,15 +115,15 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Git / GitHub / GitLab</x-font.text>
+                            <x-font.text class="text-gray-medium">Git (commit -m "oups je répare")</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Docker / Laravel Sail</x-font.text>
+                            <x-font.text class="text-gray-medium">Docker (L'usine à gaz portable)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">CI/CD / Forge</x-font.text>
+                            <x-font.text class="text-gray-medium">CI/CD (La roulette russe du vendredi)</x-font.text>
                         </li>
                     </ul>
                 </div>
@@ -129,15 +133,15 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">TDD / SOLID / Clean Code</x-font.text>
+                            <x-font.text class="text-gray-medium">SOLID (Surtout liquide sous pression)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Agile / Scrum</x-font.text>
+                            <x-font.text class="text-gray-medium">Agile (Réunions de survie)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Architecture MVC / DDD</x-font.text>
+                            <x-font.text class="text-gray-medium">TDD (Trop De Détails)</x-font.text>
                         </li>
                     </ul>
                 </div>
@@ -157,12 +161,13 @@
                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-red"></div>
 
                     <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                        <x-font.text-md class="font-medium">Stage - Développeur Web</x-font.text-md>
+                        <x-font.text-md class="font-medium">Stage - Développeur frontend</x-font.text-md>
                         <x-font.text-sm class="text-gray-medium">Sept. 2024 – Déc. 2024</x-font.text-sm>
                     </div>
 
                     <x-font.text class="mb-3">
-                        <a href="https://www.spade.be/fr/" class="text-red" target="_blank" aria-label="Vers le site de Spade">
+                        <a href="https://www.spade.be/fr/" class="text-red" target="_blank"
+                           aria-label="Vers le site de Spade">
                             SPADE · Bruxelles
                         </a>
                     </x-font.text>
@@ -170,19 +175,20 @@
                     <ul class="space-y-4 mt-4">
                         <li class="flex items-center gap-2">
                             <span class="text-red">→</span>
-                            <x-font.text class="text-gray-medium">Migration de sites legacy PHP 5.6 vers versions
-                                modernes avec maintien de la compatibilité
+                            <x-font.text class="text-gray-medium">
+                                Chasseur de trésor dans du code fossilisé PHP 5.6.
                             </x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="text-red">→</span>
-                            <x-font.text class="text-gray-medium">Développement de blocs Gutenberg personnalisés pour
-                                WordPress
+                            <x-font.text class="text-gray-medium">
+                                Dompteur de WordPress sauvage sans protection.
                             </x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="text-red">→</span>
-                            <x-font.text class="text-gray-medium">Refactoring et optimisation de code existant
+                            <x-font.text class="text-gray-medium">
+                                J'ai fait pleurer du code legacy de bonheur.
                             </x-font.text>
                         </li>
                     </ul>
@@ -192,33 +198,34 @@
                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-medium"></div>
 
                     <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                        <x-font.text-md class="font-medium">Développeur Fullstack (Projet Personnel)</x-font.text-md>
+                        <x-font.text-md class="font-medium">Développeur fullstack</x-font.text-md>
                         <x-font.text-sm class="text-gray-medium">Été 2024</x-font.text-sm>
                     </div>
 
                     <x-font.text class="mb-3">
-                        <a href="https://ludifica.be/" class="text-dark-primary" target="_blank" aria-label="Vers le site de Ludifica">
-                            Ludifica · Embourg
+                        <a href="https://ludifica.be/" class="text-dark-primary" target="_blank"
+                           aria-label="Vers le site de Ludifica">
+                            LUDIFICA · Embourg
                         </a>
                     </x-font.text>
 
                     <ul class="space-y-4 mt-4">
                         <li class="flex items-start gap-2">
                             <span class="text-red">→</span>
-                            <x-font.text class="text-gray-medium">Conception et développement d'une plateforme SaaS
-                                complète avec Laravel
+                            <x-font.text class="text-gray-medium">
+                                J'ai tout fait moi même et je suis fatigué.
                             </x-font.text>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-red">→</span>
-                            <x-font.text class="text-gray-medium">Mise en place d'un dashboard administrateur avec
-                                Filament PHP
+                            <x-font.text class="text-gray-medium">
+                                Filament m'a sauvé d'une dépression frontend.
                             </x-font.text>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-red">→</span>
-                            <x-font.text class="text-gray-medium">Gestion complète du projet (architecture,
-                                développement, tests, déploiement)
+                            <x-font.text class="text-gray-medium">
+                                CEO/CTO et stagiaire du mois en même temps.
                             </x-font.text>
                         </li>
                     </ul>
@@ -240,11 +247,22 @@
                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-red"></div>
 
                     <x-font.text-md class="font-medium mb-2">Bachelier en Informatique</x-font.text-md>
-                    <x-font.text class="text-red mb-2">HEPL - INPRES</x-font.text>
+                    <x-font.text class="text-red mb-2">
+                        <a href="https://www.hepl.be/fr/techniques-infographiques/web"
+                           aria-label="Vers le site de l'HEPL"
+                           target="_blank"
+                        >
+                            HEPL - INPRES
+                        </a>
+                    </x-font.text>
                     <x-font.text-sm class="text-gray-medium mb-3">2021 – 2025</x-font.text-sm>
 
                     <x-font.text class="text-gray-medium">
-                        Formation complète en développement d'applications et de sites web, en architecture logicielle et en méthodologies agiles.
+                        Formation d'élite qui m'a transformé en couteau suisse humain du code. Encadré par des experts,
+                        j'ai appris que les design patterns sont vitaux et que la documentation est une légende urbaine.
+                        Je jongle entre un backend Laravel solide et un frontend Tailwind étincelant, tout en gérant la
+                        base de données d'une main. J'ai aussi développé l'art subtil de réaliser des requêtes SQL
+                        performantes sans perdre la raison. Résultat : je code propre, je livre en prod sans trembler.
                     </x-font.text>
                 </div>
 
@@ -252,12 +270,23 @@
                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-medium"></div>
 
                     <x-font.text-md class="font-medium mb-2">Ingénieur Industriel</x-font.text-md>
-                    <x-font.text class="text-dark-primary mb-2 uppercase">Helmo Gramme</x-font.text>
+                    <x-font.text class="b-2">
+                        <a href="https://www.helmo.be/campus/helmo-campus-de-lourthe/institut-gramme"
+                           class="text-dark-primary uppercase"
+                           aria-label="Vers le site de l'HELMO"
+                           target="_blank"
+                        >
+                            Helmo Gramme
+                        </a>
+                    </x-font.text>
                     <x-font.text-sm class="text-gray-medium mb-3">2019 – 2021</x-font.text-sm>
 
                     <x-font.text class="text-gray-medium">
-                        Deux années d'ingénierie apportant rigueur scientifique et méthodologie de résolution de
-                        problèmes.
+                        Un cursus d'ingénieur pour forger une rigueur scientifique, concept que j'applique surtout quand
+                        le compilateur me regarde. Entre deux équations différentielles, j'ai compris que ma vocation
+                        n'était pas la physique mais le débuggage intense. J'ai gardé l'esprit analytique mais changé de
+                        terrain de jeu. Aujourd'hui, je ne calcule plus la résistance des matériaux, je teste la
+                        résistance de mes nerfs sur des bugs obscurs.
                     </x-font.text>
                 </div>
             </div>
@@ -271,17 +300,17 @@
                 <x-divider-dash class="flex-1 mt-5 ml-3 lg:mt-7.5 lg:ml-6"/>
             </div>
 
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="mt-8 flex flex-col md:flex-row gap-6 lg:gap-20">
                 <div>
                     <x-font.text-md class="font-medium mb-3">Langues</x-font.text-md>
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Français (Natif)</x-font.text>
+                            <x-font.text class="text-gray-medium">Français (high level)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Anglais (Professionnel)</x-font.text>
+                            <x-font.text class="text-gray-medium">Anglais (sous-estimé)</x-font.text>
                         </li>
                     </ul>
                 </div>
@@ -291,25 +320,51 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Permis B</x-font.text>
+                            <x-font.text class="text-gray-medium">Permis B (Pilote du dimanche)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Véhicule personnel</x-font.text>
+                            <x-font.text class="text-gray-medium">Véhicule (Batmobile rouillée)</x-font.text>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <x-font.text-md class="font-medium mb-3">Centres d'intérêt</x-font.text-md>
+                    <x-font.text-md class="font-medium mb-3">Passions obscures</x-font.text-md>
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Open Source</x-font.text>
+                            <x-font.text class="text-gray-medium">Trading (Forex & Crypto)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Veille technologique</x-font.text>
+                            <x-font.text class="text-gray-medium">Boxe Thai (Thérapie)</x-font.text>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <x-font.text-md class="font-medium mb-3">Exploits de geek</x-font.text-md>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
+                            <x-font.text class="text-gray-medium">
+                                Top 15 mondial sur
+                                <a href="https://supercell.com/en/games/clashofclans" class="underline text-red"
+                                   target="_blank" aria-label="Vers le site de Clash of Clans">
+                                    coc
+                                </a>
+                            </x-font.text>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
+                            <x-font.text class="text-gray-medium">
+                                Pousseur de pion hasardeur sur
+                                <a href="https://www.chess.com" class="underline text-red" target="_blank"
+                                   aria-label="Vers le site de Chess.com">
+                                    chess
+                                </a>
+                            </x-font.text>
                         </li>
                     </ul>
                 </div>
