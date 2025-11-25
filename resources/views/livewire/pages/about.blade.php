@@ -1,9 +1,10 @@
 <div>
-    <section class="px-6 lg:px-10 pt-30 pb-20 lg:pt-40 max-w-[1300px] mx-auto">
+    <section class="px-6 lg:px-10 pt-30 pb-12 lg:pt-40 max-w-[1300px] mx-auto">
         <h2 class="sr-only">
             À propos de moi
         </h2>
 
+        {{-- Intro --}}
         <div class="mb-15 lg:mb-20">
             <div class="flex justify-between items-center mb-8">
                 <div class="flex-center gap-1.5">
@@ -19,9 +20,17 @@
                 Renaud <span class="text-red">Van Meerbergen</span>
             </x-font.title-2xl>
 
-            <x-font.title-lg level="2" class="text-gray-medium mb-8">
-                Dompteur de code · Backend Lord
-            </x-font.title-lg>
+            <a href="#complement-infos" class="group inline-block scroll-smooth" aria-label="Note de bas de page">
+                <x-font.title-lg level="2" class="relative mb-8">
+                    <span class="bg-gradient-to-r from-gray-medium to-gray-medium bg-clip-text text-transparent opacity-100 transition-opacity duration-[500ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        Dompteur de code · Backend Lord
+                    </span>
+                    <span class="absolute inset-0 bg-gradient-to-r from-dark-primary via-red to-dark-primary bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-[500ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        Dompteur de code · Backend Lord
+                    </span>
+                    <sup class="text-base -left-1 lg:-left-2 relative -top-5 md:-top-7.5 lg:-top-12 text-gray-light group-hover:text-red group-hover:scale-110 transition-all duration-[1200ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]">1</sup>
+                </x-font.title-lg>
+            </a>
 
             <div class="pr-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
                 <a href="tel:+32470596065"
@@ -47,6 +56,7 @@
             </div>
         </div>
 
+        {{-- Profil --}}
         <section class="mb-15 lg:mb-20">
             <div class="flex justify-between items-center mb-6">
                 <x-font.title level="3" :isTitle="true">
@@ -56,15 +66,16 @@
             </div>
 
             <x-font.text-lg class="text-gray-medium max-w-[900px] leading-relaxed">
-                Je suis un architecte de panique organisée qui transforme les tickets douteux en livrables qui tiennent debout avec une playlist mythique et des jurons poétiques.
+                Je suis un alchimiste du chaos maîtrisé, je transforme des tickets douteux en résultats solides, le tout accompagné d'une playlist légendaire et de jurons poétiques.
                 Je répare la production d’un geste nonchalant tout en semant une nouvelle énigme pour l’équipe afin de préserver le suspense.
                 Je corrige des erreurs légendaires et passer 30 minutes à centrer une image me plonge dans une profonde méditation existentielle.
                 Je commente le code comme un romancier en plein mélodrame en choisissant des mots que je ne comprends pas moi-même.
                 Mon code est nettoyé à la manière d’un illusionniste de sorte qu’il ne reste aucun témoin.
-                Je suis disponible pour des missions payées en euros et je refuse les paiements en visibilité. J’accepte les propositions sérieuses et les pâtisseries comme bonus de négociation.
+                Je suis disponible pour des missions payées en euros et je refuse les paiements en visibilité. J’accepte les propositions sérieuses et les pâtisseries comme bonus de négociation.<br>
             </x-font.text-lg>
         </section>
 
+        {{-- Compétences --}}
         <section class="mb-15 lg:mb-20">
             <div class="flex justify-between items-center mb-6">
                 <x-font.title level="3" :isTitle="true">
@@ -133,11 +144,13 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">SOLID (Surtout liquide sous pression)</x-font.text>
+                            <x-font.text class="text-gray-medium">SCRUM (Surtout pour les pauses café)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Agile (Réunions de survie)</x-font.text>
+                            <x-font.text class="text-gray-medium">
+                                FED (Fuir l'Écriture de Documentation)
+                            </x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
@@ -148,6 +161,7 @@
             </div>
         </section>
 
+        {{-- Expériences --}}
         <section class="mb-15 lg:mb-20">
             <div class="flex justify-between items-center mb-6">
                 <x-font.title level="3" :isTitle="true">
@@ -165,7 +179,7 @@
                         <x-font.text-sm class="text-gray-medium">Sept. 2024 – Déc. 2024</x-font.text-sm>
                     </div>
 
-                    <x-font.text class="mb-3">
+                    <x-font.text class="my-3">
                         <a href="https://www.spade.be/fr/" class="text-red" target="_blank"
                            aria-label="Vers le site de Spade">
                             SPADE · Bruxelles
@@ -188,7 +202,7 @@
                         <li class="flex items-center gap-2">
                             <span class="text-red">→</span>
                             <x-font.text class="text-gray-medium">
-                                J'ai fait pleurer du code legacy de bonheur.
+                                J'ai appris à aimer les réunions sur Slack.
                             </x-font.text>
                         </li>
                     </ul>
@@ -202,7 +216,7 @@
                         <x-font.text-sm class="text-gray-medium">Été 2024</x-font.text-sm>
                     </div>
 
-                    <x-font.text class="mb-3">
+                    <x-font.text class="my-3">
                         <a href="https://ludifica.be/" class="text-dark-primary" target="_blank"
                            aria-label="Vers le site de Ludifica">
                             LUDIFICA · Embourg
@@ -234,6 +248,7 @@
             </div>
         </section>
 
+        {{-- Formation --}}
         <section class="mb-15 lg:mb-20">
             <div class="flex justify-between items-center mb-6">
                 <x-font.title level="3" :isTitle="true">
@@ -257,7 +272,7 @@
                     </x-font.text>
                     <x-font.text-sm class="text-gray-medium mb-3">2021 – 2025</x-font.text-sm>
 
-                    <x-font.text class="text-gray-medium">
+                    <x-font.text class="text-gray-medium leading-relaxed">
                         Formation d'élite qui m'a transformé en couteau suisse humain du code. Encadré par des experts,
                         j'ai appris que les design patterns sont vitaux et que la documentation est une légende urbaine.
                         Je jongle entre un backend Laravel solide et un frontend Tailwind étincelant, tout en gérant la
@@ -281,7 +296,7 @@
                     </x-font.text>
                     <x-font.text-sm class="text-gray-medium mb-3">2019 – 2021</x-font.text-sm>
 
-                    <x-font.text class="text-gray-medium">
+                    <x-font.text class="text-gray-medium leading-relaxed">
                         Un cursus d'ingénieur pour forger une rigueur scientifique, concept que j'applique surtout quand
                         le compilateur me regarde. Entre deux équations différentielles, j'ai compris que ma vocation
                         n'était pas la physique mais le débuggage intense. J'ai gardé l'esprit analytique mais changé de
@@ -292,7 +307,8 @@
             </div>
         </section>
 
-        <section class="lg:mb-10">
+        {{-- Informations complémentaires --}}
+        <section id="complement-infos" class="lg:mb-10">
             <div class="flex justify-between items-center mb-6">
                 <x-font.title level="3" :isTitle="true">
                     Informations complémentaires
@@ -310,7 +326,7 @@
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Anglais (sous-estimé)</x-font.text>
+                            <x-font.text class="text-gray-medium">Anglais (as good as you need)</x-font.text>
                         </li>
                     </ul>
                 </div>
@@ -338,7 +354,7 @@
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Boxe Thai (Thérapie)</x-font.text>
+                            <x-font.text class="text-gray-medium">Boxe Thai (Ceinture blanche)</x-font.text>
                         </li>
                     </ul>
                 </div>
@@ -370,5 +386,14 @@
                 </div>
             </div>
         </section>
+
+        {{-- Note de bas de page --}}
+        <div class="mt-20">
+            <x-divider-dash class="my-4" />
+
+            <p class="text-sm text-gray-dark leading-relaxed scroll-mt-8">
+                <span class="font-medium text-dark-primary">¹</span> Cette page est à prendre avec humour et légèreté.
+            </p>
+        </div>
     </section>
 </div>

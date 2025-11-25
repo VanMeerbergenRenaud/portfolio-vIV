@@ -10,8 +10,6 @@
             <x-pre-loader/>
         @endif
 
-        <!-- <x-custom-cursor /> -->
-
         <x-custom-bg />
 
         <x-partials.header />

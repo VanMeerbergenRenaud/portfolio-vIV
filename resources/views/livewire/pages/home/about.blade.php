@@ -28,7 +28,7 @@
                 </x-font.title>
 
                 <x-font.text-lg class="mt-4 text-gray-medium max-w-[480px]">
-                    Adepte des principes SOLID et du TDD, je vise le "zéro dette technique" pour un code qui reste propre et évolutif.
+                    Adepte des principes de base, je vise le "zéro dette technique" pour un code qui reste propre et évolutif.
                 </x-font.text-lg>
 
                 <x-link.secondary

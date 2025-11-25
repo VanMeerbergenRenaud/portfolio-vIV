@@ -4,7 +4,6 @@ use App\Livewire\Pages\About;
 use App\Livewire\Pages\Articles\Index as ArticlesIndex;
 use App\Livewire\Pages\Articles\Show as ArticlesShow;
 use App\Livewire\Pages\Conditions;
-use App\Livewire\Pages\Cv;
 use App\Livewire\Pages\Home;
 use App\Livewire\Pages\Policies;
 use App\Livewire\Pages\Projects\Index as ProjectsIndex;
