@@ -26,18 +26,18 @@
                 </h2>
 
                 <div class="flex flex-wrap justify-center gap-4 mt-6 text-xs md:text-sm text-gray-400">
-                    <div class="flex items-center gap-2 hover:text-matrix transition-colors">
-                        <span>📍</span> 127.0.0.1 (Neupré, Liège)
-                    </div>
-                    <div class="flex items-center gap-2 hover:text-error transition-colors">
-                        <span>🚑</span> +32 (0)470 59 60 65
-                    </div>
-                    <a href="mailto:renaud.vanmeerbergen@gmail.com" class="flex items-center gap-2 hover:text-white transition-colors border-b border-dotted border-gray-600 hover:border-white">
-                        <span>📧</span> renaud.vanmeerbergen@gmail.com
+                    <a href="tel:+32470596065" class="flex items-center gap-2 hover:text-white transition-colors border-b border-dotted border-gray-600 hover:border-white">
+                        <span>📞</span> +32 (0)470 59 60 65
                     </a>
-                    <a href="https://github.com/VanMeerbergenRenaud" target="_blank" class="flex items-center gap-2 hover:text-matrix transition-colors border-b border-dotted border-gray-600 hover:border-matrix">
+                    <a href="mailto:renaud.vanmeerbergen@gmail.com" class="flex items-center gap-2 hover:text-white transition-colors border-b border-dotted border-gray-600 hover:border-white">
+                        <span>📨</span> renaud.vanmeerbergen@gmail.com
+                    </a>
+                    <a href="https://github.com/VanMeerbergenRenaud" target="_blank" class="flex items-center gap-2 hover:text-white transition-colors border-b border-dotted border-gray-600 hover:border-white">
                         <span>🐙</span> github.com/VanMeerbergenRenaud
                     </a>
+                    <div class="flex items-center gap-2 hover:text-error transition-colors">
+                        <span>📍</span> 127.0.0.1 (Neupré, Liège)
+                    </div>
                 </div>
             </header>
 
