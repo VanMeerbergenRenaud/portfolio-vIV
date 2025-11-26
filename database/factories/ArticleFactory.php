@@ -20,9 +20,45 @@ class ArticleFactory extends Factory
         return [
             'title' => fake()->sentence(),
             'excerpt' => fake()->paragraph(),
-            'content' => fake()->paragraphs(5, true),
-            'image' => '',
-            'category' => fake()->randomElement(['Laravel', 'Architecture', 'Performance', 'Sécurité', 'DevOps', 'Design']),
+            'content_blocks' => [
+                [
+                    'type' => 'heading',
+                    'data' => [
+                        'level' => 'h2',
+                        'content' => fake()->sentence(),
+                    ],
+                ],
+                [
+                    'type' => 'paragraph',
+                    'data' => [
+                        'content' => fake()->paragraph(5),
+                    ],
+                ],
+                [
+                    'type' => 'heading',
+                    'data' => [
+                        'level' => 'h3',
+                        'content' => fake()->sentence(),
+                    ],
+                ],
+                [
+                    'type' => 'rich_text',
+                    'data' => [
+                        'content' => '<p>'.fake()->paragraph(3).'</p><ul><li>'.fake()->sentence().'</li><li>'.fake()->sentence().'</li></ul>',
+                    ],
+                ],
+                [
+                    'type' => 'quote',
+                    'data' => [
+                        'content' => fake()->sentence(),
+                        'author' => fake()->name(),
+                    ],
+                ],
+            ],
+            'cover_image' => null,
+            'category' => fake()->randomElement(['developpement', 'design', 'tutoriel', 'reflexion', 'actualite']),
+            'tags' => fake()->randomElements(['Laravel', 'PHP', 'JavaScript', 'Vue.js', 'Tailwind', 'Design', 'Performance', 'SEO'], rand(2, 5)),
+            'reading_time' => rand(3, 15),
             'is_featured' => fake()->boolean(20),
             'is_published' => true,
             'order' => 0,
