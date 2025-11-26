@@ -245,7 +245,7 @@
 
                 const currentScrollY = window.scrollY;
 
-                if (currentScrollY <= 60) {
+                if (currentScrollY <= 100) {
                     this.headerVisible = true;
                     this.lastScrollY = currentScrollY;
                     return;

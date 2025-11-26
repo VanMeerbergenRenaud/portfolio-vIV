@@ -17,7 +17,8 @@ document.addEventListener('livewire:navigated', () => {
     });
 
     // Exclure les images avec gallery-zoom-effect du reveal
-    const elementsToReveal = document.querySelectorAll('h1, h2, h3, h4, h5, h6, section, img:not(.gallery-zoom-effect), footer');
+    // TODO : ajouter aux classes voulues
+    const elementsToReveal = document.querySelectorAll('h1, h2, h3, h4, h5, h6, img:not(.gallery-zoom-effect), footer');
     elementsToReveal.forEach(element => {
         element.classList.add('reveal-on-scroll');
         observer.observe(element);

@@ -211,3 +211,14 @@
     overflow: hidden;
     border-radius: 1rem;
 }
+
+/* Rich editor */
+.rich-text {
+    ul {
+        @apply mt-2 list-disc list-inside space-y-2;
+    }
+
+    ol {
+        @apply mt-2 list-decimal list-inside space-y-2;
+    }
+}

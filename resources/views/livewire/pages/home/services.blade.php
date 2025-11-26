@@ -68,7 +68,7 @@
             {{-- Column right: Service List --}}
             <div class="flex flex-col gap-2">
                 @foreach($services as $index => $service)
-                    <x-home.section.services.item
+                    <x-home.service-item
                         :index="$index"
                         :title="$service->title"
                         :description="$service->description"

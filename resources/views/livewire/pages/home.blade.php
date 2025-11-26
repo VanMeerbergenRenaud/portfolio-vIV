@@ -21,5 +21,5 @@
 
     <livewire:pages.home.articles />
 
-    <x-home.section.cta />
+    <x-cta />
 </div>

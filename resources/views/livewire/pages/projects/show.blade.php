@@ -301,26 +301,28 @@
     </section>
 
     {{-- Other projects --}}
-    <section class="px-4 md:px-8 lg:px-10 py-15 flex flex-col gap-12 lg:gap-15">
-        <h2 class="sr-only">
-            Mes autres projets
-        </h2>
+    @if($projects && count($projects) > 0)
+        <section class="px-4 md:px-8 lg:px-10 py-15 flex flex-col gap-12">
+            <h2 class="sr-only">
+                Mes autres projets
+            </h2>
 
-        <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
-            {{-- Title --}}
-            <x-font.title-lg class="max-w-[625px]">
-                Explorez d'autres de mes réalisations.
-            </x-font.title-lg>
+            <div class="px-2 flex flex-col justify-between md:items-end gap-7 md:flex-row">
+                {{-- Title --}}
+                <x-font.title-lg class="max-w-[625px]">
+                    Explorez d'autres de mes réalisations.
+                </x-font.title-lg>
 
-            {{-- Link --}}
-            <x-link.secondary class="mt-4" link="{{ route('projects') }}">
-                Tous les projets
-            </x-link.secondary>
-        </div>
+                {{-- Link --}}
+                <x-link.secondary class="mt-4" link="{{ route('projects') }}">
+                    Tous les projets
+                </x-link.secondary>
+            </div>
 
-        {{-- Project list --}}
-        <x-projects.list :$projects />
-    </section>
+            {{-- Project list --}}
+            <x-projects.list :$projects />
+        </section>
+    @endif
 
-    <x-home.section.cta/>
+    <x-cta/>
 </div>
