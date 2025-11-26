@@ -7,7 +7,7 @@
             <div class="flex flex-col gap-1">
                 <div class="flex items-center gap-1.5">
                     <x-font.text-md class="text-gray-light">
-                        02
+                        01
                     </x-font.text-md>
 
                     <span class="text-red" aria-hidden="true">|</span>
@@ -111,6 +111,7 @@
                 </li>
             @endforelse
         </ul>
-
     </section>
+
+    <x-cta />
 </div>

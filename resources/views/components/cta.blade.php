@@ -9,7 +9,7 @@
         <div class="flex flex-col gap-1">
             <div class="flex items-center gap-1.5">
                 <x-font.text-md class="text-gray-light">
-                    11
+                    00
                 </x-font.text-md>
 
                 <span class="text-red" aria-hidden="true">|</span>
@@ -19,7 +19,7 @@
                 </x-font.text>
             </div>
             <x-font.text-sm :isTitle="true" level="3" class="pl-7 text-gray-medium">
-                Restons connectés
+                Renaud Vmb®
             </x-font.text-sm>
         </div>
 

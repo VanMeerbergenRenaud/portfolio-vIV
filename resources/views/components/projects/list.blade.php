@@ -68,7 +68,7 @@
                 </div>
 
                 {{-- Image --}}
-                <div class="relative rounded-2xl overflow-hidden min-h-[250px] max-h-[550px]">
+                <div class="relative rounded-2xl overflow-hidden min-h-65 max-h-125 2xl:max-h-250">
                     @if($project->image)
                         <img src="{{ Storage::disk('s3')->url($project->image) }}"
                              alt="{{ $project->name }}"

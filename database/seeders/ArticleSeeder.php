@@ -352,7 +352,7 @@ class ArticleSeeder extends Seeder
                     ],
                     [
                         'type' => 'rich_text',
-                        'data' => ['content' => '<p>Avant le déploiement en production :</p><ul><li>✅ Eager loading sur toutes les relations</li><li>✅ Index sur les colonnes critiques</li><li>✅ Cache de config, routes, et vues</li><li>✅ Redis pour le cache et les sessions</li><li>✅ Queues pour les tâches longues</li><li>✅ CDN pour les assets statiques</li><li>✅ Compression Gzip activée</li><li>✅ Lazy loading des images</li><li>✅ Pagination sur les grandes listes</li><li>✅ APM configuré</li></ul>'],
+                        'data' => ['content' => '<p>Avant le déploiement en production :</p><ul><li>Eager loading sur toutes les relations</li><li>Index sur les colonnes critiques</li><li>Cache de config, routes, et vues</li><li>Redis pour le cache et les sessions</li><li>Queues pour les tâches longues</li><li>CDN pour les assets statiques</li><li>Compression Gzip activée</li><li>Lazy loading des images</li><li>Pagination sur les grandes listes</li><li>APM configuré</li></ul>'],
                     ],
                     [
                         'type' => 'spacing',
@@ -603,7 +603,7 @@ class ArticleSeeder extends Seeder
                     ],
                     [
                         'type' => 'rich_text',
-                        'data' => ['content' => '<p>Checklist de sécurité AWS :</p><ul><li>✅ Secrets dans AWS Secrets Manager, jamais dans le code</li><li>✅ IAM roles avec principe de moindre privilège</li><li>✅ Security groups restrictifs (whitelist, pas blacklist)</li><li>✅ SSL/TLS partout, certificats ACM</li><li>✅ Encryption at rest pour RDS et S3</li><li>✅ MFA activé sur tous les comptes</li><li>✅ CloudTrail pour auditer toutes les actions</li><li>✅ GuardDuty pour détecter les comportements suspects</li></ul>'],
+                        'data' => ['content' => '<p>Checklist de sécurité AWS :</p><ul><li>Secrets dans AWS Secrets Manager, jamais dans le code</li><li>IAM roles avec principe de moindre privilège</li><li>Security groups restrictifs (whitelist, pas blacklist)</li><li>SSL/TLS partout, certificats ACM</li><li>Encryption at rest pour RDS et S3</li><li>MFA activé sur tous les comptes</li><li>CloudTrail pour auditer toutes les actions</li><li>GuardDuty pour détecter les comportements suspects</li></ul>'],
                     ],
                     [
                         'type' => 'spacing',

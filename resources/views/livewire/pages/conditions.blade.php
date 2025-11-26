@@ -303,7 +303,7 @@
             {{-- Contact final --}}
             <div class="mt-2 p-6 bg-red/5 border border-red/20 rounded-lg">
                 <x-font.text class="flex flex-col gap-1 text-gray-dark">
-                    <span class="font-semibold text-dark-primary">Une question sur ces conditions ?</span><br>
+                    <span class="font-semibold text-dark-primary">Des questions sur ces conditions ?</span><br>
                     <span>N'hésitez pas à me contacter à <a href="mailto:renaud.vanmeerbergen@gmail.com" class="text-red hover:underline font-semibold">renaud.vanmeerbergen@gmail.com</a>. Je serai ravi de vous répondre et de clarifier tout point qui vous semble flou.</span>
                 </x-font.text>
             </div>

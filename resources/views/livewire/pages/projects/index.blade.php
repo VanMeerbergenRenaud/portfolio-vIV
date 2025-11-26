@@ -129,6 +129,7 @@
                 </li>
             @endforelse
         </ul>
-
     </section>
+
+    <x-cta />
 </div>

@@ -322,7 +322,7 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Français (high level)</x-font.text>
+                            <x-font.text class="text-gray-medium">Français (de la street)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
@@ -396,4 +396,6 @@
             </p>
         </div>
     </section>
+
+    <x-cta />
 </div>

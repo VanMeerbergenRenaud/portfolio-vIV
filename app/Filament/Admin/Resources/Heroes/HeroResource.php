@@ -18,7 +18,7 @@ class HeroResource extends Resource
 
     protected static ?string $navigationLabel = 'Hero';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedHome;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedHeart;
 
     protected static ?int $navigationSort = 1;
 

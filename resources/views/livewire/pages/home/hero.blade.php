@@ -19,14 +19,14 @@
                     @if($hero->hero_image)
                         <img
                             src="{{ Storage::disk('s3')->url($hero->hero_image) }}"
-                            alt="{{ $hero->hero_image_alt ?? 'Portait de Renaud sur un échiquier' }}"
-                            class="w-full h-full min-h-50 max-h-150 object-cover transition-transform duration-500 group-hover:scale-105"
+                            alt="{{ $hero->hero_image_alt ?? 'Portait de Renaud entouré de chèvre pour montrer qu\'il est le "Goat" (Greatest Of All Time) des développeurs' }}"
+                            class="w-full h-full min-h-50 max-h-250 object-cover transition-transform duration-500 group-hover:scale-105"
                         >
                     @else
                         <img
                             src="{{ asset('img/placeholder.png') }}"
                             alt=""
-                            class="w-full h-full min-h-50 max-h-150 object-cover transition-transform duration-500 group-hover:scale-105"
+                            class="w-full h-full min-h-50 max-h-250 object-cover transition-transform duration-500 group-hover:scale-105"
                         >
                     @endif
                 </div>
