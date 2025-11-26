@@ -23,8 +23,8 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-2xl :isTitle="true" level="2" class="max-w-[625px]">
-                    Articles
+                <x-font.title-2xl :isTitle="true" level="2" class="max-w-[1000px]">
+                    Articles <x-article.category-label :category="$category" />
                 </x-font.title-2xl>
 
                 {{-- List of categories --}}
@@ -32,22 +32,22 @@
                    <li>
                         <a href="{{ route('articles') }}"
                            aria-label="Afficher tous les articles"
-                           class="inline-block px-4 py-2 rounded-lg transition-colors {{ request()->routeIs('articles') ? 'border border-red text-red' : 'border border-gray-200 hover:border-red hover:text-red' }}"
+                           class="inline-block px-4 py-2 rounded-lg border border-gray-200 hover:border-red hover:text-red transition-colors"
                            wire:navigate
-                           {{ request()->routeIs('articles') ? 'aria-current="page"' : '' }}
                         >
                             <x-font.text-md>Tous</x-font.text-md>
                         </a>
                     </li>
-                    @foreach($categories as $category)
+                    @foreach($categories as $cat)
                         <li>
-                            <a href="{{ route('articles.category', $category) }}"
-                               aria-label="Afficher les articles de catégorie {{ $category }}"
-                               class="inline-block px-4 py-2 rounded-lg border border-gray-200 hover:border-red hover:text-red transition-colors"
+                            <a href="{{ route('articles.category', $cat) }}"
+                               aria-label="Afficher les articles de catégorie {{ $cat }}"
+                               class="inline-block px-4 py-2 rounded-lg transition-colors {{ $cat->value === $category ? 'border border-red text-red' : 'border border-gray-200 hover:border-red hover:text-red' }}"
                                wire:navigate
+                               {{ $cat->value === $category ? 'aria-current="page"' : '' }}
                             >
                                 <x-font.text-md>
-                                    <x-article.category-label :category="$category" />
+                                    <x-article.category-label :category="$cat" />
                                 </x-font.text-md>
                             </a>
                         </li>
@@ -115,7 +115,7 @@
             @empty
                 <li class="col-span-full text-center py-10">
                     <x-font.text-lg class="text-gray-medium">
-                        Aucun article n'est disponible pour le moment.
+                        Aucun article n'est disponible pour cette catégorie.
                     </x-font.text-lg>
                 </li>
             @endforelse
@@ -123,3 +123,4 @@
 
     </section>
 </div>
+
