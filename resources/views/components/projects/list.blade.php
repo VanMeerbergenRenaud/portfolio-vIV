@@ -2,7 +2,7 @@
     'projects' => $projects
 ])
 
-<ul class="flex flex-col gap-2 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))] lg:flex">
+<ul class="flex flex-col gap-3 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))] lg:flex">
     @forelse($projects as $index => $project)
         @php
             $isReverse = $index % 2 !== 0;

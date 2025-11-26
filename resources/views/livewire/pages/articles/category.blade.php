@@ -57,7 +57,7 @@
         </div>
 
         {{-- Article list --}}
-        <ul class="flex flex-col gap-2 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))]">
+        <ul class="flex flex-col gap-3 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))]">
             @forelse($articles as $article)
                 <li>
                     <a href="{{ route('articles.show', $article->slug) }}"
@@ -101,15 +101,6 @@
                                 </div>
                             @endif
                         </div>
-
-                        {{-- Excerpt --}}
-                        @if($article->excerpt)
-                            <div class="px-3 pb-2">
-                                <x-font.text class="text-gray-medium line-clamp-2">
-                                    {{ $article->excerpt }}
-                                </x-font.text>
-                            </div>
-                        @endif
                     </a>
                 </li>
             @empty

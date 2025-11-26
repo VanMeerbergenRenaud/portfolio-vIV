@@ -55,7 +55,7 @@
         </div>
 
         {{-- Project list --}}
-        <ul class="flex flex-col gap-2 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))]">
+        <ul class="flex flex-col gap-3 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))]">
             @forelse($projects as $index => $project)
                 <li>
                     <a href="{{ route('projects.show', $project->slug) }}"
