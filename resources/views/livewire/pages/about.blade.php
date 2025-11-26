@@ -213,7 +213,7 @@
 
                     <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
                         <x-font.text-md class="font-medium">Développeur fullstack</x-font.text-md>
-                        <x-font.text-sm class="text-gray-medium">Été 2024</x-font.text-sm>
+                        <x-font.text-sm class="text-gray-medium">Août 2025 - Sept. 2025</x-font.text-sm>
                     </div>
 
                     <x-font.text class="my-3">
