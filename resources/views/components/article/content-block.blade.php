@@ -31,7 +31,7 @@
         <x-font.text class="leading-relaxed">
             {{ $data['content'] ?? '' }}
         </x-font.text>
-        @break
+    @break
 
     @case('rich_text')
         <div class="rich-text prose prose-lg">
@@ -54,11 +54,11 @@
                 </figcaption>
             @endif
         </figure>
-        @break
+    @break
 
 
     @case('code_img')
-        <figure class="mt-6">
+        <figure class="mt-6 mb-4">
             {{-- Img --}}
             @if(!empty($data['url']))
                 <img src="{{ Storage::disk('s3')->url($data['url']) }}"
@@ -81,7 +81,7 @@
                 </figcaption>
             @endif
         </figure>
-        @break
+    @break
 
     @case('quote')
         <blockquote class="border-l-4 border-red pl-4 mt-6 italic">
@@ -103,7 +103,7 @@
             $size = $data['size'] ?? '20';
         @endphp
             <div style="height: {{ $size }}px;"></div>
-        @break
+    @break
 
     @case('gallery')
         <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
