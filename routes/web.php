@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Pages\About;
+use App\Livewire\Pages\Articles\Category as ArticlesCategory;
 use App\Livewire\Pages\Articles\Index as ArticlesIndex;
 use App\Livewire\Pages\Articles\Show as ArticlesShow;
 use App\Livewire\Pages\Conditions;
@@ -18,6 +19,7 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/projects/type/{type}', ProjectsType::class)->name('projects.type');
     Route::get('/project/{slug}', ProjectsShow::class)->name('projects.show');
     Route::get('/articles', ArticlesIndex::class)->name('articles');
+    Route::get('/articles/category/{category}', ArticlesCategory::class)->name('articles.category');
     Route::get('/articles/{slug}', ArticlesShow::class)->name('articles.show');
     // Privacy
     Route::get('/policies', Policies::class)->name('policies');

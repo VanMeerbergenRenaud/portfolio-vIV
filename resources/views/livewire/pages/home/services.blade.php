@@ -1,6 +1,6 @@
 <div>
     <section id="services" class="bg-dark-primary text-white px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-15 lg:gap-20">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Services
         </h2>
 
@@ -33,7 +33,12 @@
                 </x-font.text-xl>
 
                 {{-- Link --}}
-                <x-link.secondary color="white" class="mt-4">
+                <x-link.secondary
+                    link="{{ route('home') }}#skills"
+                    :navigate="false"
+                    color="white"
+                    class="mt-4"
+                >
                     Voir mes compétences
                 </x-link.secondary>
             </div>
@@ -63,7 +68,7 @@
             {{-- Column right: Service List --}}
             <div class="flex flex-col gap-2">
                 @foreach($services as $index => $service)
-                    <x-home.section.services.item
+                    <x-home.service-item
                         :index="$index"
                         :title="$service->title"
                         :description="$service->description"

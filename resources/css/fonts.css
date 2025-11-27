@@ -1,0 +1,148 @@
+/*-------------------------
+    Fonts System
+-------------------------*/
+
+/*------ 1. Geist ------*/
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/geist/Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/geist/ExtraLight.ttf');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/geist/Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/geist/Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/geist/Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/geist/SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/geist/Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/geist/ExtraBold.ttf');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/geist/Black.ttf');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*------ 2. Instrument Sans ------*/
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../../public/fonts/instrument-sans/Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../../public/fonts/instrument-sans/Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../../public/fonts/instrument-sans/Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../../public/fonts/instrument-sans/MediumItalic.ttf');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../../public/fonts/instrument-sans/SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../../public/fonts/instrument-sans/SemiBoldItalic.ttf');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../../public/fonts/instrument-sans/Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../../public/fonts/instrument-sans/BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/*------ 3. Prestige Signature ------*/
+@font-face {
+    font-family: 'PrestigeSignatureScript-Demo';
+    src: url('../../public/fonts/prestige/prestige-signature-script-demo.ttf') format('truetype');
+    font-display: swap;
+}

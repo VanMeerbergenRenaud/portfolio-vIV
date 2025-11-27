@@ -15,19 +15,19 @@
 
 <a
     href="{{ $link }}"
-    title="Vers la page {{ $slot }}"
-    {{ $attributes->merge(['class' => 'group inline-block relative overflow-hidden']) }}
+    aria-label="Naviguer vers {{ $slot }}"
+    {{ $attributes->merge(['class' => 'group inline-block relative']) }}
     @if($navigate) wire:navigate @endif
 >
 
-    <div class="relative inline-flex items-center {{ $textClasses }}">
+    <div class="relative inline-flex items-center overflow-hidden {{ $textClasses }}">
         {{-- Outgoing label --}}
         <span class="relative z-12 block group-hover:-translate-y-20 -tracking-wide {{ $textStyle }}">
             {{ $slot }}
         </span>
 
         {{-- Incoming label --}}
-        <span class="absolute top-2 group-hover:top-0 left-0 z-10 flex-center text-red translate-y-full group-hover:translate-y-0 -tracking-wide {{ $textStyle }}">
+        <span class="absolute top-2 group-hover:top-0 left-0 z-10 flex-center text-red translate-y-full group-hover:translate-y-0 -tracking-wide {{ $textStyle }}" aria-hidden="true">
             {{ $slot }}
         </span>
     </div>

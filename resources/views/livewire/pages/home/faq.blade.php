@@ -1,6 +1,6 @@
 <div>
     <section id="faq" class="px-4 md:px-8 lg:px-10 pt-30 pb-20 lg:pt-40 lg:pb-30 flex flex-col gap-15 lg:gap-25 lg:grid lg:grid-cols-[30%_1fr]">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Faq
         </h2>
 
@@ -22,7 +22,7 @@
 
             {{-- Title --}}
             <x-font.title class="mt-3 lg:mt-4 max-w-[525px]">
-                Quelques Questions…
+                Quelques questions…
             </x-font.title>
 
             {{-- Text --}}
@@ -30,7 +30,11 @@
                 Probablement les questions que vous vous posez déjà. Si la vôtre n'est pas là, contactez-moi !
             </x-font.text-lg>
 
-            <x-link.secondary>
+            <x-link.secondary
+                link="mailto:renaud.vanmeerbergen@gmail.com"
+                title="Vers votre application de mail"
+                :navigate="false"
+            >
                 Poser une question
             </x-link.secondary>
         </div>
@@ -52,7 +56,7 @@
 
                                 <span class="text-red" aria-hidden="true">|</span>
 
-                                <x-font.text-xl>
+                                <x-font.text-xl :isTitle="true" level="3">
                                     {{ $faq->question }}
                                 </x-font.text-xl>
                             </div>

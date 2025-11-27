@@ -1,7 +1,7 @@
 <div>
     <section id="projects" class="px-4 md:px-8 lg:px-10 pt-20 pb-30 lg:pt-30 lg:pb-40 flex flex-col gap-15">
-        <h2 role="heading" aria-level="2" class="sr-only">
-            Projects
+        <h2 class="sr-only">
+            Projets
         </h2>
 
         {{-- Header section --}}
@@ -31,7 +31,10 @@
                 </x-font.title-lg>
 
                 {{-- Link --}}
-                <x-link.secondary class="mt-4" href="{{ route('projects') }}">
+                <x-link.secondary
+                    link="{{ route('projects') }}"
+                    class="mt-4"
+                >
                     Tous les projets
                 </x-link.secondary>
             </div>

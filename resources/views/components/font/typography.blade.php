@@ -1,35 +1,32 @@
 @props([
     'variant' => 'text',
-    'color' => null,
     'level' => null,
-    'class' => ''
+    'isTitle' => false,
 ])
 
 @php
-    $variants = [
-        'title-2xl' => ['h', 'dark-primary', 'title-2xl'],
-        'title-xl' => ['h', 'dark-primary', 'title-xl'],
-        'title-lg' => ['h', 'dark-primary', 'title-lg'],
-        'title' => ['h', 'dark-primary', 'title'],
-        'text-3xl' => ['p', 'dark-primary', 'text-3xl'],
-        'text-2xl' => ['p', 'dark-primary', 'text-2xl'],
-        'text-xl' => ['p', 'dark-primary', 'text-xl'],
-        'text-lg' => ['p', 'dark-primary', 'text-lg'],
-        'text' => ['p', 'dark-primary', 'text'],
-        'text-md' => ['p', 'dark-primary', 'text-md'],
-        'text-sm' => ['p', 'dark-primary', 'text-sm'],
-        'text-xs' => ['p', 'dark-primary', 'text-xs'],
+    static $config = [
+        'title-2xl' => ['title-2xl', '3'],
+        'title-xl'  => ['title-xl', '3'],
+        'title-lg'  => ['title-lg', '3'],
+        'title'     => ['title', '3'],
+        'text-3xl'  => ['text-3xl', '3'],
+        'text-2xl'  => ['text-2xl', '3'],
+        'text-xl'   => ['text-xl', '3'],
+        'text-lg'   => ['text-lg', '3'],
+        'text'      => ['text', '3'],
+        'text-md'   => ['text-md', '3'],
+        'text-sm'   => ['text-sm', '3'],
+        'text-xs'   => ['text-xs', '3'],
     ];
 
-    [$baseTag, $defaultColor, $cssClass] = $variants[$variant] ?? ['p', 'dark-primary', 'text'];
+    [$cssClass, $defaultLevel] = $config[$variant] ?? ['text', '3'];
 
-    $tag = $baseTag === 'h' ? 'h' . ($level ?? '2') : $baseTag;
-
-    $textColor = $color ?? $defaultColor;
+    $tag = $isTitle
+        ? 'h' . ($level ?? $defaultLevel)
+        : 'p';
 @endphp
 
-<{{ $tag }}
-    {{ $attributes->merge(['class' => 'typo-' . $cssClass . ' text-[var(--color-' . $textColor . ')] ' . $class]) }}
->
+<{{ $tag }} {{ $attributes->merge(['class' => "typo-{$cssClass}"]) }}>
     {{ $slot }}
 </{{ $tag }}>

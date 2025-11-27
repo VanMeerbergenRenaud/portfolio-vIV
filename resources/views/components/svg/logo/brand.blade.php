@@ -2,7 +2,7 @@
     <defs>
         <style>
             .cls-1 {
-                font-family: Geist-Medium, Geist;
+                font-family: Geist;
                 font-size: 20px;
                 font-variation-settings: 'wght' 500;
                 font-weight: 500;

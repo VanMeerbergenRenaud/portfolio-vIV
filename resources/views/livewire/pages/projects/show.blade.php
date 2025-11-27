@@ -4,7 +4,7 @@
         {{-- Infos --}}
         <div class="flex flex-col gap-7">
             <div class="flex flex-col-reverse md:flex-col md:grid md:grid-cols-[1fr_30%] md:items-end gap-4 md:gap-6">
-                <x-font.title-2xl level="2">
+                <x-font.title-2xl :isTitle="true" level="2">
                     {{ $project->name }}
                 </x-font.title-2xl>
 
@@ -16,7 +16,7 @@
                     >
                 @else
                     <img src="{{ asset('img/projects/logo.svg') }}"
-                         alt=""
+                         alt="logo par défaut"
                          class="max-w-25"
                          loading="lazy"
                     >
@@ -108,7 +108,7 @@
                 <div class="flex items-center gap-1.5">
                     <span class="text-red" aria-hidden="true">|</span>
 
-                    <x-font.text>
+                    <x-font.text :isTitle="true" level="3">
                         Contexte de réalisation
                     </x-font.text>
                 </div>
@@ -144,7 +144,7 @@
                         @endif
                     </div>
                 @else
-                    <div class="p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                    <div class="w-1/2 p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
                         <x-font.text class="text-gray-medium text-center">
                             Aucun contexte renseigné pour ce projet
                         </x-font.text>
@@ -157,8 +157,8 @@
                 <div class="flex items-center gap-1.5">
                     <span class="text-red" aria-hidden="true">|</span>
 
-                    <x-font.text>
-                        Résultats obtenus
+                    <x-font.text :isTitle="true" level="3">
+                        Au-delà de mes attentes
                     </x-font.text>
                 </div>
 
@@ -192,7 +192,7 @@
                         @endif
                     </div>
                 @else
-                    <div class="p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                    <div class="w-1/2 p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
                         <x-font.text class="text-gray-medium text-center">
                             Aucun résultat renseigné pour ce projet
                         </x-font.text>
@@ -206,7 +206,7 @@
                     <div class="flex items-center gap-1.5">
                         <span class="text-red" aria-hidden="true">|</span>
 
-                        <x-font.text>
+                        <x-font.text :isTitle="true" level="3">
                             Détails techniques
                         </x-font.text>
                     </div>
@@ -280,7 +280,7 @@
                                     Complexité
                                 </x-font.text-md>
                                 <div class="flex items-center gap-4">
-                                    <div class="flex-1 h-1.5 max-w-2/3 bg-whitesmoke rounded-full overflow-hidden">
+                                    <div class="flex-1 h-1.5 max-w-2/3 bg-white rounded-full overflow-hidden">
                                         <div class="h-full rounded-full transition-all duration-700 ease-out
                                         {{ $project->difficulty->value === 'easy' ? 'w-1/3 bg-gray-dark' : '' }}
                                         {{ $project->difficulty->value === 'medium' ? 'w-2/3 bg-gray-dark' : '' }}
@@ -301,26 +301,28 @@
     </section>
 
     {{-- Other projects --}}
-    <section class="px-4 md:px-8 lg:px-10 py-15 flex flex-col gap-12 lg:gap-15">
-        <h2 role="heading" aria-level="2" class="sr-only">
-            Mes autres projets
-        </h2>
+    @if($projects && count($projects) > 0)
+        <section class="px-4 md:px-8 lg:px-10 py-15 flex flex-col gap-12">
+            <h2 class="sr-only">
+                Mes autres projets
+            </h2>
 
-        <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
-            {{-- Title --}}
-            <x-font.title-lg class="max-w-[625px]">
-                Explorez d'autres de mes réalisations.
-            </x-font.title-lg>
+            <div class="px-2 flex flex-col justify-between md:items-end gap-7 md:flex-row">
+                {{-- Title --}}
+                <x-font.title-lg class="max-w-[625px]">
+                    Explorez d'autres de mes réalisations.
+                </x-font.title-lg>
 
-            {{-- Link --}}
-            <x-link.secondary class="mt-4" link="{{ route('projects') }}">
-                Tous les projets
-            </x-link.secondary>
-        </div>
+                {{-- Link --}}
+                <x-link.secondary class="mt-4" link="{{ route('projects') }}">
+                    Tous les projets
+                </x-link.secondary>
+            </div>
 
-        {{-- Project list --}}
-        <x-projects.list :$projects />
-    </section>
+            {{-- Project list --}}
+            <x-projects.list :$projects />
+        </section>
+    @endif
 
-    <x-home.section.cta/>
+    <x-cta/>
 </div>

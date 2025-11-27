@@ -1,5 +1,5 @@
 <div>
-    <section id="coming-soon" class="px-4 md:px-8 lg:px-10 pt-30 pb-10 md:pt-34 lg:pt-38">
+    <section id="coming-soon" class="px-4 md:px-8 lg:px-10 pt-30 pb-10 md:pt-34 lg:pt-38" role="status" aria-live="polite">
         <div class="flex flex-col gap-7">
 
             {{-- Row first --}}
@@ -18,8 +18,8 @@
                 <div class="relative overflow-hidden rounded-2xl max-h-[62.5vh] lg:min-h-[425px]">
                     <img
                         src="{{ asset('img/coming-soon.jpg') }}"
-                        alt="Portrait of a person with motion blur effect, representing creative work."
-                        class="w-full h-full object-cover"
+                        alt="Image humoristique indiquant que la page est en construction"
+                        class="w-full h-full min-h-50 object-cover"
                         loading="lazy"
                     >
                 </div>

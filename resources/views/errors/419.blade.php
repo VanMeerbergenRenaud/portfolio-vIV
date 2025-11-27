@@ -10,4 +10,4 @@
 @endsection
 @section('code', '419')
 @section('description', __('Page expirée'))
-@section('message', __('Je ne peux pas vous aider avec cette page car elle a expirée.'))
+@section('message', __('Je ne peux pas vous aider avec cette page car elle a expiré.'))

@@ -4,18 +4,18 @@
     aria-labelledby="footer-heading"
     class="relative px-6 pt-24 pb-12 md:px-10 lg:p-12 bg-dark-primary text-whitesmoke"
 >
-    <h2 id="footer-heading" role="heading" aria-level="2" class="sr-only">Menu de bas de page</h2>
+    <h2 id="footer-heading" class="sr-only">Menu de bas de page</h2>
 
     {{-- Content --}}
     <div class="relative px-6 pb-12 md:px-8 md:pb-16">
 
         {{-- 1. Section supérieure : Logo et lien retour en haut --}}
         <div class="flex justify-between items-start mb-12">
-            <x-svg.logo.brand class="w-24 h-24 md:w-32 md:h-32" />
+            <x-svg.logo.brand class="w-24 h-24 md:w-32 md:h-32" aria-hidden="true" />
 
             <a
                 href="#page-top"
-                title="Retour en haut de la page"
+                aria-label="Retour en haut de la page"
                 class="p-1 bg-transparent hover:bg-whitesmoke rounded-full group"
             >
                 <x-svg.back-top class="w-8 h-10 text-white group-hover:text-dark-primary" aria-hidden="true" />
@@ -27,7 +27,7 @@
 
             {{-- Colonne 1: Adresse --}}
             <address class="space-y-4 not-italic">
-                <h3 role="heading" aria-level="3" class="font-bold tracking-widest-plus text-gray-medium">Adresse</h3>
+                <h3 class="font-bold tracking-widest-plus text-gray-medium">Adresse</h3>
                 <p class="leading-relaxed text-sm text-whitesmoke">
                     Rue Petit Bioleux, 18<br>
                     4122, Plainevaux<br>
@@ -37,11 +37,11 @@
 
             {{-- Colonne 2 & 3: Navigation rapide --}}
             <div class="md:col-span-2">
-                <h3 role="heading" aria-level="3" class="font-bold tracking-widest-plus mb-4 text-gray-medium">Navigation rapide</h3>
+                <h3 class="font-bold tracking-widest-plus mb-4 text-gray-medium">Navigation rapide</h3>
                 <ul class="grid grid-cols-2 lg:grid-rows-4 lg:grid-flow-col lg:pr-20 justify-items-start gap-2">
                     {{-- Colonne 1 --}}
                     <li><x-link.tertiary link="{{ route('home') }}#hero" :navigate="false" color="white" fontStyle="text-sm">Introduction</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('home') }}#about" :navigate="false" color="white" fontStyle="text-sm">À propos</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#about" :navigate="false" color="white" fontStyle="text-sm">À mon sujet</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#projects" :navigate="false" color="white" fontStyle="text-sm">Projets</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#services" :navigate="false" color="white" fontStyle="text-sm">Services</x-link.tertiary></li>
                     {{-- Colonne 2 --}}
@@ -62,7 +62,7 @@
                 <h3 class="font-bold tracking-widest-plus mb-4 text-gray-medium">Pages principales</h3>
                 <ul class="flex flex-col gap-2 max-md:flex-wrap">
                     <li><x-link.tertiary link="{{ route('home') }}" color="white" fontStyle="text-sm">Accueil</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('about') }}" color="white" fontStyle="text-sm">À&nbsp;propos</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('about') }}" color="white" fontStyle="text-sm">À propos</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('projects') }}" color="white" fontStyle="text-sm">Projets</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('articles') }}" color="white" fontStyle="text-sm">Articles</x-link.tertiary></li>
                 </ul>
@@ -87,6 +87,7 @@
                 href="{{ route('policies') }}"
                 title="Lire la politique de confidentialité"
                 class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                rel="noopener noreferrer"
                 wire:navigate
             >
                 Politique de confidentialité
@@ -96,6 +97,7 @@
                 href="{{ route('conditions') }}"
                 title="Lire les conditions d'utilisation"
                 class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                rel="noopener noreferrer"
                 wire:navigate
             >
                 Conditions d'utilisation
@@ -104,17 +106,28 @@
 
         <!-- Social Links -->
         <nav aria-label="Réseaux sociaux">
-            <h3 role="heading" aria-level="3" class="sr-only">
+            <h3 class="sr-only">
                 Réseaux sociaux
             </h3>
             <ul class="flex items-center md:justify-end gap-x-3 gap-y-2 text-xs uppercase tracking-wider text-gray-medium">
+                <li>
+                    <a
+                        href="{{ asset('img/cv.pdf') }}"
+                        target="_blank"
+                        class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                        aria-label="Découvrir mon CV"
+                    >
+                        CV
+                    </a>
+                </li>
+                <li aria-hidden="true">·</li>
                 <li>
                     <a
                         href="https://www.instagram.com/web_developer.renaud/"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
-                        aria-label="Suivez-moi sur Instagram (s'ouvre dans un nouvel onglet)" {{-- Légère reformulation --}}
+                        aria-label="Suivez-moi sur Instagram"
                     >
                         Instagram
                     </a>
@@ -126,7 +139,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
-                        aria-label="Connectez-vous avec moi sur LinkedIn (s'ouvre dans un nouvel onglet)"
+                        aria-label="Connectez-vous avec moi sur LinkedIn"
                     >
                         LinkedIn
                     </a>
@@ -138,7 +151,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
-                        aria-label="Consultez mes projets sur GitHub (s'ouvre dans un nouvel onglet)"
+                        aria-label="Consultez mes projets sur GitHub"
                     >
                         GitHub
                     </a>

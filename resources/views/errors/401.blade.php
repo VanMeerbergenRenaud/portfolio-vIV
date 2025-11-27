@@ -10,4 +10,4 @@
 @endsection
 @section('code', '401')
 @section('description', __('Non autorisé'))
-@section('message', __('Je ne vous permet pas d’accéder à cette page.'))
+@section('message', __('Je ne vous permets pas d’accéder à cette page.'))

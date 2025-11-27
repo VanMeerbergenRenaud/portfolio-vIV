@@ -1,6 +1,6 @@
 <div>
     <section id="testimonials" class="px-4 md:px-8 lg:px-10 pt-20 pb-30 lg:pt-30 lg:pb-40 flex flex-col gap-15">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Témoignages
         </h2>
 
@@ -20,19 +20,25 @@
                     </x-font.text>
                 </div>
                 <x-font.text-sm class="pl-8.5 text-gray-medium">
-                    Retours d'Expérience.
+                    Retours d'expérience.
                 </x-font.text-sm>
             </div>
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-lg class="max-w-[650px]">
+                <x-font.title-lg :isTitle="true" level="3" class="max-w-[650px]">
                     Ce qu'ils disent de mon code.
                 </x-font.title-lg>
 
                 {{-- Link --}}
-                <x-link.secondary class="mt-4">
-                    Laisser un avis
+                <x-link.secondary
+                    link="mailto:renaud.vanmeerbergen@gmail.com"
+                    title="Vers votre application de mail"
+                    :navigate="false"
+                    target="_blank"
+                    class="mt-4"
+                >
+                    Envoyer un témoignage
                 </x-link.secondary>
             </div>
         </div>
@@ -47,35 +53,27 @@
 
                 <div class="mt-auto flex gap-3.5">
                     <ul class="flex -space-x-4">
-                        <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/avatars/a1.jpg') }}"
-                                 alt=""
-                                 class="w-full h-full rounded-2xl"
-                            >
-                        </li>
-                        <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/avatars/a2.jpg') }}"
-                                 alt=""
-                                 class="w-full h-full rounded-2xl"
-                            >
-                        </li>
-                        <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/avatars/a3.jpg') }}"
-                                 alt=""
-                                 class="w-full h-full rounded-2xl"
-                            >
-                        </li>
-                        <li data-border-small="true" class="w-11 h-11">
-                            <img src="{{ asset('img/avatars/a4.jpg') }}"
-                                 alt=""
-                                 class="w-full h-full rounded-2xl"
-                            >
-                        </li>
-                        <li class="w-11 h-11 bg-whitesmoke flex-center rounded-2xl" data-border-small="true">
-                            <x-font.text-md class="text-gray-dark">
-                                95+
-                            </x-font.text-md>
-                        </li>
+                        @foreach($testimonials->take(4) as $testimonial)
+                            <li data-border-small="true" class="w-11 h-11">
+                                <noindex>
+                                    <img src="{{
+                                            $testimonial->image
+                                                ? Storage::disk('s3')->url($testimonial->image)
+                                                : asset('img/placeholder.png')
+                                        }}"
+                                         alt=""
+                                         class="w-full h-full rounded-2xl object-cover"
+                                    >
+                                </noindex>
+                            </li>
+                        @endforeach
+                        @if($testimonialCount > 4)
+                            <li class="w-11 h-11 bg-whitesmoke flex-center rounded-2xl" data-border-small="true">
+                                <x-font.text-md class="text-gray-dark">
+                                    {{$testimonialCount }}+
+                                </x-font.text-md>
+                            </li>
+                        @endif
                     </ul>
 
                     <div class="flex flex-col gap-1">
@@ -89,96 +87,149 @@
                         </div>
 
                         <x-font.text-sm class="text-gray-medium">
-                            Trusted by our partners
+                            Basé sur {{ $testimonialCount }} avis vérifiés
                         </x-font.text-sm>
                     </div>
                 </div>
             </div>
 
-            <div class="relative grid grid-cols-[42px_1fr] gap-2" x-data="{ i: 0 }">
+            <div class="relative" x-data="{ i: 0 }">
+                {{-- Mobile/No-JS: Grid layout with all testimonials --}}
+                <div class="lg:hidden grid gap-4">
+                    @foreach($testimonials as $index => $testimonial)
+                        <div class="p-4.5 flex flex-col content-between gap-20 bg-white rounded-2xl">
+                            <x-font.text-3xl>
+                                "{{ $testimonial->content }}"
+                            </x-font.text-3xl>
 
-                {{-- Number --}}
-                <div class="pt-2.5 pb-1.5 px-1.5 flex flex-col items-center" data-border-rounded="true">
-
-                    <x-font.text-md class="p-1 text-gray-medium" x-text="(i + 1).toString().padStart(2, '0')">01
-                    </x-font.text-md>
-
-                    {{-- Lines --}}
-                    <div class="flex flex-col gap-1.5 mt-auto">
-                        <button
-                            type="button"
-                            class="flex-center bg-white w-8 h-8 rounded-full"
-                            @click.prevent="i = i === 0
-                                ? {{ count($testimonials) - 1 }}
-                                : i - 1"
-                        >
-                            <x-svg.arrow-left/>
-                        </button>
-                        <button
-                            type="button"
-                            class="flex-center bg-white w-8 h-8 rounded-full"
-                            @click.prevent="i = i === {{ count($testimonials) - 1 }}
-                                ? 0
-                                : i + 1"
-                        >
-                            <x-svg.arrow-right/>
-                        </button>
-                    </div>
-                </div>
-
-                @foreach($testimonials as $index => $testimonial)
-                    {{-- Card --}}
-                    <div
-                        x-show="i === {{ $index }}"
-                        class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
-                    >
-                        <x-font.text-3xl>
-                            "{{ $testimonial->content }}"
-                        </x-font.text-3xl>
-
-                        <div class="relative top-1.5 -left-1 flex md:items-center gap-3 mt-auto">
-                            <img
-                                src="{{
-                                    $testimonial->image
-                                        ? Storage::disk('s3')->url($testimonial->image)
-                                        : asset('img/placeholder.png')
-                                }}"
-                                alt="{{ $testimonial->name }}"
-                                class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover"
-                            >
-                            <div class="flex flex-col gap-0.5">
-                                <x-font.text-xl>
-                                    {{ $testimonial->name }}
-                                </x-font.text-xl>
-                                <x-font.text class="text-gray-medium">
-                                    {{ $testimonial->role }}
-                                    @if($testimonial->company)
-                                        , {{ $testimonial->company }}
-                                    @endif
-                                </x-font.text>
+                            <div class="relative top-1.5 -left-1 flex md:items-center gap-3 mt-auto">
+                                <noindex>
+                                    <img
+                                        src="{{
+                                            $testimonial->image
+                                                ? Storage::disk('s3')->url($testimonial->image)
+                                                : asset('img/placeholder.png')
+                                        }}"
+                                        alt="{{ $testimonial->name }}"
+                                        class="w-10 h-10 rounded-xl object-cover"
+                                    >
+                                </noindex>
+                                <div class="flex flex-col gap-0.5">
+                                    <x-font.text-xl>
+                                        {{ $testimonial->name }}
+                                    </x-font.text-xl>
+                                    <x-font.text class="text-gray-medium">
+                                        {{ $testimonial->role }}
+                                        @if($testimonial->company)
+                                            , {{ $testimonial->company }}
+                                        @endif
+                                    </x-font.text>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
 
-                {{-- Typo card desktop --}}
-                <div class="hidden lg:block absolute bottom-4 right-5">
-                    <x-font.title-xl class="text-whitesmoke" aria-hidden="true">
-                        <span class="sr-only">Guillemet typographique</span>
-                        <svg class="w-auto h-28" display="block" role="presentation" viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
-                                fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5" stroke="#f2f2f2"
-                                transform="translate(2 3)" width="8px"></path>
-                            <path
-                                d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
-                                fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5" stroke="#f2f2f2"
-                                transform="translate(14 3)" width="8px"></path>
-                        </svg>
-                    </x-font.title-xl>
+                {{-- Desktop: Slider layout with navigation --}}
+                <div class="hidden lg:grid grid-cols-[42px_1fr] gap-2">
+
+                    {{-- Number --}}
+                    <div class="pt-2.5 pb-1.5 px-1.5 flex flex-col items-center" data-border-rounded="true">
+
+                        <x-font.text-md
+                            class="p-1 text-gray-medium"
+                            x-text="(i + 1).toString().padStart(2, '0')"
+                            role="status"
+                            aria-live="polite"
+                            aria-label="Numéro du témoignage sélectionné"
+                        >01
+                        </x-font.text-md>
+
+                        {{-- Lines --}}
+                        <div class="flex flex-col gap-1.5 mt-auto" role="group" aria-label="Navigation des témoignages">
+                            <button
+                                type="button"
+                                class="flex-center bg-white w-8 h-8 rounded-full"
+                                @click.prevent="i = i === 0
+                                    ? {{ count($testimonials) - 1 }}
+                                    : i - 1"
+                                aria-label="Témoignage précédent"
+                            >
+                                <x-svg.arrow-left aria-hidden="true"/>
+                            </button>
+                            <button
+                                type="button"
+                                class="flex-center bg-white w-8 h-8 rounded-full"
+                                @click.prevent="i = i === {{ count($testimonials) - 1 }}
+                                    ? 0
+                                    : i + 1"
+                                aria-label="Témoignage suivant"
+                            >
+                                <x-svg.arrow-right aria-hidden="true"/>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        @foreach($testimonials as $index => $testimonial)
+                            {{-- Card --}}
+                            <div
+                                role="region"
+                                x-show="i === {{ $index }}"
+                                class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
+                                aria-label="Témoignage {{ $index + 1 }} sur {{ count($testimonials) }}"
+                            >
+                                <x-font.text-3xl>
+                                    "{{ $testimonial->content }}"
+                                </x-font.text-3xl>
+
+                                <div class="relative top-1.5 -left-1 flex md:items-center gap-3 mt-auto">
+                                    <noindex>
+                                        <img
+                                            src="{{
+                                                $testimonial->image
+                                                    ? Storage::disk('s3')->url($testimonial->image)
+                                                    : asset('img/placeholder.png')
+                                            }}"
+                                            alt="{{ $testimonial->name }}"
+                                            class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover"
+                                        >
+                                    </noindex>
+                                    <div class="flex flex-col gap-0.5">
+                                        <x-font.text-xl>
+                                            {{ $testimonial->name }}
+                                        </x-font.text-xl>
+                                        <x-font.text class="text-gray-medium">
+                                            {{ $testimonial->role }}
+                                            @if($testimonial->company)
+                                                , {{ $testimonial->company }}
+                                            @endif
+                                        </x-font.text>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                        {{-- Typo card desktop --}}
+                        <div class="absolute bottom-4 right-5">
+                            <x-font.title-xl class="text-whitesmoke" aria-hidden="true">
+                                <span class="sr-only">Guillemet typographique</span>
+                                <svg class="w-auto h-28" display="block" role="presentation" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
+                                        fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.5" stroke="#f2f2f2"
+                                        transform="translate(2 3)" width="8px"></path>
+                                    <path
+                                        d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
+                                        fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.5" stroke="#f2f2f2"
+                                        transform="translate(14 3)" width="8px"></path>
+                                </svg>
+                            </x-font.title-xl>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

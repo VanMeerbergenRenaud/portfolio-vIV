@@ -22,4 +22,6 @@ yarn-error.log
 /.vscode
 /.zed
 /.junie
+/.github
+.DS_Store
 boost.json

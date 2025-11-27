@@ -2,7 +2,7 @@
     'projects' => $projects
 ])
 
-<ul class="flex flex-col gap-2 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))] lg:flex">
+<ul class="flex flex-col gap-3 md:grid md:grid-cols-[repeat(2,minmax(100px,1fr))] lg:flex">
     @forelse($projects as $index => $project)
         @php
             $isReverse = $index % 2 !== 0;
@@ -13,14 +13,15 @@
         <li>
             <a href="{{ route('projects.show', $project->slug) }}"
                title="Vers le projet {{ $project->name }}"
+               aria-label="Voir le projet {{ $project->name }}"
                class="max-lg:bg-white p-1.5 rounded-2xl flex flex-col gap-2 lg:grid {{ $gridClass }} max-lg:border max-lg:border-transparent max-lg:border-dashed max-lg:hover:border-red group"
                wire:navigate
             >
                 {{-- Infos --}}
                 <div class="flex flex-col justify-between p-2 lg:p-6 lg:rounded-2xl lg:bg-white lg:border lg:border-transparent lg:border-dashed lg:group-hover:border-red {{ $orderClass }}">
                     <div class="flex flex-col gap-2">
-                        <div class="flex justify-between gap-1">
-                            <h4 role="heading" aria-level="4">{{ $project->name }}</h4>
+                        <div class="flex justify-between gap-1 max-lg:px-1">
+                            <x-font.text-lg :isTitle="true" level="3">{{ $project->name }}</x-font.text-lg>
                             <span class="block lg:hidden text-sm text-gray-medium">{{ $project->year }}</span>
                         </div>
 
@@ -67,7 +68,7 @@
                 </div>
 
                 {{-- Image --}}
-                <div class="relative rounded-2xl overflow-hidden min-h-[250px] max-h-[550px]">
+                <div class="relative rounded-2xl overflow-hidden min-h-65 max-h-125 2xl:max-h-250">
                     @if($project->image)
                         <img src="{{ Storage::disk('s3')->url($project->image) }}"
                              alt="{{ $project->name }}"

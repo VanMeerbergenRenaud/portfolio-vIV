@@ -16,9 +16,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('excerpt')->nullable();
-            $table->longText('content')->nullable();
-            $table->string('image')->nullable();
+            $table->json('content_blocks')->nullable();
+            $table->string('cover_image')->nullable();
             $table->string('category')->nullable();
+            $table->json('tags')->nullable();
+            $table->integer('reading_time')->nullable();
             $table->boolean('is_featured')->default(false);
             $table->boolean('is_published')->default(true);
             $table->integer('order')->default(0);

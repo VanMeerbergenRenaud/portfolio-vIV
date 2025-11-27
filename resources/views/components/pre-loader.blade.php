@@ -1,18 +1,17 @@
 <!-- Preloader -->
 <div
+    x-cloak
     x-data="preloader"
     x-show="show"
     x-transition:leave="transition ease-in-out duration-800"
     x-transition:leave-start="translate-y-0"
     x-transition:leave-end="-translate-y-full"
     class="will-change-transform fixed inset-0 bg-gray-100 items-center justify-center z-50 p-8 flex flex-col"
+    role="status"
+    aria-live="polite"
+    aria-label="Chargement de la page en cours"
 >
-    <h1
-        aria-level="1"
-        aria-label="Chargement..."
-        role="heading"
-        class="font-bold"
-    >
+    <p class="font-bold">
         <template x-for="(char, index) in text" :key="index">
             <span
                 class="inline-block text-[#A9A9A9] font-medium opacity-0 text-[44px] md:text-[56px]"
@@ -24,9 +23,11 @@
                      `
                 }"
                 x-text="char === ' ' ? '\u00A0' : char"
+                aria-hidden="true"
             ></span>
         </template>
-    </h1>
+    </p>
+    <span class="sr-only">Chargement...</span>
 </div>
 
 <script>

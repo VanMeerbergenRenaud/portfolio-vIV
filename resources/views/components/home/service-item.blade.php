@@ -31,6 +31,7 @@
 
     {{-- Title --}}
     <x-font.title
+        :isTitle="true" level="3"
         class="lg:leading-15 transition-colors duration-300 pr-6"
         x-bind:class="activeService === {{ $index }}
             ? 'text-dark-primary'

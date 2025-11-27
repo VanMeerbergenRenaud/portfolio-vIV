@@ -1,6 +1,6 @@
 <div>
     <section id="about" class="px-4 md:px-8 lg:px-10 pt-30 pb-20 md:pt-40 md:pb-25 lg:pt-50 lg:pb-30">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             À propos de moi
         </h2>
 
@@ -23,26 +23,31 @@
                     <x-font.text-sm class="text-gray-medium">2025</x-font.text-sm>
                 </div>
 
-                <x-font.title class="mt-8">
+                <x-font.title :isTitle="true" level="3" class="mt-8">
                     Artisan du code Laravel, je forge des applications web robustes, scalables et pensées pour tous les utilisateurs.
                 </x-font.title>
 
                 <x-font.text-lg class="mt-4 text-gray-medium max-w-[480px]">
-                    Adepte des principes SOLID et du TDD, je vise le "zéro dette technique" pour un code qui reste propre et évolutif.
+                    Adepte des principes de base, je vise le "zéro dette technique" pour un code qui reste propre et évolutif.
                 </x-font.text-lg>
 
-                <x-link.secondary link="#projects" class="mt-7 lg:mt-20">
+                <x-link.secondary
+                    link="{{ route('home') }}#projects"
+                    class="mt-7 lg:mt-20"
+                    :navigate="false"
+                >
                     En savoir plus
                 </x-link.secondary>
             </div>
 
             {{-- Colonne de droite --}}
             <div>
-                <div
-                    class="grid grid-cols-2  gap-2 overflow-auto
-                        lg:grid-cols-[minmax(0,8rem)_minmax(0,11.25rem)_minmax(0,11.25rem)_minmax(0,8rem)]
-                        xl:grid-cols-[auto_minmax(0,15rem)_minmax(0,15rem)_auto]"
-                >
+                <div class="
+                        grid grid-cols-2 gap-2 overflow-auto
+                        lg:grid-cols-[minmax(6rem,8rem)_auto_auto_minmax(6rem,8rem)]
+                        xl:grid-cols-[minmax(7.5rem,9rem)_auto_auto_minmax(7.5rem,9rem)]
+                        2xl:grid-cols-[minmax(9rem,15rem)_auto_auto_minmax(9rem,15rem)]
+                ">
 
                     {{-- CARTE 1: Stat 1 --}}
                     <div data-border="true"

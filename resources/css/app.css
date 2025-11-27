@@ -1,17 +1,14 @@
 @import 'tailwindcss';
+@import './fonts.css';
 @import './typography.css';
 @import './table.css';
 
 @source '../views';
 
-@font-face {
-    font-family: 'PrestigeSignatureScript-Demo';
-    src: url('../../public/fonts/portfolio/prestige-signature-script-demo.ttf') format('truetype');
-}
-
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-geist: 'Geist', var(--font-sans);
+    --font-base: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-prestige : PrestigeSignatureScript-Demo, cursive;
+    --font-global: 'Geist', 'Instrument Sans', var(--font-base);
 
     /* Color Palette */
     --color-dark-primary: #121212;
@@ -44,7 +41,7 @@
     }
 
     html {
-        @apply scroll-smooth font-geist;
+        @apply scroll-smooth font-global;
     }
 
     body {
@@ -68,25 +65,47 @@
     }
 
     img, video {
-        @apply flex-center w-full max-w-full h-auto object-cover bg-transparent overflow-hidden;
+        @apply flex-center min-h-1 w-full max-w-full h-auto object-cover bg-transparent overflow-hidden;
     }
 
     svg {
         @apply w-4 h-4 text-dark-primary;
     }
 
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    select:focus-visible,
-    textarea:focus-visible {
-        @apply outline-2 outline-gray-800 outline-offset-2 rounded-md;
+    /*---------- Accessibilité WCAG ----------*/
+    *:focus-visible {
+        @apply outline-2 outline-offset-3 outline-dark-primary rounded-md;
+    }
+
+    /* Focus visible sur fond sombre */
+    [class*="bg-dark"] *:focus-visible,
+    [class*="bg-black"] *:focus-visible,
+    [class*="bg-dark"]:focus-visible,
+    [class*="bg-black"]:focus-visible {
+        @apply outline-whitesmoke;
     }
 
     button:disabled,
     input:disabled,
     textarea:disabled {
         @apply opacity-50 cursor-not-allowed;
+    }
+
+    /* Respect des préférences de mouvement réduit */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+    /* Classes utilitaires pour l'accessibilité */
+    .skip-link {
+        @apply sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:bg-white focus:text-dark-primary focus:px-4 focus:py-2 focus:rounded-md focus:outline-2 focus:outline-dark-primary;
     }
 }
 
@@ -191,4 +210,15 @@
 .gallery-zoom-container {
     overflow: hidden;
     border-radius: 1rem;
+}
+
+/* Rich editor */
+.rich-text {
+    ul {
+        @apply mt-2 list-disc list-inside space-y-2;
+    }
+
+    ol {
+        @apply mt-2 list-decimal list-inside space-y-2;
+    }
 }

@@ -1,6 +1,6 @@
 <div>
     <section id="processes" class="px-4 md:px-8 lg:px-10 py-30 md:py-35 lg:py-40 flex flex-col gap-15 md:gap-20 lg:gap-25 lg:grid lg:grid-cols-[40%_1fr]">
-        <h2 role="heading" aria-level="2" class="sr-only">
+        <h2 class="sr-only">
             Processus
         </h2>
 
@@ -15,21 +15,25 @@
                 <span class="text-red" aria-hidden="true">|</span>
 
                 <x-font.text>
-                    Process
+                    Processus
                 </x-font.text>
             </div>
 
             {{-- Title --}}
             <x-font.title class="mt-3 lg:mt-4 max-w-[525px]">
-                De la première ligne en local à la mise en prod, un process clair.
+                De la première ligne en local à la mise en prod, un processus clair.
             </x-font.title>
 
             {{-- Text --}}
             <x-font.text-lg class="text-gray-medium mb-3 lg:mb-4 max-w-[475px]">
-                Ma méthode : anticiper, itérer, tester, et communiquer. Pour un projet sans surprise, juste des solutions.
+                Ma méthode : anticiper, itérer, tester et communiquer. Pour un projet sans surprise, juste des solutions.
             </x-font.text-lg>
 
-            <x-link.secondary>
+            <x-link.secondary
+                link="mailto:renaud.vanmeerbergen@gmail.com"
+                title="Vers votre application de mail"
+                :navigate="false"
+            >
                 Discutons de votre projet
             </x-link.secondary>
         </div>
@@ -59,7 +63,7 @@
 
                     {{-- Card --}}
                     <div class="p-6 lg:pr-35 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl">
-                        <x-font.text-2xl>
+                        <x-font.text-2xl :isTitle="true" level="3">
                             {{ $process->title }}
                         </x-font.text-2xl>
 

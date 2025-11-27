@@ -17,6 +17,7 @@ class Projects extends Component
             ->ordered()
             ->limit(3)
             ->get();
+
         $this->projectCount = Project::published()->count();
     }
 
