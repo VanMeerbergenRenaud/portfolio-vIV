@@ -28,7 +28,7 @@
                 </x-font.title-2xl>
 
                 {{-- List of different project types --}}
-                <ul class="flex flex-wrap gap-2" role="navigation" aria-label="Filtrer les projets par type">
+                <ul class="flex flex-wrap gap-2 justify-end" role="navigation" aria-label="Filtrer les projets par type">
                     <li>
                         <a href="{{ route('projects') }}"
                            aria-label="Afficher tous les projets"

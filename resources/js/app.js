@@ -33,27 +33,20 @@ document.addEventListener('livewire:navigated', () => {
                 const rect = img.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
 
-                // L'image est visible dans le viewport
                 if (rect.top < windowHeight && rect.bottom > 0) {
-                    // Calculer la position de l'image dans le viewport
-                    // 0 = en bas de l'écran (juste entrée), 1 = en haut de l'écran (sortie par le haut)
                     const scrollProgress = Math.max(0, Math.min(1,
                         (windowHeight - rect.top) / (windowHeight + rect.height)
                     ));
 
-                    // Interpoler le scale entre 1.2 (en bas) et 1 (en haut)
-                    // Plus l'image monte, plus elle se dézoom
                     const scale = 1.2 - (scrollProgress * 0.2);
 
                     img.style.transform = `scale(${scale})`;
                 } else if (rect.top >= windowHeight) {
-                    // L'image est en dessous du viewport (pas encore visible)
                     img.style.transform = 'scale(1.2)';
                 }
             });
         };
 
-        // Throttle pour optimiser les performances
         let ticking = false;
         const onScroll = () => {
             if (!ticking) {
@@ -66,6 +59,89 @@ document.addEventListener('livewire:navigated', () => {
         };
 
         window.addEventListener('scroll', onScroll, { passive: true });
-        updateZoomEffect(); // Init au chargement
+        updateZoomEffect();
+    }
+
+    /* Horizontal scroll effect for cards - Professional smooth animation */
+    const scrollCards = document.querySelectorAll('[data-scroll-card]');
+
+    if (scrollCards.length > 0 && !prefersReducedMotion && window.innerWidth >= 1024) {
+        const state = {
+            currentY: window.scrollY,
+            targetY: window.scrollY,
+            running: false,
+            offset: window.innerWidth >= 1280 ? 80 : 50,
+            ease: 0.08
+        };
+
+        const easeInOutCubic = (t) => {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        };
+
+        const updateCardPositions = () => {
+            const h = window.innerHeight;
+
+            scrollCards.forEach(card => {
+                const { top, bottom } = card.getBoundingClientRect();
+
+                if (top < h * 1.5 && bottom > -h * 0.5) {
+                    const scrollStart = h * 1.2;
+                    const scrollEnd = h * 0.5;
+                    const rawProgress = Math.max(0, Math.min(1, (scrollStart - top) / (scrollStart - scrollEnd)));
+                    const progress = easeInOutCubic(rawProgress);
+                    const x = (1 - progress) * state.offset;
+                    const dir = card.dataset.scrollCard === 'right' ? x : -x;
+
+                    card.style.transform = `translateX(${dir}px)`;
+                    card.style.transition = 'transform 0.05s linear';
+                }
+            });
+        };
+
+        const animate = () => {
+            const diff = state.targetY - state.currentY;
+            state.currentY += diff * state.ease;
+
+            updateCardPositions();
+
+            if (Math.abs(diff) > 0.5) {
+                requestAnimationFrame(animate);
+            } else {
+                state.running = false;
+            }
+        };
+
+        let scrollTicking = false;
+        const onCardScroll = () => {
+            state.targetY = window.scrollY;
+
+            if (!scrollTicking) {
+                window.requestAnimationFrame(() => {
+                    if (!state.running) {
+                        state.running = true;
+                        animate();
+                    }
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
+        };
+
+        window.addEventListener('scroll', onCardScroll, { passive: true });
+
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (window.innerWidth >= 1280) {
+                    state.offset = 80;
+                } else if (window.innerWidth >= 1024) {
+                    state.offset = 50;
+                }
+                updateCardPositions();
+            }, 150);
+        });
+
+        updateCardPositions();
     }
 });

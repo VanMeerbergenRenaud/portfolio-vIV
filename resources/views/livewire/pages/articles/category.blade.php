@@ -28,7 +28,7 @@
                 </x-font.title-2xl>
 
                 {{-- List of categories --}}
-                <ul class="flex flex-wrap gap-2" role="navigation" aria-label="Filtrer les articles par catégorie">
+                <ul class="flex flex-wrap gap-2 justify-end" role="navigation" aria-label="Filtrer les articles par catégorie">
                    <li>
                         <a href="{{ route('articles') }}"
                            aria-label="Afficher tous les articles"
