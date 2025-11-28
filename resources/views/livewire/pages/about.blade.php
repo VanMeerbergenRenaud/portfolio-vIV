@@ -66,12 +66,9 @@
             </div>
 
             <x-font.text-lg class="text-gray-medium max-w-[900px] leading-relaxed">
-                Je suis un alchimiste du chaos maîtrisé, je transforme des tickets douteux en résultats solides, le tout accompagné d'une playlist mythique et de jurons poétiques.
-                Je répare la production d’un geste nonchalant tout en semant une nouvelle énigme pour l’équipe afin de préserver le suspense.
-                Je corrige des erreurs légendaires et passe 30 minutes à centrer une image, qui me plonge dans une profonde méditation existentielle.
-                J'écris le code comme un artiste en plein mélodrame en choisissant des mots que je ne comprends pas moi-même.
-                Mon code est nettoyé à la manière d’un illusionniste de sorte qu’il ne reste aucun témoin.
-                Je suis disponible pour des missions payées en euros et je refuse les paiements en visibilité. J’accepte les propositions sérieuses et les pâtisseries comme bonus de négociation.<br>
+                Je suis un alchimiste du chaos maîtrisé, je transforme des tickets douteux en résultats solides, le tout accompagné d'une playlist mythique.
+                Fondamentalement, c'est la passion du travail bien fait qui me guide. Si je passe 30 minutes à centrer une image, ce n'est pas par hasard, mais par pur souci d'excellence visuelle. Loin de vouloir complexifier le code pour briller, je cherche avant tout la solution la plus fiable et la plus simple possible.
+                Mon approche est celle d'un artisan qui accorde autant d'importance à la stabilité technique qu'au confort des utilisateurs. Je suis là pour bâtir du durable, avec sérieux, écoute et bonne humeur.<br>
             </x-font.text-lg>
         </section>
 
@@ -90,11 +87,11 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">PHP 8.5 (Non, il n'est pas mort)</x-font.text>
+                            <x-font.text class="text-gray-medium">PHP (Toujours vivant)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Laravel (Magie noire incluse)</x-font.text>
+                            <x-font.text class="text-gray-medium">Laravel (Pour les magiciens du web)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
@@ -108,7 +105,7 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Tailwind CSS (J'ai banni le CSS pur)</x-font.text>
+                            <x-font.text class="text-gray-medium">Tailwind CSS (Le framework qui ne dort jamais)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
@@ -126,11 +123,11 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Git (commit -m "oups je répare")</x-font.text>
+                            <x-font.text class="text-gray-medium">Git (Sauve des vies depuis 2005)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Docker (L'usine à gaz portable)</x-font.text>
+                            <x-font.text class="text-gray-medium">Docker (Stockage illégal)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
@@ -340,7 +337,7 @@
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Véhicule (Batmobile rouillée)</x-font.text>
+                            <x-font.text class="text-gray-medium">Véhicule (Trottinette débridée)</x-font.text>
                         </li>
                     </ul>
                 </div>
