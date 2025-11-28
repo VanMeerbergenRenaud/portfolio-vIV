@@ -224,7 +224,7 @@
                         <li class="flex items-start gap-2">
                             <span class="text-red">→</span>
                             <x-font.text class="text-gray-medium">
-                                J'ai tout fait moi même et je suis fatigué.
+                                Concrétisation d'un SaaS en 4 semaines chrono.
                             </x-font.text>
                         </li>
                         <li class="flex items-start gap-2">
@@ -236,7 +236,7 @@
                         <li class="flex items-start gap-2">
                             <span class="text-red">→</span>
                             <x-font.text class="text-gray-medium">
-                                CEO/CTO et stagiaire du mois en même temps.
+                                Employé du mois (auto-proclamé).
                             </x-font.text>
                         </li>
                     </ul>
