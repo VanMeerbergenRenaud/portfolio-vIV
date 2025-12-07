@@ -49,7 +49,7 @@
 
             {{-- Logo --}}
             <div class="pointer-events-none absolute top-4 -right-4 lg:top-18 lg:-right-6 z-10 rotate-12">
-                <x-svg.wrapped.logo class="h-32 w-32 lg:h-48 lg:w-48" />
+                <x-svg.wrapped.circular-logo class="h-32 w-32 lg:h-48 lg:w-48" />
             </div>
 
             {{-- Content --}}
