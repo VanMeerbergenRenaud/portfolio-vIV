@@ -18,8 +18,8 @@
                     Contact
                 </x-font.text>
             </div>
-            <x-font.text-sm :isTitle="true" level="3" class="pl-7 text-gray-medium">
-                Renaud Vmb®
+            <x-font.text-sm :isTitle="true" level="3" class="pl-8.5 text-gray-medium">
+                Envoyez-moi un message
             </x-font.text-sm>
         </div>
 
