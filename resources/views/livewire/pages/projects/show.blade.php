@@ -18,11 +18,11 @@
                     <img src="{{ asset('img/projects/logo.svg') }}"
                          alt="logo par défaut"
                          class="max-w-25"
-                         loading="lazy"
                     >
                 @endif
             </div>
 
+            {{-- Description & Image --}}
             <div class="flex flex-col md:grid md:grid-cols-[1fr_30%] gap-4 md:gap-6">
                 <div class="max-sm:order-2 max-sm:mt-4">
                     @if($project->image)
@@ -41,6 +41,7 @@
                     @endif
                 </div>
 
+                {{-- Description & details --}}
                 <div class="grid justify-between gap-15">
                     <div>
                         <x-divider-dash class="hidden lg:block"/>
@@ -73,7 +74,7 @@
                                     <x-font.text-md class="text-gray-medium">Type</x-font.text-md>
                                     <x-divider-dash class="flex-1"/>
                                     <x-font.text-md>
-                                        <x-project-type-label :type="$project->type"/>
+                                        <x-projects.type-label :type="$project->type"/>
                                     </x-font.text-md>
                                 </div>
                             @endif
@@ -248,7 +249,7 @@
                                 </x-font.text-md>
                                 <div class="flex flex-wrap gap-2">
                                     @foreach($project->roles as $role)
-                                        <x-project-role-label :role="$role"/>
+                                        <x-projects.role-label :role="$role"/>
                                     @endforeach
                                 </div>
                             </div>
