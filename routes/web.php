@@ -6,6 +6,7 @@ use App\Livewire\Pages\Articles\Index as ArticlesIndex;
 use App\Livewire\Pages\Articles\Show as ArticlesShow;
 use App\Livewire\Pages\Conditions;
 use App\Livewire\Pages\Home;
+use App\Livewire\Pages\LaravelWrapped;
 use App\Livewire\Pages\Policies;
 use App\Livewire\Pages\Projects\Index as ProjectsIndex;
 use App\Livewire\Pages\Projects\Show as ProjectsShow;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/', Home::class)->name('home');
+    Route::get('/laravel-wrapped', LaravelWrapped::class)->name('laravel-wrapped');
     Route::get('/about', About::class)->name('about');
     Route::get('/projects', ProjectsIndex::class)->name('projects');
     Route::get('/projects/type/{type}', ProjectsType::class)->name('projects.type');

@@ -254,7 +254,7 @@
                 <x-divider-dash class="flex-1 mt-5 ml-3 lg:mt-7.5 lg:ml-6"/>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
                 <div class="border-l-2 border-red pl-6 relative">
                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-red"></div>
 

@@ -142,6 +142,16 @@
                 >
                     renaud.vanmeerbergen@gmail.com
                 </x-link.tertiary>
+                {{-- Laravel Wrapped --}}
+                <x-link.tertiary
+                    link="{{ route('laravel-wrapped') }}"
+                    title="Découvrir mes statistiques Laravel"
+                    fontStyle="text-md font-medium"
+                    target="_blank"
+                    :navigate="false"
+                >
+                    Laravel Wrapped 2025
+                </x-link.tertiary>
                 {{-- Phone --}}
                 <x-link.tertiary
                     link="tel:+32470596065"
