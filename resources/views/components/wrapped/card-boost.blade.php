@@ -4,7 +4,7 @@
 ])
 
 <div class="mb-6 break-inside-avoid">
-    <div class="relative w-full rounded-lg border md:max-w-90 p-8 overflow-hidden border-neutral-800 bg-neutral-900">
+    <div class="relative w-full rounded-2xl border md:max-w-90 p-8 overflow-hidden border-neutral-800 bg-neutral-900">
 
         {{-- Background SVG --}}
         <div class="absolute inset-0 opacity-40">

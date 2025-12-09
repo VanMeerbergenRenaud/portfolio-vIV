@@ -1,7 +1,11 @@
-@props(['title', 'value' => null, 'description', 'valueSize' => 'large'])
+@props([
+    'title', 'value' => null,
+    'description',
+    'valueSize' => 'large'
+])
 
 <div class="mb-6 break-inside-avoid">
-    <div class="relative w-full overflow-hidden rounded-lg border border-gray-200 md:max-w-90 bg-white p-8 transition-shadow">
+    <div class="relative w-full overflow-hidden rounded-2xl border border-gray-200 md:max-w-90 bg-white p-8 transition-shadow">
         <div class="mb-20 flex items-center gap-2">
             {{ $icon }}
 
