@@ -147,8 +147,6 @@
                     link="{{ route('laravel-wrapped') }}"
                     title="Découvrir mes statistiques Laravel"
                     fontStyle="text-md font-medium"
-                    target="_blank"
-                    :navigate="false"
                 >
                     Laravel Wrapped 2025
                 </x-link.tertiary>

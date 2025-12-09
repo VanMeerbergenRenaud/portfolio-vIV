@@ -103,6 +103,12 @@
         }
     }
 
+    @supports (content-visibility: auto) {
+        img, svg {
+            content-visibility: auto;
+        }
+    }
+
     /* Classes utilitaires pour l'accessibilité */
     .skip-link {
         @apply sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:bg-white focus:text-dark-primary focus:px-4 focus:py-2 focus:rounded-md focus:outline-2 focus:outline-dark-primary;
