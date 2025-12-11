@@ -241,5 +241,23 @@
     </section>
 
     {{-- Empty space --}}
-    <div class="my-24" aria-hidden="true"></div>
+    <div class="my-8" aria-hidden="true"></div>
+
+    {{-- Crédit --}}
+    <div class="max-w-[1200px] mx-auto">
+        <div class="py-8 px-6 lg:px-10 border-t border-gray-200">
+            <x-font.text-sm class="text-gray-medium text-center">
+                Cette page est une reproduction partielle inspirée de
+                <a href="https://wrapped.laravel.com"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visiter le site officiel de Laravel Wrapped"
+                   class="text-red hover:underline"
+                >
+                    Laravel Wrapped
+                </a>
+                par Laravel.
+            </x-font.text-sm>
+        </div>
+    </div>
 </div>
