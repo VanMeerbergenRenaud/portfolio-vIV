@@ -15,8 +15,6 @@
             .cls-2 {
                 font-family: PrestigeSignatureScript-Demo;
                 font-size: 56px;
-                letter-spacing: -1rem;
-                transform: translateX(-2px);
             }
 
             .rotating-text {
@@ -82,7 +80,8 @@
             <text class="cls-1" transform="translate(57.93 167.45) rotate(-126.43)"><tspan x="0" y="0">·</tspan></text>
         </g>
         <g>
-            <text class="cls-2" x="115" y="120" text-anchor="middle">RV</text>
+            <text class="cls-2" x="95" y="120" text-anchor="middle" dominant-baseline="central">R</text>
+            <text class="cls-2" x="145" y="120" text-anchor="middle" dominant-baseline="central">V</text>
         </g>
     </g>
 </svg>
