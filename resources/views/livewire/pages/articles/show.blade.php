@@ -1,4 +1,6 @@
 <div>
+    <x-schema.article-show :article="$article" />
+
     <section id="article" class="px-6 lg:px-12 pt-30 pb-25 lg:pt-45 flex flex-col gap-10">
 
         {{-- Article with sidebar --}}

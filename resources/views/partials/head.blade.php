@@ -4,11 +4,13 @@
 <meta name="theme-color" content="#121212">
 
 <title>{{ $title ?? 'Renaud Van Meerbergen' }}</title>
+
 <meta name="title" content="Renaud Vmb">
 <meta name="author" content="Renaud Van Meerbergen">
 <meta name="keywords" content="développeur fullstack, développeur Laravel, développement d'applications, développeur frontend, développeur backend, développeur Liège, Renaud développeur">
 <meta name="description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
-<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ url()->current() }}">
+<meta name="robots" content="all">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -60,3 +62,15 @@
 <!-- Styles -->
 @livewireStyles
 @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+<!-- Schema.org JSON-LD -->
+@if(request()->routeIs('home'))
+    <x-schema.home />
+@elseif(request()->routeIs('about'))
+    <x-schema.about />
+@elseif(request()->routeIs('projects'))
+    <x-schema.projects />
+@elseif(request()->routeIs('articles'))
+    <x-schema.articles />
+@endif
+
