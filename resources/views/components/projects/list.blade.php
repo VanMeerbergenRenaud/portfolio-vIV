@@ -67,14 +67,17 @@
 
                 {{-- Img --}}
                 <div class="relative rounded-2xl overflow-hidden min-h-65 lg:min-h-120 max-h-125 2xl:max-h-250">
-                    <img
-                        src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
-                        alt="{{ $project->name }}"
-                        class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
-                        loading="lazy"
-                    >
+                    <noindex>
+                        <img
+                            src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
+                            alt="{{ $project->name }}"
+                            class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
+                            loading="lazy"
+                        >
+                    </noindex>
 
-                        <div class="z-2 absolute max-lg:left-4 bottom-4 {{ $isReverse ? 'lg:left-6' : 'lg:right-6' }}">
+                    <div class="z-2 absolute max-lg:left-4 bottom-4 {{ $isReverse ? 'lg:left-6' : 'lg:right-6' }}">
+                        <noindex>
                             <img
                                 src="{{ $project->logo_white ? Storage::disk('s3')->url($project->logo_white) : asset('img/projects/logo.svg') }}"
                                 alt="{{ $project->name ? 'Logo du projet : ' . $project->name : 'logo par défaut' }}"
@@ -86,7 +89,8 @@
                                 "
                                 loading="lazy"
                             >
-                        </div>
+                        </noindex>
+                    </div>
                 </div>
             </a>
         </li>

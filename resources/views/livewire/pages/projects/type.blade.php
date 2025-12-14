@@ -78,22 +78,26 @@
                         </div>
 
                         {{-- Image --}}
-                        <div class="relative rounded-2xl overflow-hidden min-h-[250px] max-h-[500px]">
-                            <img
-                                src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
-                                alt="{{ $project->name ? 'Image du projet : ' . $project->name : '' }}"
-                                class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
-                                loading="lazy"
-                            >
+                        <div class="relative rounded-2xl overflow-hidden min-h-52 max-h-125">
+                            <noindex>
+                                <img
+                                    src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
+                                    alt="{{ $project->name ? 'Image du projet : ' . $project->name : '' }}"
+                                    class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
+                                    loading="lazy"
+                                >
+                            </noindex>
 
                             {{-- Logo --}}
                             <div class="z-2 absolute left-4 bottom-4">
-                                <img
-                                    src="{{ $project->logo_white ? Storage::disk('s3')->url($project->logo_white) : asset('img/projects/logo.svg') }}"
-                                    alt="{{ $project->name ? 'Logo du projet : ' . $project->name : 'logo par défaut' }}"
-                                    class="object-contain transition-all duration-600 py-1 px-2 min-w-24 max-w-32 max-h-18 group-hover:scale-115 group-hover:max-h-20 group-hover:-translate-y-1 group-hover:translate-x-2"
-                                    loading="lazy"
-                                >
+                                <noindex>
+                                    <img
+                                        src="{{ $project->logo_white ? Storage::disk('s3')->url($project->logo_white) : asset('img/projects/logo.svg') }}"
+                                        alt="{{ $project->name ? 'Logo du projet : ' . $project->name : 'logo par défaut' }}"
+                                        class="object-contain transition-all duration-600 py-1 px-2 min-w-24 max-w-32 max-h-18 group-hover:scale-115 group-hover:max-h-20 group-hover:-translate-y-1 group-hover:translate-x-2"
+                                        loading="lazy"
+                                    >
+                                </noindex>
                             </div>
                         </div>
                     </a>

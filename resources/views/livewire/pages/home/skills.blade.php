@@ -70,17 +70,21 @@
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden md:hidden lg:block lg:min-w-52">
                     @if($skills[0]->image)
-                        <img src="{{ Storage::url($skills[0]->image) }}"
-                             alt="{{ $skills[0]->name }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ Storage::url($skills[0]->image) }}"
+                                 alt="{{ $skills[0]->name }}"
+                                 class="h-full w-full object-cover"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ asset('img/placeholder.png') }}"
+                                 alt=""
+                                 class="h-full"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @endif
                 </div>
 
@@ -117,17 +121,21 @@
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden hidden lg:block lg:min-w-52">
                     @if($skills[2]->image)
-                        <img src="{{ Storage::url($skills[2]->image) }}"
-                             alt="{{ $skills[2]->name }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ Storage::url($skills[2]->image) }}"
+                                 alt="{{ $skills[2]->name }}"
+                                 class="h-full w-full object-cover"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ asset('img/placeholder.png') }}"
+                                 alt=""
+                                 class="h-full"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @endif
                 </div>
 
@@ -152,17 +160,21 @@
                 {{-- Same image for mobile --}}
                 <div class="rounded-2xl overflow-hidden md:hidden">
                     @if($skills[2]->image)
-                        <img src="{{ Storage::url($skills[2]->image) }}"
-                             alt="{{ $skills[2]->name }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ Storage::url($skills[2]->image) }}"
+                                 alt="{{ $skills[2]->name }}"
+                                 class="h-full w-full object-cover"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ asset('img/placeholder.png') }}"
+                                 alt=""
+                                 class="h-full"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @endif
                 </div>
 
@@ -220,17 +232,21 @@
                 {{-- Same image for mobile --}}
                 <div class="rounded-2xl overflow-hidden md:hidden">
                     @if($skills[4]->image)
-                        <img src="{{ Storage::url($skills[4]->image) }}"
-                             alt="{{ $skills[4]->name }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ Storage::url($skills[4]->image) }}"
+                                 alt="{{ $skills[4]->name }}"
+                                 class="h-full w-full object-cover"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ asset('img/placeholder.png') }}"
+                                 alt=""
+                                 class="h-full"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @endif
                 </div>
 
@@ -258,17 +274,21 @@
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden hidden lg:block lg:min-w-52">
                     @if($skills[5]->image)
-                        <img src="{{ Storage::url($skills[5]->image) }}"
-                             alt="{{ $skills[5]->name }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ Storage::url($skills[5]->image) }}"
+                                 alt="{{ $skills[5]->name }}"
+                                 class="h-full w-full object-cover"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ asset('img/placeholder.png') }}"
+                                 alt=""
+                                 class="h-full"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @endif
                 </div>
 

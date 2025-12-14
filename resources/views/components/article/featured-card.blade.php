@@ -26,19 +26,25 @@
             </p>
         </div>
 
-        <div class="relative rounded-2xl overflow-hidden min-h-[300px] max-h-[450px] -order-1 {{ $reverse ? 'lg:order-1' : 'lg:order-none' }}">
+        <div class="relative rounded-2xl overflow-hidden min-h-52 max-h-115 -order-1 {{ $reverse ? 'lg:order-1' : 'lg:order-none' }}">
             @if($article->cover_image)
-                <img src="{{ Storage::disk('s3')->url($article->cover_image) }}"
-                     alt="Image de couverture de l'article : {{ $article->title }}"
-                     class="scale-110 group-hover:scale-100 group-focus:scale-100 transition-all duration-500 w-full h-full object-cover"
-                     loading="lazy"
-                     role="img">
+                <noindex>
+                    <img src="{{ Storage::disk('s3')->url($article->cover_image) }}"
+                         alt="Image de couverture de l'article : {{ $article->title }}"
+                         class="scale-110 group-hover:scale-100 group-focus:scale-100 transition-all duration-500 w-full h-full object-cover"
+                         loading="lazy"
+                         role="img"
+                    >
+                </noindex>
             @else
-                <img src="{{ asset('img/placeholder.png') }}"
-                     alt=""
-                     role="presentation"
-                     class="scale-110 group-hover:scale-100 group-focus:scale-100 transition-all duration-500 w-full h-full object-cover"
-                     loading="lazy">
+                <noindex>
+                    <img src="{{ asset('img/placeholder.png') }}"
+                         alt=""
+                         role="presentation"
+                         class="scale-110 group-hover:scale-100 group-focus:scale-100 transition-all duration-500 w-full h-full object-cover"
+                         loading="lazy"
+                    >
+                </noindex>
             @endif
 
             <div class="z-2 absolute top-2 right-2" aria-hidden="true">

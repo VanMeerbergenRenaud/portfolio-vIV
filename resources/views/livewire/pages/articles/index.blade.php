@@ -78,19 +78,23 @@
                         </div>
 
                         {{-- Image --}}
-                        <div class="relative rounded-2xl overflow-hidden min-h-[250px] max-h-[500px]">
+                        <div class="relative rounded-2xl overflow-hidden min-h-52 max-h-125">
                             @if($article->cover_image)
-                                <img src="{{ Storage::disk('s3')->url($article->cover_image) }}"
-                                     alt="{{ $article->title }}"
-                                     class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
-                                     loading="lazy"
-                                >
+                                <noindex>
+                                    <img src="{{ Storage::disk('s3')->url($article->cover_image) }}"
+                                         alt="{{ $article->title }}"
+                                         class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
+                                         loading="lazy"
+                                    >
+                                </noindex>
                             @else
-                                <img src="{{ asset('img/placeholder.png') }}"
-                                     alt="{{ $article->title }}"
-                                     class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
-                                     loading="lazy"
-                                >
+                                <noindex>
+                                    <img src="{{ asset('img/placeholder.png') }}"
+                                         alt="{{ $article->title }}"
+                                         class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
+                                         loading="lazy"
+                                    >
+                                </noindex>
                             @endif
 
                             @if($article->category)

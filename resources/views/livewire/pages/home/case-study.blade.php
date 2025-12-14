@@ -69,17 +69,21 @@
                     </x-font.text-xl>
 
                     @if($caseStudy->image)
-                        <img src="{{ Storage::disk('s3')->url($caseStudy->image) }}"
-                             alt="{{ $caseStudy->project_name }}"
-                             class="absolute inset-0 h-full w-full object-cover"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ Storage::disk('s3')->url($caseStudy->image) }}"
+                                 alt="{{ $caseStudy->project_name }}"
+                                 class="absolute inset-0 h-full w-full object-cover"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="absolute inset-0 h-full w-full object-cover"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ asset('img/placeholder.png') }}"
+                                 alt=""
+                                 class="absolute inset-0 h-full w-full object-cover"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @endif
 
                     <x-font.text-md class="mt-auto z-2 text-white">

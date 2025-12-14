@@ -40,47 +40,51 @@
     @break
 
     @case('image')
-        <figure class="mt-8">
-            <img src="{{ Storage::disk('s3')->url($data['url']) }}"
-                 alt="{{ $data['alt'] ?? '' }}"
-                 class="rounded-2xl w-full"
-                 loading="lazy"
-            >
-            @if(!empty($data['caption']))
-                <figcaption class="text-center mt-2">
-                    <x-font.text-sm class="text-gray-medium">
-                        {{ $data['caption'] }}
-                    </x-font.text-sm>
-                </figcaption>
-            @endif
-        </figure>
+        <noindex>
+            <figure class="mt-8">
+                <img src="{{ Storage::disk('s3')->url($data['url']) }}"
+                     alt="{{ $data['alt'] ?? '' }}"
+                     class="rounded-2xl w-full"
+                     loading="lazy"
+                >
+                @if(!empty($data['caption']))
+                    <figcaption class="text-center mt-2">
+                        <x-font.text-sm class="text-gray-medium">
+                            {{ $data['caption'] }}
+                        </x-font.text-sm>
+                    </figcaption>
+                @endif
+            </figure>
+        </noindex>
     @break
 
 
     @case('code_img')
-        <figure class="mt-6 mb-4">
-            {{-- Img --}}
-            @if(!empty($data['url']))
-                <img src="{{ Storage::disk('s3')->url($data['url']) }}"
-                     alt="{{ $data['alt'] ?? 'Code snippet' }}"
-                     class="rounded-2xl w-full"
-                     loading="lazy"
-                >
-            @else
-                <p class="bg-gray-100 rounded-xl p-6 text-gray-dark text-center">
-                    Image de code non disponible
-                </p>
-            @endif
+        <noindex>
+            <figure class="mt-6 mb-4">
+                {{-- Img --}}
+                @if(!empty($data['url']))
+                    <img src="{{ Storage::disk('s3')->url($data['url']) }}"
+                         alt="{{ $data['alt'] ?? 'Code snippet' }}"
+                         class="rounded-2xl w-full"
+                         loading="lazy"
+                    >
+                @else
+                    <p class="bg-gray-100 rounded-xl p-6 text-gray-dark text-center">
+                        Image de code non disponible
+                    </p>
+                @endif
 
-            {{-- Caption --}}
-            @if(!empty($data['caption']))
-                <figcaption class="text-left mt-2.5 pl-2">
-                    <x-font.text-sm class="text-gray-medium">
-                        {{ $data['caption'] }}
-                    </x-font.text-sm>
-                </figcaption>
-            @endif
-        </figure>
+                {{-- Caption --}}
+                @if(!empty($data['caption']))
+                    <figcaption class="text-left mt-2.5 pl-2">
+                        <x-font.text-sm class="text-gray-medium">
+                            {{ $data['caption'] }}
+                        </x-font.text-sm>
+                    </figcaption>
+                @endif
+            </figure>
+        </noindex>
     @break
 
     @case('quote')
@@ -108,11 +112,13 @@
     @case('gallery')
         <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
             @foreach($data['images'] ?? [] as $image)
-                <img src="{{ Storage::disk('s3')->url($image) }}"
-                     alt="Galerie d'images"
-                     class="rounded-lg w-full h-full object-cover"
-                     loading="lazy"
-                >
+                <noindex>
+                    <img src="{{ Storage::disk('s3')->url($image) }}"
+                         alt="Galerie d'images"
+                         class="rounded-lg w-full h-full object-cover"
+                         loading="lazy"
+                    >
+                </noindex>
             @endforeach
         </div>
     @break

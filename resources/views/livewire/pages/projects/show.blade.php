@@ -11,16 +11,20 @@
                 </x-font.title-2xl>
 
                 @if($project->logo_black)
-                    <img
-                        src="{{ Storage::disk('s3')->url($project->logo_black) }}"
-                        alt="{{ $project->name }} logo"
-                        class="max-w-25"
-                    >
+                    <noindex>
+                        <img
+                            src="{{ Storage::disk('s3')->url($project->logo_black) }}"
+                            alt="{{ $project->name }} logo"
+                            class="max-w-25"
+                        >
+                    </noindex>
                 @else
-                    <img src="{{ asset('img/projects/logo.svg') }}"
-                         alt="logo par défaut"
-                         class="max-w-25"
-                    >
+                    <noindex>
+                        <img src="{{ asset('img/projects/logo.svg') }}"
+                             alt="logo par défaut"
+                             class="max-w-25"
+                        >
+                    </noindex>
                 @endif
             </div>
 
@@ -28,18 +32,22 @@
             <div class="flex flex-col md:grid md:grid-cols-[1fr_30%] gap-4 md:gap-6">
                 <div class="max-sm:order-2 max-sm:mt-4">
                     @if($project->image)
-                        <img
-                            src="{{ Storage::disk('s3')->url($project->image) }}"
-                            alt="{{ $project->name }}"
-                            class="rounded-2xl"
-                            loading="lazy"
-                        >
+                        <noindex>
+                            <img
+                                src="{{ Storage::disk('s3')->url($project->image) }}"
+                                alt="{{ $project->name }}"
+                                class="rounded-2xl"
+                                loading="lazy"
+                            >
+                        </noindex>
                     @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="rounded-2xl"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ asset('img/placeholder.png') }}"
+                                 alt=""
+                                 class="rounded-2xl"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @endif
                 </div>
 

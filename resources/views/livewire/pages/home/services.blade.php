@@ -57,11 +57,13 @@
                     <x-font.text class="text-gray-light mt-auto" x-text="services[activeService]?.title || services[0].title"></x-font.text>
                 </div>
 
-                <div class="rounded-2xl overflow-hidden max-h-[350px]">
+                <div class="rounded-2xl overflow-hidden max-h-88">
                     {{-- If no active service add an image placeholder --}}
-                    <img :src="services[activeService]?.image_url || services[0].image_url"
-                         :alt="services[activeService]?.title || 'Service'"
-                         class="w-full h-full object-cover transition-opacity duration-500 bg-transparent">
+                    <img
+                        :src="services[activeService]?.image_url || services[0].image_url"
+                        :alt="services[activeService]?.title || 'Service'"
+                        class="w-full h-full object-cover transition-opacity duration-500 bg-transparent"
+                    >
                 </div>
             </div>
 

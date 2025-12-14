@@ -137,14 +137,16 @@
                 </div>
 
                 @if($article->cover_image)
-                    <figure class="rounded-2xl overflow-hidden max-h-[600px]">
-                        <img src="{{ Storage::disk('s3')->url($article->cover_image) }}"
-                             alt="{{ $article->title }} - Image de couverture"
-                             class="w-full h-full object-cover"
-                             loading="lazy"
-                             role="img"
-                        >
-                    </figure>
+                    <noindex>
+                        <figure class="rounded-2xl overflow-hidden max-h-[600px]">
+                            <img src="{{ Storage::disk('s3')->url($article->cover_image) }}"
+                                 alt="{{ $article->title }} - Image de couverture"
+                                 class="w-full h-full object-cover"
+                                 loading="lazy"
+                                 role="img"
+                            >
+                        </figure>
+                    </noindex>
                 @endif
 
                 {{-- Table of Contents --}}
