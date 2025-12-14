@@ -7,7 +7,7 @@
 
 <meta name="title" content="Renaud Vmb">
 <meta name="author" content="Renaud Van Meerbergen">
-<meta name="keywords" content="développeur fullstack, développeur Laravel, développement d'applications, développeur frontend, développeur backend, développeur Liège, Renaud développeur">
+<meta name="keywords" content="développeur liège, développeur web liège, développeur fullstack liège, Renaud développeur, développeur fullstack, développeur Laravel, développeur web frontend, développeur web backend">
 <meta name="description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
 <link rel="canonical" href="{{ url()->current() }}">
 <meta name="robots" content="all">
