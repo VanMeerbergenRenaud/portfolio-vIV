@@ -170,7 +170,7 @@
 
                 @if($headings->isNotEmpty())
                     <nav
-                        class="flex flex-col gap-4 py-5 px-6 bg-gradient-to-br from-red/5 via-red/3 to-transparent rounded-xl border border-red/10"
+                        class="flex flex-col gap-4 py-5 px-6 bg-linear-to-br from-red/5 via-red/3 to-transparent rounded-xl border border-red/10"
                         aria-labelledby="toc-heading"
                     >
                         <div class="flex items-center gap-1.5">
@@ -184,7 +184,7 @@
                             @foreach($headings as $heading)
                                 <li class="flex items-start gap-2 {{ $heading['level'] === 'h4' ? 'pl-6' : '' }}">
                                     @if($heading['order'])
-                                        <span class="text-gray-medium text-xs mt-0.5 min-w-[1rem]" aria-hidden="true">
+                                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
                                             {{ str_pad($heading['order'], 2, '0', STR_PAD_LEFT) }}
                                         </span>
                                     @else

@@ -26,20 +26,76 @@
             </x-font.text>
 
             {{-- Sommaire --}}
-            <div class="mt-4 flex flex-col gap-5">
-                <x-font.text class="font-semibold text-dark-primary" :isTitle="true" level="3">
-                    Sommaire
-                </x-font.text>
-                <ul class="pl-6 list-decimal text-gray-dark flex flex-col gap-2">
-                    <li><a href="#section-1" class="hover:text-red hover:underline transition-colors font-medium">Responsable du traitement</a></li>
-                    <li><a href="#section-2" class="hover:text-red hover:underline transition-colors font-medium">Les données que nous collectons</a></li>
-                    <li><a href="#section-3" class="hover:text-red hover:underline transition-colors font-medium">Pourquoi nous collectons vos données</a></li>
-                    <li><a href="#section-4" class="hover:text-red hover:underline transition-colors font-medium">Partage et services tiers</a></li>
-                    <li><a href="#section-5" class="hover:text-red hover:underline transition-colors font-medium">Durée de conservation</a></li>
-                    <li><a href="#section-6" class="hover:text-red hover:underline transition-colors font-medium">Vos droits sur vos données</a></li>
-                    <li><a href="#section-7" class="hover:text-red hover:underline transition-colors font-medium">Notre politique sur les cookies</a></li>
-                </ul>
-            </div>
+            <nav
+                class="mt-4 flex flex-col gap-4 py-5 px-6 bg-linear-to-br from-red/5 via-red/3 to-transparent rounded-xl border border-red/10"
+                aria-labelledby="toc-heading"
+            >
+                <div class="flex items-center gap-1.5">
+                    <span class="text-red text-xs" aria-hidden="true">|</span>
+                    <x-font.text-md class="font-medium text-dark-primary">
+                        Sommaire
+                    </x-font.text-md>
+                </div>
+
+                <ol class="px-1 flex flex-col gap-2.5" role="list">
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            01
+                        </span>
+                        <a href="#section-1" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Responsable du traitement
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            02
+                        </span>
+                        <a href="#section-2" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Les données que nous collectons
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            03
+                        </span>
+                        <a href="#section-3" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Pourquoi nous collectons vos données
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            04
+                        </span>
+                        <a href="#section-4" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Partage et services tiers
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            05
+                        </span>
+                        <a href="#section-5" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Durée de conservation
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            06
+                        </span>
+                        <a href="#section-6" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Vos droits sur vos données
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            07
+                        </span>
+                        <a href="#section-7" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Notre politique sur les cookies
+                        </a>
+                    </li>
+                </ol>
+            </nav>
 
             {{-- Part 1 --}}
             <div id="section-1" class="mt-4 flex flex-col gap-5">
@@ -67,7 +123,7 @@
                         <x-font.text class="font-semibold text-dark-primary">
                             Données de navigation :
                         </x-font.text>
-                        <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-1.5">
+                        <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                             <li>
                                 Adresse IP et données techniques de connexion (navigateur, système d'exploitation)
                             </li>
@@ -81,7 +137,7 @@
                         <x-font.text class="font-semibold text-dark-primary">
                             Données de contact (si vous me contactez) :
                         </x-font.text>
-                        <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-1.5">
+                        <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                             <li>
                                 Nom, prénom
                             </li>
@@ -106,7 +162,7 @@
                     Notre engagement est simple : vos données servent uniquement à vous rendre service. Nous les utilisons pour :
                 </x-font.text>
 
-                <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-2">
+                <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                     <li>
                         Faire fonctionner le site web et assurer son bon fonctionnement technique
                     </li>
@@ -157,7 +213,7 @@
                     Nous conservons vos données pour la durée strictement nécessaire aux finalités pour lesquelles elles ont été collectées :
                 </x-font.text>
 
-                <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-2">
+                <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                     <li>
                         <span class="font-semibold text-dark-primary">Données de navigation :</span> Conservées pendant 13 mois maximum
                     </li>
@@ -181,7 +237,7 @@
                     Vous avez le contrôle total sur vos données. Conformément au RGPD (Règlement Général sur la Protection des Données), vous pouvez à tout moment :
                 </x-font.text>
 
-                <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-2">
+                <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                     <li>
                         <span class="font-semibold text-dark-primary">Droit d'accès :</span> Demander une copie de toutes les données que nous détenons sur vous
                     </li>
