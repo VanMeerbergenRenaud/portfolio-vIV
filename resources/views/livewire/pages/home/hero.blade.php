@@ -21,6 +21,7 @@
                             src="{{ Storage::disk('s3')->url($hero->hero_image) }}"
                             alt="{{ $hero->hero_image_alt ?? 'Portrait de Renaud Van Meerbergen' }}"
                             class="w-full h-full min-h-50 max-h-250 object-cover transition-transform duration-500 group-hover:scale-105"
+                            fetchpriority="high"
                         >
                         <span class="absolute bottom-0 right-0 md:bottom-2 md:right-3 text-white text-xs md:text-sm font-semibold py-2 px-4 backdrop-blur-[5px] rounded-lg">
                             Le "GOAT" des devs

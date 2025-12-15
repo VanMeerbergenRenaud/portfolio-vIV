@@ -42,7 +42,7 @@
                     {{-- Colonne 1 --}}
                     <li><x-link.tertiary link="{{ route('home') }}#hero" :navigate="false" color="white" fontStyle="text-sm">Introduction</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#about" :navigate="false" color="white" fontStyle="text-sm">À mon sujet</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('home') }}#projects" :navigate="false" color="white" fontStyle="text-sm">Projets</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#projects" :navigate="false" color="white" fontStyle="text-sm">Mes projets</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#services" :navigate="false" color="white" fontStyle="text-sm">Services</x-link.tertiary></li>
                     {{-- Colonne 2 --}}
                     <li><x-link.tertiary link="{{ route('home') }}#processes" :navigate="false" color="white" fontStyle="text-sm">Processus</x-link.tertiary></li>
