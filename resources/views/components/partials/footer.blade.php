@@ -52,7 +52,7 @@
                     {{-- Colonne 3 --}}
                     <li><x-link.tertiary link="{{ route('home') }}#case_study" :navigate="false" color="white" fontStyle="text-sm">Cas d'étude</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#faq" :navigate="false" color="white" fontStyle="text-sm">Faq</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('home') }}#articles" :navigate="false" color="white" fontStyle="text-sm">Articles</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#articles" :navigate="false" color="white" fontStyle="text-sm">Mes articles</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#cta" :navigate="false" color="white" fontStyle="text-sm">Me suivre</x-link.tertiary></li>
                 </ul>
             </div>
