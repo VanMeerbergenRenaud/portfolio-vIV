@@ -4,8 +4,8 @@ namespace App\Filament\Admin\Widgets;
 
 use App\Models\Service;
 use App\Models\Skill;
-use App\Models\Tool;
 use App\Models\Testimonial;
+use App\Models\Tool;
 use Filament\Widgets\ChartWidget;
 
 class PortfolioMetricsChart extends ChartWidget
@@ -41,4 +41,3 @@ class PortfolioMetricsChart extends ChartWidget
         ];
     }
 }
-

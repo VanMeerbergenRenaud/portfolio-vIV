@@ -2,8 +2,8 @@
 
 namespace App\Filament\Admin\Widgets;
 
-use App\Models\Project;
 use App\Models\Article;
+use App\Models\Project;
 use Filament\Widgets\ChartWidget;
 
 class PublishRateChart extends ChartWidget
@@ -47,4 +47,3 @@ class PublishRateChart extends ChartWidget
         ];
     }
 }
-

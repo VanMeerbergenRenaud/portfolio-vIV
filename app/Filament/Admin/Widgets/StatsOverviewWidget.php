@@ -3,13 +3,13 @@
 namespace App\Filament\Admin\Widgets;
 
 use App\Models\Article;
+use App\Models\CaseStudy;
+use App\Models\Faq;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Skill;
-use App\Models\Tool;
 use App\Models\Testimonial;
-use App\Models\CaseStudy;
-use App\Models\Faq;
+use App\Models\Tool;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
@@ -17,7 +17,7 @@ class StatsOverviewWidget extends BaseWidget
 {
     protected static ?int $sort = 1;
 
-    protected int | string | array $columnSpan = 'full';
+    protected int|string|array $columnSpan = 'full';
 
     protected function getStats(): array
     {
@@ -26,15 +26,15 @@ class StatsOverviewWidget extends BaseWidget
 
         return [
             Stat::make('Projets', $publishedProjects)
-                ->description((Project::count() - $publishedProjects) . ' brouillon(s)')
+                ->description((Project::count() - $publishedProjects).' brouillon(s)')
                 ->descriptionIcon('heroicon-m-briefcase')
-                ->chart(collect(range(6, 0))->map(fn($d) => Project::whereDate('created_at', now()->subDays($d))->count())->toArray())
+                ->chart(collect(range(6, 0))->map(fn ($d) => Project::whereDate('created_at', now()->subDays($d))->count())->toArray())
                 ->color('gray'),
 
             Stat::make('Articles', $publishedArticles)
-                ->description((Article::count() - $publishedArticles) . ' brouillon(s)')
+                ->description((Article::count() - $publishedArticles).' brouillon(s)')
                 ->descriptionIcon('heroicon-m-document-text')
-                ->chart(collect(range(6, 0))->map(fn($d) => Article::whereDate('created_at', now()->subDays($d))->count())->toArray())
+                ->chart(collect(range(6, 0))->map(fn ($d) => Article::whereDate('created_at', now()->subDays($d))->count())->toArray())
                 ->color('gray'),
 
             Stat::make('Services', Service::count())

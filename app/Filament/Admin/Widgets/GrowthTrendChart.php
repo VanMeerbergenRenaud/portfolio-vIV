@@ -4,10 +4,6 @@ namespace App\Filament\Admin\Widgets;
 
 use App\Models\Article;
 use App\Models\Project;
-use App\Models\Service;
-use App\Models\Skill;
-use App\Models\Tool;
-use App\Models\Testimonial;
 use Filament\Widgets\ChartWidget;
 
 class GrowthTrendChart extends ChartWidget
@@ -18,13 +14,13 @@ class GrowthTrendChart extends ChartWidget
 
     protected function getData(): array
     {
-        $months = collect(range(5, 0))->map(fn($i) => now()->subMonths($i));
+        $months = collect(range(5, 0))->map(fn ($i) => now()->subMonths($i));
 
         return [
             'datasets' => [
                 [
                     'label' => 'Articles',
-                    'data' => $months->map(fn($date) => Article::whereYear('created_at', $date->year)->whereMonth('created_at', $date->month)->count()),
+                    'data' => $months->map(fn ($date) => Article::whereYear('created_at', $date->year)->whereMonth('created_at', $date->month)->count()),
                     'borderColor' => 'rgba(148, 163, 184, 0.8)',
                     'backgroundColor' => 'rgba(148, 163, 184, 0.2)',
                     'fill' => true,
@@ -32,14 +28,14 @@ class GrowthTrendChart extends ChartWidget
                 ],
                 [
                     'label' => 'Projets',
-                    'data' => $months->map(fn($date) => Project::whereYear('created_at', $date->year)->whereMonth('created_at', $date->month)->count()),
+                    'data' => $months->map(fn ($date) => Project::whereYear('created_at', $date->year)->whereMonth('created_at', $date->month)->count()),
                     'borderColor' => 'rgba(71, 85, 105, 0.8)',
                     'backgroundColor' => 'rgba(71, 85, 105, 0.2)',
                     'fill' => true,
                     'tension' => 0.4,
                 ],
             ],
-            'labels' => $months->map(fn($date) => $date->format('M Y')),
+            'labels' => $months->map(fn ($date) => $date->format('M Y')),
         ];
     }
 
@@ -62,4 +58,3 @@ class GrowthTrendChart extends ChartWidget
         ];
     }
 }
-
