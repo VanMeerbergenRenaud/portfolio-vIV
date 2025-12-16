@@ -164,11 +164,12 @@ class SchemaService
                 '@id' => url('/').'#personimage',
                 'url' => $imageUrl,
                 'contentUrl' => $imageUrl,
+                'caption' => 'Renaud Van Meerbergen - Développeur Web Fullstack',
             ],
             'jobTitle' => 'Développeur Web Fullstack',
-            'description' => 'Développeur fullstack spécialisé en Laravel et Livewire basé à Liège, Belgique.',
-            'email' => 'mailto:renaud.vanmeerbergen@gmail.com',
-            'telephone' => '+32 470 59 60 65',
+            'description' => 'Développeur web fullstack spécialisé en Laravel et Livewire basé à Liège, Belgique.',
+            'email' => 'renaud.vanmeerbergen@gmail.com',
+            'telephone' => '+32470596065',
             'address' => [
                 '@type' => 'PostalAddress',
                 'addressLocality' => 'Neupré',
@@ -176,16 +177,37 @@ class SchemaService
                 'postalCode' => '4120',
                 'addressCountry' => 'BE',
             ],
-            'nationality' => ['@type' => 'Country', 'name' => 'Belgique'],
-            'knowsLanguage' => ['fr', 'en'],
+            'workLocation' => [
+                '@type' => 'Place',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'addressLocality' => 'Neupré',
+                    'addressRegion' => 'Liège',
+                    'addressCountry' => 'BE',
+                ],
+            ],
+            'nationality' => [
+                '@type' => 'Country',
+                'name' => 'Belgique',
+            ],
+            'knowsLanguage' => [
+                ['@type' => 'Language', 'name' => 'Français', 'alternateName' => 'fr'],
+                ['@type' => 'Language', 'name' => 'Anglais', 'alternateName' => 'en'],
+            ],
             'knowsAbout' => [
                 'Laravel', 'PHP', 'Livewire', 'Tailwind CSS', 'Alpine.js',
                 'Vue.js', 'JavaScript', 'MySQL', 'Git', 'Docker', 'Filament',
             ],
             'sameAs' => [
-                'https://www.linkedin.com/in/renaud-van-meerbergen/',
                 'https://github.com/VanMeerbergenRenaud',
+                'https://www.linkedin.com/in/renaud-van-meerbergen/',
+                'https://www.youtube.com/channel/UCw3jlTRtedA59dgZ6IL9ltA',
+                'https://www.raycast.com/RenaudVmb',
+                'https://x.com/RenaudVmb',
                 'https://www.instagram.com/web_developer.renaud/',
+                'https://stackoverflow.com/users/20922404/van-meerbergen-renaud',
+                'https://gravatar.com/renaudvanmeerbergen',
+                'https://about.me/renaud_vmb',
             ],
         ];
     }
@@ -202,7 +224,42 @@ class SchemaService
             'about' => ['@id' => url('/').self::PERSON_ID],
             'mainEntity' => ['@id' => url('/').self::PERSON_ID],
             'inLanguage' => 'fr-BE',
-            'datePublished' => '2023-01-01',
+            'datePublished' => '2023-01-01T00:00:00+01:00',
+            'dateModified' => now()->toIso8601String(),
+        ];
+    }
+
+    public function getLaravelWrappedSchema(): array
+    {
+        $hero = Hero::published()->first();
+
+        return [
+            '@context' => 'https://schema.org',
+            '@graph' => array_filter([
+                $this->getWebSiteSchema(),
+                $this->getPersonSchema($hero),
+                $this->getLaravelWrappedPageSchema(),
+                $this->getBreadcrumbSchema([
+                    ['name' => 'Accueil', 'url' => url('/')],
+                    ['name' => 'Laravel Wrapped', 'url' => route('laravel-wrapped')],
+                ]),
+            ]),
+        ];
+    }
+
+    protected function getLaravelWrappedPageSchema(): array
+    {
+        return [
+            '@type' => 'WebPage',
+            '@id' => route('laravel-wrapped').'#webpage',
+            'url' => route('laravel-wrapped'),
+            'name' => 'Laravel Wrapped 2025 - Renaud Van Meerbergen',
+            'description' => 'Ma rétrospective Laravel 2025 : statistiques, projets et évolution de mes compétences avec le framework Laravel.',
+            'isPartOf' => ['@id' => url('/').self::WEBSITE_ID],
+            'about' => ['@id' => url('/').self::PERSON_ID],
+            'mainEntity' => ['@id' => url('/').self::PERSON_ID],
+            'inLanguage' => 'fr-BE',
+            'datePublished' => now()->startOfYear()->toIso8601String(),
             'dateModified' => now()->toIso8601String(),
         ];
     }
@@ -232,15 +289,21 @@ class SchemaService
             'description' => 'Découvrez les projets de développement web réalisés par Renaud Van Meerbergen avec Laravel, Livewire et Tailwind CSS.',
             'isPartOf' => ['@id' => url('/').self::WEBSITE_ID],
             'about' => ['@id' => url('/').self::PERSON_ID],
+            'mainEntity' => ['@id' => url('/').'#projects'],
             'inLanguage' => 'fr-BE',
+            'dateModified' => now()->toIso8601String(),
         ];
     }
 
     protected function getBlogSchema($articles): array
     {
+        $blogPosts = $articles->map(function ($article) {
+            return ['@id' => route('articles.show', $article->slug).'#article'];
+        })->toArray();
+
         return [
-            '@type' => 'Blog',
-            '@id' => route('articles').'#blog',
+            '@type' => ['Blog', 'CollectionPage'],
+            '@id' => route('articles').'#webpage',
             'url' => route('articles'),
             'name' => 'Blog - Renaud Van Meerbergen',
             'description' => 'Articles, réflexions et tutoriels sur le développement web, Laravel et les bonnes pratiques.',
@@ -248,9 +311,9 @@ class SchemaService
             'author' => ['@id' => url('/').self::PERSON_ID],
             'publisher' => ['@id' => url('/').self::PERSON_ID],
             'inLanguage' => 'fr-BE',
-            'blogPost' => $articles->map(function ($article) {
-                return ['@id' => route('articles.show', $article->slug).'#article'];
-            })->toArray(),
+            'dateModified' => now()->toIso8601String(),
+            'mainEntity' => ['@id' => route('articles').'#articlelist'],
+            'blogPost' => $blogPosts,
         ];
     }
 
@@ -343,16 +406,28 @@ class SchemaService
                     'position' => $index + 1,
                     'item' => [
                         '@type' => 'CreativeWork',
-                        '@id' => route('projects.show', $project->slug),
+                        '@id' => route('projects.show', $project->slug).'#project',
                         'name' => $project->name,
                         'description' => $project->description,
                         'url' => route('projects.show', $project->slug),
-                        'image' => ['@type' => 'ImageObject', 'url' => $imageUrl],
-                        'dateCreated' => $project->year,
+                        'image' => [
+                            '@type' => 'ImageObject',
+                            'url' => $imageUrl,
+                            'caption' => $project->name,
+                        ],
                         'creator' => ['@id' => url('/').self::PERSON_ID],
-                        'keywords' => is_array($project->tags) ? implode(', ', $project->tags) : $project->tags,
+                        'author' => ['@id' => url('/').self::PERSON_ID],
+                        'inLanguage' => 'fr-BE',
                     ],
                 ];
+
+                if ($project->year) {
+                    $item['item']['dateCreated'] = $project->year.'-01-01T00:00:00+01:00';
+                }
+
+                if ($project->tags) {
+                    $item['item']['keywords'] = is_array($project->tags) ? implode(', ', $project->tags) : $project->tags;
+                }
 
                 if ($project->duration) {
                     $item['item']['temporalCoverage'] = $project->duration;
@@ -409,7 +484,7 @@ class SchemaService
                     ? Storage::disk('s3')->url($article->cover_image)
                     : asset('img/placeholder.png');
 
-                return [
+                $item = [
                     '@type' => 'ListItem',
                     'position' => $index + 1,
                     'item' => [
@@ -418,17 +493,33 @@ class SchemaService
                         'headline' => $article->title,
                         'description' => $article->excerpt,
                         'url' => route('articles.show', $article->slug),
-                        'image' => ['@type' => 'ImageObject', 'url' => $imageUrl],
-                        'datePublished' => $article->created_at?->toIso8601String(),
+                        'image' => [
+                            '@type' => 'ImageObject',
+                            'url' => $imageUrl,
+                            'caption' => $article->title,
+                        ],
+                        'datePublished' => $article->published_at?->toIso8601String() ?? $article->created_at?->toIso8601String(),
                         'dateModified' => $article->updated_at?->toIso8601String(),
                         'author' => ['@id' => url('/').self::PERSON_ID],
                         'publisher' => ['@id' => url('/').self::PERSON_ID],
-                        'timeRequired' => 'PT'.($article->reading_time ?? 5).'M',
-                        'articleSection' => $article->category?->value ?? $article->category,
-                        'keywords' => is_array($article->tags) ? implode(', ', $article->tags) : $article->tags,
+                        'mainEntityOfPage' => route('articles.show', $article->slug),
                         'inLanguage' => 'fr-BE',
                     ],
                 ];
+
+                if ($article->reading_time) {
+                    $item['item']['timeRequired'] = 'PT'.($article->reading_time).'M';
+                }
+
+                if ($article->category) {
+                    $item['item']['articleSection'] = $article->category?->value ?? $article->category;
+                }
+
+                if ($article->tags) {
+                    $item['item']['keywords'] = is_array($article->tags) ? implode(', ', $article->tags) : $article->tags;
+                }
+
+                return $item;
             })->toArray(),
         ];
     }
@@ -439,39 +530,55 @@ class SchemaService
             ? Storage::disk('s3')->url($project->image)
             : asset('img/placeholder.png');
 
-        $schema = [
-            '@type' => 'WebPage',
-            '@id' => route('projects.show', $project->slug).'#webpage',
-            'url' => route('projects.show', $project->slug),
+        $mainEntity = [
+            '@type' => 'CreativeWork',
+            '@id' => route('projects.show', $project->slug).'#project',
             'name' => $project->name,
             'description' => $project->description,
-            'isPartOf' => ['@id' => url('/').self::WEBSITE_ID],
-            'inLanguage' => 'fr-BE',
-            'mainEntity' => [
-                '@type' => 'CreativeWork',
-                '@id' => route('projects.show', $project->slug).'#project',
-                'name' => $project->name,
-                'description' => $project->description,
-                'url' => route('projects.show', $project->slug),
-                'image' => ['@type' => 'ImageObject', 'url' => $imageUrl],
-                'creator' => ['@id' => url('/').self::PERSON_ID],
-                'dateCreated' => $project->year ? $project->year.'-01-01' : null,
-                'keywords' => is_array($project->tags) ? implode(', ', $project->tags) : $project->tags,
+            'image' => [
+                '@type' => 'ImageObject',
+                'url' => $imageUrl,
+                'caption' => $project->name,
             ],
+            'creator' => ['@id' => url('/').self::PERSON_ID],
+            'author' => ['@id' => url('/').self::PERSON_ID],
+            'inLanguage' => 'fr-BE',
         ];
 
         if ($project->url) {
-            $schema['mainEntity']['url'] = $project->url;
+            $mainEntity['url'] = $project->url;
+        }
+
+        if ($project->year) {
+            $mainEntity['dateCreated'] = $project->year.'-01-01T00:00:00+01:00';
+        }
+
+        if ($project->tags) {
+            $mainEntity['keywords'] = is_array($project->tags) ? implode(', ', $project->tags) : $project->tags;
+        }
+
+        if ($project->duration) {
+            $mainEntity['temporalCoverage'] = $project->duration;
         }
 
         if ($project->client) {
-            $schema['mainEntity']['sourceOrganization'] = [
+            $mainEntity['sourceOrganization'] = [
                 '@type' => 'Organization',
                 'name' => $project->client,
             ];
         }
 
-        return $schema;
+        return [
+            '@type' => 'WebPage',
+            '@id' => route('projects.show', $project->slug).'#webpage',
+            'url' => route('projects.show', $project->slug),
+            'name' => $project->name.' - Renaud Van Meerbergen',
+            'description' => $project->description,
+            'isPartOf' => ['@id' => url('/').self::WEBSITE_ID],
+            'inLanguage' => 'fr-BE',
+            'dateModified' => $project->updated_at?->toIso8601String() ?? now()->toIso8601String(),
+            'mainEntity' => $mainEntity,
+        ];
     }
 
     protected function getArticleDetailSchema(Article $article): array
@@ -480,32 +587,56 @@ class SchemaService
             ? Storage::disk('s3')->url($article->cover_image)
             : asset('img/placeholder.png');
 
-        return [
+        $schema = [
             '@type' => 'BlogPosting',
             '@id' => route('articles.show', $article->slug).'#article',
-            'mainEntityOfPage' => route('articles.show', $article->slug),
+            'mainEntityOfPage' => [
+                '@type' => 'WebPage',
+                '@id' => route('articles.show', $article->slug),
+            ],
             'headline' => $article->title,
             'description' => $article->excerpt,
             'url' => route('articles.show', $article->slug),
             'image' => [
                 '@type' => 'ImageObject',
                 'url' => $imageUrl,
+                'caption' => $article->title,
             ],
             'datePublished' => $article->published_at?->toIso8601String() ?? $article->created_at?->toIso8601String(),
             'dateModified' => $article->updated_at?->toIso8601String(),
-            'author' => ['@id' => url('/').self::PERSON_ID],
+            'author' => [
+                '@type' => 'Person',
+                '@id' => url('/').self::PERSON_ID,
+                'name' => 'Renaud Van Meerbergen',
+            ],
             'publisher' => [
-                '@type' => 'Organization',
+                '@type' => 'Person',
+                '@id' => url('/').self::PERSON_ID,
                 'name' => 'Renaud Van Meerbergen',
                 'logo' => [
                     '@type' => 'ImageObject',
                     'url' => asset('img/opengraph.png'),
                 ],
             ],
-            'articleSection' => $article->category?->value ?? $article->category,
-            'keywords' => is_array($article->tags) ? implode(', ', $article->tags) : $article->tags,
             'inLanguage' => 'fr-BE',
+            'isPartOf' => [
+                '@id' => route('articles').'#blog',
+            ],
         ];
+
+        if ($article->category) {
+            $schema['articleSection'] = $article->category?->value ?? $article->category;
+        }
+
+        if ($article->tags) {
+            $schema['keywords'] = is_array($article->tags) ? implode(', ', $article->tags) : $article->tags;
+        }
+
+        if ($article->reading_time) {
+            $schema['timeRequired'] = 'PT'.($article->reading_time).'M';
+        }
+
+        return $schema;
     }
 
     protected function getBreadcrumbSchema(array $items): array

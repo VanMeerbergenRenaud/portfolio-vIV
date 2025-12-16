@@ -72,5 +72,7 @@
     <x-schema.projects />
 @elseif(request()->routeIs('articles'))
     <x-schema.articles />
+@elseif(request()->routeIs('laravel-wrapped'))
+    <x-schema.laravel-wrapped />
 @endif
 

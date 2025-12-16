@@ -111,7 +111,7 @@
                                                 : asset('img/placeholder.png')
                                         }}"
                                         alt="{{ $testimonial->name }}"
-                                        class="w-10 h-10 rounded-xl object-cover"
+                                        class="w-10 h-10 rounded-xl object-cover no-reveal"
                                     >
                                 </noindex>
                                 <div class="flex flex-col gap-0.5">
@@ -192,7 +192,7 @@
                                                     : asset('img/placeholder.png')
                                             }}"
                                             alt="{{ $testimonial->name }}"
-                                            class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover"
+                                            class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover no-reveal"
                                         >
                                     </noindex>
                                     <div class="flex flex-col gap-0.5">
@@ -214,8 +214,7 @@
                         <div class="absolute bottom-4 right-5">
                             <x-font.title-xl class="text-whitesmoke" aria-hidden="true">
                                 <span class="sr-only">Guillemet typographique</span>
-                                <svg class="w-auto h-28" display="block" role="presentation" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
+                                <svg class="w-auto h-28" display="block" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
                                         fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"
