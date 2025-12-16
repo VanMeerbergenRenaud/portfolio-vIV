@@ -78,12 +78,12 @@
                         </div>
 
                         {{-- Image --}}
-                        <div class="relative rounded-2xl overflow-hidden min-h-52 max-h-125">
+                        <div class="relative rounded-2xl overflow-hidden min-h-52 max-h-135 h-full">
                             <noindex>
                                 <img
                                     src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
                                     alt="{{ $project->name ? 'Image du projet : ' . $project->name : '' }}"
-                                    class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
+                                    class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full min-h-55 object-cover"
                                     loading="lazy"
                                 >
                             </noindex>

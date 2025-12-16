@@ -138,7 +138,7 @@
 
                 @if($article->cover_image)
                     <noindex>
-                        <figure class="rounded-2xl overflow-hidden max-h-[600px]">
+                        <figure class="rounded-2xl overflow-hidden min-h-50 max-h-150">
                             <img src="{{ Storage::disk('s3')->url($article->cover_image) }}"
                                  alt="{{ $article->title }} - Image de couverture"
                                  class="w-full h-full object-cover"
