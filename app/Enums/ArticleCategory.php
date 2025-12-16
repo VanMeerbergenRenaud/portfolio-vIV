@@ -5,9 +5,9 @@ namespace App\Enums;
 enum ArticleCategory: string
 {
     case EXPERIENCE = 'experience';
-    case TUTORIEL = 'tutoriel';
-    case REFLEXION = 'reflexion';
-    case ACTUALITE = 'actualite';
+    case TUTORIEL = 'tutorial';
+    case REFLEXION = 'reflection';
+    case ACTUALITE = 'news';
 
     public function label(): string
     {

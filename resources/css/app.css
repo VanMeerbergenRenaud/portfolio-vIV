@@ -2,6 +2,7 @@
 @import './fonts.css';
 @import './typography.css';
 @import './table.css';
+@import 'highlight.js/styles/github.css';
 
 @source '../views';
 
@@ -218,13 +219,48 @@
     border-radius: 1rem;
 }
 
+/*------- Article blocks -------*/
+
 /* Rich editor */
 .rich-text {
+    ul, ol, li, p {
+        @apply text-gray-dark font-normal text-lg;
+    }
+
+    strong {
+        @apply text-dark-primary;
+    }
+
     ul {
-        @apply mt-2 list-disc list-inside space-y-2;
+        @apply mt-2 pl-6 list-disc space-y-2;
     }
 
     ol {
-        @apply mt-2 list-decimal list-inside space-y-2;
+        @apply mt-2 pl-6 list-decimal space-y-2;
     }
+
+    ul li, ol li {
+        @apply pl-1;
+    }
+
+    ul li::marker, ol li::marker {
+        @apply text-gray-light;
+    }
+}
+
+/* Code wrap */
+pre {
+    @apply m-0 p-0;
+}
+
+pre code {
+    @apply bg-transparent p-0 block leading-snug;
+}
+
+.hljs {
+    @apply bg-transparent text-sm;
+}
+
+.language-css, .language-css > * {
+    @apply text-sm;
 }

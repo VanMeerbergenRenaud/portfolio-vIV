@@ -1,6 +1,20 @@
 /*---------------------- JS  ----------------------*/
 
-/* Reveal content on scroll */
+import hljs from 'highlight.js';
+
+/* Reveal all titles (h1, h2, h3, h4, h5, h6) on scroll */
+document.addEventListener('livewire:navigated', () => {
+    // TODO
+});
+
+/* Code syntax highlighting */
+document.addEventListener('livewire:navigated', () => {
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightElement(block);
+    });
+});
+
+/* Reveal img on scroll */
 document.addEventListener('livewire:navigated', () => {
     // Vérifier les préférences de mouvement réduit
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -17,7 +31,7 @@ document.addEventListener('livewire:navigated', () => {
     });
 
     // Exclure les images avec gallery-zoom-effect du reveal
-    const elementsToReveal = document.querySelectorAll('h1, h2, h3, h4, h5, h6, img:not(.gallery-zoom-effect, .no-reveal), footer');
+    const elementsToReveal = document.querySelectorAll('img:not(.gallery-zoom-effect, .no-reveal)');
     elementsToReveal.forEach(element => {
         element.classList.add('reveal-on-scroll');
         observer.observe(element);

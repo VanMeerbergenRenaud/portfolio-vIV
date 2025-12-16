@@ -20,10 +20,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Il est 3 heures du matin. Votre café refroidit lentement tandis que vos doigts dansent sur le clavier. Vous êtes en pleine construction de votre SaaS, cette idée qui vous hante depuis des mois. Et soudain, vous réalisez : vous venez d\'implémenter une fonctionnalité complexe en temps réel sans écrire une seule ligne de JavaScript. Bienvenue dans l\'univers magique de Laravel et Livewire.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'L\'élégance de la simplicité'],
                     ],
@@ -36,10 +32,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Laravel, ce framework PHP qui a su conquérir les cœurs par son élégance syntaxique, s\'associe à Livewire pour créer des interfaces réactives avec la puissance du back-end. Imaginez : des composants dynamiques, des mises à jour en temps réel, des formulaires intelligents - le tout orchestré depuis votre code PHP adoré.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'La puissance du monolithe moderne'],
                     ],
@@ -50,10 +42,6 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'quote',
                         'data' => ['content' => 'La complexité prématurée est l\'ennemie du lancement rapide. Laravel et Livewire vous permettent de démarrer simple et d\'évoluer intelligemment.', 'author' => 'Caleb Porzio'],
-                    ],
-                    [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
                     ],
                     [
                         'type' => 'heading',
@@ -135,10 +123,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Votre application Laravel tourne en production depuis quelques mois. Les utilisateurs affluent, les données s\'accumulent, et soudain : les pages se chargent lentement, les requêtes prennent plusieurs secondes, votre serveur commence à suffoquer. Bienvenue dans le monde de l\'optimisation des performances.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'Les fondamentaux de la performance'],
                     ],
@@ -149,10 +133,6 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'quote',
                         'data' => ['content' => 'L\'optimisation prématurée est la racine de tous les maux. Mais l\'optimisation au bon moment est la clé de la survie.', 'author' => 'Donald Knuth (adapté)'],
-                    ],
-                    [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
                     ],
                     [
                         'type' => 'heading',
@@ -197,10 +177,6 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'paragraph',
                         'data' => ['content' => 'Attention cependant : trop d\'index ralentissent les écritures. Il faut trouver l\'équilibre entre lectures et écritures. Indexez les colonnes utilisées dans les WHERE, JOIN, et ORDER BY.'],
-                    ],
-                    [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
                     ],
                     [
                         'type' => 'heading',
@@ -263,10 +239,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Ces quatre commandes peuvent réduire le temps de boot de votre application de 50%. Intégrez-les dans votre pipeline de déploiement.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'Laravel Octane : la révolution des performances'],
                     ],
@@ -291,10 +263,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => '<p>Bonnes pratiques Octane :</p><ul><li>Évitez les variables statiques pour les données de requête</li><li>Nettoyez les ressources dans les terminables</li><li>Utilisez les intervalles pour le garbage collection</li><li>Testez la consommation mémoire sous charge</li></ul>'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'Queues : libérez vos requêtes'],
                     ],
@@ -313,10 +281,6 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'paragraph',
                         'data' => ['content' => 'Laravel Horizon vous donne une visibilité totale sur vos queues : throughput, failed jobs, retry strategies. C\'est un outil indispensable en production.'],
-                    ],
-                    [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
                     ],
                     [
                         'type' => 'heading',
@@ -343,20 +307,12 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Des solutions comme New Relic, Datadog, ou Blackfire vous donnent une visibilité complète sur les performances en production. Elles détectent automatiquement les slow queries, les endpoints lents, et les goulots d\'étranglement.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'Checklist d\'optimisation'],
                     ],
                     [
                         'type' => 'rich_text',
                         'data' => ['content' => '<p>Avant le déploiement en production :</p><ul><li>Eager loading sur toutes les relations</li><li>Index sur les colonnes critiques</li><li>Cache de config, routes, et vues</li><li>Redis pour le cache et les sessions</li><li>Queues pour les tâches longues</li><li>CDN pour les assets statiques</li><li>Compression Gzip activée</li><li>Lazy loading des images</li><li>Pagination sur les grandes listes</li><li>APM configuré</li></ul>'],
-                    ],
-                    [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
                     ],
                     [
                         'type' => 'heading',
@@ -372,7 +328,7 @@ class ArticleSeeder extends Seeder
                     ],
                 ],
                 'cover_image' => null,
-                'category' => 'tutoriel',
+                'category' => 'tutorial',
                 'tags' => ['Laravel', 'Performance', 'Optimisation', 'Cache', 'Database'],
                 'reading_time' => 15,
                 'is_featured' => false,
@@ -390,10 +346,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Le déploiement d\'applications web a radicalement changé ces dernières années. Fini le temps du serveur unique qui héberge tout. Aujourd\'hui, nous construisons des architectures distribuées, résilientes, qui s\'adaptent automatiquement à la charge. Laravel s\'intègre parfaitement dans cet écosystème cloud moderne.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'L\'architecture cloud moderne'],
                     ],
@@ -404,10 +356,6 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'quote',
                         'data' => ['content' => 'Architecture is about the important stuff. Whatever that is.', 'author' => 'Martin Fowler'],
-                    ],
-                    [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
                     ],
                     [
                         'type' => 'heading',
@@ -458,10 +406,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Pour Laravel, c\'est transparent. Vous pointez simplement votre configuration database vers le endpoint Aurora, et tout fonctionne. Le read replica endpoint permet de router les SELECT vers les réplicas pour décharger le master.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'Laravel Vapor : serverless sans friction'],
                     ],
@@ -502,10 +446,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Pour les applications avec un trafic constant et prévisible, EC2 avec auto-scaling peut être plus économique. Faites le calcul en fonction de vos besoins réels.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'Laravel Forge : l\'infrastructure as code simplifiée'],
                     ],
@@ -524,10 +464,6 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'rich_text',
                         'data' => ['content' => '<p>Ce que Forge fait pour vous :</p><ul><li>Provisioning de serveurs en un clic</li><li>Configuration SSL automatique avec Let\'s Encrypt</li><li>Déploiement git automatique sur push</li><li>Gestion des workers de queue</li><li>Scheduled tasks (cron) dans l\'interface</li><li>Backup automatique de base de données</li><li>Monitoring de santé des serveurs</li></ul>'],
-                    ],
-                    [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
                     ],
                     [
                         'type' => 'heading',
@@ -562,10 +498,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Sur S3, chaque tenant a son propre préfixe (ou bucket). Les IAM policies garantissent qu\'un tenant ne peut jamais accéder aux fichiers d\'un autre.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'Observabilité et monitoring'],
                     ],
@@ -590,10 +522,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => 'Configurez des alarmes sur les métriques critiques : CPU > 80%, disk space < 20%, erreur rate > 5%. Recevez une notification Slack ou un SMS avant que vos utilisateurs ne soient impactés.'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'Sécurité dans le cloud'],
                     ],
@@ -606,10 +534,6 @@ class ArticleSeeder extends Seeder
                         'data' => ['content' => '<p>Checklist de sécurité AWS :</p><ul><li>Secrets dans AWS Secrets Manager, jamais dans le code</li><li>IAM roles avec principe de moindre privilège</li><li>Security groups restrictifs (whitelist, pas blacklist)</li><li>SSL/TLS partout, certificats ACM</li><li>Encryption at rest pour RDS et S3</li><li>MFA activé sur tous les comptes</li><li>CloudTrail pour auditer toutes les actions</li><li>GuardDuty pour détecter les comportements suspects</li></ul>'],
                     ],
                     [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
-                    ],
-                    [
                         'type' => 'heading',
                         'data' => ['level' => 'h3', 'content' => 'Coûts : optimiser sans sacrifier la performance'],
                     ],
@@ -620,10 +544,6 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'rich_text',
                         'data' => ['content' => '<p>Stratégies d\'optimisation des coûts :</p><ul><li>Reserved Instances pour la capacité de base (économies jusqu\'à 70%)</li><li>Spot Instances pour les workers non-critiques</li><li>Auto-scaling pour éviter la sur-provision</li><li>S3 Intelligent Tiering pour les fichiers peu accédés</li><li>CloudFront pour réduire les transferts depuis S3</li><li>RDS Aurora Serverless pour les environnements de dev/staging</li></ul>'],
-                    ],
-                    [
-                        'type' => 'spacing',
-                        'data' => ['size' => '10'],
                     ],
                     [
                         'type' => 'heading',
@@ -647,6 +567,325 @@ class ArticleSeeder extends Seeder
                 'order' => 3,
                 'published_at' => now()->subDays(10),
             ],
+            [
+                'title' => 'CSS Wrapped 2025 : La révolution du Web Natif',
+                'slug' => 'css-wrapped-2025-revolution-web-natif',
+                'excerpt' => 'L\'équipe Chrome Dev vient de publier le CSS Wrapped 2025. Le constat est sans appel : nous assistons à la plus grande évolution du langage depuis Flexbox. Découvrez comment le CSS natif remplace désormais des kilooctets de JavaScript.',
+                'content_blocks' => [
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'L\'équipe Chrome Dev vient de dévoiler son CSS Wrapped 2025. Au-delà de la vitrine interactive, c\'est un signal fort pour l\'industrie : le CSS de 2025 n\'a plus rien à voir avec le langage de style limité que nous avons appris à contourner pendant une décennie.'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Après avoir décortiqué cette démo technique et mesuré les gains de performance, ma conclusion est catégorique : le fossé entre "ce qu\'on peut faire en CSS" et "ce qu\'on doit faire en JavaScript" vient de se combler. 🚀'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Nous quittons l\'ère où CSS servait uniquement à la "décoration". Le navigateur prend désormais en charge nativement des interactions complexes qui nécessitaient hier de lourdes bibliothèques tierces.'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Voici les 5 piliers techniques qui redéfinissent le développement frontend en 2025.'],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h3', 'content' => '1. Animations et performances natives'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'La fluidité à 60fps n\'est plus un objectif difficile à atteindre, c\'est désormais une garantie architecturale offerte par le navigateur.'],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'Scroll-driven Animations'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Animer un élément au scroll impliquait historiquement d\'écouter l\'événement `scroll` en JS et de calculer des positions via `requestAnimationFrame`. Une méthode coûteuse en ressources, souvent saccadée sur mobile.'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Les Scroll-driven Animations délèguent cette tâche au "compositor thread". Concrètement : même si votre thread principal JavaScript est bloqué par un calcul lourd, l\'animation reste parfaitement fluide.'],
+                    ],
+                    [
+                        'type' => 'code_text',
+                        'data' => [
+                            'language' => 'css',
+                            'code' => '@keyframes reveal {
+  from { opacity: 0; transform: translateY(100px) scale(0.8); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.card {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}',
+                            'caption' => 'Apparition progressive au scroll sans une seule ligne de JavaScript.',
+                        ],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'View Transitions API'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Imiter la fluidité des applications natives (transitions entre les pages) nécessitait jusqu\'ici une architecture SPA complexe. La View Transitions API change la donne en permettant au navigateur de capturer l\'état "avant" et "après" navigation pour interpoler automatiquement le changement.'],
+                    ],
+                    [
+                        'type' => 'code_text',
+                        'data' => [
+                            'language' => 'css',
+                            'code' => '@view-transition {
+  navigation: auto;
+}
+
+.hero-image {
+  view-transition-name: hero;
+}',
+                            'caption' => 'Morphing automatique d\'une image entre deux pages HTML distinctes.',
+                        ],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'Gestion des états d\'entrée'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Animer un élément passant de `display: none` à `block` a toujours été un casse-tête nécessitant des hacks. Avec `@starting-style`, nous pouvons enfin définir l\'état initial d\'un élément lors de son insertion dans le DOM.'],
+                    ],
+                    [
+                        'type' => 'code_text',
+                        'data' => [
+                            'language' => 'css',
+                            'code' => 'dialog {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s, display 0.3s allow-discrete;
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}',
+                            'caption' => 'Animation d\'entrée propre pour une modale, incluant la propriété display.',
+                        ],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h3', 'content' => '2. Architecture orientée composants'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Le CSS moderne comprend enfin la structure logique de nos applications et propose des outils pour gérer l\'encapsulation et le contexte.'],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'Anchor Positioning'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Positionner un tooltip ou un menu par rapport à son déclencheur ne requiert plus de bibliothèques comme Popper.js. `Anchor Positioning` rend ce lien déclaratif et gère nativement le repositionnement si l\'espace manque.'],
+                    ],
+                    [
+                        'type' => 'code_text',
+                        'data' => [
+                            'language' => 'css',
+                            'code' => '.tooltip {
+  position: fixed;
+  position-anchor: --my-trigger;
+  top: anchor(bottom);
+  left: anchor(center);
+  translate: -50% 10px;
+
+  position-try-fallbacks: --top, --right;
+}',
+                            'caption' => 'Un tooltip ancré qui s\'adapte intelligemment à l\'espace disponible.',
+                        ],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'Container Queries'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Le responsive design évolue. Au lieu de regarder la taille de l\'écran (Media Queries), nous pouvons désormais adapter un composant selon la taille de son conteneur parent. C\'est la clé pour créer des composants réellement portables.'],
+                    ],
+                    [
+                        'type' => 'code_text',
+                        'data' => [
+                            'language' => 'css',
+                            'code' => '.card-container {
+  container-type: inline-size;
+  container-name: card;
+}
+
+@container card (min-width: 400px) {
+  .card {
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+  }
+}',
+                            'caption' => 'La carte change de layout selon l\'espace conteneur, peu importe le viewport.',
+                        ],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'CSS Nesting natif'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'L\'imbrication, fonctionnalité phare des préprocesseurs comme SASS, est désormais standardisée. Le code est plus concis et plus lisible sans étape de compilation.'],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h3', 'content' => '3. Puissance de calcul'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'CSS devient un moteur de calcul capable de gérer des logiques mathématiques complexes pour le layout et l\'animation.'],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'Fonctions trigonométriques'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => '`sin()`, `cos()`, `tan()` débarquent nativement. Elles permettent de créer des layouts circulaires ou des trajectoires complexes sans une seule ligne de JavaScript.'],
+                    ],
+                    [
+                        'type' => 'code_text',
+                        'data' => [
+                            'language' => 'css',
+                            'code' => '.orbit__item {
+  --angle: calc(360deg / var(--items) * var(--i));
+  translate:
+    calc(cos(var(--angle)) * var(--radius))
+    calc(sin(var(--angle)) * var(--radius));
+}',
+                            'caption' => 'Positionnement circulaire calculé dynamiquement en CSS.',
+                        ],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'Fonction attr() typée'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'La nouvelle syntaxe de `attr()` permet de récupérer une valeur HTML, de la typer (nombre, couleur, unité) et de l\'utiliser directement dans vos calculs de style. Un pont robuste entre HTML et CSS.'],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h3', 'content' => '4. Couleurs haute définition'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Nos écrans modernes sont capables d\'afficher bien plus que le standard sRGB des années 90. CSS s\'ouvre enfin à cet espace colorimétrique étendu.'],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'Espaces P3 et OKLCH'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'L\'espace Display-P3 offre des couleurs plus vibrantes (+25% de spectre). `OKLCH`, quant à lui, garantit une uniformité perceptuelle : changer la teinte ne modifie plus la luminosité perçue, ce qui simplifie drastiquement la création de palettes accessibles.'],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'Relative Color Syntax'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'La manipulation de couleur devient programmatique. Vous pouvez désormais dériver une couleur à partir d\'une autre (éclaircir, assombrir, changer l\'opacité) directement en CSS.'],
+                    ],
+                    [
+                        'type' => 'code_text',
+                        'data' => [
+                            'language' => 'css',
+                            'code' => '.button:hover {
+  background: oklch(from var(--brand) calc(l + 0.1) c h);
+}',
+                            'caption' => 'Génération automatique des variantes au survol.',
+                        ],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h3', 'content' => '5. Formulaires modernes'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Styliser les éléments de formulaire natifs a toujours été un défi, poussant souvent à réinventer la roue au détriment de l\'accessibilité. C\'est terminé.'],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h4', 'content' => 'Field-sizing et Select'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => '`field-sizing: content` permet à un textarea de s\'adapter automatiquement à son contenu. De même, les nouveaux pseudos-éléments pour `<select>` permettent enfin un styling complet sans casser l\'expérience native.'],
+                    ],
+                    [
+                        'type' => 'code_text',
+                        'data' => [
+                            'language' => 'css',
+                            'code' => 'textarea {
+  field-sizing: content;
+}
+
+::picker(select) {
+  appearance: base-select;
+  background: var(--surface);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}',
+                            'caption' => 'Composants de formulaire natifs, adaptatifs et stylés.',
+                        ],
+                    ],
+                    [
+                        'type' => 'heading',
+                        'data' => ['level' => 'h3', 'content' => 'Un nouveau paradigme'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Ce CSS Wrapped 2025 marque un tournant. Pendant longtemps, nous avons utilisé JavaScript pour compenser les lacunes du CSS. Aujourd\'hui, la tendance s\'inverse :'],
+                    ],
+                    [
+                        'type' => 'list',
+                        'data' => [
+                            'style' => 'unordered',
+                            'items' => [
+                                'ScrollTrigger → Remplacé par scroll-timeline.',
+                                'Framer Motion (page transitions) → Remplacé par View Transitions API.',
+                                'Popper.js → Remplacé par Anchor Positioning.',
+                                'Autosize.js → Remplacé par field-sizing.'
+                            ]
+                        ],
+                    ],
+                    [
+                        'type' => 'quote',
+                        'data' => ['content' => 'Le CSS natif est devenu trop puissant et trop élégant pour être systématiquement abstrait ou ignoré.', 'author' => null],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Si Tailwind et les frameworks utilitaires restent excellents pour la vélocité, le CSS moderne "Ingénieur" s\'impose pour les expériences créatives et performantes. Il est temps d\'auditer vos dépendances JS et de laisser le navigateur faire ce qu\'il fait de mieux : gérer le rendu visuel. 🎨'],
+                    ],
+                    [
+                        'type' => 'paragraph',
+                        'data' => ['content' => 'Le web natif n\'a jamais été aussi puissant. Profitez-en.'],
+                    ],
+                ],
+                'cover_image' => null,
+                'category' => 'news',
+                'tags' => ['CSS', 'Frontend', 'Performance', 'Web Design'],
+                'reading_time' => 10,
+                'is_featured' => true,
+                'is_published' => true,
+                'order' => 4,
+                'published_at' => now()->subDays(2),
+            ]
+
         ];
 
         foreach ($articles as $articleData) {

@@ -169,6 +169,40 @@ class ArticleForm
                                             ->placeholder('Un composant de recherche en temps réel'),
                                     ]),
 
+                                Builder\Block::make('code_text')
+                                    ->label('Code (Texte)')
+                                    ->schema([
+                                        Select::make('language')
+                                            ->label('Langage')
+                                            ->options([
+                                                'php' => 'PHP',
+                                                'javascript' => 'JavaScript',
+                                                'typescript' => 'TypeScript',
+                                                'html' => 'HTML',
+                                                'css' => 'CSS',
+                                                'scss' => 'SCSS',
+                                                'blade' => 'Blade',
+                                                'json' => 'JSON',
+                                                'yaml' => 'YAML',
+                                                'bash' => 'Bash',
+                                                'sql' => 'SQL',
+                                                'python' => 'Python',
+                                                'markdown' => 'Markdown',
+                                            ])
+                                            ->searchable()
+                                            ->required()
+                                            ->helperText('Sélectionnez le langage pour la coloration syntaxique'),
+                                        Textarea::make('code')
+                                            ->label('Code')
+                                            ->rows(10)
+                                            ->required()
+                                            ->helperText('Collez votre code ici - il sera affiché avec coloration syntaxique'),
+                                        TextInput::make('caption')
+                                            ->label('Légende')
+                                            ->helperText('Description du code (optionnel)')
+                                            ->placeholder('Exemple : Configuration du service de recherche'),
+                                    ]),
+
                                 Builder\Block::make('quote')
                                     ->label('Citation')
                                     ->schema([
