@@ -204,6 +204,36 @@
         </div>
     @break
 
-    {{-- @case(sources) --}}
+    @case('sources')
+        <div class="mt-10 mb-8 p-6 bg-gray-50 border border-gray-200 rounded-xl">
+            <x-font.text-xl class="mb-4 flex gap-2">
+                <span>📚</span>Sources et références
+            </x-font.text-xl>
+
+            @if(!empty($data['items']))
+                <ul class="space-y-3">
+                    @foreach($data['items'] as $source)
+                        <li class="flex flex-col">
+                            <a href="{{ $source['url'] ?? '#' }}"
+                               target="_blank"
+                               rel="noopener noreferrer nofollow"
+                               class="flex md:items-center gap-3"
+                            >
+                                <svg class="flex shrink-0 mt-1.5 lg:mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                                <span class="text-red-600 hover:text-red-800">{{ $source['title'] ?? 'Source' }}</span>
+                            </a>
+                            @if(!empty($source['description']))
+                                <x-font.text-md class="text-gray-600 mt-1 ml-7 font-normal">
+                                    {{ $source['description'] }}
+                                </x-font.text-md>
+                            @endif
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
+    @break
 @endswitch
 

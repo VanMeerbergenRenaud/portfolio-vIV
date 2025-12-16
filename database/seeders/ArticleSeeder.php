@@ -103,6 +103,33 @@ class ArticleSeeder extends Seeder
                         'type' => 'paragraph',
                         'data' => ['content' => 'Après des années à tester chaque nouveau framework, j\'en suis arrivé à cette conclusion : la meilleure stack est celle qui vous permet de livrer. Laravel et Livewire incarnent cette philosophie.'],
                     ],
+                    [
+                        'type' => 'sources',
+                        'data' => [
+                            'items' => [
+                                [
+                                    'title' => 'Livewire v3 Documentation',
+                                    'url' => 'https://livewire.laravel.com/docs',
+                                    'description' => 'La bible technique pour maîtriser la réactivité côté serveur.',
+                                ],
+                                [
+                                    'title' => 'FilamentPHP - The TALL Stack Admin Panel',
+                                    'url' => 'https://filamentphp.com/',
+                                    'description' => 'L\'outil de prédilection pour construire des back-offices SaaS en un temps record.',
+                                ],
+                                [
+                                    'title' => 'Alpine.js - A rugged, minimal tool',
+                                    'url' => 'https://alpinejs.dev/',
+                                    'description' => 'Le compagnon JavaScript indispensable pour les interactions légères.',
+                                ],
+                                [
+                                    'title' => 'The TALL Stack ecosystem',
+                                    'url' => 'https://tallstack.dev/',
+                                    'description' => 'Ressources pour l\'alliance Tailwind, Alpine, Laravel et Livewire.',
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
                 'cover_image' => null,
                 'category' => 'experience',
@@ -325,6 +352,33 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'paragraph',
                         'data' => ['content' => 'Une application performante n\'est pas un luxe, c\'est la différence entre un utilisateur qui reste et un utilisateur qui part. Laravel vous donne tous les outils nécessaires. À vous de les utiliser intelligemment.'],
+                    ],
+                    [
+                        'type' => 'sources',
+                        'data' => [
+                            'items' => [
+                                [
+                                    'title' => 'Laravel Octane - Supercharging Performance',
+                                    'url' => 'https://laravel.com/docs/octane',
+                                    'description' => 'Documentation sur l\'utilisation de Swoole/RoadRunner pour des performances x10.',
+                                ],
+                                [
+                                    'title' => 'Eloquent Performance Patterns',
+                                    'url' => 'https://eloquent-course.reinink.ca/',
+                                    'description' => 'Référence ultime par Jonathan Reinink pour résoudre les problèmes N+1 et l\'optimisation SQL.',
+                                ],
+                                [
+                                    'title' => 'Blackfire.io Profiler',
+                                    'url' => 'https://blackfire.io/docs/integrations/laravel',
+                                    'description' => 'Outil professionnel d\'APM pour visualiser les goulots d\'étranglement.',
+                                ],
+                                [
+                                    'title' => 'High Performance MySQL',
+                                    'url' => 'https://dev.mysql.com/doc/refman/8.0/en/optimization-indexes.html',
+                                    'description' => 'Documentation technique sur la stratégie d\'indexation B-Tree.',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 'cover_image' => null,
@@ -556,6 +610,33 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'paragraph',
                         'data' => ['content' => 'Commencez simple : un serveur Forge, une base RDS, et S3 pour les fichiers. Puis scalez progressivement : ajoutez un load balancer, activez l\'auto-scaling, implémentez le caching agressif. L\'architecture cloud est un voyage itératif. L\'important est de démarrer et d\'améliorer continuellement.'],
+                    ],
+                    [
+                        'type' => 'sources',
+                        'data' => [
+                            'items' => [
+                                [
+                                    'title' => 'The Twelve-Factor App',
+                                    'url' => 'https://12factor.net/fr/',
+                                    'description' => 'La méthodologie standard pour construire des applications SaaS modernes et scalables.',
+                                ],
+                                [
+                                    'title' => 'AWS Well-Architected Framework',
+                                    'url' => 'https://aws.amazon.com/architecture/well-architected/',
+                                    'description' => 'Les piliers de l\'excellence architecturale cloud selon Amazon.',
+                                ],
+                                [
+                                    'title' => 'Laravel Vapor Documentation',
+                                    'url' => 'https://docs.vapor.build/',
+                                    'description' => 'Guide technique du déploiement serverless sur AWS Lambda.',
+                                ],
+                                [
+                                    'title' => 'Scaling Laravel on AWS',
+                                    'url' => 'https://serverless.com/blog/laravel-serverless-architecture/',
+                                    'description' => 'Étude de cas sur l\'architecture distribuée et le passage à l\'échelle.',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 'cover_image' => null,
@@ -874,6 +955,33 @@ class ArticleSeeder extends Seeder
                     [
                         'type' => 'paragraph',
                         'data' => ['content' => 'Le web natif n\'a jamais été aussi puissant. Profitez-en.'],
+                    ],
+                    [
+                        'type' => 'sources',
+                        'data' => [
+                            'items' => [
+                                [
+                                    'title' => 'Chrome Developers - CSS Wrapped 2025',
+                                    'url' => 'https://chrome.dev/css-wrapped-2025/',
+                                    'description' => 'L\'analyse officielle des nouvelles capacités du moteur de rendu.',
+                                ],
+                                [
+                                    'title' => 'MDN Web Docs - View Transitions API',
+                                    'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API',
+                                    'description' => 'Documentation technique standardisée pour les transitions de page natives.',
+                                ],
+                                [
+                                    'title' => 'Scroll-driven Animations (Bramus Van Damme)',
+                                    'url' => 'https://scroll-driven-animations.style/',
+                                    'description' => 'Le site de référence pour maîtriser les animations liées au scroll sans JS.',
+                                ],
+                                [
+                                    'title' => 'W3C CSS Anchor Positioning',
+                                    'url' => 'https://www.w3.org/TR/css-anchor-position-1/',
+                                    'description' => 'La spécification officielle du W3C pour le positionnement d\'éléments flottants.',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 'cover_image' => null,

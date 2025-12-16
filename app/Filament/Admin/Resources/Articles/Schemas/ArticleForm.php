@@ -6,6 +6,7 @@ use App\Enums\ArticleCategory;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
@@ -243,6 +244,33 @@ class ArticleForm
                                             ->reorderable()
                                             ->maxFiles(10)
                                             ->required(),
+                                    ]),
+
+                                Builder\Block::make('sources')
+                                    ->label('Sources et références')
+                                    ->schema([
+                                        Repeater::make('items')
+                                            ->label('Sources')
+                                            ->schema([
+                                                TextInput::make('title')
+                                                    ->label('Titre')
+                                                    ->required()
+                                                    ->placeholder('Documentation officielle Chrome DevRel'),
+                                                TextInput::make('url')
+                                                    ->label('URL')
+                                                    ->url()
+                                                    ->required()
+                                                    ->placeholder('https://example.com'),
+                                                Textarea::make('description')
+                                                    ->label('Description')
+                                                    ->rows(2)
+                                                    ->placeholder('Description optionnelle de la source'),
+                                            ])
+                                            ->columns(1)
+                                            ->defaultItems(0)
+                                            ->reorderable()
+                                            ->collapsible()
+                                            ->itemLabel(fn (array $state): ?string => $state['title'] ?? null),
                                     ]),
                             ])
                             ->blockNumbers(false)
