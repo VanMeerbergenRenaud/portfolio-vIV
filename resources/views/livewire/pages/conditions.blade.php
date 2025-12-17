@@ -18,7 +18,7 @@
         {{-- Grid --}}
         <div class="flex flex-col gap-8 max-w-175">
             <x-font.title-lg :isTitle="true" level="2">
-                Conditions générales d'utilisation.
+                Conditions générales d'utilisation<span aria-hidden="true">.</span>
             </x-font.title-lg>
 
             <x-font.text class="text-gray-medium">
@@ -32,7 +32,7 @@
             >
                 <div class="flex items-center gap-1.5">
                     <span class="text-red text-xs" aria-hidden="true">|</span>
-                    <x-font.text-md class="font-medium text-dark-primary">
+                    <x-font.text-md :isTitle="true" level="3" class="font-medium text-dark-primary">
                         Sommaire
                     </x-font.text-md>
                 </div>
@@ -107,8 +107,9 @@
 
             {{-- Part 1 --}}
             <div id="section-1" class="mt-4 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    1. Mentions légales
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">1.</span>
+                    Mentions légales
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -156,8 +157,9 @@
 
             {{-- Part 2 --}}
             <div id="section-2" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    2. Objet du site
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">2.</span>
+                    Objet du site
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -186,8 +188,9 @@
 
             {{-- Part 3 --}}
             <div id="section-3" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    3. Accès au site
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">3.</span>
+                    Accès au site
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -217,8 +220,9 @@
 
             {{-- Part 4 --}}
             <div id="section-4" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    4. Propriété intellectuelle
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">4.</span>
+                    Propriété intellectuelle
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -252,8 +256,9 @@
 
             {{-- Part 5 --}}
             <div id="section-5" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    5. Limitation de responsabilité
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">5.</span>
+                    Limitation de responsabilité
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -289,8 +294,9 @@
 
             {{-- Part 6 --}}
             <div id="section-6" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    6. Liens hypertextes
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">6.</span>
+                    Liens hypertextes
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -331,8 +337,9 @@
 
             {{-- Part 7 --}}
             <div id="section-7" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    7. Modification des Conditions Générales d'Utilisation
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">7.</span>
+                    Modification des <abbr title="Conditions Générales d'Utilisation">CGU</abbr>
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -350,8 +357,9 @@
 
             {{-- Part 8 --}}
             <div id="section-8" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    8. Droit applicable et juridiction compétente
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">8.</span>
+                    Droit applicable et juridiction compétente
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">

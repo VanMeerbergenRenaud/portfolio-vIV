@@ -24,7 +24,7 @@
 
             {{-- Title and filters --}}
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
-                <x-font.title-2xl :isTitle="true" level="2" class="max-w-[1000px]">
+                <x-font.title-2xl :isTitle="true" level="2" class="max-w-255">
                     Projets <x-projects.type-label :type="$type" />
                 </x-font.title-2xl>
 
@@ -70,7 +70,7 @@
                         {{-- Infos --}}
                         <div class="flex items-center justify-between gap-4 px-3 py-2">
                             <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
-                                {{ $project->name }}.
+                                {{ $project->name }}<span aria-hidden="true">.</span>
                             </x-font.text-xl>
                             <x-font.text class="text-gray-medium">
                                 {{ $project->year }}

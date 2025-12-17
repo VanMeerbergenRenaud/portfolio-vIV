@@ -12,18 +12,16 @@
             $content = $data['content'] ?? '';
             $id = $data['id'] ?? '';
         @endphp
+
         @if($level === 'h3')
-            {{-- H3 : Grande rupture visuelle --}}
             <x-font.text-2xl :isTitle="true" level="3" class="mt-10 mb-5 font-bold text-gray-900" id="{{ $id }}">
                 {{ $content }}
             </x-font.text-2xl>
         @elseif($level === 'h4')
-            {{-- H4 : Rupture moyenne --}}
             <x-font.text-xl :isTitle="true" level="4" class="mt-8 mb-4 font-semibold text-gray-900" id="{{ $id }}">
                 {{ $content }}
             </x-font.text-xl>
         @else
-            {{-- H5/Autre : Petite rupture --}}
             <x-font.text-lg :isTitle="true" level="5" class="mt-6 mb-3 font-medium text-gray-900" id="{{ $id }}">
                 {{ $content }}
             </x-font.text-lg>
@@ -154,7 +152,7 @@
                 </div>
             @endif
 
-            <div class="py-2 px-4 overflow-x-auto bg-gray-50 border border-gray-200 {{ empty($data['language']) ? 'rounded-xl' : 'rounded-b-xl' }}">
+            <div tabindex="0" class="py-2 px-4 overflow-x-auto bg-gray-50 border border-gray-200 {{ empty($data['language']) ? 'rounded-xl' : 'rounded-b-xl' }}">
                 <pre class="leading-4 text-xs"><code x-ref="codeBlock" class="language-{{ $data['language'] ?? 'plaintext' }} w-full text-xs">{{ $data['code'] ?? '' }}</code></pre>
             </div>
 

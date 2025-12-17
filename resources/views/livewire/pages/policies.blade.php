@@ -18,7 +18,7 @@
         {{-- Grid --}}
         <div class="flex flex-col gap-8 max-w-175">
             <x-font.title-lg :isTitle="true" level="2">
-                Politique de confidentialité.
+                Politique de confidentialité<span aria-hidden="true">.</span>
             </x-font.title-lg>
 
             <x-font.text class="text-gray-medium">
@@ -32,7 +32,7 @@
             >
                 <div class="flex items-center gap-1.5">
                     <span class="text-red text-xs" aria-hidden="true">|</span>
-                    <x-font.text-md class="font-medium text-dark-primary">
+                    <x-font.text-md :isTitle="true" level="3" class="font-medium text-dark-primary">
                         Sommaire
                     </x-font.text-md>
                 </div>
@@ -99,8 +99,9 @@
 
             {{-- Part 1 --}}
             <div id="section-1" class="mt-4 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    1. Responsable du traitement des données
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">1.</span>
+                    Responsable du traitement des données
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -110,8 +111,9 @@
 
             {{-- Part 2 --}}
             <div id="section-2" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    2. Les données que nous collectons
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">2.</span>
+                    Les données que nous collectons
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -154,8 +156,9 @@
 
             {{-- Part 3 --}}
             <div id="section-3" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    3. Pourquoi nous collectons vos données
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">3.</span>
+                    Pourquoi nous collectons vos données
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -184,8 +187,9 @@
 
             {{-- Part 4 --}}
             <div id="section-4" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    4. Partage des données et services tiers
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">4.</span>
+                    Partage des données et services tiers
                 </x-font.text-xl>
 
                 <div class="flex flex-col gap-2">
@@ -205,8 +209,9 @@
 
             {{-- Part 5 --}}
             <div id="section-5" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    5. Durée de conservation
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">5.</span>
+                    Durée de conservation
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -229,8 +234,9 @@
 
             {{-- Part 6 --}}
             <div id="section-6" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    6. Vos droits sur vos données
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">6.</span>
+                    Vos droits sur vos données
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -269,8 +275,9 @@
 
             {{-- Part 7 --}}
             <div id="section-7" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    7. Notre politique sur les cookies
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">7.</span>
+                    Notre politique sur les cookies
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">

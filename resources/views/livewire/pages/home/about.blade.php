@@ -23,7 +23,7 @@
                     <x-font.text-sm class="text-gray-medium">2025</x-font.text-sm>
                 </div>
 
-                <x-font.title :isTitle="true" level="3" class="mt-8">
+                <x-font.title class="mt-8">
                     Artisan du code Laravel, je forge des applications web robustes, scalables et pensées pour tous les utilisateurs.
                 </x-font.title>
 

@@ -11,7 +11,7 @@
 
         {{-- 1. Section supérieure : Logo et lien retour en haut --}}
         <div class="flex justify-between items-start mb-12">
-            <x-svg.logo.brand class="w-24 h-24 md:w-32 md:h-32" aria-hidden="true" />
+            <x-svg.logo.brand class="w-24 h-24 md:w-32 md:h-32" aria-hidden="true" focusable="false" />
 
             <a
                 href="#page-top"
@@ -28,11 +28,16 @@
             {{-- Colonne 1: Adresse --}}
             <address class="space-y-4 not-italic">
                 <h3 class="font-bold tracking-widest-plus text-gray-medium">Adresse</h3>
-                <p class="leading-relaxed text-sm text-whitesmoke">
+                <a class="leading-relaxed text-sm text-whitesmoke hover:text-red"
+                   href="https://maps.app.goo.gl/qY7TrBUW6BLtoNBn7"
+                   target="_blank"
+                   aria-label="Voir mon adresse sur Google Maps"
+                   rel="noopener noreferrer"
+                >
                     Rue Petit Bioleux, 18<br>
                     4122, Plainevaux<br>
                     Liège – Belgique
-                </p>
+                </a>
             </address>
 
             {{-- Colonne 2 & 3: Navigation rapide --}}
@@ -162,6 +167,6 @@
 
     {{-- My name --}}
     <div aria-hidden="true" class="relative mt-4 flex w-full items-end justify-center">
-        <x-svg.name/>
+        <x-svg.name />
     </div>
 </footer>

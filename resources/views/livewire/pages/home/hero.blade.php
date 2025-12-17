@@ -4,7 +4,7 @@
 
             {{-- Row first --}}
             <div class="flex flex-col lg:grid gap-6 lg:grid-cols-[1fr_315px]">
-                <x-font.title-2xl :isTitle="true" level="2">
+                <x-font.title-2xl :isTitle="true" level="2" aria-hidden="true">
                     {!! $hero->title !!}
                 </x-font.title-2xl>
 
@@ -16,23 +16,15 @@
             {{-- Row second --}}
             <div class="flex flex-col lg:grid gap-6 lg:grid-cols-[1fr_315px]">
                 <div class="relative group overflow-hidden rounded-2xl max-h-[62.5vh] lg:min-h-[425px]">
-                    @if($hero->hero_image)
-                        <img
-                            src="{{ Storage::disk('s3')->url($hero->hero_image) }}"
-                            alt="{{ $hero->hero_image_alt ?? 'Portrait de Renaud Van Meerbergen' }}"
-                            class="w-full h-full min-h-50 max-h-250 object-cover transition-transform duration-500 group-hover:scale-105"
-                            fetchpriority="high"
-                        >
-                        <span class="absolute bottom-0 right-0 md:bottom-2 md:right-3 text-white text-xs md:text-sm font-semibold py-2 px-4 backdrop-blur-[5px] rounded-lg">
-                            Le "GOAT" des devs
-                        </span>
-                    @else
-                        <img
-                            src="{{ asset('img/placeholder.png') }}"
-                            alt=""
-                            class="w-full h-full min-h-50 max-h-250 object-cover transition-transform duration-500 group-hover:scale-105"
-                        >
-                    @endif
+                    <img
+                        src="{{ $hero->hero_image ? Storage::disk('s3')->url($hero->hero_image) : asset('img/placeholder.png') }}"
+                        alt="{{ $hero->hero_image_alt ?? 'Portrait de Renaud Van Meerbergen' }}"
+                        class="w-full h-full min-h-50 max-h-250 object-cover transition-transform duration-500 group-hover:scale-105"
+                        fetchpriority="high"
+                    >
+                    <span class="absolute bottom-0 right-0 md:bottom-2 md:right-3 text-white text-xs md:text-sm font-semibold py-2 px-4 backdrop-blur-[5px] rounded-lg">
+                        Le "GOAT" des devs
+                    </span>
                 </div>
 
                 {{-- Column right --}}

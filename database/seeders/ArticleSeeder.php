@@ -940,8 +940,8 @@ class ArticleSeeder extends Seeder
                                 'ScrollTrigger → Remplacé par scroll-timeline.',
                                 'Framer Motion (page transitions) → Remplacé par View Transitions API.',
                                 'Popper.js → Remplacé par Anchor Positioning.',
-                                'Autosize.js → Remplacé par field-sizing.'
-                            ]
+                                'Autosize.js → Remplacé par field-sizing.',
+                            ],
                         ],
                     ],
                     [
@@ -992,7 +992,7 @@ class ArticleSeeder extends Seeder
                 'is_published' => true,
                 'order' => 4,
                 'published_at' => now()->subDays(2),
-            ]
+            ],
 
         ];
 
