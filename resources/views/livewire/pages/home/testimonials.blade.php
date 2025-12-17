@@ -51,7 +51,7 @@
                     La plus grande fierté d'un développeur, c'est un code qui parle à ses utilisateurs et à ses pairs.
                 </x-font.text>
 
-                <div class="mt-auto flex gap-3.5">
+                <div class="mt-auto flex flex-wrap gap-3.5">
                     <ul class="flex -space-x-4">
                         @foreach($testimonials->take(4) as $testimonial)
                             <li data-border-small="true" class="w-11 h-11">
@@ -179,7 +179,7 @@
                                 class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
                                 aria-label="Témoignage {{ $index + 1 }} sur {{ count($testimonials) }}"
                             >
-                                <x-font.text-3xl>
+                                <x-font.text-3xl class="no-reveal">
                                     "{{ $testimonial->content }}"
                                 </x-font.text-3xl>
 
@@ -196,10 +196,10 @@
                                         >
                                     </noindex>
                                     <div class="flex flex-col gap-0.5">
-                                        <x-font.text-xl>
+                                        <x-font.text-xl class="no-reveal">
                                             {{ $testimonial->name }}
                                         </x-font.text-xl>
-                                        <x-font.text class="text-gray-medium">
+                                        <x-font.text class="text-gray-medium no-reveal">
                                             {{ $testimonial->role }}
                                             @if($testimonial->company)
                                                 , {{ $testimonial->company }}

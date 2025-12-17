@@ -83,7 +83,7 @@
         <div class="flex flex-wrap items-center justify-start gap-x-3 gap-y-2 text-xs uppercase tracking-wider text-gray-medium">
             <a href="{{ route('home') }}"
                title="Retour à la page d'accueil"
-               class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+               class="hover:text-whitesmoke hover:underline smooth-reval-effect rounded-sm transition-colors duration-300"
             >
                 <span class="leading-none" aria-label="Copyright">&copy;</span> {{ date('Y') }} Renaud Van Meerbergen
             </a>
@@ -91,7 +91,7 @@
             <a
                 href="{{ route('policies') }}"
                 title="Lire la politique de confidentialité"
-                class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                class="hover:text-whitesmoke hover:underline smooth-reval-effect rounded-sm transition-colors duration-300"
                 rel="noopener noreferrer"
                 wire:navigate
             >
@@ -101,7 +101,7 @@
             <a
                 href="{{ route('conditions') }}"
                 title="Lire les conditions d'utilisation"
-                class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                class="hover:text-whitesmoke hover:underline smooth-reval-effect rounded-sm transition-colors duration-300"
                 rel="noopener noreferrer"
                 wire:navigate
             >
@@ -114,7 +114,7 @@
             <h3 class="sr-only">
                 Réseaux sociaux
             </h3>
-            <ul class="flex items-center md:justify-end gap-x-3 gap-y-2 text-xs uppercase tracking-wider text-gray-medium">
+            <ul class="flex items-center md:justify-end gap-x-3 gap-y-2 smooth-reval-effect text-xs uppercase tracking-wider text-gray-medium">
                 <li>
                     <a
                         href="{{ asset('img/cv.pdf') }}"

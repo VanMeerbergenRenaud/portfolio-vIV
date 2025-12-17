@@ -62,7 +62,7 @@
                     <img
                         :src="services[activeService]?.image_url || services[0].image_url"
                         :alt="services[activeService]?.title || 'Service'"
-                        class="w-full h-full object-cover transition-opacity duration-500 bg-transparent"
+                        class="w-full h-full min-h-75 object-cover transition-opacity duration-500 bg-transparent"
                     >
                 </div>
             </div>

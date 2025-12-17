@@ -1,160 +1,94 @@
-/*---------------------- JS  ----------------------*/
-
 import hljs from 'highlight.js';
 
-/* Reveal all titles (h1, h2, h3, h4, h5, h6) on scroll */
 document.addEventListener('livewire:navigated', () => {
-    // TODO
-});
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* Code syntax highlighting */
-document.addEventListener('livewire:navigated', () => {
-    document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightElement(block);
-    });
-});
+    document.querySelectorAll('pre code').forEach(hljs.highlightElement);
 
-/* Reveal img on scroll */
-document.addEventListener('livewire:navigated', () => {
-    // Vérifier les préférences de mouvement réduit
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    const observer = new IntersectionObserver((entries) => {
+    const textRevealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
+                textRevealObserver.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: prefersReducedMotion ? 0 : 0.1
+    }, { threshold: reducedMotion ? 0 : 0.2, rootMargin: '0px 0px -2px 0px' });
+
+    document.querySelectorAll('.smooth-reval-effect, svg, img').forEach(el => {
+        el.classList.add('reveal-scroll');
+        textRevealObserver.observe(el);
     });
 
-    // Exclure les images avec gallery-zoom-effect du reveal
-    const elementsToReveal = document.querySelectorAll('img:not(.gallery-zoom-effect, .no-reveal)');
-    elementsToReveal.forEach(element => {
-        element.classList.add('reveal-on-scroll');
-        observer.observe(element);
-    });
 
-    /* Zoom out effect on scroll for gallery images - Bidirectionnel */
     const galleryImages = document.querySelectorAll('.gallery-zoom-effect');
-
-    if (galleryImages.length > 0 && !prefersReducedMotion) {
-        const updateZoomEffect = () => {
+    if (galleryImages.length && !reducedMotion) {
+        let ticking = false;
+        const updateZoom = () => {
+            const vh = window.innerHeight;
             galleryImages.forEach(img => {
-                const rect = img.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-
-                if (rect.top < windowHeight && rect.bottom > 0) {
-                    const scrollProgress = Math.max(0, Math.min(1,
-                        (windowHeight - rect.top) / (windowHeight + rect.height)
-                    ));
-
-                    const scale = 1.2 - (scrollProgress * 0.2);
-
-                    img.style.transform = `scale(${scale})`;
-                } else if (rect.top >= windowHeight) {
+                const { top, bottom, height } = img.getBoundingClientRect();
+                if (top < vh && bottom > 0) {
+                    const progress = Math.max(0, Math.min(1, (vh - top) / (vh + height)));
+                    img.style.transform = `scale(${1.2 - progress * 0.2})`;
+                } else if (top >= vh) {
                     img.style.transform = 'scale(1.2)';
                 }
             });
+            ticking = false;
         };
 
-        let ticking = false;
-        const onScroll = () => {
+        window.addEventListener('scroll', () => {
             if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    updateZoomEffect();
-                    ticking = false;
-                });
+                requestAnimationFrame(updateZoom);
                 ticking = true;
             }
-        };
+        }, { passive: true });
 
-        window.addEventListener('scroll', onScroll, { passive: true });
-        updateZoomEffect();
+        updateZoom();
     }
 
-    /* Horizontal scroll effect for cards - Professional smooth animation */
+    /* Horizontal scroll cards effect */
     const scrollCards = document.querySelectorAll('[data-scroll-card]');
+    if (scrollCards.length && !reducedMotion && window.innerWidth >= 1024) {
+        const state = { current: window.scrollY, target: window.scrollY, running: false };
+        const offset = window.innerWidth >= 1280 ? 80 : 50;
 
-    if (scrollCards.length > 0 && !prefersReducedMotion && window.innerWidth >= 1024) {
-        const state = {
-            currentY: window.scrollY,
-            targetY: window.scrollY,
-            running: false,
-            offset: window.innerWidth >= 1280 ? 80 : 50,
-            ease: 0.08
-        };
-
-        const easeInOutCubic = (t) => {
-            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-        };
-
-        const updateCardPositions = () => {
-            const h = window.innerHeight;
-
+        const updateCards = () => {
+            const vh = window.innerHeight;
             scrollCards.forEach(card => {
                 const { top, bottom } = card.getBoundingClientRect();
-
-                if (top < h * 1.5 && bottom > -h * 0.5) {
-                    const scrollStart = h * 1.2;
-                    const scrollEnd = h * 0.5;
-                    const rawProgress = Math.max(0, Math.min(1, (scrollStart - top) / (scrollStart - scrollEnd)));
-                    const progress = easeInOutCubic(rawProgress);
-                    const x = (1 - progress) * state.offset;
-                    const dir = card.dataset.scrollCard === 'right' ? x : -x;
-
-                    card.style.transform = `translateX(${dir}px)`;
-                    card.style.transition = 'transform 0.05s linear';
+                if (top < vh * 1.5 && bottom > -vh * 0.5) {
+                    const rawProgress = Math.max(0, Math.min(1, (vh * 1.2 - top) / (vh * 0.7)));
+                    const progress = rawProgress < 0.5 ? 4 * rawProgress ** 3 : 1 - (-2 * rawProgress + 2) ** 3 / 2;
+                    const x = (1 - progress) * offset * (card.dataset.scrollCard === 'right' ? 1 : -1);
+                    card.style.transform = `translateX(${x}px)`;
                 }
             });
         };
 
         const animate = () => {
-            const diff = state.targetY - state.currentY;
-            state.currentY += diff * state.ease;
-
-            updateCardPositions();
-
-            if (Math.abs(diff) > 0.5) {
-                requestAnimationFrame(animate);
-            } else {
-                state.running = false;
-            }
+            const diff = state.target - state.current;
+            state.current += diff * 0.08;
+            updateCards();
+            state.running = Math.abs(diff) > 0.5;
+            if (state.running) requestAnimationFrame(animate);
         };
 
-        let scrollTicking = false;
-        const onCardScroll = () => {
-            state.targetY = window.scrollY;
-
-            if (!scrollTicking) {
-                window.requestAnimationFrame(() => {
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            state.target = window.scrollY;
+            if (!ticking) {
+                requestAnimationFrame(() => {
                     if (!state.running) {
                         state.running = true;
                         animate();
                     }
-                    scrollTicking = false;
+                    ticking = false;
                 });
-                scrollTicking = true;
+                ticking = true;
             }
-        };
+        }, { passive: true });
 
-        window.addEventListener('scroll', onCardScroll, { passive: true });
-
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                if (window.innerWidth >= 1280) {
-                    state.offset = 80;
-                } else if (window.innerWidth >= 1024) {
-                    state.offset = 50;
-                }
-                updateCardPositions();
-            }, 150);
-        });
-
-        updateCardPositions();
+        updateCards();
     }
 });

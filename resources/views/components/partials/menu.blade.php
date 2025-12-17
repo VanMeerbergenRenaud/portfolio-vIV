@@ -18,7 +18,7 @@
     >
         <div class="w-full">
             {{-- Basic menu --}}
-            <div class="flex items-center justify-between flex-shrink-0 px-3">
+            <div class="flex items-center justify-between shrink-0 px-3">
                 <!-- Logo -->
                 <div @mouseenter="animation.animate()" @mouseleave="animation.reset()">
                     <a href="{{ route('home') }}"

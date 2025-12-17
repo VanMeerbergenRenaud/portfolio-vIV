@@ -58,7 +58,7 @@
                         @if($project->duration)
                             <div class="flex items-baseline gap-1.5">
                                 <x-font.text-md class="text-gray-medium">Durée</x-font.text-md>
-                                <x-divider-dash class="flex-1" />
+                                <x-divider-dash class="flex-1 " />
                                 <x-font.text-md>{{ $project->duration }}</x-font.text-md>
                             </div>
                         @endif

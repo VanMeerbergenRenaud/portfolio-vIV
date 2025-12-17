@@ -62,7 +62,7 @@
                             </div>
 
                             {{-- Button --}}
-                            <div class="flex-center bg-whitesmoke w-7 h-7 rounded-md flex-shrink-0">
+                            <div class="flex-center bg-whitesmoke w-7 h-7 rounded-md shrink-0">
                                 <x-svg.plus class="text-dark-primary transition-transform duration-300"
                                             x-bind:class="open && 'rotate-45 text-red'"/>
                             </div>
@@ -70,7 +70,7 @@
 
                         {{-- Content --}}
                         <div x-collapse x-show="open">
-                            <x-font.text class="text-gray-medium mt-3.5 max-w-2xl">
+                            <x-font.text class="text-gray-medium mt-3.5 max-w-2xl no-reveal">
                                 {{ $faq->answer }}
                             </x-font.text>
                         </div>

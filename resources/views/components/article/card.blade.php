@@ -35,14 +35,14 @@
                     {{ $article->published_at->format('M d, Y') }}
                 </time>
 
-                <h3 class="text-2xl font-medium">
+                <x-font.text-2xl :isTitle="true" level="3">
                     {{ $article->title }}
-                </h3>
+                </x-font.text-2xl>
             </div>
 
-            <p class="mt-3 text-gray-medium">
+            <x-font.text class="mt-3 text-gray-medium">
                 {{ $article->excerpt }}
-            </p>
+            </x-font.text>
         </div>
     </a>
 </article>

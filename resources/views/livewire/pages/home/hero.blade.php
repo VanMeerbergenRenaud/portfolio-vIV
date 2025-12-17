@@ -90,10 +90,10 @@
                         <div class="flex justify-between gap-2">
                             <x-font.text-md class="flex items-center gap-2">
                                 @if($hero->is_available)
-                                    <span class="bg-green-400 rounded-full w-2 h-2 flex-shrink-0"
+                                    <span class="bg-green-400 rounded-full w-2 h-2 shrink-0"
                                           aria-hidden="true"></span>
                                 @else
-                                    <span class="bg-gray-400 rounded-full w-2 h-2 flex-shrink-0"
+                                    <span class="bg-gray-400 rounded-full w-2 h-2 shrink-0"
                                           aria-hidden="true"></span>
                                 @endif
                                 {{ $hero->availability_status }}

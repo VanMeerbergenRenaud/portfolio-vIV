@@ -10,45 +10,26 @@
                     {{ $project->name }}
                 </x-font.title-2xl>
 
-                @if($project->logo_black)
-                    <noindex>
-                        <img
-                            src="{{ Storage::disk('s3')->url($project->logo_black) }}"
-                            alt="{{ $project->name }} logo"
-                            class="max-w-25"
-                        >
-                    </noindex>
-                @else
-                    <noindex>
-                        <img src="{{ asset('img/projects/logo.svg') }}"
-                             alt="logo par défaut"
-                             class="max-w-25"
-                        >
-                    </noindex>
-                @endif
+                <noindex>
+                    <img
+                        src="{{ $project->logo_black ? Storage::disk('s3')->url($project->logo_black) : asset('img/projects/logo.svg') }}"
+                        alt="{{ $project->name ? $project->name . ' logo' : 'Logo du projet' }}"
+                        class="max-w-25 smooth-reval-effect"
+                    >
+                </noindex>
             </div>
 
             {{-- Description & Image --}}
             <div class="flex flex-col md:grid md:grid-cols-[1fr_30%] gap-4 md:gap-6">
                 <div class="max-sm:order-2 max-sm:mt-4">
-                    @if($project->image)
-                        <noindex>
-                            <img
-                                src="{{ Storage::disk('s3')->url($project->image) }}"
-                                alt="{{ $project->name }}"
-                                class="rounded-2xl"
-                                loading="lazy"
-                            >
-                        </noindex>
-                    @else
-                        <noindex>
-                            <img src="{{ asset('img/placeholder.png') }}"
-                                 alt=""
-                                 class="rounded-2xl"
-                                 loading="lazy"
-                            >
-                        </noindex>
-                    @endif
+                    <noindex>
+                        <img
+                            src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
+                            alt="{{ $project->name }}"
+                            class="rounded-2xl"
+                            loading="lazy"
+                        >
+                    </noindex>
                 </div>
 
                 {{-- Description & details --}}
