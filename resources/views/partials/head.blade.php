@@ -5,10 +5,10 @@
 
 <title>{{ $title ?? 'Renaud Van Meerbergen' }}</title>
 
-<meta name="title" content="Renaud Vmb">
+<meta name="title" content="Renaud Van Meerbergen">
 <meta name="author" content="Renaud Van Meerbergen">
-<meta name="keywords" content="développeur liège, développeur web liège, développeur fullstack liège, Renaud développeur, développeur fullstack, développeur Laravel, développeur web frontend, développeur web backend">
-<meta name="description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
+<meta name="keywords" content="Renaud Van Meerbergen, Renaud développeur, Renaud développeur web, Renaud développeur Liège, renaud developpeur, développeur Liège, développeur fullstack Liège, dev web Liège, développeur Laravel Liège, développeur WordPress Liège">
+<meta name="description" content="Portfolio de Renaud Van Meerbergen, développeur web à Liège. Projets d’applications web avec Laravel, création de sites WordPress et travaux de dev front-end et back-end.">
 <link rel="canonical" href="{{ url()->current() }}">
 <meta name="robots" content="all">
 
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:title" content="Renaud Van Meerbergen">
-<meta property="og:description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
+<meta property="og:description" content="Portfolio de Renaud Van Meerbergen, développeur web à Liège. Projets d’applications web avec Laravel, création de sites WordPress et travaux de dev front-end et back-end.">
 
 <meta property="og:image" content="{{ asset('img/opengraph.png') }}">
 <meta property="og:image:secure_url" content="{{ secure_asset('img/opengraph.png') }}">
@@ -29,7 +29,7 @@
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ url()->current() }}">
 <meta property="twitter:title" content="Renaud Van Meerbergen">
-<meta property="twitter:description" content="Développeur fullstack junior spécialisé en Laravel. Je transforme le chaos des specs en code élégant, performant et qui traverse le temps.">
+<meta property="twitter:description" content="Portfolio de Renaud Van Meerbergen, développeur web à Liège. Projets d’applications web avec Laravel, création de sites WordPress et travaux de dev front-end et back-end.">
 <meta property="twitter:image" content="{{ asset('img/opengraph.png') }}">
 
 <!-- Favicons -->
@@ -55,7 +55,7 @@
     @if (!empty($title))
         {{ $title }}
     @else
-        {{ config('app.name', 'Renaud Vmb') }}
+        {{ config('app.name', 'Renaud Van Meerbergen') }}
     @endif
 </title>
 
