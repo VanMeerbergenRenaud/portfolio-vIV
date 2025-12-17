@@ -1,22 +1,25 @@
 <div>
     <x-schema.article-show :article="$article" />
 
-    <section id="article" class="px-6 lg:px-12 pt-30 pb-25 lg:pt-45 flex flex-col gap-10">
+    <div class="px-6 lg:px-12 pt-30 pb-25 lg:pt-45 flex flex-col gap-10">
 
-        {{-- Article with sidebar --}}
-        <article
-            class="flex flex-col gap-10 lg:gap-15 lg:grid lg:grid-cols-[25%_1fr]"
-             aria-labelledby="article-title"
-        >
+        {{-- Article with aside --}}
+        <article class="flex flex-col gap-10 lg:gap-15 lg:grid lg:grid-cols-[25%_1fr]">
+
             {{-- Left column --}}
             <aside
                 class="flex flex-col gap-6 w-full max-w-185 self-start"
-                aria-label="Informations sur l'article"
+                role="complementary"
             >
+                <h2 class="sr-only">Informations sur l'article</h2>
+
                 {{-- Main card --}}
                 <div class="flex flex-col gap-5 p-5 bg-gradient-to-br from-red/3 via-red/1 to-transparent rounded-xl border border-red/10">
+
                     {{-- Back link --}}
-                    <nav aria-label="Navigation articles">
+                    <nav aria-label="Fil d'Ariane" role="navigation">
+                        <h3 class="sr-only">Navigation secondaire</h3>
+
                         <div class="flex items-center gap-1.5">
                             <span class="text-red text-xs" aria-hidden="true">|</span>
                             <x-font.text-sm>
@@ -45,12 +48,12 @@
                     <div class="hidden lg:flex lg:flex-col lg:gap-6">
                         {{-- Reading time --}}
                         @if($article->reading_time)
-                            <div class="flex items-baseline gap-1" role="complementary" aria-label="Temps de lecture">
-                                <x-font.text-lg class="font-medium" aria-label="{{ $article->reading_time }} minutes">
+                            <div class="flex items-baseline gap-1">
+                                <x-font.text-lg class="font-medium">
                                     {{ $article->reading_time }}
                                 </x-font.text-lg>
                                 <x-font.text-sm class="text-gray-medium">
-                                    min de lecture
+                                    <span aria-label="{{ $article->reading_time }} minutes de lecture">min de lecture</span>
                                 </x-font.text-sm>
                             </div>
                         @endif
@@ -109,7 +112,7 @@
                                     <ul class="flex flex-wrap gap-1.5" aria-labelledby="tags-label" role="list">
                                         @foreach($article->tags as $tag)
                                             <li>
-                                                <span class="text-xs px-2 py-1 bg-white/50 text-gray-dark rounded hover:bg-white transition-colors">
+                                                <span class="text-xs px-2 py-1 bg-white/70 text-gray-dark rounded hover:bg-white transition-colors">
                                                     {{ $tag }}
                                                 </span>
                                             </li>
@@ -123,9 +126,9 @@
             </aside>
 
             {{-- Right column --}}
-            <div class="flex flex-col gap-8 max-w-185" id="main-content" role="main">
+            <div class="flex flex-col gap-8 max-w-185" id="main-content">
                 <div class="flex flex-col gap-7">
-                    <x-font.title-lg :isTitle="true" level="2" id="article-title">
+                    <x-font.title-lg id="article-title">
                         {{ $article->title }}
                     </x-font.title-lg>
 
@@ -137,16 +140,16 @@
                 </div>
 
                 @if($article->cover_image)
-                    <noindex>
-                        <figure class="rounded-2xl overflow-hidden min-h-50 max-h-150">
+                    <figure class="rounded-2xl overflow-hidden min-h-50 max-h-150">
+                        <noindex>
                             <img src="{{ Storage::disk('s3')->url($article->cover_image) }}"
                                  alt="{{ $article->title }} - Image de couverture"
                                  class="w-full h-full object-cover"
-                                 loading="lazy"
-                                 role="img"
+                                 loading="eager"
+                                 fetchpriority="high"
                             >
-                        </figure>
-                    </noindex>
+                        </noindex>
+                    </figure>
                 @endif
 
                 {{-- Table of Contents --}}
@@ -170,12 +173,12 @@
 
                 @if($headings->isNotEmpty())
                     <nav
-                        class="flex flex-col gap-4 py-5 px-6 bg-linear-to-br from-red/5 via-red/3 to-transparent rounded-xl border border-red/10"
+                        class="flex flex-col gap-4 py-5 px-6 bg-gradient-to-br from-red/5 via-red/3 to-transparent rounded-xl border border-red/10"
                         aria-labelledby="toc-heading"
                     >
                         <div class="flex items-center gap-1.5">
                             <span class="text-red text-xs" aria-hidden="true">|</span>
-                            <x-font.text-md class="font-medium text-dark-primary" id="toc-heading">
+                            <x-font.text-md :isTitle="true" level="2" class="font-medium text-dark-primary" id="toc-heading">
                                 Sommaire
                             </x-font.text-md>
                         </div>
@@ -218,7 +221,7 @@
                 </div>
             </div>
         </article>
-    </section>
+    </div>
 
     {{-- Related articles - Outside the grid --}}
     @if($articles && count($articles) > 0)

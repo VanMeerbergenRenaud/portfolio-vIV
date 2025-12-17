@@ -635,6 +635,29 @@ class SchemaService
         if ($article->reading_time) {
             $schema['timeRequired'] = 'PT'.($article->reading_time).'M';
         }
+        if ($article->content_blocks && is_array($article->content_blocks)) {
+            $textContent = collect($article->content_blocks)
+                ->filter(fn ($block) => in_array($block['type'] ?? '', ['paragraph', 'heading', 'list']))
+                ->map(function ($block) {
+                    if ($block['type'] === 'paragraph') {
+                        return $block['data']['content'] ?? '';
+                    }
+                    if ($block['type'] === 'heading') {
+                        return $block['data']['content'] ?? '';
+                    }
+                    if ($block['type'] === 'list') {
+                        return collect($block['data']['items'] ?? [])->implode(' ');
+                    }
+
+                    return '';
+                })
+                ->implode(' ');
+
+            $wordCount = str_word_count(strip_tags($textContent));
+            if ($wordCount > 0) {
+                $schema['wordCount'] = $wordCount;
+            }
+        }
 
         return $schema;
     }
