@@ -2,28 +2,23 @@
 <div
     x-data="animatedMenu"
     @keydown.escape.window="menuOpen = false"
-    @scroll.window.throttle.200ms="handleScroll()"
+    @scroll.window.throttle.100ms="handleScroll()"
 >
     <div
+        x-cloak
         :class="{
             'top-4 left-4 right-4 lg:left-11 lg:right-11 rounded-2xl p-2 h-12 lg:h-14 w-auto': !menuOpen,
             'inset-0 rounded-none p-4 h-screen': menuOpen,
-            '-translate-y-[calc(100%+1rem)] pointer-events-none': !menuOpen && !headerVisible,
+            '-translate-y-[calc(100%+2rem)]': !menuOpen && !headerVisible,
             'translate-y-0': !menuOpen && headerVisible
         }"
-        class="fixed z-25 top-0 left-0 flex flex-col bg-white transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        class="fixed z-25 top-0 left-0 flex flex-col bg-white transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
         x-trap.inert.noscroll="menuOpen"
         aria-live="polite"
     >
-        <div
-            class="transition-[opacity,transform] duration-300 ease-in-out w-full"
-            :class="{
-                'opacity-0 -translate-y-2': !menuOpen && !headerVisible,
-                'opacity-100 translate-y-0 delay-150': !menuOpen && headerVisible
-            }"
-        >
+        <div class="w-full">
             {{-- Basic menu --}}
-            <div class="flex items-center justify-between flex-shrink-0 px-3">
+            <div class="flex items-center justify-between shrink-0 px-3">
                 <!-- Logo -->
                 <div @mouseenter="animation.animate()" @mouseleave="animation.reset()">
                     <a href="{{ route('home') }}"
@@ -39,7 +34,7 @@
                 </div>
 
                 <!-- Desktop links -->
-                <div class="flex gap-4">
+                <div x-cloak class="flex gap-4">
                     <ul
                         class="hidden lg:flex items-center justify-end gap-4 lg:gap-6"
                         :class="{ 'opacity-0 pointer-events-none': menuOpen, 'opacity-100': !menuOpen }"
@@ -148,6 +143,14 @@
                 >
                     renaud.vanmeerbergen@gmail.com
                 </x-link.tertiary>
+                {{-- Laravel Wrapped --}}
+                <x-link.tertiary
+                    link="{{ route('laravel-wrapped') }}"
+                    title="Découvrir mes statistiques Laravel"
+                    fontStyle="text-md font-medium"
+                >
+                    Laravel Wrapped 2025
+                </x-link.tertiary>
                 {{-- Phone --}}
                 <x-link.tertiary
                     link="tel:+32470596065"
@@ -207,6 +210,10 @@
         Alpine.data('animatedMenu', () => ({
             menuOpen: false,
             scrollPosition: 0,
+            headerVisible: true,
+            lastScrollY: 0,
+            scrollDownThreshold: 20,
+            scrollUpThreshold: 10,
 
             animation: {
                 text: 'Renaud Vmb®',
@@ -236,27 +243,26 @@
                 }
             },
 
-            lastScrollY: window.scrollY,
-            headerVisible: true,
-            scrollThreshold: 15,
-
             handleScroll() {
                 if (this.menuOpen) return;
 
                 const currentScrollY = window.scrollY;
 
-                if (currentScrollY <= 100) {
+                if (currentScrollY < 40) {
                     this.headerVisible = true;
                     this.lastScrollY = currentScrollY;
                     return;
                 }
 
-                if (Math.abs(currentScrollY - this.lastScrollY) < this.scrollThreshold) {
-                    return;
-                }
+                const scrollDiff = currentScrollY - this.lastScrollY;
 
-                this.headerVisible = currentScrollY < this.lastScrollY;
-                this.lastScrollY = currentScrollY;
+                if (scrollDiff > 0) {
+                    this.headerVisible = false;
+                    this.lastScrollY = currentScrollY;
+                } else if (scrollDiff < 0) {
+                    this.headerVisible = true;
+                    this.lastScrollY = currentScrollY;
+                }
             },
 
             init() {
@@ -274,6 +280,7 @@
                         window.scrollTo({top: this.scrollPosition, behavior: 'instant'});
                     }
                 });
+
                 this.lastScrollY = window.scrollY;
             }
         }));

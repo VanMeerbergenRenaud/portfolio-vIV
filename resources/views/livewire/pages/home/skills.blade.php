@@ -69,19 +69,13 @@
 
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden md:hidden lg:block lg:min-w-52">
-                    @if($skills[0]->image)
-                        <img src="{{ Storage::url($skills[0]->image) }}"
+                    <noindex>
+                        <img src="{{ $skills[0]->image ? Storage::url($skills[0]->image) :asset('img/placeholder.png') }}"
                              alt="{{ $skills[0]->name }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
                         >
-                    @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
-                    @endif
+                    </noindex>
                 </div>
 
                 {{-- Card --}}
@@ -116,19 +110,13 @@
 
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden hidden lg:block lg:min-w-52">
-                    @if($skills[2]->image)
-                        <img src="{{ Storage::url($skills[2]->image) }}"
+                    <noindex>
+                        <img src="{{ $skills[2]->image ? Storage::url($skills[2]->image) : asset('img/placeholder.png') }}"
                              alt="{{ $skills[2]->name }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
                         >
-                    @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
-                    @endif
+                    </noindex>
                 </div>
 
                 {{-- Card --}}
@@ -151,19 +139,13 @@
 
                 {{-- Same image for mobile --}}
                 <div class="rounded-2xl overflow-hidden md:hidden">
-                    @if($skills[2]->image)
-                        <img src="{{ Storage::url($skills[2]->image) }}"
+                    <noindex>
+                        <img src="{{ $skills[2]->image ? Storage::url($skills[2]->image) : asset('img/placeholder.png') }}"
                              alt="{{ $skills[2]->name }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
                         >
-                    @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
-                    @endif
+                    </noindex>
                 </div>
 
                 {{-- For tablet : Gray empty space --}}
@@ -219,19 +201,13 @@
 
                 {{-- Same image for mobile --}}
                 <div class="rounded-2xl overflow-hidden md:hidden">
-                    @if($skills[4]->image)
-                        <img src="{{ Storage::url($skills[4]->image) }}"
+                    <noindex>
+                        <img src="{{ $skills[4]->image ? Storage::url($skills[4]->image) : asset('img/placeholder.png') }}"
                              alt="{{ $skills[4]->name }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
                         >
-                    @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
-                    @endif
+                    </noindex>
                 </div>
 
                 {{-- For tablet : Gray empty space --}}
@@ -257,19 +233,13 @@
 
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden hidden lg:block lg:min-w-52">
-                    @if($skills[5]->image)
-                        <img src="{{ Storage::url($skills[5]->image) }}"
-                             alt="{{ $skills[5]->name }}"
+                    <noindex>
+                        <img src="{{ $skills[5]->image ? Storage::url($skills[5]->image) : asset('img/placeholder.png') }}"
+                             alt="{{ $skills[5]->name ?? '' }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
                         >
-                    @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="h-full"
-                             loading="lazy"
-                        >
-                    @endif
+                    </noindex>
                 </div>
 
                 {{-- Gray empty space --}}

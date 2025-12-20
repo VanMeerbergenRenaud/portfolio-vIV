@@ -1,5 +1,6 @@
 {{-- Background animé --}}
 <div class="fixed inset-0 pointer-events-none select-none z-0 overflow-hidden"
+     aria-hidden="true"
      x-data="{
             translateX: -5,
             translateY: 5,

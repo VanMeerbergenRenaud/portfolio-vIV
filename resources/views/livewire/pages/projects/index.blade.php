@@ -23,12 +23,12 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-2xl :isTitle="true" level="2" class="max-w-[625px]">
+                <x-font.title-2xl :isTitle="true" level="2" class="max-w-255">
                     Projets
                 </x-font.title-2xl>
 
-                {{-- List of different project types --}}
-                <ul class="flex flex-wrap gap-2" role="navigation" aria-label="Filtrer les projets par type">
+                {{-- List of categories --}}
+                <ul class="flex flex-wrap gap-2 justify-end" role="list" aria-label="Filtrer les projets par type">
                    <li>
                         <a href="{{ route('projects') }}"
                            aria-label="Afficher tous les projets"
@@ -47,7 +47,7 @@
                                wire:navigate
                             >
                                 <x-font.text-md>
-                                    <x-project-type-label :type="$type" />
+                                    <x-projects.type-label :type="$type" />
                                 </x-font.text-md>
                             </a>
                         </li>
@@ -68,7 +68,7 @@
                         {{-- Infos --}}
                         <div class="flex items-center justify-between gap-4 px-3 py-2">
                             <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
-                                {{ $project->name }}.
+                                {{ $project->name }}<span aria-hidden="true">.</span>
                             </x-font.text-xl>
                             <x-font.text class="text-gray-medium">
                                 {{ $project->year }}
@@ -76,48 +76,32 @@
                         </div>
 
                         {{-- Image --}}
-                        <div class="relative rounded-2xl overflow-hidden min-h-[250px] max-h-[500px]">
-                            @if($project->image)
-                                <img src="{{ Storage::disk('s3')->url($project->image) }}"
-                                     alt="{{ $project->name }}"
-                                     class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
-                                     loading="lazy"
+                        <div class="relative rounded-2xl overflow-hidden min-h-52 max-h-135 h-full">
+                            <noindex>
+                                <img
+                                    src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
+                                    alt="{{ $project->name ? 'Image du projet : ' . $project->name : '' }}"
+                                    class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full min-h-55 object-cover"
+                                    loading="lazy"
                                 >
-                            @else
-                                <img src="{{ asset('img/placeholder.png') }}"
-                                     alt="{{ $project->name }}"
-                                     class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full object-cover"
-                                     loading="lazy"
-                                >
-                            @endif
+                            </noindex>
 
-                            @if($project->logo_white)
-                                <div class="z-2 absolute left-4 bottom-4">
-                                    <img src="{{ Storage::disk('s3')->url($project->logo_white) }}"
-                                         alt="{{ $project->name }} logo"
-                                         class="
+                            {{-- Logo --}}
+                            <div class="z-2 absolute left-4 bottom-4">
+                                <noindex>
+                                    <img
+                                        src="{{ $project->logo_white ? Storage::disk('s3')->url($project->logo_white) : asset('img/projects/logo.svg') }}"
+                                        alt="{{ $project->name ? 'Logo du projet : ' . $project->name : 'logo par défaut' }}"
+                                        class="
                                             object-contain transition-all duration-600 py-1 px-2
                                             min-w-24 max-w-32 max-h-18
                                             group-hover:scale-115 group-hover:max-h-20
                                             group-hover:-translate-y-1 group-hover:translate-x-2
                                         "
-                                         loading="lazy"
+                                        loading="lazy"
                                     >
-                                </div>
-                            @else
-                                <div class="z-2 absolute left-4 bottom-4">
-                                    <img src="{{ asset('img/projects/logo.svg') }}"
-                                         alt="logo par défaut"
-                                         class="
-                                            object-contain transition-all duration-600 py-1 px-2
-                                            min-w-24 max-w-32 max-h-18
-                                            group-hover:scale-115 group-hover:max-h-20
-                                            group-hover:-translate-y-1 group-hover:translate-x-2
-                                        "
-                                         loading="lazy"
-                                    >
-                                </div>
-                            @endif
+                                </noindex>
+                            </div>
                         </div>
                     </a>
                 </li>

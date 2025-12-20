@@ -1,71 +1,94 @@
-/*---------------------- JS  ----------------------*/
+import hljs from 'highlight.js';
 
-/* Reveal content on scroll */
 document.addEventListener('livewire:navigated', () => {
-    // Vérifier les préférences de mouvement réduit
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const observer = new IntersectionObserver((entries) => {
+    document.querySelectorAll('pre code').forEach(hljs.highlightElement);
+
+    const textRevealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
+                textRevealObserver.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: prefersReducedMotion ? 0 : 0.1
+    }, { threshold: reducedMotion ? 0 : 0.2, rootMargin: '0px 0px -2px 0px' });
+
+    document.querySelectorAll('.smooth-reval-effect, svg, img').forEach(el => {
+        el.classList.add('reveal-scroll');
+        textRevealObserver.observe(el);
     });
 
-    // Exclure les images avec gallery-zoom-effect du reveal
-    // TODO : ajouter aux classes voulues
-    const elementsToReveal = document.querySelectorAll('h1, h2, h3, h4, h5, h6, img:not(.gallery-zoom-effect), footer');
-    elementsToReveal.forEach(element => {
-        element.classList.add('reveal-on-scroll');
-        observer.observe(element);
-    });
 
-    /* Zoom out effect on scroll for gallery images - Bidirectionnel */
     const galleryImages = document.querySelectorAll('.gallery-zoom-effect');
-
-    if (galleryImages.length > 0 && !prefersReducedMotion) {
-        const updateZoomEffect = () => {
+    if (galleryImages.length && !reducedMotion) {
+        let ticking = false;
+        const updateZoom = () => {
+            const vh = window.innerHeight;
             galleryImages.forEach(img => {
-                const rect = img.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-
-                // L'image est visible dans le viewport
-                if (rect.top < windowHeight && rect.bottom > 0) {
-                    // Calculer la position de l'image dans le viewport
-                    // 0 = en bas de l'écran (juste entrée), 1 = en haut de l'écran (sortie par le haut)
-                    const scrollProgress = Math.max(0, Math.min(1,
-                        (windowHeight - rect.top) / (windowHeight + rect.height)
-                    ));
-
-                    // Interpoler le scale entre 1.2 (en bas) et 1 (en haut)
-                    // Plus l'image monte, plus elle se dézoom
-                    const scale = 1.2 - (scrollProgress * 0.2);
-
-                    img.style.transform = `scale(${scale})`;
-                } else if (rect.top >= windowHeight) {
-                    // L'image est en dessous du viewport (pas encore visible)
+                const { top, bottom, height } = img.getBoundingClientRect();
+                if (top < vh && bottom > 0) {
+                    const progress = Math.max(0, Math.min(1, (vh - top) / (vh + height)));
+                    img.style.transform = `scale(${1.2 - progress * 0.2})`;
+                } else if (top >= vh) {
                     img.style.transform = 'scale(1.2)';
+                }
+            });
+            ticking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateZoom);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        updateZoom();
+    }
+
+    /* Horizontal scroll cards effect */
+    const scrollCards = document.querySelectorAll('[data-scroll-card]');
+    if (scrollCards.length && !reducedMotion && window.innerWidth >= 1024) {
+        const state = { current: window.scrollY, target: window.scrollY, running: false };
+        const offset = window.innerWidth >= 1280 ? 80 : 50;
+
+        const updateCards = () => {
+            const vh = window.innerHeight;
+            scrollCards.forEach(card => {
+                const { top, bottom } = card.getBoundingClientRect();
+                if (top < vh * 1.5 && bottom > -vh * 0.5) {
+                    const rawProgress = Math.max(0, Math.min(1, (vh * 1.2 - top) / (vh * 0.7)));
+                    const progress = rawProgress < 0.5 ? 4 * rawProgress ** 3 : 1 - (-2 * rawProgress + 2) ** 3 / 2;
+                    const x = (1 - progress) * offset * (card.dataset.scrollCard === 'right' ? 1 : -1);
+                    card.style.transform = `translateX(${x}px)`;
                 }
             });
         };
 
-        // Throttle pour optimiser les performances
+        const animate = () => {
+            const diff = state.target - state.current;
+            state.current += diff * 0.08;
+            updateCards();
+            state.running = Math.abs(diff) > 0.5;
+            if (state.running) requestAnimationFrame(animate);
+        };
+
         let ticking = false;
-        const onScroll = () => {
+        window.addEventListener('scroll', () => {
+            state.target = window.scrollY;
             if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    updateZoomEffect();
+                requestAnimationFrame(() => {
+                    if (!state.running) {
+                        state.running = true;
+                        animate();
+                    }
                     ticking = false;
                 });
                 ticking = true;
             }
-        };
+        }, { passive: true });
 
-        window.addEventListener('scroll', onScroll, { passive: true });
-        updateZoomEffect(); // Init au chargement
+        updateCards();
     }
 });

@@ -68,12 +68,14 @@
                             class="group p-6 h-45 lg:h-55 flex-center"
                         >
                             @if($tool->logo)
-                                <img
-                                    src="{{ Storage::disk('s3')->url($tool->logo) }}"
-                                    alt="{{ $tool->name }}"
-                                    class="max-h-25 object-contain group-hover:scale-110 transition-transform"
-                                    loading="lazy"
-                                >
+                                <noindex>
+                                    <img
+                                        src="{{ Storage::disk('s3')->url($tool->logo) }}"
+                                        alt="{{ $tool->name }}"
+                                        class="max-h-25 object-contain group-hover:scale-110 transition-transform"
+                                        loading="lazy"
+                                    >
+                                </noindex>
                             @else
                                 <x-font.text-xl :isTitle="true" level="3" class="font-semibold text-gray-medium">
                                     {{ $tool->name }}

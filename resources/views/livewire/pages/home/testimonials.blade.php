@@ -26,7 +26,7 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-lg :isTitle="true" level="3" class="max-w-[650px]">
+                <x-font.title-lg class="max-w-[650px]">
                     Ce qu'ils disent de mon code.
                 </x-font.title-lg>
 
@@ -51,7 +51,7 @@
                     La plus grande fierté d'un développeur, c'est un code qui parle à ses utilisateurs et à ses pairs.
                 </x-font.text>
 
-                <div class="mt-auto flex gap-3.5">
+                <div class="mt-auto flex flex-wrap gap-3.5">
                     <ul class="flex -space-x-4">
                         @foreach($testimonials->take(4) as $testimonial)
                             <li data-border-small="true" class="w-11 h-11">
@@ -111,7 +111,7 @@
                                                 : asset('img/placeholder.png')
                                         }}"
                                         alt="{{ $testimonial->name }}"
-                                        class="w-10 h-10 rounded-xl object-cover"
+                                        class="w-10 h-10 rounded-xl object-cover no-reveal"
                                     >
                                 </noindex>
                                 <div class="flex flex-col gap-0.5">
@@ -179,7 +179,7 @@
                                 class="p-4.5 lg:p-7.5 lg:pr-35 min-h-100 flex flex-col content-between gap-20 lg:gap-37.5 bg-white rounded-2xl"
                                 aria-label="Témoignage {{ $index + 1 }} sur {{ count($testimonials) }}"
                             >
-                                <x-font.text-3xl>
+                                <x-font.text-3xl class="no-reveal">
                                     "{{ $testimonial->content }}"
                                 </x-font.text-3xl>
 
@@ -192,14 +192,14 @@
                                                     : asset('img/placeholder.png')
                                             }}"
                                             alt="{{ $testimonial->name }}"
-                                            class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover"
+                                            class="w-10 h-10 lg:w-13 lg:h-13 rounded-xl object-cover no-reveal"
                                         >
                                     </noindex>
                                     <div class="flex flex-col gap-0.5">
-                                        <x-font.text-xl>
+                                        <x-font.text-xl class="no-reveal">
                                             {{ $testimonial->name }}
                                         </x-font.text-xl>
-                                        <x-font.text class="text-gray-medium">
+                                        <x-font.text class="text-gray-medium no-reveal">
                                             {{ $testimonial->role }}
                                             @if($testimonial->company)
                                                 , {{ $testimonial->company }}
@@ -214,8 +214,7 @@
                         <div class="absolute bottom-4 right-5">
                             <x-font.title-xl class="text-whitesmoke" aria-hidden="true">
                                 <span class="sr-only">Guillemet typographique</span>
-                                <svg class="w-auto h-28" display="block" role="presentation" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
+                                <svg class="w-auto h-28" display="block" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M 7 0 L 1 0 C 0.448 0 0 0.448 0 1 L 0 9.5 C 0 10.052 0.448 10.5 1 10.5 L 3.5 10.5 C 3.776 10.5 4 10.724 4 11 L 4 12 C 4 13.105 3.105 14 2 14 L 1 14 C 0.448 14 0 14.448 0 15 L 0 17 C 0 17.552 0.448 18 1 18 L 2 18 C 5.314 18 8 15.314 8 12 L 8 1 C 8 0.448 7.552 0 7 0 Z"
                                         fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round"

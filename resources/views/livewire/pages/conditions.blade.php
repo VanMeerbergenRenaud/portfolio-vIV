@@ -18,7 +18,7 @@
         {{-- Grid --}}
         <div class="flex flex-col gap-8 max-w-175">
             <x-font.title-lg :isTitle="true" level="2">
-                Conditions générales d'utilisation.
+                Conditions générales d'utilisation<span aria-hidden="true">.</span>
             </x-font.title-lg>
 
             <x-font.text class="text-gray-medium">
@@ -26,26 +26,90 @@
             </x-font.text>
 
             {{-- Sommaire --}}
-            <div class="mt-4 flex flex-col gap-5 py-2.5">
-                <x-font.text class="font-semibold text-dark-primary" :isTitle="true" level="3">
-                    Sommaire
-                </x-font.text>
-                <ul class="pl-6 list-decimal text-gray-dark flex flex-col gap-2">
-                    <li><a href="#section-1" class="hover:text-red hover:underline transition-colors font-medium">Mentions légales</a></li>
-                    <li><a href="#section-2" class="hover:text-red hover:underline transition-colors font-medium">Objet du site</a></li>
-                    <li><a href="#section-3" class="hover:text-red hover:underline transition-colors font-medium">Accès au site</a></li>
-                    <li><a href="#section-4" class="hover:text-red hover:underline transition-colors font-medium">Propriété intellectuelle</a></li>
-                    <li><a href="#section-5" class="hover:text-red hover:underline transition-colors font-medium">Limitation de responsabilité</a></li>
-                    <li><a href="#section-6" class="hover:text-red hover:underline transition-colors font-medium">Liens hypertextes</a></li>
-                    <li><a href="#section-7" class="hover:text-red hover:underline transition-colors font-medium">Modification des CGU</a></li>
-                    <li><a href="#section-8" class="hover:text-red hover:underline transition-colors font-medium">Droit applicable et juridiction</a></li>
-                </ul>
-            </div>
+            <nav
+                class="mt-4 flex flex-col gap-4 py-5 px-6 bg-linear-to-br from-red/5 via-red/3 to-transparent rounded-xl border border-red/10"
+                aria-labelledby="toc-heading"
+            >
+                <div class="flex items-center gap-1.5">
+                    <span class="text-red text-xs" aria-hidden="true">|</span>
+                    <x-font.text-md :isTitle="true" level="3" class="font-medium text-dark-primary">
+                        Sommaire
+                    </x-font.text-md>
+                </div>
+
+                <ol class="px-1 flex flex-col gap-2.5" role="list">
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            01
+                        </span>
+                        <a href="#section-1" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Mentions légales
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            02
+                        </span>
+                        <a href="#section-2" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Objet du site
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            03
+                        </span>
+                        <a href="#section-3" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Accès au site
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            04
+                        </span>
+                        <a href="#section-4" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Propriété intellectuelle
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            05
+                        </span>
+                        <a href="#section-5" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Limitation de responsabilité
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            06
+                        </span>
+                        <a href="#section-6" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Liens hypertextes
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            07
+                        </span>
+                        <a href="#section-7" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Modification des CGU
+                        </a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-gray-medium text-xs mt-0.5 min-w-4" aria-hidden="true">
+                            08
+                        </span>
+                        <a href="#section-7" class="flex-1 hover:text-red font-medium rounded transition-colors text-sm text-gray-dark">
+                            Droit applicable et juridiction
+                        </a>
+                    </li>
+                </ol>
+            </nav>
 
             {{-- Part 1 --}}
             <div id="section-1" class="mt-4 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    1. Mentions légales
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">1.</span>
+                    Mentions légales
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -54,21 +118,25 @@
 
                 <div class="flex flex-col gap-3 pl-4">
                     <x-font.text class="text-gray-medium">
-                        <span class="font-semibold text-dark-primary">Éditeur :</span> Renaud Van Meerbergen
+                        <span class="font-semibold text-dark-primary">Éditeur :</span>
+                        Renaud Van Meerbergen
                     </x-font.text>
                     <x-font.text class="text-gray-medium">
-                        <span class="font-semibold text-dark-primary">Adresse :</span> Belgique
+                        <span class="font-semibold text-dark-primary">Adresse :</span>
+                        <a href="https://maps.app.goo.gl/qY7TrBUW6BLtoNBn7" target="_blank" class="text-red hover:underline font-medium">Rue Petit Bioleux 18, 4122 Neupré, Belgique</a>
                     </x-font.text>
                     <x-font.text class="text-gray-medium">
-                        <span class="font-semibold text-dark-primary">Email :</span> <a href="mailto:renaud.vanmeerbergen@gmail.com" class="text-red hover:underline font-medium">renaud.vanmeerbergen@gmail.com</a>
+                        <span class="font-semibold text-dark-primary">Email :</span>
+                        <a href="mailto:renaud.vanmeerbergen@gmail.com" class="text-red hover:underline font-medium">renaud.vanmeerbergen@gmail.com</a>
                     </x-font.text>
                     <x-font.text class="text-gray-medium">
-                        <span class="font-semibold text-dark-primary">Site web :</span> <a href="https://renaud-vmb.com" target="_blank" rel="noopener noreferrer" class="text-red hover:underline font-medium">https://renaud-vmb.com</a>
+                        <span class="font-semibold text-dark-primary">Site web :</span>
+                        <a href="https://renaud-vmb.com" target="_blank" rel="noopener noreferrer" class="text-red hover:underline font-medium">https://renaud-vmb.com</a>
                     </x-font.text>
                 </div>
 
-                <x-font.text class="text-gray-medium mt-2">
-                    <span class="font-semibold text-dark-primary">Hébergement :</span>
+                <x-font.text class="font-semibold mt-2">
+                    Hébergement :
                 </x-font.text>
 
                 <div class="flex flex-col gap-3 pl-4">
@@ -89,15 +157,16 @@
 
             {{-- Part 2 --}}
             <div id="section-2" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    2. Objet du site
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">2.</span>
+                    Objet du site
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
                     Ce site constitue mon portfolio professionnel personnel. Il a pour objectif de présenter :
                 </x-font.text>
 
-                <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-2">
+                <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                     <li>
                         Mon parcours professionnel et mes compétences
                     </li>
@@ -119,8 +188,9 @@
 
             {{-- Part 3 --}}
             <div id="section-3" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    3. Accès au site
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">3.</span>
+                    Accès au site
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -131,7 +201,7 @@
                     Je mets tout en œuvre pour offrir aux utilisateurs des informations et/ou des outils disponibles et vérifiés. Toutefois, je ne peux garantir :
                 </x-font.text>
 
-                <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-2">
+                <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                     <li>
                         L'absence d'interruption temporaire du site pour des opérations de maintenance ou de mise à jour
                     </li>
@@ -150,8 +220,9 @@
 
             {{-- Part 4 --}}
             <div id="section-4" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    4. Propriété intellectuelle
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">4.</span>
+                    Propriété intellectuelle
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -166,7 +237,7 @@
                     Exceptions autorisées :
                 </x-font.text>
 
-                <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-2">
+                <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                     <li>
                         Consultation du site à des fins personnelles et non commerciales
                     </li>
@@ -185,15 +256,16 @@
 
             {{-- Part 5 --}}
             <div id="section-5" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    5. Limitation de responsabilité
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">5.</span>
+                    Limitation de responsabilité
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
                     Je m'efforce de fournir sur le site des informations aussi précises que possible. Toutefois, je ne pourrai être tenu responsable :
                 </x-font.text>
 
-                <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-2">
+                <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                     <li>
                         Des erreurs, inexactitudes ou omissions portant sur des informations disponibles sur le site
                     </li>
@@ -222,8 +294,9 @@
 
             {{-- Part 6 --}}
             <div id="section-6" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    6. Liens hypertextes
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">6.</span>
+                    Liens hypertextes
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -242,7 +315,7 @@
                     Vous pouvez créer un lien vers ce site sans demande préalable, à condition que :
                 </x-font.text>
 
-                <ul class="pl-6 list-disc text-gray-dark flex flex-col gap-2">
+                <ul class="pl-6 list-disc text-gray-medium font-medium flex flex-col gap-2">
                     <li>
                         Le lien s'ouvre dans une nouvelle fenêtre
                     </li>
@@ -264,8 +337,9 @@
 
             {{-- Part 7 --}}
             <div id="section-7" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    7. Modification des Conditions Générales d'Utilisation
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">7.</span>
+                    Modification des <abbr title="Conditions Générales d'Utilisation">CGU</abbr>
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">
@@ -283,8 +357,9 @@
 
             {{-- Part 8 --}}
             <div id="section-8" class="mt-2 flex flex-col gap-5">
-                <x-font.text-xl class="font-semibold" :isTitle="true" level="4">
-                    8. Droit applicable et juridiction compétente
+                <x-font.text-xl class="font-semibold" :isTitle="true" level="3">
+                    <span class="mr-2" aria-hidden="true">8.</span>
+                    Droit applicable et juridiction compétente
                 </x-font.text-xl>
 
                 <x-font.text class="text-gray-medium">

@@ -27,6 +27,6 @@
         : 'p';
 @endphp
 
-<{{ $tag }} {{ $attributes->merge(['class' => "typo-{$cssClass}"]) }}>
+<{{ $tag }} {{ $attributes->merge(['class' => "smooth-reval-effect typo-{$cssClass}"]) }}>
     {{ $slot }}
 </{{ $tag }}>

@@ -23,7 +23,7 @@ class ArticlesTable
                     ->label('Ordre')
                     ->sortable(),
 
-                ImageColumn::make('image')
+                ImageColumn::make('cover_image')
                     ->label('Image')
                     ->disk('s3')
                     ->circular(),

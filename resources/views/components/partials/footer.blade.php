@@ -11,7 +11,7 @@
 
         {{-- 1. Section supérieure : Logo et lien retour en haut --}}
         <div class="flex justify-between items-start mb-12">
-            <x-svg.logo.brand class="w-24 h-24 md:w-32 md:h-32" aria-hidden="true" />
+            <x-svg.logo.brand class="w-24 h-24 md:w-32 md:h-32" aria-hidden="true" focusable="false" />
 
             <a
                 href="#page-top"
@@ -28,11 +28,16 @@
             {{-- Colonne 1: Adresse --}}
             <address class="space-y-4 not-italic">
                 <h3 class="font-bold tracking-widest-plus text-gray-medium">Adresse</h3>
-                <p class="leading-relaxed text-sm text-whitesmoke">
+                <a class="leading-relaxed text-sm text-whitesmoke hover:text-red"
+                   href="https://maps.app.goo.gl/qY7TrBUW6BLtoNBn7"
+                   target="_blank"
+                   aria-label="Voir mon adresse sur Google Maps"
+                   rel="noopener noreferrer"
+                >
                     Rue Petit Bioleux, 18<br>
                     4122, Plainevaux<br>
                     Liège – Belgique
-                </p>
+                </a>
             </address>
 
             {{-- Colonne 2 & 3: Navigation rapide --}}
@@ -42,7 +47,7 @@
                     {{-- Colonne 1 --}}
                     <li><x-link.tertiary link="{{ route('home') }}#hero" :navigate="false" color="white" fontStyle="text-sm">Introduction</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#about" :navigate="false" color="white" fontStyle="text-sm">À mon sujet</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('home') }}#projects" :navigate="false" color="white" fontStyle="text-sm">Projets</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#projects" :navigate="false" color="white" fontStyle="text-sm">Mes projets</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#services" :navigate="false" color="white" fontStyle="text-sm">Services</x-link.tertiary></li>
                     {{-- Colonne 2 --}}
                     <li><x-link.tertiary link="{{ route('home') }}#processes" :navigate="false" color="white" fontStyle="text-sm">Processus</x-link.tertiary></li>
@@ -52,7 +57,7 @@
                     {{-- Colonne 3 --}}
                     <li><x-link.tertiary link="{{ route('home') }}#case_study" :navigate="false" color="white" fontStyle="text-sm">Cas d'étude</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#faq" :navigate="false" color="white" fontStyle="text-sm">Faq</x-link.tertiary></li>
-                    <li><x-link.tertiary link="{{ route('home') }}#articles" :navigate="false" color="white" fontStyle="text-sm">Articles</x-link.tertiary></li>
+                    <li><x-link.tertiary link="{{ route('home') }}#articles" :navigate="false" color="white" fontStyle="text-sm">Mes articles</x-link.tertiary></li>
                     <li><x-link.tertiary link="{{ route('home') }}#cta" :navigate="false" color="white" fontStyle="text-sm">Me suivre</x-link.tertiary></li>
                 </ul>
             </div>
@@ -78,7 +83,7 @@
         <div class="flex flex-wrap items-center justify-start gap-x-3 gap-y-2 text-xs uppercase tracking-wider text-gray-medium">
             <a href="{{ route('home') }}"
                title="Retour à la page d'accueil"
-               class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+               class="hover:text-whitesmoke hover:underline smooth-reval-effect rounded-sm transition-colors duration-300"
             >
                 <span class="leading-none" aria-label="Copyright">&copy;</span> {{ date('Y') }} Renaud Van Meerbergen
             </a>
@@ -86,7 +91,7 @@
             <a
                 href="{{ route('policies') }}"
                 title="Lire la politique de confidentialité"
-                class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                class="hover:text-whitesmoke hover:underline smooth-reval-effect rounded-sm transition-colors duration-300"
                 rel="noopener noreferrer"
                 wire:navigate
             >
@@ -96,7 +101,7 @@
             <a
                 href="{{ route('conditions') }}"
                 title="Lire les conditions d'utilisation"
-                class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
+                class="hover:text-whitesmoke hover:underline smooth-reval-effect rounded-sm transition-colors duration-300"
                 rel="noopener noreferrer"
                 wire:navigate
             >
@@ -109,7 +114,7 @@
             <h3 class="sr-only">
                 Réseaux sociaux
             </h3>
-            <ul class="flex items-center md:justify-end gap-x-3 gap-y-2 text-xs uppercase tracking-wider text-gray-medium">
+            <ul class="flex items-center md:justify-end gap-x-3 gap-y-2 smooth-reval-effect text-xs uppercase tracking-wider text-gray-medium">
                 <li>
                     <a
                         href="{{ asset('img/cv.pdf') }}"
@@ -162,6 +167,6 @@
 
     {{-- My name --}}
     <div aria-hidden="true" class="relative mt-4 flex w-full items-end justify-center">
-        <x-svg.name/>
+        <x-svg.name />
     </div>
 </footer>

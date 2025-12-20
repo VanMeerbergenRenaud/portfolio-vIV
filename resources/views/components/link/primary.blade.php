@@ -6,18 +6,18 @@
 
 @php
     if ($variant === 'bw') {
-        $classes = 'p-1 bg-white hover:bg-black rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-white group';
+        $classes = 'p-1 bg-white hover:bg-black rounded-2xl smooth-reval-effect flex justify-between gap-8 border border-transparent border-dashed hover:border-white group';
         $textClasses = 'text-black group-hover:text-white';
         $arrowBg = 'bg-black group-hover:bg-white';
         $arrowStrokeClass = 'stroke-white group-hover:stroke-black';
     } elseif ($variant === 'wb') {
-        $classes = 'p-1 bg-black hover:bg-white rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-black group';
+        $classes = 'p-1 bg-black hover:bg-white rounded-2xl smooth-reval-effect flex justify-between gap-8 border border-transparent border-dashed hover:border-black group';
         $textClasses = 'text-white group-hover:text-black';
         $arrowBg = 'bg-white group-hover:bg-black';
         $arrowStrokeClass = 'stroke-black group-hover:stroke-white';
     } else {
         // default (red)
-        $classes = 'p-1 bg-red hover:bg-white rounded-2xl flex justify-between gap-8 border border-transparent border-dashed hover:border-gray-light group';
+        $classes = 'p-1 bg-red hover:bg-white rounded-2xl smooth-reval-effect flex justify-between gap-8 border border-transparent border-dashed hover:border-gray-light group';
         $textClasses = 'text-white group-hover:text-dark-primary';
         $arrowBg = 'bg-white';
         $arrowStrokeClass = 'stroke-red group-hover:stroke-dark-primary';

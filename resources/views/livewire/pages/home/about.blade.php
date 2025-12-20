@@ -23,7 +23,7 @@
                     <x-font.text-sm class="text-gray-medium">2025</x-font.text-sm>
                 </div>
 
-                <x-font.title :isTitle="true" level="3" class="mt-8">
+                <x-font.title class="mt-8">
                     Artisan du code Laravel, je forge des applications web robustes, scalables et pensées pour tous les utilisateurs.
                 </x-font.title>
 
@@ -50,7 +50,7 @@
                 ">
 
                     {{-- CARTE 1: Stat 1 --}}
-                    <div data-border="true"
+                    <div data-border="true" data-scroll-card
                          class="bg-transparent p-5 pb-4 rounded-xl flex flex-col justify-between h-30 lg:col-start-2 lg:row-start-1">
                         <p class="text-xl font-medium">
                             {!! preg_replace('/([+x])/i', '<span class="text-xl font-medium text-[#FC4040]">$1</span>', $about->stat1_value) !!}
@@ -59,13 +59,13 @@
                     </div>
 
                     {{-- CARTE 2: Vide --}}
-                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-3 lg:row-start-1"></div>
+                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-3 lg:row-start-1" data-scroll-card></div>
 
                     {{-- CARTE 3: Vide --}}
-                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-2 lg:row-start-2"></div>
+                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-2 lg:row-start-2" data-scroll-card></div>
 
                     {{-- CARTE 4: Stat 2 --}}
-                    <div data-border="true"
+                    <div data-border="true" data-scroll-card
                          class="p-5 pb-3 rounded-xl flex flex-col justify-between h-30 lg:col-start-3 lg:row-start-2">
                         <p class="text-xl font-medium">
                             {!! preg_replace('/([+x])/i', '<span class="text-xl font-medium text-[#FC4040]">$1</span>', $about->stat2_value) !!}
@@ -74,7 +74,7 @@
                     </div>
 
                     {{-- CARTE 5: Stat 3 --}}
-                    <div data-border="true"
+                    <div data-border="true" data-scroll-card
                          class="p-5 pb-3 rounded-xl flex flex-col justify-between h-30 lg:col-start-2 lg:row-start-3">
                         <p class="text-xl font-medium">
                             {!! preg_replace('/([+x])/i', '<span class="text-xl font-medium text-[#FC4040]">$1</span>', $about->stat3_value) !!}
@@ -83,13 +83,13 @@
                     </div>
 
                     {{-- CARTE 6: Vide --}}
-                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-3 lg:row-start-3"></div>
+                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-3 lg:row-start-3" data-scroll-card></div>
 
                     {{-- CARTE 7: Vide --}}
-                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-2 lg:row-start-4"></div>
+                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-2 lg:row-start-4" data-scroll-card></div>
 
                     {{-- CARTE 8: Stat 4 --}}
-                    <div data-border="true"
+                    <div data-border="true" data-scroll-card
                          class="p-5 pb-3 rounded-xl flex flex-col justify-between h-30 lg:col-start-3 lg:row-start-4">
                         <p class="text-xl font-medium">
                             {!! preg_replace('/([+x])/i', '<span class="text-xl font-medium text-[#FC4040]">$1</span>', $about->stat4_value) !!}
@@ -100,11 +100,12 @@
                     {{-- Eléments uniquement visibles sur DESKTOP --}}
 
                     {{-- CARTE 9: Vide (Desktop seulement) --}}
-                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-1"></div>
+                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-1" data-scroll-card></div>
 
                     {{-- CARTE 10: Image 1 (Desktop seulement) --}}
                     <div
-                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-1 overflow-hidden">
+                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-1 overflow-hidden"
+                        data-scroll-card>
                         @if($about->image1)
                             <img src="{{ Storage::disk('s3')->url($about->image1) }}"
                                  alt="{{ $about->image1_alt ?? 'Image' }}"
@@ -122,7 +123,8 @@
 
                     {{-- CARTE 11: Image 2 (Desktop seulement) --}}
                     <div
-                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-2 overflow-hidden">
+                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-2 overflow-hidden"
+                        data-scroll-card>
                         @if($about->image2)
                             <img src="{{ Storage::disk('s3')->url($about->image2) }}"
                                  alt="{{ $about->image2_alt ?? 'Image' }}"
@@ -139,14 +141,15 @@
                     </div>
 
                     {{-- CARTE 12: Vide (Desktop seulement) --}}
-                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-2"></div>
+                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-2" data-scroll-card></div>
 
                     {{-- CARTE 13: Vide (Desktop seulement) --}}
-                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-3"></div>
+                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-3" data-scroll-card></div>
 
                     {{-- CARTE 14: Image 3 (Desktop seulement) --}}
                     <div
-                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-3 overflow-hidden">
+                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-3 overflow-hidden"
+                        data-scroll-card>
                         @if($about->image3)
                             <img src="{{ Storage::disk('s3')->url($about->image3) }}"
                                  alt="{{ $about->image3_alt ?? 'Image' }}"
@@ -164,7 +167,8 @@
 
                     {{-- CARTE 15: Image 4 (Desktop seulement) --}}
                     <div
-                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-4 overflow-hidden">
+                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-4 overflow-hidden"
+                        data-scroll-card>
                         @if($about->image4)
                             <img src="{{ Storage::disk('s3')->url($about->image4) }}"
                                  alt="{{ $about->image4_alt ?? 'Image' }}"
@@ -181,7 +185,7 @@
                     </div>
 
                     {{-- CARTE 16: Vide (Desktop seulement) --}}
-                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-4"></div>
+                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-4" data-scroll-card></div>
                 </div>
             </div>
         </div>

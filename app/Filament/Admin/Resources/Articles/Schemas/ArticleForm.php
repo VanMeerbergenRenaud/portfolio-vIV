@@ -6,6 +6,7 @@ use App\Enums\ArticleCategory;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
@@ -169,6 +170,40 @@ class ArticleForm
                                             ->placeholder('Un composant de recherche en temps réel'),
                                     ]),
 
+                                Builder\Block::make('code_text')
+                                    ->label('Code (Texte)')
+                                    ->schema([
+                                        Select::make('language')
+                                            ->label('Langage')
+                                            ->options([
+                                                'php' => 'PHP',
+                                                'javascript' => 'JavaScript',
+                                                'typescript' => 'TypeScript',
+                                                'html' => 'HTML',
+                                                'css' => 'CSS',
+                                                'scss' => 'SCSS',
+                                                'blade' => 'Blade',
+                                                'json' => 'JSON',
+                                                'yaml' => 'YAML',
+                                                'bash' => 'Bash',
+                                                'sql' => 'SQL',
+                                                'python' => 'Python',
+                                                'markdown' => 'Markdown',
+                                            ])
+                                            ->searchable()
+                                            ->required()
+                                            ->helperText('Sélectionnez le langage pour la coloration syntaxique'),
+                                        Textarea::make('code')
+                                            ->label('Code')
+                                            ->rows(10)
+                                            ->required()
+                                            ->helperText('Collez votre code ici - il sera affiché avec coloration syntaxique'),
+                                        TextInput::make('caption')
+                                            ->label('Légende')
+                                            ->helperText('Description du code (optionnel)')
+                                            ->placeholder('Exemple : Configuration du service de recherche'),
+                                    ]),
+
                                 Builder\Block::make('quote')
                                     ->label('Citation')
                                     ->schema([
@@ -209,6 +244,33 @@ class ArticleForm
                                             ->reorderable()
                                             ->maxFiles(10)
                                             ->required(),
+                                    ]),
+
+                                Builder\Block::make('sources')
+                                    ->label('Sources et références')
+                                    ->schema([
+                                        Repeater::make('items')
+                                            ->label('Sources')
+                                            ->schema([
+                                                TextInput::make('title')
+                                                    ->label('Titre')
+                                                    ->required()
+                                                    ->placeholder('Documentation officielle Chrome DevRel'),
+                                                TextInput::make('url')
+                                                    ->label('URL')
+                                                    ->url()
+                                                    ->required()
+                                                    ->placeholder('https://example.com'),
+                                                Textarea::make('description')
+                                                    ->label('Description')
+                                                    ->rows(2)
+                                                    ->placeholder('Description optionnelle de la source'),
+                                            ])
+                                            ->columns(1)
+                                            ->defaultItems(0)
+                                            ->reorderable()
+                                            ->collapsible()
+                                            ->itemLabel(fn (array $state): ?string => $state['title'] ?? null),
                                     ]),
                             ])
                             ->blockNumbers(false)

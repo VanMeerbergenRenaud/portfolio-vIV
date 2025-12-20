@@ -13,7 +13,7 @@
 <div>
     <a
         href="{{ $link }}"
-        {{ $attributes->merge(['class' => "pb-0.5 inline-flex items-center gap-1.5 lg:gap-2 group border-b {$colorClasses}"]) }}
+        {{ $attributes->merge(['class' => "pb-0.5 inline-flex items-center gap-1.5 lg:gap-2 smooth-reval-effect group border-b {$colorClasses}"]) }}
         @if($navigate) wire:navigate @endif
     >
         <span class="typo-link group-hover:-translate-y-0.5">{{ $slot }}</span>

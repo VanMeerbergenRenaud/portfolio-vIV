@@ -1,4 +1,4 @@
-<svg class="w-full h-full opacity-80" width="288.259" height="59.951" viewBox="0 0 288.259 59.951" xmlns="http://www.w3.org/2000/svg">
+<svg class="w-full h-full opacity-80" focusable="false" width="288.259" height="59.951" viewBox="0 0 288.259 59.951" xmlns="http://www.w3.org/2000/svg">
     <!-- Définition du dégradé -->
     <defs>
         <linearGradient id="textGradient" x1="0" y1="0" x2="0" y2="1">

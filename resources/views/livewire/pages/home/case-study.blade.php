@@ -26,7 +26,7 @@
 
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 {{-- Title --}}
-                <x-font.title-lg :isTitle="true" level="3" class="max-w-[550px]">
+                <x-font.title-lg class="max-w-[550px]">
                     {{ $caseStudy->title }}
                 </x-font.title-lg>
 
@@ -69,17 +69,21 @@
                     </x-font.text-xl>
 
                     @if($caseStudy->image)
-                        <img src="{{ Storage::disk('s3')->url($caseStudy->image) }}"
-                             alt="{{ $caseStudy->project_name }}"
-                             class="absolute inset-0 h-full w-full object-cover"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ Storage::disk('s3')->url($caseStudy->image) }}"
+                                 alt="{{ $caseStudy->project_name }}"
+                                 class="absolute inset-0 h-full w-full object-cover"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="absolute inset-0 h-full w-full object-cover"
-                             loading="lazy"
-                        >
+                        <noindex>
+                            <img src="{{ asset('img/placeholder.png') }}"
+                                 alt=""
+                                 class="absolute inset-0 h-full w-full object-cover"
+                                 loading="lazy"
+                            >
+                        </noindex>
                     @endif
 
                     <x-font.text-md class="mt-auto z-2 text-white">

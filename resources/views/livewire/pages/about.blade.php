@@ -15,20 +15,19 @@
                 <x-font.text-sm class="text-gray-medium">2025</x-font.text-sm>
             </div>
 
-            {{-- Change  from here only --}}
             <x-font.title-2xl class="mb-6">
                 Renaud <span class="text-red">Van Meerbergen</span>
             </x-font.title-2xl>
 
             <a href="#complement-infos" class="group inline-block scroll-smooth" aria-label="Note de bas de page">
                 <x-font.title-lg level="2" class="relative mb-8">
-                    <span class="bg-gradient-to-r from-gray-medium to-gray-medium bg-clip-text text-transparent opacity-100 transition-opacity duration-[500ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                    <span class="bg-gradient-to-r from-gray-medium to-gray-medium bg-clip-text text-transparent opacity-100 transition-opacity duration-500 ease-in-out">
                         Dompteur de code · Backend Lord
                     </span>
-                    <span class="absolute inset-0 bg-gradient-to-r from-dark-primary via-red to-dark-primary bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-[500ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                    <span class="absolute inset-0 bg-gradient-to-r from-dark-primary via-red to-dark-primary bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                         Dompteur de code · Backend Lord
                     </span>
-                    <sup class="text-base -left-1 lg:-left-2 relative -top-5 md:-top-7.5 lg:-top-12 text-gray-light group-hover:text-red group-hover:scale-110 transition-all duration-[1200ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]">1</sup>
+                    <sup class="text-base -left-1 lg:-left-2 relative -top-5 md:-top-7.5 lg:-top-12 text-gray-light group-hover:text-red group-hover:scale-110 transition-all duration-1200 ease-[cubic-bezier(0.34,1.56,0.64,1)]">1</sup>
                 </x-font.title-lg>
             </a>
 
@@ -36,7 +35,7 @@
                 <a href="tel:+32470596065"
                    class="flex items-center gap-2 text-gray-medium hover:text-dark-primary transition-colors"
                 >
-                    <span class="text-red">→</span> +32 (0)470 59 60 65
+                    <span class="text-red">→</span> +32 (0) 470 59 60 65
                 </a>
                 <a href="mailto:renaud.vanmeerbergen@gmail.com"
                    class="flex items-center gap-2 text-gray-medium hover:text-dark-primary transition-colors"
@@ -65,13 +64,10 @@
                 <x-divider-dash class="flex-1 mt-5 ml-3 lg:mt-7.5 lg:ml-6"/>
             </div>
 
-            <x-font.text-lg class="text-gray-medium max-w-[900px] leading-relaxed">
-                Je suis un alchimiste du chaos maîtrisé, je transforme des tickets douteux en résultats solides, le tout accompagné d'une playlist mythique et de jurons poétiques.
-                Je répare la production d’un geste nonchalant tout en semant une nouvelle énigme pour l’équipe afin de préserver le suspense.
-                Je corrige des erreurs légendaires et passe 30 minutes à centrer une image, qui me plonge dans une profonde méditation existentielle.
-                J'écris le code comme un artiste en plein mélodrame en choisissant des mots que je ne comprends pas moi-même.
-                Mon code est nettoyé à la manière d’un illusionniste de sorte qu’il ne reste aucun témoin.
-                Je suis disponible pour des missions payées en euros et je refuse les paiements en visibilité. J’accepte les propositions sérieuses et les pâtisseries comme bonus de négociation.<br>
+            <x-font.text-lg class="text-gray-medium max-w-225 leading-relaxed">
+                Je suis un alchimiste du chaos maîtrisé, je transforme des tickets douteux en résultats solides, le tout accompagné d'une playlist mythique.
+                Fondamentalement, c'est la passion du travail bien fait qui me guide. Si je passe 30 minutes à centrer une image, ce n'est pas par hasard, mais par pur souci d'excellence visuelle. Loin de vouloir complexifier le code pour briller, je cherche avant tout la solution la plus fiable et la plus simple possible.
+                Mon approche est celle d'un artisan qui accorde autant d'importance à la stabilité technique qu'au confort des utilisateurs. Je suis là pour bâtir du durable, avec sérieux, écoute et bonne humeur.<br>
             </x-font.text-lg>
         </section>
 
@@ -90,11 +86,11 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">PHP 8.5 (Non, il n'est pas mort)</x-font.text>
+                            <x-font.text class="text-gray-medium">PHP (Toujours vivant)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Laravel (Magie noire incluse)</x-font.text>
+                            <x-font.text class="text-gray-medium">Laravel (Pour les magiciens du web)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
@@ -108,7 +104,7 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Tailwind CSS (J'ai banni le CSS pur)</x-font.text>
+                            <x-font.text class="text-gray-medium">Tailwind CSS (Le framework qui ne dort jamais)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
@@ -126,11 +122,11 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Git (commit -m "oups je répare")</x-font.text>
+                            <x-font.text class="text-gray-medium">Git (Sauve des vies depuis 2005)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Docker (L'usine à gaz portable)</x-font.text>
+                            <x-font.text class="text-gray-medium">Docker (Stockage illégal)</x-font.text>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
@@ -227,7 +223,7 @@
                         <li class="flex items-start gap-2">
                             <span class="text-red">→</span>
                             <x-font.text class="text-gray-medium">
-                                J'ai tout fait moi même et je suis fatigué.
+                                Concrétisation d'un SaaS en 4 semaines chrono.
                             </x-font.text>
                         </li>
                         <li class="flex items-start gap-2">
@@ -239,7 +235,7 @@
                         <li class="flex items-start gap-2">
                             <span class="text-red">→</span>
                             <x-font.text class="text-gray-medium">
-                                CEO/CTO et stagiaire du mois en même temps.
+                                Employé du mois (auto-proclamé).
                             </x-font.text>
                         </li>
                     </ul>
@@ -257,7 +253,7 @@
                 <x-divider-dash class="flex-1 mt-5 ml-3 lg:mt-7.5 lg:ml-6"/>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
                 <div class="border-l-2 border-red pl-6 relative">
                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-red"></div>
 
@@ -340,7 +336,7 @@
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-red rounded-full"></span>
-                            <x-font.text class="text-gray-medium">Véhicule (Batmobile rouillée)</x-font.text>
+                            <x-font.text class="text-gray-medium">Véhicule (Trottinette débridée)</x-font.text>
                         </li>
                     </ul>
                 </div>

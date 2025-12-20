@@ -16,7 +16,7 @@
 <a
     href="{{ $link }}"
     aria-label="Naviguer vers {{ $slot }}"
-    {{ $attributes->merge(['class' => 'group inline-block relative']) }}
+    {{ $attributes->merge(['class' => 'group inline-block relative smooth-reval-effect']) }}
     @if($navigate) wire:navigate @endif
 >
 

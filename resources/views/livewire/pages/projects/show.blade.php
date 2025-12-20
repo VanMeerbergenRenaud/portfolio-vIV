@@ -1,4 +1,6 @@
 <div>
+    <x-schema.project-show :project="$project" />
+
     <section class="px-4 md:px-8 lg:px-10 pt-30 pb-20 lg:pt-40 lg:pb-30 flex flex-col gap-15 lg:gap-20">
 
         {{-- Infos --}}
@@ -8,39 +10,29 @@
                     {{ $project->name }}
                 </x-font.title-2xl>
 
-                @if($project->logo_black)
+                <noindex>
                     <img
-                        src="{{ Storage::disk('s3')->url($project->logo_black) }}"
-                        alt="{{ $project->name }} logo"
-                        class="max-w-25"
+                        src="{{ $project->logo_black ? Storage::disk('s3')->url($project->logo_black) : asset('img/projects/logo.svg') }}"
+                        alt="{{ $project->name ? $project->name . ' logo' : 'Logo du projet' }}"
+                        class="max-w-25 smooth-reval-effect"
                     >
-                @else
-                    <img src="{{ asset('img/projects/logo.svg') }}"
-                         alt="logo par défaut"
-                         class="max-w-25"
-                         loading="lazy"
-                    >
-                @endif
+                </noindex>
             </div>
 
+            {{-- Description & Image --}}
             <div class="flex flex-col md:grid md:grid-cols-[1fr_30%] gap-4 md:gap-6">
                 <div class="max-sm:order-2 max-sm:mt-4">
-                    @if($project->image)
+                    <noindex>
                         <img
-                            src="{{ Storage::disk('s3')->url($project->image) }}"
+                            src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
                             alt="{{ $project->name }}"
                             class="rounded-2xl"
                             loading="lazy"
                         >
-                    @else
-                        <img src="{{ asset('img/placeholder.png') }}"
-                             alt=""
-                             class="rounded-2xl"
-                             loading="lazy"
-                        >
-                    @endif
+                    </noindex>
                 </div>
 
+                {{-- Description & details --}}
                 <div class="grid justify-between gap-15">
                     <div>
                         <x-divider-dash class="hidden lg:block"/>
@@ -73,7 +65,7 @@
                                     <x-font.text-md class="text-gray-medium">Type</x-font.text-md>
                                     <x-divider-dash class="flex-1"/>
                                     <x-font.text-md>
-                                        <x-project-type-label :type="$project->type"/>
+                                        <x-projects.type-label :type="$project->type"/>
                                     </x-font.text-md>
                                 </div>
                             @endif
@@ -248,7 +240,7 @@
                                 </x-font.text-md>
                                 <div class="flex flex-wrap gap-2">
                                     @foreach($project->roles as $role)
-                                        <x-project-role-label :role="$role"/>
+                                        <x-projects.role-label :role="$role"/>
                                     @endforeach
                                 </div>
                             </div>
