@@ -7,15 +7,10 @@ use Livewire\Component;
 
 class Faq extends Component
 {
-    public $faqs;
-
-    public function mount()
-    {
-        $this->faqs = FaqList::published()->ordered()->get();
-    }
-
     public function render()
     {
-        return view('livewire.pages.home.faq');
+        return view('livewire.pages.home.faq', [
+            'faqs' => FaqList::published()->ordered()->get(),
+        ]);
     }
 }
