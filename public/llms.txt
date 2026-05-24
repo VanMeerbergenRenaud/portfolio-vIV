@@ -1,0 +1,23 @@
+# Renaud Van Meerbergen - Portfolio
+
+> Je suis développeur web fullstack basé à Liège, spécialisé dans l'écosystème Laravel, Livewire, et le développement front-end.
+
+## À propos
+Développeur web passionné, je conçois des applications web modernes, robustes et performantes. Mes technologies de prédilection sont :
+- PHP / Laravel
+- Livewire / Alpine.js
+- Tailwind CSS / Vue.js
+
+## Structure du site
+Voici les ressources importantes de mon site :
+
+- [Accueil](https://renaud-vmb.com/) : Page principale du portfolio.
+- [À propos](https://renaud-vmb.com/about) : Mon parcours et mes compétences.
+- [Projets](https://renaud-vmb.com/projects) : Découverte de mes projets, SaaS et applications web.
+- [Articles](https://renaud-vmb.com/articles) : Mon blog où je partage des tutoriels, des actualités Laravel et des retours d'expérience.
+
+## Articles Récents et Expertise
+Je rédige régulièrement du contenu technique autour de l'écosystème Laravel (architecture, performance, Livewire, Filament). Vous retrouverez mes publications dans la section "Articles".
+
+## Me contacter
+N'hésitez pas à me contacter pour des projets de développement web (Laravel, WordPress, API, dev front-end et back-end) à Liège ou en remote.
