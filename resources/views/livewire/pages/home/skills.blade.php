@@ -70,7 +70,7 @@
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden md:hidden lg:block lg:min-w-52">
                     <noindex>
-                        <img src="{{ $skills[0]->image ? Storage::url($skills[0]->image) :asset('img/placeholder.png') }}"
+                        <img src="{{ $skills[0]->image ? Storage::disk('s3')->url($skills[0]->image) : asset('img/placeholder.png') }}"
                              alt="{{ $skills[0]->name }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
@@ -111,7 +111,7 @@
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden hidden lg:block lg:min-w-52">
                     <noindex>
-                        <img src="{{ $skills[2]->image ? Storage::url($skills[2]->image) : asset('img/placeholder.png') }}"
+                        <img src="{{ $skills[2]->image ? Storage::disk('s3')->url($skills[2]->image) : asset('img/placeholder.png') }}"
                              alt="{{ $skills[2]->name }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
@@ -140,7 +140,7 @@
                 {{-- Same image for mobile --}}
                 <div class="rounded-2xl overflow-hidden md:hidden">
                     <noindex>
-                        <img src="{{ $skills[2]->image ? Storage::url($skills[2]->image) : asset('img/placeholder.png') }}"
+                        <img src="{{ $skills[2]->image ? Storage::disk('s3')->url($skills[2]->image) : asset('img/placeholder.png') }}"
                              alt="{{ $skills[2]->name }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
@@ -202,7 +202,7 @@
                 {{-- Same image for mobile --}}
                 <div class="rounded-2xl overflow-hidden md:hidden">
                     <noindex>
-                        <img src="{{ $skills[4]->image ? Storage::url($skills[4]->image) : asset('img/placeholder.png') }}"
+                        <img src="{{ $skills[4]->image ? Storage::disk('s3')->url($skills[4]->image) : asset('img/placeholder.png') }}"
                              alt="{{ $skills[4]->name }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
@@ -234,7 +234,7 @@
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden hidden lg:block lg:min-w-52">
                     <noindex>
-                        <img src="{{ $skills[5]->image ? Storage::url($skills[5]->image) : asset('img/placeholder.png') }}"
+                        <img src="{{ $skills[5]->image ? Storage::disk('s3')->url($skills[5]->image) : asset('img/placeholder.png') }}"
                              alt="{{ $skills[5]->name ?? '' }}"
                              class="h-full w-full object-cover"
                              loading="lazy"
