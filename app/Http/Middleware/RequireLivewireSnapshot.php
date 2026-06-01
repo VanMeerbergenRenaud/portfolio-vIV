@@ -16,13 +16,19 @@ class RequireLivewireSnapshot
     {
         if ($request->routeIs('livewire.update') || $request->is('livewire/update')) {
             // Livewire update requests should include component snapshot data.
-            // If missing, this is not a valid Livewire interaction and should not reach Livewire internals.
-            $hasSnapshot = $request->has('components') ||
-                           $request->has('snapshot') ||
-                           $request->has('fingerprint');
+            // Reject missing/non-string snapshots before Livewire tries to hydrate.
+            $payload = $request->json()->all();
+            $snapshot = data_get($payload, 'components.0.snapshot')
+                        ?? data_get($payload, 'snapshot')
+                        ?? data_get($payload, 'fingerprint');
 
-            if (! $hasSnapshot) {
-                return response()->json(['message' => 'Invalid Livewire request.'], 400);
+            if (! is_string($snapshot) || $snapshot === '') {
+                return response()->json(['message' => 'Invalid Livewire snapshot.'], 400);
+            }
+
+            // Optional: reject obviously truncated payloads to reduce corrupt hydration attempts.
+            if (strlen($snapshot) < 50) {
+                return response()->json(['message' => 'Truncated Livewire snapshot.'], 400);
             }
 
             // Apply rate limiting specifically for livewire updates: 60 requests per minute per IP.
