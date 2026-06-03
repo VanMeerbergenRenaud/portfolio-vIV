@@ -17,6 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
+        $exceptions->dontReport([
+            \Livewire\Mechanisms\HandleComponents\CorruptComponentPayloadException::class,
+        ]);
+
         $exceptions->render(function (\Livewire\Mechanisms\HandleComponents\CorruptComponentPayloadException $e) {
             return response()->json(['message' => 'Invalid component payload.'], 400);
         });
