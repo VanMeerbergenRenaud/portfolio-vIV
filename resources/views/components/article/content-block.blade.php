@@ -26,67 +26,63 @@
                 {{ $content }}
             </x-font.text-lg>
         @endif
-    @break
+        @break
 
     @case('paragraph')
         <x-font.text class="my-2.5 text-gray-dark font-normal text-lg">
             {{ $data['content'] ?? '' }}
         </x-font.text>
-    @break
+        @break
 
     @case('rich_text')
         <div class="my-4 text-gray-dark font-normal text-lg rich-text">
             {!! $data['content'] ?? '' !!}
         </div>
-    @break
+        @break
 
     @case('image')
-        <noindex>
-            <figure class="mt-8">
-                <img src="{{ Storage::disk('s3')->url($data['url']) }}"
-                     alt="{{ $data['alt'] ?? '' }}"
-                     class="rounded-2xl w-full"
-                     loading="lazy"
-                >
-                @if(!empty($data['caption']))
-                    <figcaption class="text-center mt-2">
-                        <x-font.text-md class="text-gray-medium font-normal">
-                            {{ $data['caption'] }}
-                        </x-font.text-md>
-                    </figcaption>
-                @endif
-            </figure>
-        </noindex>
-    @break
+        <figure class="mt-8">
+            <img src="{{ Storage::disk('s3')->url($data['url']) }}"
+                 alt="{{ $data['alt'] ?? '' }}"
+                 class="rounded-2xl w-full"
+                 loading="lazy"
+            >
+            @if(!empty($data['caption']))
+                <figcaption class="text-center mt-2">
+                    <x-font.text-md class="text-gray-medium font-normal">
+                        {{ $data['caption'] }}
+                    </x-font.text-md>
+                </figcaption>
+            @endif
+        </figure>
+        @break
 
 
     @case('code_img')
-        <noindex>
-            <figure class="mt-6 mb-4">
-                {{-- Img --}}
-                @if(!empty($data['url']))
-                    <img src="{{ Storage::disk('s3')->url($data['url']) }}"
-                         alt="{{ $data['alt'] ?? 'Code snippet' }}"
-                         class="rounded-2xl w-full"
-                         loading="lazy"
-                    >
-                @else
-                    <p class="bg-gray-100 rounded-xl p-6 text-gray-dark text-center">
-                        Image de code non disponible
-                    </p>
-                @endif
+        <figure class="mt-6 mb-4">
+            {{-- Img --}}
+            @if(!empty($data['url']))
+                <img src="{{ Storage::disk('s3')->url($data['url']) }}"
+                     alt="{{ $data['alt'] ?? 'Code snippet' }}"
+                     class="rounded-2xl w-full"
+                     loading="lazy"
+                >
+            @else
+                <p class="bg-gray-100 rounded-xl p-6 text-gray-dark text-center">
+                    Image de code non disponible
+                </p>
+            @endif
 
-                {{-- Caption --}}
-                @if(!empty($data['caption']))
-                    <figcaption class="text-left mt-2.5 pl-2">
-                        <x-font.text-md class="text-gray-medium font-normal">
-                            {{ $data['caption'] }}
-                        </x-font.text-md>
-                    </figcaption>
-                @endif
-            </figure>
-        </noindex>
-    @break
+            {{-- Caption --}}
+            @if(!empty($data['caption']))
+                <figcaption class="text-left mt-2.5 pl-2">
+                    <x-font.text-md class="text-gray-medium font-normal">
+                        {{ $data['caption'] }}
+                    </x-font.text-md>
+                </figcaption>
+            @endif
+        </figure>
+        @break
 
     @case('code_text')
         <div class="relative -left-1 mt-6 mb-8 pr-1" x-data="{
@@ -152,8 +148,10 @@
                 </div>
             @endif
 
-            <div tabindex="0" class="py-2 px-4 overflow-x-auto bg-gray-50 border border-gray-200 {{ empty($data['language']) ? 'rounded-xl' : 'rounded-b-xl' }}">
-                <pre class="leading-4 text-xs"><code x-ref="codeBlock" class="language-{{ $data['language'] ?? 'plaintext' }} w-full text-xs">{{ $data['code'] ?? '' }}</code></pre>
+            <div tabindex="0"
+                 class="py-2 px-4 overflow-x-auto bg-gray-50 border border-gray-200 {{ empty($data['language']) ? 'rounded-xl' : 'rounded-b-xl' }}">
+                <pre class="leading-4 text-xs"><code x-ref="codeBlock"
+                                                     class="language-{{ $data['language'] ?? 'plaintext' }} w-full text-xs">{{ $data['code'] ?? '' }}</code></pre>
             </div>
 
             @if(!empty($data['caption']))
@@ -164,7 +162,7 @@
                 </figcaption>
             @endif
         </div>
-    @break
+        @break
 
     @case('quote')
         <blockquote class="my-10 pl-6 border-l-4 border-red-500 py-2">
@@ -179,28 +177,26 @@
                 </footer>
             @endif
         </blockquote>
-    @break
+        @break
 
     @case('spacing')
         @php
             $size = $data['size'] ?? '20';
         @endphp
-            <div style="height: {{ $size }}px;"></div>
-    @break
+        <div style="height: {{ $size }}px;"></div>
+        @break
 
     @case('gallery')
         <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
             @foreach($data['images'] ?? [] as $image)
-                <noindex>
-                    <img src="{{ Storage::disk('s3')->url($image) }}"
-                         alt="Galerie d'images"
-                         class="rounded-lg w-full h-full object-cover"
-                         loading="lazy"
-                    >
-                </noindex>
+                <img src="{{ Storage::disk('s3')->url($image) }}"
+                     alt="Galerie d'images"
+                     class="rounded-lg w-full h-full object-cover"
+                     loading="lazy"
+                >
             @endforeach
         </div>
-    @break
+        @break
 
     @case('sources')
         <div class="mt-10 mb-8 p-6 bg-gray-50 border border-gray-200 rounded-xl">
@@ -217,8 +213,10 @@
                                rel="noopener noreferrer nofollow"
                                class="flex md:items-center gap-3"
                             >
-                                <svg class="flex shrink-0 mt-1.5 lg:mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                <svg class="flex shrink-0 mt-1.5 lg:mt-0.5" fill="none" stroke="currentColor"
+                                     viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                 </svg>
                                 <span class="text-red-600 hover:text-red-800">{{ $source['title'] ?? 'Source' }}</span>
                             </a>
@@ -232,6 +230,6 @@
                 </ul>
             @endif
         </div>
-    @break
+        @break
 @endswitch
 

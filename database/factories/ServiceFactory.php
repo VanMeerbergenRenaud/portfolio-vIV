@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends Factory<Service>
@@ -29,7 +30,7 @@ class ServiceFactory extends Factory
         return [
             'number' => '('.str_pad(fake()->unique()->numberBetween(1, 99), 2, '0', STR_PAD_LEFT).')',
             'title' => $title,
-            'slug' => \Illuminate\Support\Str::slug($title),
+            'slug' => Str::slug($title),
             'description' => fake()->paragraph(),
             'image' => 'img/placeholder.png',
             'tags' => fake()->randomElements([

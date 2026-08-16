@@ -44,15 +44,17 @@
 
             <div data-scroll-row="left" class="flex flex-col gap-2 md:flex-row">
                 {{-- For tablet : Gray empty space --}}
-                <div class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
+                <div
+                    class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
 
                 {{-- Card --}}
-                <div data-border-gray="true" class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
+                <div data-border-gray="true"
+                     class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
                     {{-- Header card--}}
                     <div class="flex items-center gap-1.5">
-                        <x-svg.star class="h-5 w-5 text-red" />
+                        <x-svg.star class="h-5 w-5 text-red"/>
 
-                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
+                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5"/>
 
                         <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[0]->name }}
@@ -65,26 +67,27 @@
                 </div>
 
                 {{-- For tablet : Gray empty space --}}
-                <div class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
+                <div
+                    class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
 
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden md:hidden lg:block lg:min-w-52">
-                    <noindex>
-                        <img src="{{ $skills[0]->image ? Storage::disk('s3')->url($skills[0]->image) : asset('img/placeholder.png') }}"
-                             alt="{{ $skills[0]->name }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
-                    </noindex>
+                    <img
+                        src="{{ $skills[0]->image ? Storage::disk('s3')->url($skills[0]->image) : asset('img/placeholder.png') }}"
+                        alt="{{ $skills[0]->name }}"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                    >
                 </div>
 
                 {{-- Card --}}
-                <div data-border-gray="true" class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
+                <div data-border-gray="true"
+                     class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
                     {{-- Header card--}}
                     <div class="flex items-center gap-1.5">
-                        <x-svg.star class="h-5 w-5 text-red" />
+                        <x-svg.star class="h-5 w-5 text-red"/>
 
-                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
+                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5"/>
 
                         <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[1]->name }}
@@ -106,26 +109,27 @@
 
             <div data-scroll-row="right" class="flex flex-col gap-2 md:flex-row">
                 {{-- For tablet : Gray empty space --}}
-                <div class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
+                <div
+                    class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
 
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden hidden lg:block lg:min-w-52">
-                    <noindex>
-                        <img src="{{ $skills[2]->image ? Storage::disk('s3')->url($skills[2]->image) : asset('img/placeholder.png') }}"
-                             alt="{{ $skills[2]->name }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
-                    </noindex>
+                    <img
+                        src="{{ $skills[2]->image ? Storage::disk('s3')->url($skills[2]->image) : asset('img/placeholder.png') }}"
+                        alt="{{ $skills[2]->name }}"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                    >
                 </div>
 
                 {{-- Card --}}
-                <div data-border-gray="true" class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
+                <div data-border-gray="true"
+                     class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
                     {{-- Header card--}}
                     <div class="flex items-center gap-1.5">
-                        <x-svg.star class="h-5 w-5 text-red" />
+                        <x-svg.star class="h-5 w-5 text-red"/>
 
-                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
+                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5"/>
 
                         <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[2]->name }}
@@ -139,25 +143,26 @@
 
                 {{-- Same image for mobile --}}
                 <div class="rounded-2xl overflow-hidden md:hidden">
-                    <noindex>
-                        <img src="{{ $skills[2]->image ? Storage::disk('s3')->url($skills[2]->image) : asset('img/placeholder.png') }}"
-                             alt="{{ $skills[2]->name }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
-                    </noindex>
+                    <img
+                        src="{{ $skills[2]->image ? Storage::disk('s3')->url($skills[2]->image) : asset('img/placeholder.png') }}"
+                        alt="{{ $skills[2]->name }}"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                    >
                 </div>
 
                 {{-- For tablet : Gray empty space --}}
-                <div class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
+                <div
+                    class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
 
                 {{-- Card --}}
-                <div data-border-gray="true" class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
+                <div data-border-gray="true"
+                     class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
                     {{-- Header card--}}
                     <div class="flex items-center gap-1.5">
-                        <x-svg.star class="h-5 w-5 text-red" />
+                        <x-svg.star class="h-5 w-5 text-red"/>
 
-                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
+                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5"/>
 
                         <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[3]->name }}
@@ -179,15 +184,17 @@
 
             <div data-scroll-row="left" class="flex flex-col gap-2 md:flex-row">
                 {{-- For tablet : Gray empty space --}}
-                <div class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
+                <div
+                    class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
 
                 {{-- Card --}}
-                <div data-border-gray="true" class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
+                <div data-border-gray="true"
+                     class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
                     {{-- Header card--}}
                     <div class="flex items-center gap-1.5">
-                        <x-svg.star class="h-5 w-5 text-red" />
+                        <x-svg.star class="h-5 w-5 text-red"/>
 
-                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
+                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5"/>
 
                         <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[4]->name }}
@@ -201,25 +208,26 @@
 
                 {{-- Same image for mobile --}}
                 <div class="rounded-2xl overflow-hidden md:hidden">
-                    <noindex>
-                        <img src="{{ $skills[4]->image ? Storage::disk('s3')->url($skills[4]->image) : asset('img/placeholder.png') }}"
-                             alt="{{ $skills[4]->name }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
-                    </noindex>
+                    <img
+                        src="{{ $skills[4]->image ? Storage::disk('s3')->url($skills[4]->image) : asset('img/placeholder.png') }}"
+                        alt="{{ $skills[4]->name }}"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                    >
                 </div>
 
                 {{-- For tablet : Gray empty space --}}
-                <div class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
+                <div
+                    class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
 
                 {{-- Card --}}
-                <div data-border-gray="true" class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
+                <div data-border-gray="true"
+                     class="p-6 lg:p-7 flex flex-col gap-10 lg:gap-14 rounded-2xl w-full md:min-w-[20rem] lg:min-w-[27rem] md:max-w-[27.5rem]">
                     {{-- Header card--}}
                     <div class="flex items-center gap-1.5">
-                        <x-svg.star class="h-5 w-5 text-red" />
+                        <x-svg.star class="h-5 w-5 text-red"/>
 
-                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5" />
+                        <x-divider vertical="true" class="rounded-sm !bg-gray-lighter !h-3.5 !w-0.5"/>
 
                         <x-font.text-xl :isTitle="true" level="3" class="font-semibold">
                             {{ $skills[5]->name }}
@@ -233,17 +241,17 @@
 
                 {{-- Image --}}
                 <div class="rounded-2xl overflow-hidden hidden lg:block lg:min-w-52">
-                    <noindex>
-                        <img src="{{ $skills[5]->image ? Storage::disk('s3')->url($skills[5]->image) : asset('img/placeholder.png') }}"
-                             alt="{{ $skills[5]->name ?? '' }}"
-                             class="h-full w-full object-cover"
-                             loading="lazy"
-                        >
-                    </noindex>
+                    <img
+                        src="{{ $skills[5]->image ? Storage::disk('s3')->url($skills[5]->image) : asset('img/placeholder.png') }}"
+                        alt="{{ $skills[5]->name ?? '' }}"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                    >
                 </div>
 
                 {{-- Gray empty space --}}
-                <div class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
+                <div
+                    class="hidden md:block bg-whitesmoke opacity-85 min-w-10 h-10 md:h-full lg:min-w-35 rounded-2xl"></div>
             </div>
 
             {{----------- END ROW 3 -----------}}
@@ -291,7 +299,7 @@
                 const h = window.innerHeight;
 
                 this.rows.forEach(row => {
-                    const { top, bottom } = row.getBoundingClientRect();
+                    const {top, bottom} = row.getBoundingClientRect();
                     if (top < h && bottom > 0) {
                         const progress = Math.min(1, (1 - top / h) * 1.6);
                         const x = progress * this.offset;

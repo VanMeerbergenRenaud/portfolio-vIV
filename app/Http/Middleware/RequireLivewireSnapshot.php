@@ -33,15 +33,16 @@ class RequireLivewireSnapshot
 
             // Apply rate limiting specifically for livewire updates: 60 requests per minute per IP.
             $ip = $request->ip();
-            $limiterKey = 'livewire-update:' . ($ip ?? 'unknown');
+            $limiterKey = 'livewire-update:'.($ip ?? 'unknown');
 
             if (RateLimiter::tooManyAttempts($limiterKey, 60)) {
                 $seconds = RateLimiter::availableIn($limiterKey);
+
                 return response()->json([
                     'message' => 'Too many requests.',
-                    'retry_after' => $seconds
+                    'retry_after' => $seconds,
                 ], 429, [
-                    'Retry-After' => $seconds
+                    'Retry-After' => $seconds,
                 ]);
             }
 

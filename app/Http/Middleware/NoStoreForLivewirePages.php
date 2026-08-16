@@ -11,7 +11,7 @@ class NoStoreForLivewirePages
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  Closure(Request): (Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
@@ -22,7 +22,7 @@ class NoStoreForLivewirePages
             if (method_exists($response, 'header')) {
                 $response->header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
                 $response->header('Pragma', 'no-cache');
-            } else if (isset($response->headers)) {
+            } elseif (isset($response->headers)) {
                 $response->headers->set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
                 $response->headers->set('Pragma', 'no-cache');
             }

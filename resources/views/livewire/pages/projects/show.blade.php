@@ -1,5 +1,5 @@
 <div>
-    <x-schema.project-show :project="$project" />
+    <x-schema.project-show :project="$project"/>
 
     <section class="px-4 md:px-8 lg:px-10 pt-30 pb-20 lg:pt-40 lg:pb-30 flex flex-col gap-15 lg:gap-20">
 
@@ -10,26 +10,22 @@
                     {{ $project->name }}
                 </x-font.title-2xl>
 
-                <noindex>
-                    <img
-                        src="{{ $project->logo_black ? Storage::disk('s3')->url($project->logo_black) : asset('img/projects/logo.svg') }}"
-                        alt="{{ $project->name ? $project->name . ' logo' : 'Logo du projet' }}"
-                        class="max-w-25 smooth-reval-effect"
-                    >
-                </noindex>
+                <img
+                    src="{{ $project->logo_black ? Storage::disk('s3')->url($project->logo_black) : asset('img/projects/logo.svg') }}"
+                    alt="{{ $project->name ? $project->name . ' logo' : 'Logo du projet' }}"
+                    class="max-w-25 smooth-reval-effect"
+                >
             </div>
 
             {{-- Description & Image --}}
             <div class="flex flex-col md:grid md:grid-cols-[1fr_30%] gap-4 md:gap-6">
                 <div class="max-sm:order-2 max-sm:mt-4">
-                    <noindex>
-                        <img
-                            src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
-                            alt="{{ $project->name }}"
-                            class="rounded-2xl"
-                            loading="lazy"
-                        >
-                    </noindex>
+                    <img
+                        src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
+                        alt="{{ $project->name }}"
+                        class="rounded-2xl"
+                        loading="lazy"
+                    >
                 </div>
 
                 {{-- Description & details --}}
@@ -123,7 +119,8 @@
                         @if($project->context_gallery && count($project->context_gallery) > 0)
                             <div class="grid grid-cols-1 gap-4 my-8">
                                 @foreach($project->context_gallery as $index => $image)
-                                    <div class="rounded-2xl overflow-hidden {{ count($project->context_gallery) === 1 ? 'md:col-span-2' : '' }}">
+                                    <div
+                                        class="rounded-2xl overflow-hidden {{ count($project->context_gallery) === 1 ? 'md:col-span-2' : '' }}">
                                         <img
                                             src="{{ Storage::disk('s3')->url($image) }}"
                                             alt="Image contexte {{ $project->name }} - {{ $index + 1 }}"
@@ -171,7 +168,8 @@
                         @if($project->results_gallery && count($project->results_gallery) > 0)
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
                                 @foreach($project->results_gallery as $index => $image)
-                                    <div class="rounded-2xl overflow-hidden {{ count($project->results_gallery) === 1 ? 'md:col-span-2' : '' }}">
+                                    <div
+                                        class="rounded-2xl overflow-hidden {{ count($project->results_gallery) === 1 ? 'md:col-span-2' : '' }}">
                                         <img
                                             src="{{ Storage::disk('s3')->url($image) }}"
                                             alt="Résultat {{ $project->name }} - {{ $index + 1 }}"
@@ -210,8 +208,10 @@
 
                         <x-font.text class="text-gray-medium max-w-175 leading-relaxed">
                             Découvrez les aspects techniques et les outils qui m'ont permis de mener à bien ce projet.
-                            Que ce soit des outils open-source, des frameworks modernes ou des méthodologies agiles, chaque élément a joué un rôle crucial dans la réussite de cette réalisation.
-                            Issu d'une réflexion approfondie, chaque choix technique a été fait pour garantir la qualité, la performance et la pérennité du projet.
+                            Que ce soit des outils open-source, des frameworks modernes ou des méthodologies agiles,
+                            chaque élément a joué un rôle crucial dans la réussite de cette réalisation.
+                            Issu d'une réflexion approfondie, chaque choix technique a été fait pour garantir la
+                            qualité, la performance et la pérennité du projet.
                         </x-font.text>
                     </div>
 
@@ -224,7 +224,8 @@
                                 </x-font.text-md>
                                 <div class="flex flex-wrap gap-2">
                                     @foreach($project->tags as $tag)
-                                        <span class="px-3 py-1.5 text-sm font-medium text-gray-dark bg-white rounded-lg hover:bg-gray-200 transition-colors duration-300">
+                                        <span
+                                            class="px-3 py-1.5 text-sm font-medium text-gray-dark bg-white rounded-lg hover:bg-gray-200 transition-colors duration-300">
                                         {{ $tag }}
                                     </span>
                                     @endforeach
@@ -312,7 +313,7 @@
             </div>
 
             {{-- Project list --}}
-            <x-projects.list :$projects />
+            <x-projects.list :$projects/>
         </section>
     @endif
 
