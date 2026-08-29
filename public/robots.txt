@@ -1,4 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /img/cv.pdf
+Disallow: /policies
+Disallow: /conditions
 
 Sitemap: https://renaud-vmb.com/sitemap.xml
