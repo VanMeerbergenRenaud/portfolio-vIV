@@ -108,7 +108,7 @@
                         data-scroll-card>
                         @if($about->image1)
                             <img src="{{ Storage::disk('s3')->url($about->image1) }}"
-                                 alt="{{ $about->image1_alt ?? 'Image' }}"
+                                 alt="{{ $about->image1_alt ?: 'Photo de Renaud Van Meerbergen, développeur web fullstack à Liège' }}"
                                  class="w-full h-full object-cover"
                                  loading="lazy"
                             >
@@ -127,7 +127,7 @@
                         data-scroll-card>
                         @if($about->image2)
                             <img src="{{ Storage::disk('s3')->url($about->image2) }}"
-                                 alt="{{ $about->image2_alt ?? 'Image' }}"
+                                 alt="{{ $about->image2_alt ?: 'Photo de Renaud Van Meerbergen, développeur web fullstack à Liège' }}"
                                  class="w-full h-full object-cover"
                                  loading="lazy"
                             >
@@ -152,7 +152,7 @@
                         data-scroll-card>
                         @if($about->image3)
                             <img src="{{ Storage::disk('s3')->url($about->image3) }}"
-                                 alt="{{ $about->image3_alt ?? 'Image' }}"
+                                 alt="{{ $about->image3_alt ?: 'Photo de Renaud Van Meerbergen, développeur web fullstack à Liège' }}"
                                  class="w-full h-full object-cover"
                                  loading="lazy"
                             >
@@ -171,7 +171,7 @@
                         data-scroll-card>
                         @if($about->image4)
                             <img src="{{ Storage::disk('s3')->url($about->image4) }}"
-                                 alt="{{ $about->image4_alt ?? 'Image' }}"
+                                 alt="{{ $about->image4_alt ?: 'Photo de Renaud Van Meerbergen, développeur web fullstack à Liège' }}"
                                  class="w-full h-full object-cover"
                                  loading="lazy"
                             >

@@ -117,7 +117,7 @@
             <ul class="flex items-center md:justify-end gap-x-3 gap-y-2 smooth-reval-effect text-xs uppercase tracking-wider text-gray-medium">
                 <li>
                     <a
-                        href="{{ asset('img/cv.pdf') }}"
+                        href="{{ route('cv') }}"
                         target="_blank"
                         class="hover:text-whitesmoke hover:underline rounded-sm transition-colors duration-300"
                         aria-label="Découvrir mon CV"

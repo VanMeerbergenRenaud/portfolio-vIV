@@ -18,7 +18,7 @@
                 <div class="relative group overflow-hidden rounded-2xl max-h-[62.5vh] lg:min-h-[425px]">
                     <img
                         src="{{ $hero->hero_image ? Storage::disk('s3')->url($hero->hero_image) : asset('img/placeholder.png') }}"
-                        alt="{{ $hero->hero_image_alt ?? 'Portrait de Renaud Van Meerbergen' }}"
+                        alt="{{ $hero->hero_image_alt ?: 'Portrait de Renaud Van Meerbergen' }}"
                         class="w-full h-full min-h-50 max-h-250 object-cover transition-transform duration-500 group-hover:scale-105"
                         fetchpriority="high"
                     >

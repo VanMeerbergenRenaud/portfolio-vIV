@@ -85,6 +85,8 @@ class AdminPanelProvider extends PanelProvider
         FilamentView::registerRenderHook(
             'panels::head.end',
             fn (): string => Blade::render('
+                <meta name="robots" content="noindex, nofollow">
+
                 <style>
                     .fi-section-content .fi-section-content {
                         background-color: #f9f9f9 !important;
