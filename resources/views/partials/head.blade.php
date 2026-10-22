@@ -9,11 +9,7 @@
 <meta name="author" content="Renaud Van Meerbergen">
 <meta name="keywords" content="Renaud Van Meerbergen, Renaud développeur, Renaud développeur web, Renaud développeur Liège, renaud developpeur, développeur Liège, développeur fullstack Liège, dev web Liège, développeur Laravel Liège, développeur WordPress Liège">
 <meta name="description" content="Portfolio de Renaud Van Meerbergen, développeur web à Liège. Projets d’applications web avec Laravel, création de sites WordPress et travaux de dev front-end et back-end.">
-    @if(request()->routeIs('policies') || request()->routeIs('conditions'))
-        <meta name="robots" content="noindex, nofollow">
-    @else
-        <meta name="robots" content="index, follow">
-    @endif
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url()->current() }}">
 
 <!-- Open Graph -->
