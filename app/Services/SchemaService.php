@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\About;
 use App\Models\Article;
 use App\Models\Faq;
 use App\Models\Hero;
@@ -151,6 +152,19 @@ class SchemaService
             ? Storage::disk('s3')->url($hero->hero_image)
             : asset('img/opengraph.png');
 
+        // Photos de la section "À propos" de l'accueil, pour les associer à la personne dans Google Images
+        $about = About::published()->first();
+        $aboutImages = collect([$about?->image1, $about?->image2, $about?->image3, $about?->image4])
+            ->filter()
+            ->map(fn (string $path) => [
+                '@type' => 'ImageObject',
+                'url' => Storage::disk('s3')->url($path),
+                'contentUrl' => Storage::disk('s3')->url($path),
+                'caption' => 'Renaud Van Meerbergen - Développeur Web Fullstack',
+            ])
+            ->values()
+            ->all();
+
         return [
             '@type' => 'Person',
             '@id' => url('/').self::PERSON_ID,
@@ -160,11 +174,14 @@ class SchemaService
             'alternateName' => 'Renaud Vmb',
             'url' => url('/'),
             'image' => [
-                '@type' => 'ImageObject',
-                '@id' => url('/').'#personimage',
-                'url' => $imageUrl,
-                'contentUrl' => $imageUrl,
-                'caption' => 'Renaud Van Meerbergen - Développeur Web Fullstack',
+                [
+                    '@type' => 'ImageObject',
+                    '@id' => url('/').'#personimage',
+                    'url' => $imageUrl,
+                    'contentUrl' => $imageUrl,
+                    'caption' => 'Renaud Van Meerbergen - Développeur Web Fullstack',
+                ],
+                ...$aboutImages,
             ],
             'jobTitle' => 'Développeur Web Fullstack',
             'description' => 'Développeur web fullstack spécialisé en Laravel et Livewire basé à Liège, Belgique.',

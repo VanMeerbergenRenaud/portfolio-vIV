@@ -79,13 +79,11 @@
 
                         {{-- Image --}}
                         <div class="relative rounded-2xl overflow-hidden min-h-52 max-h-135 h-full">
-                            <noindex>
-                                <img src="{{ $article->cover_image ? Storage::disk('s3')->url($article->cover_image) : asset('img/placeholder.png') }}"
-                                     alt="{{ $article->title }}"
-                                     class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full min-h-55 object-cover"
-                                     loading="lazy"
-                                >
-                            </noindex>
+                            <img src="{{ $article->cover_image ? Storage::disk('s3')->url($article->cover_image) : asset('img/placeholder.png') }}"
+                                 alt="{{ $article->title }}"
+                                 class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full min-h-55 object-cover"
+                                 loading="lazy"
+                            >
 
                             @if($article->category)
                                 <div class="z-2 absolute left-4 bottom-4 bg-red text-white px-4 py-2 rounded-lg">

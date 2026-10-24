@@ -44,29 +44,29 @@
             <div>
                 <div class="
                         grid grid-cols-2 gap-2 overflow-auto
-                        lg:grid-cols-[minmax(6rem,8rem)_auto_auto_minmax(6rem,8rem)]
+                        md:grid-cols-[minmax(6rem,8rem)_auto_auto_minmax(6rem,8rem)]
                         xl:grid-cols-[minmax(7.5rem,9rem)_auto_auto_minmax(7.5rem,9rem)]
                         2xl:grid-cols-[minmax(9rem,15rem)_auto_auto_minmax(9rem,15rem)]
                 ">
 
                     {{-- CARTE 1: Stat 1 --}}
                     <div data-border="true" data-scroll-card
-                         class="bg-transparent p-5 pb-4 rounded-xl flex flex-col justify-between h-30 lg:col-start-2 lg:row-start-1">
+                         class="bg-transparent p-5 pb-4 rounded-xl flex flex-col justify-between h-30 col-start-1 row-start-1 md:col-start-2 md:row-start-1">
                         <p class="text-xl font-medium">
                             {!! preg_replace('/([+x])/i', '<span class="text-xl font-medium text-[#FC4040]">$1</span>', $about->stat1_value) !!}
                         </p>
                         <p class="mt-1 text-sm text-neutral-500">{{ $about->stat1_label }}</p>
                     </div>
 
-                    {{-- CARTE 2: Vide --}}
-                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-3 lg:row-start-1" data-scroll-card></div>
+                    {{-- CARTE 2: Vide (à partir de la tablette) --}}
+                    <div class="hidden md:block z-1 bg-white rounded-xl h-30 md:col-start-3 md:row-start-1" data-scroll-card></div>
 
-                    {{-- CARTE 3: Vide --}}
-                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-2 lg:row-start-2" data-scroll-card></div>
+                    {{-- CARTE 3: Vide (à partir de la tablette) --}}
+                    <div class="hidden md:block z-1 bg-white rounded-xl h-30 md:col-start-2 md:row-start-2" data-scroll-card></div>
 
                     {{-- CARTE 4: Stat 2 --}}
                     <div data-border="true" data-scroll-card
-                         class="p-5 pb-3 rounded-xl flex flex-col justify-between h-30 lg:col-start-3 lg:row-start-2">
+                         class="p-5 pb-3 rounded-xl flex flex-col justify-between h-30 col-start-2 row-start-2 md:col-start-3 md:row-start-2">
                         <p class="text-xl font-medium">
                             {!! preg_replace('/([+x])/i', '<span class="text-xl font-medium text-[#FC4040]">$1</span>', $about->stat2_value) !!}
                         </p>
@@ -75,41 +75,41 @@
 
                     {{-- CARTE 5: Stat 3 --}}
                     <div data-border="true" data-scroll-card
-                         class="p-5 pb-3 rounded-xl flex flex-col justify-between h-30 lg:col-start-2 lg:row-start-3">
+                         class="p-5 pb-3 rounded-xl flex flex-col justify-between h-30 col-start-1 row-start-3 md:col-start-2 md:row-start-3">
                         <p class="text-xl font-medium">
                             {!! preg_replace('/([+x])/i', '<span class="text-xl font-medium text-[#FC4040]">$1</span>', $about->stat3_value) !!}
                         </p>
                         <p class="mt-1 text-sm text-neutral-500">{{ $about->stat3_label }}</p>
                     </div>
 
-                    {{-- CARTE 6: Vide --}}
-                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-3 lg:row-start-3" data-scroll-card></div>
+                    {{-- CARTE 6: Vide (à partir de la tablette) --}}
+                    <div class="hidden md:block z-1 bg-white rounded-xl h-30 md:col-start-3 md:row-start-3" data-scroll-card></div>
 
-                    {{-- CARTE 7: Vide --}}
-                    <div class="z-1 bg-white rounded-xl h-30 lg:col-start-2 lg:row-start-4" data-scroll-card></div>
+                    {{-- CARTE 7: Vide (à partir de la tablette) --}}
+                    <div class="hidden md:block z-1 bg-white rounded-xl h-30 md:col-start-2 md:row-start-4" data-scroll-card></div>
 
                     {{-- CARTE 8: Stat 4 --}}
                     <div data-border="true" data-scroll-card
-                         class="p-5 pb-3 rounded-xl flex flex-col justify-between h-30 lg:col-start-3 lg:row-start-4">
+                         class="p-5 pb-3 rounded-xl flex flex-col justify-between h-30 col-start-2 row-start-4 md:col-start-3 md:row-start-4">
                         <p class="text-xl font-medium">
                             {!! preg_replace('/([+x])/i', '<span class="text-xl font-medium text-[#FC4040]">$1</span>', $about->stat4_value) !!}
                         </p>
                         <p class="mt-1 text-sm text-neutral-500">{{ $about->stat4_label }}</p>
                     </div>
 
-                    {{-- Eléments uniquement visibles sur DESKTOP --}}
+                    {{-- Photos : en damier avec les stats sur mobile, dans les colonnes extérieures à partir de la tablette --}}
 
-                    {{-- CARTE 9: Vide (Desktop seulement) --}}
-                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-1" data-scroll-card></div>
+                    {{-- CARTE 9: Vide (à partir de la tablette) --}}
+                    <div class="hidden md:block z-1 bg-white rounded-xl h-30 md:col-start-1 md:row-start-1" data-scroll-card></div>
 
-                    {{-- CARTE 10: Image 1 (Desktop seulement) --}}
+                    {{-- CARTE 10: Image 1 --}}
                     <div
-                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-1 overflow-hidden"
+                        class="z-1 bg-white rounded-xl h-30 col-start-2 row-start-1 md:col-start-4 md:row-start-1 overflow-hidden"
                         data-scroll-card>
                         @if($about->image1)
                             <img src="{{ Storage::disk('s3')->url($about->image1) }}"
-                                 alt="{{ $about->image1_alt ?? 'Image' }}"
-                                 class="w-full h-full object-cover"
+                                 alt="{{ $about->image1_alt ?: 'Photo de Renaud Van Meerbergen, développeur web fullstack à Liège' }}"
+                                 class="w-full h-full object-cover object-top md:object-center"
                                  loading="lazy"
                             >
                         @else
@@ -121,14 +121,14 @@
                         @endif
                     </div>
 
-                    {{-- CARTE 11: Image 2 (Desktop seulement) --}}
+                    {{-- CARTE 11: Image 2 --}}
                     <div
-                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-2 overflow-hidden"
+                        class="z-1 bg-white rounded-xl h-30 col-start-1 row-start-2 md:col-start-1 md:row-start-2 overflow-hidden"
                         data-scroll-card>
                         @if($about->image2)
                             <img src="{{ Storage::disk('s3')->url($about->image2) }}"
-                                 alt="{{ $about->image2_alt ?? 'Image' }}"
-                                 class="w-full h-full object-cover"
+                                 alt="{{ $about->image2_alt ?: 'Photo de Renaud Van Meerbergen, développeur web fullstack à Liège' }}"
+                                 class="w-full h-full object-cover object-top md:object-center"
                                  loading="lazy"
                             >
                         @else
@@ -140,20 +140,20 @@
                         @endif
                     </div>
 
-                    {{-- CARTE 12: Vide (Desktop seulement) --}}
-                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-2" data-scroll-card></div>
+                    {{-- CARTE 12: Vide (à partir de la tablette) --}}
+                    <div class="hidden md:block z-1 bg-white rounded-xl h-30 md:col-start-4 md:row-start-2" data-scroll-card></div>
 
-                    {{-- CARTE 13: Vide (Desktop seulement) --}}
-                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-3" data-scroll-card></div>
+                    {{-- CARTE 13: Vide (à partir de la tablette) --}}
+                    <div class="hidden md:block z-1 bg-white rounded-xl h-30 md:col-start-1 md:row-start-3" data-scroll-card></div>
 
-                    {{-- CARTE 14: Image 3 (Desktop seulement) --}}
+                    {{-- CARTE 14: Image 3 --}}
                     <div
-                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-3 overflow-hidden"
+                        class="z-1 bg-white rounded-xl h-30 col-start-2 row-start-3 md:col-start-4 md:row-start-3 overflow-hidden"
                         data-scroll-card>
                         @if($about->image3)
                             <img src="{{ Storage::disk('s3')->url($about->image3) }}"
-                                 alt="{{ $about->image3_alt ?? 'Image' }}"
-                                 class="w-full h-full object-cover"
+                                 alt="{{ $about->image3_alt ?: 'Photo de Renaud Van Meerbergen, développeur web fullstack à Liège' }}"
+                                 class="w-full h-full object-cover object-top md:object-center"
                                  loading="lazy"
                             >
                         @else
@@ -165,14 +165,14 @@
                         @endif
                     </div>
 
-                    {{-- CARTE 15: Image 4 (Desktop seulement) --}}
+                    {{-- CARTE 15: Image 4 --}}
                     <div
-                        class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-1 lg:row-start-4 overflow-hidden"
+                        class="z-1 bg-white rounded-xl h-30 col-start-1 row-start-4 md:col-start-1 md:row-start-4 overflow-hidden"
                         data-scroll-card>
                         @if($about->image4)
                             <img src="{{ Storage::disk('s3')->url($about->image4) }}"
-                                 alt="{{ $about->image4_alt ?? 'Image' }}"
-                                 class="w-full h-full object-cover"
+                                 alt="{{ $about->image4_alt ?: 'Photo de Renaud Van Meerbergen, développeur web fullstack à Liège' }}"
+                                 class="w-full h-full object-cover object-top md:object-center"
                                  loading="lazy"
                             >
                         @else
@@ -184,8 +184,8 @@
                         @endif
                     </div>
 
-                    {{-- CARTE 16: Vide (Desktop seulement) --}}
-                    <div class="hidden lg:block z-1 bg-white rounded-xl h-30 lg:col-start-4 lg:row-start-4" data-scroll-card></div>
+                    {{-- CARTE 16: Vide (à partir de la tablette) --}}
+                    <div class="hidden md:block z-1 bg-white rounded-xl h-30 md:col-start-4 md:row-start-4" data-scroll-card></div>
                 </div>
             </div>
         </div>

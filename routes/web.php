@@ -33,6 +33,16 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/conditions', Conditions::class)->name('conditions');
 });
 
+/* CV : servi par Laravel pour envoyer l'en-tête noindex (absent quand nginx sert le PDF directement) */
+Route::get('/cv', function () {
+    return response()->file(resource_path('files/cv.pdf'), [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'inline; filename="cv-renaud-van-meerbergen.pdf"',
+        'X-Robots-Tag' => 'noindex, nofollow',
+    ]);
+})->name('cv');
+Route::permanentRedirect('/img/cv.pdf', '/cv');
+
 /* Admin login */
 Route::get('/login', function () {
     return redirect('/admin/login');

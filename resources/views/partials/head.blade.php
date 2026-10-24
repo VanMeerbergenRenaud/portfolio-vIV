@@ -9,8 +9,8 @@
 <meta name="author" content="Renaud Van Meerbergen">
 <meta name="keywords" content="Renaud Van Meerbergen, Renaud développeur, Renaud développeur web, Renaud développeur Liège, renaud developpeur, développeur Liège, développeur fullstack Liège, dev web Liège, développeur Laravel Liège, développeur WordPress Liège">
 <meta name="description" content="Portfolio de Renaud Van Meerbergen, développeur web à Liège. Projets d’applications web avec Laravel, création de sites WordPress et travaux de dev front-end et back-end.">
-<link rel="canonical" href="{{ url()->current() }}">
-<meta name="robots" content="all">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -33,13 +33,13 @@
 <meta property="twitter:image" content="{{ asset('img/opengraph.png') }}">
 
 <!-- Favicons -->
-<link rel="icon" href="{{ asset('public/favicons/favicon.ico') }}" sizes="any">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/favicons/favicon-16x16.png') }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('public/favicons/favicon-32x32.png') }}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('public/favicons/apple-touch-icon.png') }}">
-<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('public/favicons/android-chrome-192x192.png') }}">
-<link rel="icon" type="image/png" sizes="512x512" href="{{ asset('public/favicons/android-chrome-512x512.png') }}">
-<link rel="manifest" href="{{ asset('public/favicons/site.webmanifest') }}">
+<link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('android-chrome-192x192.png') }}">
+<link rel="icon" type="image/png" sizes="512x512" href="{{ asset('android-chrome-512x512.png') }}">
+<link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
 <!-- JavaScript required -->
 <noscript>

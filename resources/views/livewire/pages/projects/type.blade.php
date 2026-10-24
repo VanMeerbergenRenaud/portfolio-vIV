@@ -1,5 +1,6 @@
 <div>
-    <section id="projects" class="px-4 md:px-8 lg:px-10 pt-30 pb-25 lg:pt-52 lg:pb-40 flex flex-col gap-8 md:gap-12 lg:gap-20">
+    <section id="projects"
+             class="px-4 md:px-8 lg:px-10 pt-30 pb-25 lg:pt-52 lg:pb-40 flex flex-col gap-8 md:gap-12 lg:gap-20">
 
         {{-- Header section --}}
         <div class="flex flex-col gap-7">
@@ -14,7 +15,8 @@
                     <span class="text-red" aria-hidden="true">|</span>
 
                     <x-font.text>
-                        Projets - <x-projects.type-label :type="$type" />
+                        Projets -
+                        <x-projects.type-label :type="$type"/>
                     </x-font.text>
                 </div>
                 <x-font.text-sm class="pl-8.5 text-gray-medium">
@@ -25,7 +27,8 @@
             {{-- Title and filters --}}
             <div class="flex flex-col justify-between md:items-end gap-7 md:flex-row">
                 <x-font.title-2xl :isTitle="true" level="2" class="max-w-255">
-                    Projets <x-projects.type-label :type="$type" />
+                    Projets
+                    <x-projects.type-label :type="$type"/>
                 </x-font.title-2xl>
 
                 {{-- List of types --}}
@@ -48,7 +51,7 @@
                                wire:navigate
                             >
                                 <x-font.text-md>
-                                    <x-projects.type-label :type="$projectType" />
+                                    <x-projects.type-label :type="$projectType"/>
                                 </x-font.text-md>
                             </a>
                         </li>
@@ -79,25 +82,21 @@
 
                         {{-- Image --}}
                         <div class="relative rounded-2xl overflow-hidden min-h-52 max-h-135 h-full">
-                            <noindex>
-                                <img
-                                    src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
-                                    alt="{{ $project->name ? 'Image du projet : ' . $project->name : '' }}"
-                                    class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full min-h-55 object-cover"
-                                    loading="lazy"
-                                >
-                            </noindex>
+                            <img
+                                src="{{ $project->image ? Storage::disk('s3')->url($project->image) : asset('img/placeholder.png') }}"
+                                alt="{{ $project->name ? 'Image du projet : ' . $project->name : '' }}"
+                                class="scale-110 group-hover:scale-100 transition-all duration-500 w-full h-full min-h-55 object-cover"
+                                loading="lazy"
+                            >
 
                             {{-- Logo --}}
                             <div class="z-2 absolute left-4 bottom-4">
-                                <noindex>
-                                    <img
-                                        src="{{ $project->logo_white ? Storage::disk('s3')->url($project->logo_white) : asset('img/projects/logo.svg') }}"
-                                        alt="{{ $project->name ? 'Logo du projet : ' . $project->name : 'logo par défaut' }}"
-                                        class="object-contain transition-all duration-600 py-1 px-2 min-w-24 max-w-32 max-h-18 group-hover:scale-115 group-hover:max-h-20 group-hover:-translate-y-1 group-hover:translate-x-2"
-                                        loading="lazy"
-                                    >
-                                </noindex>
+                                <img
+                                    src="{{ $project->logo_white ? Storage::disk('s3')->url($project->logo_white) : asset('img/projects/logo.svg') }}"
+                                    alt="{{ $project->name ? 'Logo du projet : ' . $project->name : 'logo par défaut' }}"
+                                    class="object-contain transition-all duration-600 py-1 px-2 min-w-24 max-w-32 max-h-18 group-hover:scale-115 group-hover:max-h-20 group-hover:-translate-y-1 group-hover:translate-x-2"
+                                    loading="lazy"
+                                >
                             </div>
                         </div>
                     </a>
@@ -105,13 +104,15 @@
             @empty
                 <li class="col-span-full text-center py-10">
                     <x-font.text-lg class="text-gray-medium">
-                        Aucun projet de type "<x-projects.type-label :type="$type" />" n'a été développé pour le moment.
+                        Aucun projet de type "
+                        <x-projects.type-label :type="$type"/>
+                        " n'a été développé pour le moment.
                     </x-font.text-lg>
                 </li>
             @endforelse
         </ul>
     </section>
 
-    <x-cta />
+    <x-cta/>
 </div>
 

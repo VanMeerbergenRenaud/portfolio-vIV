@@ -1,2 +1,9 @@
 User-agent: *
 Disallow:
+
+# Google Images : seules les photos (hero/about sur S3) et le logo doivent ressortir
+User-agent: Googlebot-Image
+Disallow: /img/
+Allow: /img/opengraph.png
+
+Sitemap: https://renaud-vmb.com/sitemap.xml
